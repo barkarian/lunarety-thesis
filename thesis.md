@@ -261,7 +261,46 @@ _Εικόνα 4.1: Ροή δεδομένων συγχρονισμού κρατή
 ![Ροή Auto Actions](./images/auto_actions.png)
 _Εικόνα 4.2: Διάγραμμα ροής εκτέλεσης των Auto Actions._
 
-### 4.2.1 Time-based Triggers (Cron Jobs)
+### 4.2.3 Μηχανισμός Προτύπων (Template Engine)
+
+Για την ευελιξία των μηνυμάτων, αναπτύχθηκε ένας custom Template Engine (`templateUtils.ts`) που επιτρέπει τη δυναμική αντικατάσταση μεταβλητών και τη χρήση λογικής υπό συνθήκη.
+
+**Λειτουργικότητα:**
+
+- **Variable Replacement**: Χρήση της σύνταξης `[object.property]` για πρόσβαση σε εμφωλευμένα δεδομένα (π.χ. `[booking.guest.name]`).
+- **Conditional Logic**: Χρήση της σύνταξης `{condition?? result}` για εμφάνιση κειμένου μόνο αν ικανοποιείται η συνθήκη (π.χ. `{booking.status==="confirmed"?? Κράτηση Επιβεβαιωμένη}`).
+- **Date Formatting**: Αυτόματη αναγνώριση και μορφοποίηση ημερομηνιών.
+
+**Παράδειγμα Προτύπου:**
+
+```text
+Νέα κράτηση:
+🏠 Επιβεβαιωμένη κράτηση - [property.title]
+
+👤 [booking.bookingHolder.firstName] [booking.bookingHolder.lastName]
+👪 [booking.resource.adults] Ενήλικες, [booking.resource.children] Παιδιά
+📆 Από [booking.resource.checkIn] έως [booking.resource.checkOut]
+📍 [property.propertyCountry]
+
+{user.settings.features.bookings.prices!=="none"?? 💰 Τιμή: €[booking.pricing.totalAmount]}
+{user.settings.features.bookings.prices!=="none"?? 💲 Τιμή ανά νύχτα: €[booking.resource.pricePerNight]/νύχτα για [booking.resource.nights] νύχτες}
+
+{user.settings.features.bookings.contactDetails!=="none"?? 📞 Αριθμός τηλεφώνου: [booking.bookingHolder.phone]}
+{user.settings.features.bookings.contactDetails!=="none"?? ✉ Email: [booking.bookingHolder.email]}
+
+{user.settings.features.messages.visibility!=="none"?? 🗨 Μηνύματα: μπορείτε να δείτε/απαντήσετε [link-booking-chat]}
+{user.settings.features.messages.visibility!=="none"?? 🗨 Ημερολόγιο: [link-booking]}
+```
+
+**Τεχνική Υλοποίηση:**
+
+Η υλοποίηση βασίζεται σε Regular Expressions για την αναγνώριση των patterns και αναδρομική διάσχιση των αντικειμένων (booking, property, user) για την εύρεση των τιμών. Ο κώδικας διαχειρίζεται επίσης ειδικές περιπτώσεις, όπως η δημιουργία δυναμικών συνδέσμων (`[link-booking]`) που οδηγούν σε ασφαλείς σελίδες της πλατφόρμας.
+
+**Μελλοντική Επέκταση (GUI):**
+
+Επί του παρόντος, η σύνταξη των προτύπων γίνεται σε μορφή κειμένου (plain text). Μια σημαντική μελλοντική βελτίωση αφορά την ανάπτυξη ενός γραφικού περιβάλλοντος (GUI Builder), όπου ο χρήστης θα μπορεί να επιλέγει μεταβλητές και συνθήκες από λίστες (drag-and-drop), εξαλείφοντας την ανάγκη απομνημόνευσης της σύνταξης και μειώνοντας την πιθανότητα λαθών.
+
+### 4.2.4 Time-based Triggers (Cron Jobs)
 
 Αυτές οι ενέργειες εκτελούνται βάσει χρόνου σε σχέση με ένα γεγονός της κράτησης.
 
@@ -273,7 +312,7 @@ _Εικόνα 4.2: Διάγραμμα ροής εκτέλεσης των Auto Ac
 ![Σενάρια Time-based Triggers](./images/time_based_triggers_scenario.png)
 _Εικόνα 4.3: Σενάρια λειτουργίας Time-based Triggers για κράτηση της τελευταίας στιγμής (1 μέρα πριν την άφιξη). Στο Σενάριο 1 (μικρό παράθυρο 5 ωρών), η κράτηση χάνει τον κανόνα "2 μέρες πριν" και δεν στέλνεται μήνυμα. Στο Σενάριο 2 (μεγάλο παράθυρο 2 ημερών), η κράτηση εμπίπτει στο παράθυρο και το μήνυμα (π.χ. "The key to open your door is : 2004") αποστέλλεται κανονικά._
 
-### 4.2.2 Instant Triggers (Webhooks)
+### 4.2.5 Instant Triggers (Webhooks)
 
 Ενέργειες που εκτελούνται άμεσα μόλις συμβεί το γεγονός.
 
