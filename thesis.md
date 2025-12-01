@@ -85,7 +85,8 @@ This work contributes to understanding how modern software architectures and Rap
      - 4.4.3 Διαχείριση Δικαιωμάτων και Drawers
 5. **ΑΠΟΤΕΛΕΣΜΑΤΑ**
    - 5.1 Παρουσίαση της Πλατφόρμας
-   - 5.2 Smart Features & LLM Integration
+   - 5.2 Παρουσίαση του Generated Website
+   - 5.3 Smart Features & LLM Integration
 6. **ΣΥΖΗΤΗΣΗ**
 7. **ΣΥΜΠΕΡΑΣΜΑΤΑ**
 8. **ΒΙΒΛΙΟΓΡΑΦΙΑ**
@@ -347,7 +348,23 @@ _Εικόνα 5.4: Διαχείριση Πλάνων Χρέωσης (Plans) στ
 ![Auto Actions Dashboard](<./presentation_assets/AUTO_ACTIONS%20(advanced%20dashboard).gif>)
 _Εικόνα 5.5: Διαχείριση Αυτοματισμών (Auto Actions) στο Advanced Dashboard._
 
-## 5.2 Smart Features & LLM Integration
+## 5.2 Παρουσίαση του Generated Website
+
+Η πλατφόρμα παρέχει τη δυνατότητα αυτόματης παραγωγής ιστοσελίδων για τα καταλύματα, προσφέροντας μια ολοκληρωμένη εμπειρία τόσο για τον διαχειριστή όσο και για τον επισκέπτη.
+
+![Website Generation Admin](<./presentation_assets/Website%20Generation%20(Admin).gif>)
+_Εικόνα 5.6: Διαδικασία παραγωγής Website από το περιβάλλον του διαχειριστή._
+Ο διαχειριστής μπορεί με απλά βήματα να δημιουργήσει και να δημοσιεύσει την ιστοσελίδα του καταλύματος, αξιοποιώντας τα δεδομένα που είναι ήδη καταχωρημένα στην πλατφόρμα.
+
+![Website Guest Navigation](<./presentation_assets/Website%20Demo%20(Navigate%20inside%20Website%20like%20a%20guest).gif>)
+_Εικόνα 5.7: Πλοήγηση επισκέπτη στην παραγόμενη ιστοσελίδα._
+Η ιστοσελίδα που παράγεται είναι πλήρως λειτουργική, επιτρέποντας στον επισκέπτη να δει λεπτομέρειες του καταλύματος, φωτογραφίες και παροχές, καθώς και να προχωρήσει σε κράτηση.
+
+![Website AI Capabilities](<./presentation_assets/Website%20Demo%20(LLM%20and%20AI%20capabilities%20that%20guests%20can%20use).gif>)
+_Εικόνα 5.8: Δυνατότητες AI και LLM για την εξυπηρέτηση επισκεπτών._
+Ενσωματωμένες δυνατότητες Τεχνητής Νοημοσύνης επιτρέπουν στους επισκέπτες να αλληλεπιδρούν με έξυπνους βοηθούς για να λαμβάνουν άμεσες απαντήσεις σε ερωτήματα σχετικά με το κατάλυμα και την περιοχή.
+
+## 5.3 Smart Features & LLM Integration
 
 Η ενσωμάτωση LLMs προσφέρει απτά οφέλη:
 
