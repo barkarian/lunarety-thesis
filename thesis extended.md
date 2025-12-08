@@ -838,9 +838,6 @@ _Απεικόνιση: Ένα flowchart οριζόντιο:
 
 Ο υπολογισμός του χρονικού παραθύρου ακολουθεί διαφορετική λογική ανάλογα με τον τύπο του trigger:
 
-**_[ΔΙΑΓΡΑΜΜΑ: Time Window Calculation]_**
-_Περιγραφή διαγράμματος: Ένα timeline diagram που δείχνει δύο σενάρια: (1) "before" triggers όπου το παράθυρο είναι [now + interval, now + interval + window], (2) "after" triggers όπου το παράθυρο είναι [now − interval − window, now − interval]. Επισημαίνονται οι μεταβλητές timeInterval και timeWindow._
-
 ```typescript
 // everyHourCron.ts - Υπολογισμός fromDate/toDate
 const now: Date = new Date();
@@ -1115,8 +1112,9 @@ _Περιγραφή διαγράμματος: Δύο screenshots που δείχ
 1. Βλέπει: Ημερομηνίες check-in/out, Property name, Room name
 2. ΔΕΝ βλέπει: Τιμή, Email πελάτη, Τηλέφωνο, Μηνύματα
 
-**_[ΔΙΑΓΡΑΜΜΑ: Access Control Decision Tree]_**
-_Περιγραφή διαγράμματος: Ένα decision tree που δείχνει τη διαδικασία απόφασης για κάθε request: (1) User authenticated? → (2) User type? → (3) Collection access rules → (4) Plan features check → (5) Field-level access → Final decision (allow/deny)._
+![Access Control Decision Tree](./images/access_control_decision_tree.png)
+_Εικόνα: Ένα decision tree που δείχνει τη διαδικασία απόφασης για κάθε request:  
+(1) User authenticated? → (2) User type? → (3) Collection access rules → (4) Field-level access → Final decision (allow/deny)._
 
 ## 4.4 Αυτοματοποιημένη Παραγωγή Ιστοσελίδων
 
