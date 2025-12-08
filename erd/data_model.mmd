@@ -1,0 +1,104 @@
+erDiagram
+    %% LUNARETY v2 - COMPACT DATA MODEL
+
+    USERS {
+        string id PK
+        string email UK
+        string type "platform-user|owner|manager|stuff"
+    }
+
+    PLANS {
+        string id PK
+        string planName
+        string type "managed-by-platform|managed-by-manager"
+    }
+
+    PROPERTY {
+        string id PK
+        string title
+        string status "imported|active"
+        string channelPropertyId
+    }
+
+    PROPERTY_RATES {
+        string id PK
+        number date
+        string channelRoomId
+        number price
+        number availUnits
+    }
+
+    WEBSITE {
+        string id PK
+        string type "platform|manager|owner"
+        string websiteApiKey UK
+    }
+
+    MEDIA {
+        string id PK
+        string alt
+        string url
+    }
+
+    BOOKINGS {
+        string id PK
+        string reservationName
+        string status
+        string source
+        number totalAmount
+    }
+
+    BILLING {
+        string id PK
+        string type "owner-bill|manager-bill"
+        number totalAmountWithoutTaxes
+        string paymentStatus
+    }
+
+    AUTO_ACTIONS {
+        string id PK
+        string type
+        string triggerType
+    }
+
+    %% USER HIERARCHY
+    USERS ||--o{ USERS : "manages"
+    USERS ||--o{ USERS : "owns"
+
+    %% PLANS
+    USERS ||--o{ PLANS : "creates"
+    USERS ||--|| PLANS : "subscribes"
+    PLANS ||--o{ BILLING : "generates"
+    PLANS ||--o{ BOOKINGS : "calculates commission"
+
+    %% PROPERTY
+    USERS ||--o{ PROPERTY : "manages"
+    USERS ||--o{ PROPERTY : "owns"
+    USERS }o--o{ PROPERTY : "works on"
+    PROPERTY ||--o{ BOOKINGS : "has"
+    PROPERTY ||--o{ PROPERTY_RATES : "has"
+    PROPERTY ||--o{ MEDIA : "has"
+    PROPERTY }o--o{ WEBSITE : "listed on"
+    PROPERTY ||--o{ AUTO_ACTIONS : "subscribed"
+
+    %% WEBSITE
+    WEBSITE ||--|| USERS : "owned by"
+    WEBSITE ||--o{ MEDIA : "has"
+
+    %% BOOKINGS
+    USERS ||--o{ BOOKINGS : "manages"
+    BOOKINGS ||--o| WEBSITE : "from"
+    BOOKINGS ||--|{ PROPERTY_RATES : "nightly rates"
+    BOOKINGS ||--|| PROPERTY_RATES : "check-in rate"
+    BOOKINGS ||--o| BOOKINGS : "main booking"
+    BOOKINGS ||--o{ AUTO_ACTIONS : "triggered"
+
+    %% BILLING
+    USERS ||--o{ BILLING : "debtor"
+    USERS ||--o{ BILLING : "creditor"
+    BILLING ||--o{ BOOKINGS : "includes"
+
+    %% AUTO ACTIONS
+    AUTO_ACTIONS ||--|| USERS : "created by"
+    USERS ||--o{ AUTO_ACTIONS : "subscribed to"
+
