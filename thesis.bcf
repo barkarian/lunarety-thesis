@@ -2392,7 +2392,6 @@
     <bcf:citekey order="16" intorder="1">pms_systems</bcf:citekey>
     <bcf:citekey order="17" intorder="1">design_patterns</bcf:citekey>
     <bcf:citekey order="17" intorder="2">software_architecture</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">dndkit</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

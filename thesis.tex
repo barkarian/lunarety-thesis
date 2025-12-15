@@ -450,7 +450,16 @@ This work contributes to understanding how modern software architectures and Rap
 \section{Ρόλοι και Ιεραρχία Χρηστών}
 \label{sec:user-hierarchy}
 
-Το σύστημα σχεδιάστηκε με γνώμονα την ιεραρχία Manager-Owner, υλοποιώντας ένα εύκαμπτο μοντέλο δικαιωμάτων που επιτρέπει τον έλεγχο σε κάθε επίπεδο.
+Το σύστημα σχεδιάστηκε με γνώμονα την ιεραρχία Manager-Owner:
+
+\begin{enumerate}
+    \item \textbf{Platform Users (Admins):} Οι διαχειριστές της πλατφόρμας Lunarety. Έχουν καθολική εποπτεία.
+    \item \textbf{Managers:} Ο κεντρικός κόμβος. Συνδέουν το Channel Manager τους, δημιουργούν πλάνα χρέωσης και εισάγουν τους Owners τους.
+    \item \textbf{Owners:} Πελάτες του Manager. Βλέπουν μόνο τα δικά τους ακίνητα και οικονομικά στοιχεία. Η πρόσβασή τους καθορίζεται αυστηρά από τον Manager.
+    \item \textbf{Staff:} Υπάλληλοι (καθαριστές, υποδοχή) που ανήκουν είτε σε Manager είτε σε Owner, με περιορισμένα δικαιώματα (π.χ. view-only στο ημερολόγιο).
+\end{enumerate}
+
+Το σύστημα υλοποιεί ένα εύκαμπτο μοντέλο δικαιωμάτων που επιτρέπει τον έλεγχο σε κάθε επίπεδο.
 
 \subsection{Τύποι Χρηστών (User Types)}
 \label{subsec:user-types}
@@ -520,7 +529,15 @@ This work contributes to understanding how modern software architectures and Rap
 \section{Αρχιτεκτονική Συστήματος (Monorepo)}
 \label{sec:system-architecture}
 
-Η πλατφόρμα υλοποιείται ως Monorepo, το οποίο εξασφαλίζει συνοχή μεταξύ των διαφορετικών components και διευκολύνει την κοινή χρήση τύπων και utilities.
+Η πλατφόρμα υλοποιείται ως Monorepo, το οποίο περιλαμβάνει:
+
+\begin{itemize}
+    \item Τον πυρήνα της εφαρμογής (PayloadCMS + Next.js).
+    \item Τους Webhook Handlers για την επικοινωνία με τρίτα συστήματα.
+    \item Τα Cron Jobs για τις χρονοπρογραμματισμένες εργασίες.
+\end{itemize}
+
+Η πλατφόρμα εξασφαλίζει συνοχή μεταξύ των διαφορετικών components και διευκολύνει την κοινή χρήση τύπων και utilities.
 
 \subsection{Δομή Monorepo}
 \label{subsec:monorepo-structure}
@@ -597,10 +614,19 @@ Resend & Email sending & \code{lib/email/} \\
     \label{fig:system-architecture}
 \end{figure}
 
-Παράλληλα, το \code{lunarety-v2-website} αποτελεί ένα ξεχωριστό public project στο GitHub, σχεδιασμένο να λειτουργεί ως template για τις ιστοσελίδες των καταλυμάτων. Επικοινωνεί με την πλατφόρμα μέσω ενός secure API endpoint χρησιμοποιώντας \code{WEBSITE\_API\_KEY}.
+Παράλληλα, το \code{lunarety-v2-website} αποτελεί ένα ξεχωριστό public project στο GitHub, σχεδιασμένο να λειτουργεί ως template για τις ιστοσελίδες των καταλυμάτων, το οποίο όμως συνδέεται άμεσα με την πλατφόρμα μέσω API.
 
 \section{Μοντέλο Δεδομένων και Σχέσεις}
 \label{sec:data-model}
+
+Η βάση δεδομένων (PostgreSQL) οργανώνεται γύρω από τις εξής κύριες οντότητες:
+
+\begin{itemize}
+    \item \textbf{Users:} Περιλαμβάνει ιεραρχικές σχέσεις (parent-child) για τη σύνδεση Manager-Owner-Staff.
+    \item \textbf{Properties:} Τα ακίνητα, τα οποία συνδέονται με \code{propId} του Beds24 και ανήκουν σε έναν Manager και (προαιρετικά) σε έναν Owner.
+    \item \textbf{Bookings:} Κεντρικός πίνακας κρατήσεων με πλήρη στοιχεία πελάτη και οικονομικά δεδομένα.
+    \item \textbf{Auto-Actions:} Πίνακας κανόνων αυτοματισμού.
+\end{itemize}
 
 \subsection{Κύριες Οντότητες (Collections)}
 \label{subsec:collections}
@@ -699,6 +725,16 @@ Resend & Email sending & \code{lib/email/} \\
 
 \section{Διαχείριση Κρατήσεων και Συγχρονισμός}
 \label{sec:booking-sync}
+
+Η διασύνδεση με το Beds24 είναι κρίσιμη και ακολουθεί μια συγκεκριμένη ροή:
+
+\begin{enumerate}
+    \item \textbf{Σύνδεση Λογαριασμού:} Ο Manager εισάγει το API Key του Beds24.
+    \item \textbf{Initial Import:} Κατά την εισαγωγή του κλειδιού, το σύστημα εκτελεί μια μαζική εισαγωγή (Import) όλων των Properties και των Rates που είναι ορισμένα στο Channel Manager.
+    \item \textbf{Webhook Configuration:} Το σύστημα αυτόματα ενημερώνει τις ρυθμίσεις του Beds24 ώστε να στέλνει Webhooks στο endpoint της πλατφόρμας (\code{/api/webhooks/channel-managers/beds24/bookings}).
+    \item \textbf{Async Updates:} Από εκείνη τη στιγμή, κάθε αλλαγή (νέα κράτηση, αλλαγή ημερομηνίας) έρχεται ασύγχρονα μέσω Webhook.
+    \item \textbf{Scheduled Sync:} Για λόγους ασφαλείας και συνέπειας, εκτελείται περιοδικός συγχρονισμός (π.χ. στο τέλος της ημέρας) για να διορθωθούν τυχόν χαμένα πακέτα.
+\end{enumerate}
 
 Η διαχείριση κρατήσεων αποτελεί τον πυρήνα της πλατφόρμας και απαιτεί προσεκτικό σχεδιασμό για να εξασφαλιστεί η ακεραιότητα των δεδομένων, η απόδοση και η συνέπεια μεταξύ της τοπικής βάσης δεδομένων και του Channel Manager.
 
@@ -826,6 +862,146 @@ export const computeCommissionOfPlan = (
     \label{fig:booking-sync}
 \end{figure}
 
+\subsection{Σύστημα Σύνδεσης με Property Rates}
+\label{subsec:rate-linking}
+
+Κάθε κράτηση συνδέεται με τα αντίστοιχα PropertyRate records μέσω του \code{relatedRates} field. Αυτό είναι κρίσιμο για:
+
+\begin{itemize}
+    \item Τον υπολογισμό διαθεσιμότητας (ένα rate με booked unit δεν είναι διαθέσιμο)
+    \item Τον υπολογισμό τιμών (η τιμή ανά νύχτα προέρχεται από το rate)
+    \item Την ενημέρωση του ημερολογίου
+\end{itemize}
+
+\paragraph{linkRatesToBooking Hook:}
+
+\begin{lstlisting}[caption={linkRatesToBooking Hook}]
+export const linkRatesToBooking: CollectionBeforeChangeHook<Booking> = async ({
+  data,
+  req,
+}) => {
+  // Εύρεση σχετικών rates για τη διάρκεια της κράτησης
+  const rates = await payload.find({
+    collection: "property-rates",
+    where: {
+      channelRoomId: { equals: data.resource.roomAndUnit.roomId },
+      date: {
+        greater_than_equal: data.resource.checkIn,
+        less_than: data.resource.checkOut,
+      },
+    },
+    limit: 10000,
+  });
+
+  data.relatedRates = {
+    nightlyRates: rates.docs.map((rate) => rate.id),
+    checkInRate: rates.docs.find((rate) => rate.date === data.resource.checkIn)
+      ?.id,
+  };
+  return data;
+};
+\end{lstlisting}
+
+\paragraph{touchNightlyRates Hook (Cascade Update):}
+
+Μετά την αποθήκευση μιας κράτησης, χρειάζεται να ενημερωθούν τα σχετικά rates ώστε να αντικατοπτρίζουν τη νέα κατάσταση. Αυτό γίνεται με ένα «touch» update:
+
+\begin{lstlisting}[caption={touchNightlyRates Hook}]
+export const touchNightlyRates: CollectionAfterChangeHook<Booking> = async ({
+  doc,
+  req,
+}) => {
+  const rateIds =
+    doc.relatedRates?.nightlyRates?.map((rate) =>
+      typeof rate === "object" ? rate.id : rate
+    ) || [];
+
+  // "Touch" update - ενεργοποιεί τα hooks του property-rates
+  await Promise.all(
+    rateIds.map((id) =>
+      payload.update({
+        collection: "property-rates",
+        id,
+        data: {}, // Κενό update, μόνο για να τρέξουν τα hooks
+        req: { transactionID: req.transactionID },
+      })
+    )
+  );
+  return doc;
+};
+\end{lstlisting}
+
+\subsection{Διαχείριση Transactions και Ασφάλεια Δεδομένων}
+\label{subsec:transactions}
+
+Όλες οι κρίσιμες λειτουργίες εκτελούνται εντός database transactions για να εξασφαλιστεί η ακεραιότητα:
+
+\begin{lstlisting}[caption={Χρήση Transactions}]
+const transactionId = await payload.db.beginTransaction();
+try {
+  // Πολλαπλές operations...
+  await payload.db.commitTransaction(transactionId);
+} catch (error) {
+  await payload.db.rollbackTransaction(transactionId);
+  throw error;
+}
+\end{lstlisting}
+
+\subsection{Εισαγωγή Properties και Βελτιστοποίηση Property Rates}
+\label{subsec:property-import}
+
+Η εισαγωγή καταλυμάτων και των τιμών τους αποτελεί μία από τις πιο απαιτητικές λειτουργίες σε επίπεδο απόδοσης. Για ένα τυπικό κατάλυμα με 4 δωμάτια, το σύστημα χρειάζεται να εισάγει περίπου 5.840 records (4 δωμάτια $\times$ 1.460 ημέρες = 4 χρόνια rates).
+
+\paragraph{Μαζικές Εισαγωγές και Απευθείας Πρόσβαση στη Βάση:}
+
+Γενικά, για τις μαζικές εισαγωγές (mass imports) -- είτε πρόκειται για bookings είτε για properties και rates -- χρησιμοποιούνται \textbf{custom algorithms που δεν βασίζονται καθόλου σε webhooks} και προσπελαύνουν απευθείας τη βάση δεδομένων. Αυτή η προσέγγιση είναι απαραίτητη για λόγους απόδοσης, καθώς η εκτέλεση του πλήρους lifecycle για χιλιάδες records θα ήταν απαγορευτικά αργή.
+
+\paragraph{Αρχικοποίηση και Καθημερινή Συντήρηση:}
+
+Η μαζική εισαγωγή properties και rates πραγματοποιείται κατά την \textbf{αρχική σύνδεση} (initialization) του Manager με τον Channel Manager. Επιπλέον, τα \textbf{access tokens ανανεώνονται καθημερινά} μέσω του \code{everyNightCron}, διασφαλίζοντας την αδιάλειπτη επικοινωνία με το Beds24 API.
+
+\paragraph{Στρατηγική Εισαγωγής Rates:}
+
+Το σύστημα εισάγει τιμές για ένα παράθυρο 4 ετών (2 χρόνια πίσω + 2 χρόνια μπροστά) για κάθε δωμάτιο. Το Beds24 στέλνει τα rates σε συμπτυγμένη μορφή (date ranges), π.χ. «από 1/1 έως 31/1 με τιμή €100», τα οποία το σύστημα επεκτείνει σε μεμονωμένες ημέρες.
+
+\paragraph{Ευρετηρίαση (Indexing) για Βελτιστοποίηση:}
+
+Ο πίνακας \textbf{PropertyRates έχει ευρετηριαστεί (indexed)} στα πεδία που διαβάζονται και ενημερώνονται πιο συχνά, όπως το \code{date} και το \code{channelRoomId}. Αυτό είναι κρίσιμο διότι όταν ενημερώνεται ένα booking, το σύστημα χρειάζεται να ενημερώσει \textbf{όλα τα προηγούμενα και τρέχοντα related rates} -- μια λειτουργία που εκτελείται πολύ συχνά.
+
+\paragraph{Ενημέρωση Rates κατά την Εισαγωγή:}
+
+Κατά την εισαγωγή ή τον συγχρονισμό, ενημερώνονται \textbf{όλα τα room rates του property}. Αυτή είναι μια βαριά λειτουργία (ενδεχομένως χιλιάδες records), και για αυτό χρησιμοποιείται ειδικός αλγόριθμος που προσπελαύνει απευθείας τη βάση δεδομένων χωρίς να ενεργοποιεί το lifecycle για κάθε record ξεχωριστά.
+
+\paragraph{Αλγόριθμος Σύγκρισης Rates:}
+
+Κατά τον συγχρονισμό, το σύστημα συγκρίνει τα νέα rates με τα υπάρχοντα στη βάση, δημιουργώντας maps για γρήγορη αναζήτηση και κατηγοριοποιώντας τα rates σε: \code{ratesToCreate} (νέα), \code{ratesToUpdate} (τροποποιημένα), και \code{ratesToDelete} (διαγραμμένα).
+
+\paragraph{Βελτιστοποίηση Απόδοσης:}
+
+Για την εισαγωγή χιλιάδων rates, χρησιμοποιούνται direct DB operations:
+
+\begin{table}[H]
+\centering
+\caption{Στρατηγικές Βελτιστοποίησης Rates}
+\label{tab:rate-optimization}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Μέθοδος} & \textbf{Χρήση} & \textbf{Πλεονεκτήματα} \\
+\midrule
+\code{payload.db.create()} & Νέα rates & Παρακάμπτει hooks, $\sim$10x πιο γρήγορο \\
+\code{payload.db.updateOne()} & Ενημέρωση rates & Αποφεύγει cascade updates \\
+\code{payload.update()} & Μεμονωμένες αλλαγές & Πλήρες lifecycle, ενεργοποιεί hooks \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: Rate Import Performance Comparison]}\\\small Περιγραφή διαγράμματος: Ένα bar chart που συγκρίνει τον χρόνο εκτέλεσης για εισαγωγή 1.000 rates: (1) Με πλήρες lifecycle ($\sim$60 seconds), (2) Με direct DB operations ($\sim$5 seconds). Επίσης δείχνει τον αριθμό API calls που αποφεύγονται.\vspace{1cm}}}
+    \caption{Σύγκριση απόδοσης εισαγωγής rates.}
+    \label{fig:rate-performance}
+\end{figure}
+
 \section{Μηχανισμός Auto Actions}
 \label{sec:auto-actions}
 
@@ -845,9 +1021,11 @@ export const computeCommissionOfPlan = (
 \subsection{Κανάλια Επικοινωνίας}
 \label{subsec:communication-channels}
 
+Το σύστημα υποστηρίζει πολλαπλά κανάλια (\code{preferableChannels}) και προσπαθεί να στείλει το μήνυμα με σειρά προτεραιότητας.
+
 \begin{itemize}
-    \item \textbf{Για Guests:} OTA Message (μέσω API καναλιού) ή Email.
-    \item \textbf{Για Users:} Telegram. Η αρχιτεκτονική επιτρέπει εύκολη προσθήκη νέων καναλιών (WhatsApp, SMS).
+    \item \textbf{Για Guests:} \code{OTA Message} (μέσω API καναλιού) ή \code{Email}.
+    \item \textbf{Για Users:} \code{Telegram}. Οι χρήστες μπορούν να κάνουν Subscribe στο Telegram Bot της πλατφόρμας και να λαμβάνουν άμεσες ειδοποιήσεις στο κινητό τους. Η αρχιτεκτονική είναι σχεδιασμένη ώστε να επιτρέπει την εύκολη προσθήκη νέων καναλιών (π.χ. WhatsApp, SMS) στο μέλλον.
 \end{itemize}
 
 \begin{figure}[H]
@@ -875,16 +1053,37 @@ export const computeCommissionOfPlan = (
 👤 [booking.bookingHolder.firstName] [booking.bookingHolder.lastName]
 👪 [booking.resource.adults] Ενήλικες, [booking.resource.children] Παιδιά
 📆 Από [booking.resource.checkIn] έως [booking.resource.checkOut]
+📍 [property.propertyCountry]
 
-{user.settings.features.bookings.prices!=="none"?? 
-  💰 Τιμή: €[booking.pricing.totalAmount]}
+{user.settings.features.bookings.prices!=="none"?? 💰 Τιμή: €[booking.pricing.totalAmount]}
+{user.settings.features.bookings.prices!=="none"?? 💲 Τιμή ανά νύχτα: €[booking.resource.pricePerNight]/νύχτα για [booking.resource.nights] νύχτες}
 
-{user.settings.features.messages.visibility!=="none"?? 
-  🗨 Μηνύματα: [link-booking-chat]}
+{user.settings.features.bookings.contactDetails!=="none"?? 📞 Αριθμός τηλεφώνου: [booking.bookingHolder.phone]}
+{user.settings.features.bookings.contactDetails!=="none"?? ✉ Email: [booking.bookingHolder.email]}
+
+{user.settings.features.messages.visibility!=="none"?? 🗨 Μηνύματα: μπορείτε να δείτε/απαντήσετε [link-booking-chat]}
+{user.settings.features.messages.visibility!=="none"?? 🗨 Ημερολόγιο: [link-booking]}
 \end{lstlisting}
+
+\paragraph{Τεχνική Υλοποίηση:}
+Η υλοποίηση βασίζεται σε Regular Expressions για την αναγνώριση των patterns και αναδρομική διάσχιση των αντικειμένων (booking, property, user) για την εύρεση των τιμών. Ο κώδικας διαχειρίζεται επίσης ειδικές περιπτώσεις, όπως η δημιουργία δυναμικών συνδέσμων (\code{[link-booking]}) που οδηγούν σε ασφαλείς σελίδες της πλατφόρμας.
+
+\paragraph{Μελλοντική Επέκταση (GUI):}
+Επί του παρόντος, η σύνταξη των προτύπων γίνεται σε μορφή κειμένου (plain text). Μια σημαντική μελλοντική βελτίωση αφορά την ανάπτυξη ενός γραφικού περιβάλλοντος (GUI Builder), όπου ο χρήστης θα μπορεί να επιλέγει μεταβλητές και συνθήκες από λίστες (drag-and-drop), εξαλείφοντας την ανάγκη απομνημόνευσης της σύνταξης και μειώνοντας την πιθανότητα λαθών.
 
 \subsection{Time-based Triggers (Cron Jobs)}
 \label{subsec:time-based-triggers}
+
+Αυτές οι ενέργειες εκτελούνται βάσει χρόνου σε σχέση με ένα γεγονός της κράτησης.
+
+\begin{itemize}
+    \item \textbf{Trigger Types:} \code{before-checkin}, \code{after-checkout}, \code{after-cancellation}, \code{after-new-booking}.
+    \item \textbf{Λογική Εκτέλεσης:} Ένα Cron Job τρέχει κάθε ώρα (\code{everyHourCron.ts}). Για κάθε ενεργό Auto Action, υπολογίζει ένα χρονικό παράθυρο [\code{fromDate}, \code{toDate}] βάσει του \code{timeInterval} και \code{timeWindow}.
+    \begin{itemize}
+        \item \textit{Παράδειγμα:} Για ενέργεια «2 μέρες πριν την άφιξη», το σύστημα ψάχνει κρατήσεις με \code{checkInDate} που εμπίπτει στο διάστημα [Τώρα + 48 ώρες, Τώρα + 48 ώρες + Window].
+    \end{itemize}
+    \item \textbf{Query:} Χρησιμοποιείται το Drizzle/Payload API για να βρεθούν οι κρατήσεις που πληρούν τα κριτήρια και δεν έχουν ήδη λάβει την ειδοποίηση (έλεγχος στο \code{logging.automationTracking}).
+\end{itemize}
 
 \begin{table}[H]
 \centering
@@ -921,9 +1120,19 @@ if (triggerType.includes("before")) {
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{time_based_triggers_scenario.png}
-    \caption{Σενάρια λειτουργίας Time-based Triggers για κράτηση τελευταίας στιγμής.}
+    \caption{Σενάρια λειτουργίας Time-based Triggers για κράτηση της τελευταίας στιγμής (1 μέρα πριν την άφιξη). Στο Σενάριο 1 (μικρό παράθυρο 5 ωρών), η κράτηση χάνει τον κανόνα «2 μέρες πριν» και δεν στέλνεται μήνυμα. Στο Σενάριο 2 (μεγάλο παράθυρο 2 ημερών), η κράτηση εμπίπτει στο παράθυρο και το μήνυμα (π.χ. «The key to open your door is : 2004») αποστέλλεται κανονικά.}
     \label{fig:time-triggers}
 \end{figure}
+
+\subsection{Instant Triggers (Webhooks)}
+\label{subsec:instant-triggers}
+
+Ενέργειες που εκτελούνται άμεσα μόλις συμβεί το γεγονός.
+
+\begin{itemize}
+    \item \textbf{Trigger Types:} \code{on-new-message}, \code{on-update}
+    \item \textbf{Υλοποίηση:} Αυτές οι ενέργειες δεν περιμένουν το Cron. Καλούνται απευθείας μέσα από τον Webhook Handler (\code{route.ts}) μόλις ολοκληρωθεί επιτυχώς η αποθήκευση της κράτησης/μηνύματος.
+\end{itemize}
 
 \subsection{Αρχιτεκτονική Cron Jobs}
 \label{subsec:cron-architecture}
@@ -946,18 +1155,41 @@ if (triggerType.includes("before")) {
 \section{Σύστημα Χρέωσης και Τιμολόγησης}
 \label{sec:billing-system}
 
+Η τιμολόγηση και η διαχείριση οικονομικών σχέσεων μεταξύ Platform, Managers και Owners αποτεύει κρίσιμο κομμάτι της πλατφόρμας. Το σύστημα υλοποιεί αυτοματοποιημένη μηνιαία χρέωση μέσω ενός scheduled Cron Job.
+
 \subsection{Αρχιτεκτονική Χρέωσης}
 \label{subsec:billing-architecture}
 
-Το σύστημα billing δημιουργεί χρεώσεις ανά χρήστη στο τέλος κάθε μήνα:
+Το σύστημα billing δημιουργεί χρεώσεις ανά χρήστη (Manager ή Owner) στο τέλος κάθε μήνα. Για κάθε μήνα, ένας Owner ή Manager θα έχει το πολύ:
+
+\begin{enumerate}
+    \item \textbf{1 Billing όπου είναι Οφειλέτης (Debtor):} Πληρώνει προς την πλατφόρμα (αν είναι Manager) ή προς τον Manager (αν είναι Owner).
+    \item \textbf{1 Billing όπου είναι Πιστωτής (Creditor)} (εφόσον είναι Manager): Λαμβάνει πληρωμές από τους Owners που διαχειρίζεται.
+\end{enumerate}
+
+Επιπλέον, τα Billing records δημιουργούνται όταν υπάρχουν \textbf{unallocated bookings} -- κρατήσεις που δεν έχουν ακόμη αντιστοιχιστεί σε κάποιο Billing record. Κατά τη διαδικασία μηνιαίας χρέωσης, το σύστημα αναζητά bookings της περιόδου που δεν έχουν συμπεριληφθεί σε κανένα bill και τα συσχετίζει με το νεοδημιουργούμενο Billing.
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{billing_hierarchy.png}
+%     \caption{Ροή χρεώσεων και σχέσεις οφειλέτη-πιστωτή.}
+%     \label{fig:billing-hierarchy}
+% \end{figure}
 
 \begin{itemize}
-    \item \textbf{Owner Bill:} Ο Owner (Debtor) οφείλει στον Manager (Creditor)
-    \item \textbf{Manager Bill:} Ο Manager (Debtor) οφείλει στην Πλατφόρμα (Creditor)
+    \item \textbf{Owner Bill:} Ο Owner (Debtor) οφείλει στον Manager (Creditor). Περιλαμβάνει commissions και fixed fees.
+    \item \textbf{Manager Bill:} Ο Manager (Debtor) οφείλει στην Πλατφόρμα (Creditor). Περιλαμβάνει platform commissions.
 \end{itemize}
 
-\subsection{Ανάλυση Χρεώσεων}
+\subsection{Αυτόματη Μηνιαία Δημιουργία Bills (Cron Job)}
+\label{subsec:monthly-bills}
+
+Στην αρχή κάθε μήνα, εκτελείται αυτόματα το \code{everyMonthCron} που δημιουργεί τα billing records για τον προηγούμενο μήνα. Η διαδικασία περιλαμβάνει την εύρεση όλων των Managers και Owners με τα αντίστοιχα properties τους, τον υπολογισμό της περιόδου χρέωσης (αρχή και τέλος μήνα, ημερομηνία λήξης πληρωμής), και τη δημιουργία του κατάλληλου billing record ανά χρήστη. Όλες οι λειτουργίες εκτελούνται εντός ενός database transaction για να εξασφαλιστεί η ατομικότητα των ενεργειών.
+
+\subsection{Ανάλυση Χρεώσεων (Pricing Breakdown)}
 \label{subsec:pricing-breakdown}
+
+Κάθε bill περιλαμβάνει λεπτομερή ανάλυση των χρεώσεων:
 
 \begin{table}[H]
 \centering
@@ -967,20 +1199,115 @@ if (triggerType.includes("before")) {
 \toprule
 \textbf{Τύπος} & \textbf{Περιγραφή} & \textbf{Υπολογισμός} \\
 \midrule
-\code{propertyCommission} & Ανά ακίνητο & count $\times$ pricePerProperty \\
-\code{unitCommission} & Ανά δωμάτιο & count $\times$ pricePerUnit \\
-\code{bookingsCommission} & Προμήθεια κρατήσεων & $\sum$ commissions \\
+\code{propertyCommission} & Χρέωση ανά ακίνητο & count $\times$ pricePerProperty \\
+\code{unitCommission} & Χρέωση ανά δωμάτιο/μονάδα & count $\times$ pricePerUnit \\
+\code{bookingsCommission} & Προμήθεια κρατήσεων & Άθροισμα προμηθειών όλων των κρατήσεων της περιόδου \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Σύστημα Ελέγχου Πρόσβασης}
+Όταν ο χρήστης πατάει το «Recalculate» button, το \code{billingBeforeChangeHook} επανυπολογίζει τις χρεώσεις, αναζητώντας όλες τις κρατήσεις της περιόδου και αθροίζοντας τις αντίστοιχες προμήθειες.
+
+\subsection{Προβολή Bills ανά Ρόλο Χρήστη}
+\label{subsec:bills-view}
+
+Το σύστημα access control εξασφαλίζει ότι κάθε χρήστης βλέπει μόνο τα σχετικά bills:
+
+\begin{table}[H]
+\centering
+\caption{Προβολή Billing ανά Ρόλο}
+\label{tab:billing-view}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Ρόλος Χρήστη} & \textbf{Τι Βλέπει} \\
+\midrule
+\textbf{Platform User} & Όλα τα billing records \\
+\textbf{Manager} & Τα δικά του manager-bills (τι οφείλει στην πλατφόρμα) + \\
+& Τα owner-bills όπου είναι creditor (τι του οφείλουν οι Owners) \\
+\textbf{Owner} & Τα δικά του owner-bills (τι οφείλει στον Manager του) \\
+\textbf{Staff} & Τα owner-bills του Owner που ανήκουν (read-only) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Κατάσταση Πληρωμής}
+\label{subsec:payment-status}
+
+Κάθε bill έχει μια \code{payment.status} που μπορεί να είναι:
+
+\begin{itemize}
+    \item \code{unpaid}: Δεν έχει πληρωθεί
+    \item \code{partially}: Μερική πληρωμή
+    \item \code{paid-direct}: Πληρώθηκε απευθείας (μετρητά, τραπεζική μεταφορά)
+    \item \code{paid-online}: Πληρώθηκε online μέσω της πλατφόρμας
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: Billing UI Screenshots]}\\\small Περιγραφή διαγράμματος: Δύο screenshots που δείχνουν: (1) Την προβολή του Manager με τα owner-bills που περιμένει να εισπράξει και τα manager-bills που πρέπει να πληρώσει, (2) Την προβολή του Owner με τα bills που οφείλει στον Manager του, μαζί με breakdown των χρεώσεων.\vspace{1cm}}}
+    \caption{Διεπαφή χρήστη Billing.}
+    \label{fig:billing-ui}
+\end{figure}
+
+\subsection{Σύστημα Ελέγχου Πρόσβασης (Access Control System)}
 \label{subsec:access-control}
 
-Η πλατφόρμα υλοποιεί έλεγχο πρόσβασης σε δύο άξονες:
+Η πλατφόρμα υλοποιεί ένα εξελιγμένο σύστημα ελέγχου πρόσβασης που βασίζεται σε δύο άξονες:
+
 \begin{enumerate}
-    \item \textbf{Ρόλος Χρήστη:} platform-user, manager, owner, staff
-    \item \textbf{Χαρακτηριστικά Πλάνου:} Ρυθμίσεις από τον Manager για κάθε Owner/Staff
+    \item \textbf{Ρόλος Χρήστη} (User Type): platform-user, manager, owner, staff
+    \item \textbf{Χαρακτηριστικά Πλάνου} (Plan Features): Ρυθμίσεις που καθορίζονται από τον Manager για κάθε Owner/Staff
+\end{enumerate}
+
+\paragraph{Plan Features Configuration:}
+
+Ο Manager μπορεί να ρυθμίσει τα δικαιώματα για κάθε Owner ή Staff μέσω του πεδίου \code{settings.features}. Τα διαθέσιμα features αφορούν τα Bookings (περιεχόμενο, τιμές, στοιχεία επικοινωνίας), τα Messages (ορατότητα και δυνατότητα απάντησης), το Property (περιεχόμενο και rates), και το Billing (ορατότητα). Κάθε feature μπορεί να έχει τιμή \code{none} (καμία πρόσβαση), \code{view} (μόνο ανάγνωση), ή \code{write} (πλήρης πρόσβαση).
+
+\paragraph{Πίνακας Δικαιωμάτων ανά Συνδυασμό:}
+
+\begin{table}[H]
+\centering
+\caption{Πίνακας Δικαιωμάτων}
+\label{tab:permissions-matrix}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{@{}llllll@{}}
+\toprule
+\textbf{Πόρος} & \textbf{Feature Setting} & \textbf{Platform User} & \textbf{Manager} & \textbf{Owner} & \textbf{Staff} \\
+\midrule
+Bookings - Βασικά & content: view & \checkmark All & \checkmark Managed Properties & \checkmark Owned Properties & \checkmark Owner's Properties \\
+Bookings - Βασικά & content: write & \checkmark & \checkmark & \checkmark Edit own & $\times$ \\
+Bookings - Τιμές & prices: view & \checkmark & \checkmark & \textit{If allowed} & \textit{If allowed} \\
+Bookings - Επικ. & contactDetails: view & \checkmark & \checkmark & \textit{If allowed} & \textit{If allowed} \\
+Messages & visibility: write & \checkmark & \checkmark & \textit{If allowed} & \textit{If allowed} \\
+Billing & visibility: view & \checkmark & \checkmark Own bills & \textit{If allowed} & $\times$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\paragraph{Υλοποίηση Access Functions:}
+
+Κάθε collection διαθέτει access functions που αξιολογούν τον συνδυασμό ρόλου και features. Για παράδειγμα, οι Platform Users έχουν πρόσβαση σε όλα τα δεδομένα, οι Managers βλέπουν μόνο τα bookings των ακινήτων που διαχειρίζονται, οι Owners βλέπουν τα δικά τους ακίνητα, και το Staff ακολουθεί τους περιορισμούς του Owner στον οποίο ανήκει με επιπλέον restrictions.
+
+\paragraph{Field-Level Access Control:}
+
+Επιπλέον του collection-level access, υπάρχει και field-level control. Κάθε πεδίο μπορεί να έχει τις δικές του access functions για read και update, επιτρέποντας την απόκρυψη ευαίσθητων πληροφοριών (π.χ. τιμές, στοιχεία επικοινωνίας) ακόμη και αν ο χρήστης έχει πρόσβαση στο collection.
+
+\paragraph{Παράδειγμα Σεναρίου:}
+
+Ένας Manager δημιουργεί έναν χρήστη «Καθαριστής» (Staff) με τα εξής δικαιώματα:
+
+\begin{itemize}
+    \item \code{bookings.content: 'view'} -- Μπορεί να δει τις κρατήσεις
+    \item \code{bookings.prices: 'none'} -- Δεν μπορεί να δει τιμές
+    \item \code{bookings.contactDetails: 'none'} -- Δεν μπορεί να δει στοιχεία επικοινωνίας
+    \item \code{messages.visibility: 'none'} -- Δεν μπορεί να δει μηνύματα
+\end{itemize}
+
+Όταν ο Καθαριστής ανοίξει μια κράτηση:
+\begin{enumerate}
+    \item Βλέπει: Ημερομηνίες check-in/out, Property name, Room name
+    \item ΔΕΝ βλέπει: Τιμή, Email πελάτη, Τηλέφωνο, Μηνύματα
 \end{enumerate}
 
 \begin{figure}[H]
@@ -993,19 +1320,53 @@ if (triggerType.includes("before")) {
 \section{Αυτοματοποιημένη Παραγωγή Ιστοσελίδων}
 \label{sec:website-generation}
 
+Η πλατφόρμα παρέχει τη δυνατότητα αυτόματης παραγωγής ιστοσελίδων για καταλύματα, αποτελώντας μια ολοκληρωμένη λύση direct booking.
+
 \subsection{Δομή και Λειτουργία Website}
 \label{subsec:website-structure}
 
-Το παραγόμενο website ακολουθεί βελτιστοποιημένη δομή τριών σελίδων:
+Το παραγόμενο website ακολουθεί βελτιστοποιημένη δομή τριών κύριων σελίδων:
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Website Page Architecture]}\\\small Περιγραφή: Τρεις κάθετες στήλες που αναπαριστούν τις σελίδες: (1) Home Page «/» - με Multi-room search form, Property cards grid, Filter options (2) Property Page «/properties/[id]» - με Gallery, Description, Room list, AI Chat Bubble, Book Now CTA (3) Booking Page «/booking/[id]» - με Booking details, Payment info, Guest self-service options. Βέλη δείχνουν τη ροή πλοήγησης του χρήστη.\vspace{1cm}}}
+    \caption{Αρχιτεκτονική σελίδων Website.}
+    \label{fig:website-arch}
+\end{figure}
 
 \begin{enumerate}
-    \item \textbf{Home Page (/):} Multi-room search, property cards, filtering
-    \item \textbf{Property Page (/properties/[id]):} Gallery, description, AI Chat Bubble
-    \item \textbf{Booking Page (/booking/[id]):} Λεπτομέρειες κράτησης, self-service
+    \item \textbf{Home Page (/):} Κεντρική σελίδα με Multi-room search
+    \begin{itemize}
+        \item Επιλογή ημερομηνιών check-in/check-out
+        \item Επιλογή αριθμού ενηλίκων/παιδιών
+        \item Real-time availability filtering
+    \end{itemize}
+    \item \textbf{Property Page (/properties/[propertyId]):} Σελίδα λεπτομερειών καταλύματος
+    \begin{itemize}
+        \item Gallery με εικόνες
+        \item Περιγραφή και παροχές
+        \item AI Chat Bubble για ερωτήσεις
+        \item Booking form
+    \end{itemize}
+    \item \textbf{Booking Management (/booking/[bookingId]):} Σελίδα διαχείρισης κράτησης για τον επισκέπτη
+    \begin{itemize}
+        \item Προβολή λεπτομερειών κράτησης
+        \item Δυνατότητα ακύρωσης (αν επιτρέπεται)
+        \item Στοιχεία επικοινωνίας
+    \end{itemize}
 \end{enumerate}
 
 \subsection{Website API Endpoints}
 \label{subsec:website-api}
+
+Το website επικοινωνεί με την πλατφόρμα μέσω secure API endpoints:
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Website API Flow]}\\\small Περιγραφή: Sequence diagram που δείχνει: Website $\to$ Platform API: "/api/website/properties" (GET) $\to$ ... $\to$ Booking confirmation.\vspace{1cm}}}
+    \caption{Ροή επικοινωνίας Website API.}
+    \label{fig:website-api-flow}
+\end{figure}
 
 \begin{table}[H]
 \centering
@@ -1015,14 +1376,124 @@ if (triggerType.includes("before")) {
 \toprule
 \textbf{Endpoint} & \textbf{Method} & \textbf{Σκοπός} \\
 \midrule
-\code{/api/website/properties} & GET & Λίστα καταλυμάτων \\
-\code{/api/website/properties/[id]} & GET & Λεπτομέρειες \\
-\code{/api/website/availability} & POST & Έλεγχος διαθεσιμότητας \\
+\code{/api/website/properties} & GET & Λίστα καταλυμάτων του website \\
+\code{/api/website/properties/[id]} & GET & Λεπτομέρειες ενός καταλύματος \\
+\code{/api/website/availability} & POST & Έλεγχος διαθεσιμότητας για ημερομηνίες \\
 \code{/api/website/booking} & POST & Δημιουργία κράτησης \\
 \code{/api/website/booking/[id]} & GET & Λεπτομέρειες κράτησης \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\paragraph{Αλγόριθμος Ελέγχου Διαθεσιμότητας:}
+
+\begin{lstlisting}[caption={Έλεγχος Διαθεσιμότητας}]
+// Endpoint: /api/website/availability
+export const getAvailabilities = async (
+  websiteApiKey: string,
+  checkIn: number,
+  checkOut: number,
+  rooms: { adults: number; children: number }[]
+) => {
+  // 1. Βρες τα properties που ανήκουν σε αυτό το website
+  const website = await payload.find({
+    collection: "website",
+    where: { apiKey: { equals: websiteApiKey } },
+  });
+
+  // 2. Φέρε τα rates για τις ζητούμενες ημερομηνίες
+  const rates = await payload.find({
+    collection: "property-rates",
+    where: {
+      property: { in: website.properties },
+      date: {
+        greater_than_equal: checkIn,
+        less_than: checkOut,
+      },
+    },
+  });
+
+  // 3. Φιλτράρισμα βάσει availUnits > 0
+  const availableProperties = rates.docs.filter(
+    (rate) => rate.availability.availUnits > 0
+  );
+
+  // 4. Matching rooms με ζητούμενη χωρητικότητα
+  return matchRoomsToRequirements(availableProperties, rooms);
+};
+\end{lstlisting}
+
+\subsection{Deploy URL \& Vercel Integration}
+\label{subsec:deploy-url}
+
+Η διαδικασία «One-Click Deploy» απλοποιεί τη δημιουργία website:
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: One-Click Deploy Process]}\\\small Περιγραφή: Horizontal timeline με 4 βήματα: (1) Manager clicks Deploy $\to$ (2) Vercel clones template $\to$ (3) WEBSITE\_API\_KEY auto-set $\to$ (4) Website live in $\sim$2 minutes.\vspace{1cm}}}
+    \caption{Διαδικασία One-Click Deploy.}
+    \label{fig:deploy-process}
+\end{figure}
+
+\begin{enumerate}
+    \item Ο Manager κλικάρει το «Deploy to Vercel» button
+    \item To Vercel κλωνοποιεί το public repo \code{lunarety-v2-website}
+    \item To \code{WEBSITE\_API\_KEY} τίθεται αυτόματα ως environment variable
+    \item Το website είναι live μέσα σε $\sim$2 λεπτά
+\end{enumerate}
+
+\subsection{Website Booking Creation Flow}
+\label{subsec:website-booking-flow}
+
+Όταν ένας επισκέπτης κάνει κράτηση μέσω του website:
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Guest Booking Journey]}\\\small Περιγραφή: Customer journey map με 6 σημεία: (1) Search Dates $\to$ (2) View Properties $\to$ (3) Select Room $\to$ (4) Fill Details $\to$ (5) Confirm Booking $\to$ (6) Receive Confirmation.\vspace{1cm}}}
+    \caption{Ταξίδι κράτησης επισκέπτη.}
+    \label{fig:guest-journey}
+\end{figure}
+
+\begin{lstlisting}[caption={Δημιουργία κράτησης από Website}]
+// Website booking creation
+const createWebsiteBooking = async (bookingData, websiteApiKey) => {
+  // Δημιουργία κράτησης με source = "website"
+  const booking = await payload.create({
+    collection: "bookings",
+    data: {
+      ...bookingData,
+      source: "website", // Σημειώνει ότι ήρθε από website
+      website: websiteId, // Reference στο website
+    },
+  });
+
+  // Το lifecycle hook αναλαμβάνει:
+  // 1. Commission calculation
+  // 2. Sync με Beds24
+  // 3. Rate linking
+  // 4. Auto-actions triggering
+
+  return booking;
+};
+\end{lstlisting}
+
+\subsection{Επιχειρηματικές Ευκαιρίες (Platform as OTA)}
+\label{subsec:business-opportunities}
+
+Η ευελιξία του συστήματος δημιουργεί νέες επιχειρηματικές ευκαιρίες:
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Platform as OTA Business Model]}\\\small Περιγραφή: Διάγραμμα που δείχνει δύο μοντέλα: (1) Traditional - Guest $\to$ Airbnb/Booking (15-20\% fee) $\to$ Property. (2) Platform as OTA - Guest $\to$ Manager's Platform Website (5\% fee) $\to$ Property.\vspace{1cm}}}
+    \caption{Επιχειρηματικό μοντέλο Platform as OTA.}
+    \label{fig:ota-model}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Owner Website:} Ένα website για κάθε Owner με τα δικά του ακίνητα
+    \item \textbf{Platform Website:} Ένα συγκεντρωτικό website με όλα τα ακίνητα του Manager
+    \item \textbf{Hybrid Model:} Ο Manager λειτουργεί ως μικρό OTA, κρατώντας προμήθεια από τους Owners για τις απευθείας κρατήσεις
+\end{itemize}
 
 \section{Περιβάλλον Χρήστη (Platform UI)}
 \label{sec:platform-ui}
@@ -1030,24 +1501,31 @@ if (triggerType.includes("before")) {
 \subsection{Dashboard και Calendar}
 \label{subsec:calendar}
 
-Το ημερολόγιο σχεδιάστηκε ως «Easy Calendar» με:
+Το ημερολόγιο δεν υποστηρίζει drag-and-drop για λόγους ακρίβειας. Αντ' αυτού, προσφέρει εργαλεία μαζικής επεξεργασίας:
 
 \begin{itemize}
-    \item \textbf{Drag and Drop:} Μετακίνηση κρατήσεων με τη βιβλιοθήκη \code{@dnd-kit}~\cite{dndkit}
-    \item \textbf{Infinite Scrolling:} Οριζόντια (ημερομηνίες) και κάθετα (properties)
-    \item \textbf{Επιλογή Εύρους:} Μαζική αλλαγή τιμών και διαθεσιμότητας
-    \item \textbf{Φίλτρα Properties:} Επιλογή συγκεκριμένων καταλυμάτων
+    \item \textbf{Επιλογή Κρατήσεων:} Ο χρήστης επιλέγει μια κράτηση για να δει λεπτομέρειες ή να την επεξεργαστεί.
+    \item \textbf{Επιλογή Ημερομηνιών:} Ο χρήστης επιλέγει ένα εύρος ημερομηνιών και μπορεί να αλλάξει μαζικά τιμές και διαθεσιμότητα.
+    \item \textbf{Φίλτρα:} Δυνατότητα επιλογής συγκεκριμένων καταλυμάτων για προβολή.
 \end{itemize}
 
 \subsection{Σύστημα Μηνυμάτων}
 \label{subsec:messages}
 
-Το Chat υποστηρίζει:
+Χρήστες με τα κατάλληλα δικαιώματα μπορούν να απαντήσουν σε φιλοξενούμενους απευθείας στα συνδεδεμένα OTAs μέσω της διεπαφής συνομιλίας. Στη σελίδα \code{/messages}, παρέχεται πρόσβαση σε όλα τα πρόσφατα μηνύματα, τα οποία επιστρέφονται ταξινομημένα από το νεότερο στο παλαιότερο και υποστηρίζουν πλήρη σελιδοποίηση με infinite scrolling. Ο χρήστης μπορεί να αναζητήσει συνομιλίες χρησιμοποιώντας φίλτρα όπως το όνομα κράτησης, το κατάλυμα ή το κείμενο του τελευταίου μηνύματος. Επιπλέον, το Chat επιτρέπει τη χρήση των \textbf{Simple Templates} (που συμπληρώνονται αυτόματα με στοιχεία της κράτησης) και τη βελτίωση κειμένου μέσω AI («Improve with AI»).
+
+\subsection{Διαχείριση Δικαιωμάτων και Drawers}
+\label{subsec:access-management}
+
+Η επεξεργασία γίνεται μέσω UI Drawers με δυναμικό περιεχόμενο βάσει δικαιωμάτων.
+
+\paragraph{Παράδειγμα:}
+Ένας Manager μπορεί να ορίσει ότι ο χρήστης «Καθαριστής» (Staff) μπορεί να βλέπει τις κρατήσεις αλλά \textit{δεν} μπορεί να δει τα στοιχεία επικοινωνίας του πελάτη ούτε να αλλάξει τις ημερομηνίες. Το Drawer θα προσαρμοστεί αυτόματα, κρύβοντας ή απενεργοποιώντας τα αντίστοιχα πεδία.
+
+\paragraph{Στρατηγικές Ενημέρωσης (Update Strategies):}
 \begin{itemize}
-    \item Άμεση επικοινωνία με φιλοξενούμενους μέσω OTAs
-    \item Χρήση Simple Templates με auto-fill
-    \item Βελτίωση κειμένου μέσω AI («Improve with AI»)
-    \item Infinite scrolling και αναζήτηση
+    \item \textbf{Booking Update:} Ενεργοποιεί το πλήρες lifecycle (επικοινωνία με Channel Manager $\rightarrow$ update/create booking).
+    \item \textbf{Availability Update:} Για να αποφευχθεί ο φόρτος στο Channel Manager (ένα request ανά ημέρα), ακολουθείται άλλη στρατηγική. Γίνεται πρώτα μαζικό update στο Channel Manager και, εφόσον επιτύχει, ενημερώνονται απευθείας τα Rates στη βάση δεδομένων (Direct DB Update), παρακάμπτοντας τα hooks για ταχύτητα.
 \end{itemize}
 
 % ============================================================================
@@ -1059,45 +1537,82 @@ if (triggerType.includes("before")) {
 \section{Παρουσίαση της Πλατφόρμας}
 \label{sec:platform-presentation}
 
-Η πλατφόρμα προσφέρει ένα μοντέρνο, responsive περιβάλλον εργασίας. Τα παρακάτω screenshots παρουσιάζουν την οπτική γωνία ενός χρήστη με πλήρη δικαιώματα (Admin/Manager).
+Η πλατφόρμα προσφέρει ένα μοντέρνο, responsive περιβάλλον εργασίας. Στα παρακάτω οπτικά παραδείγματα (GIFs) παρουσιάζεται η οπτική γωνία ενός χρήστη με πλήρη δικαιώματα (Admin/Manager). Είναι σημαντικό να τονιστεί ότι χρήστες με διαφορετικούς ρόλους (όπως Owners ή Staff) ενδέχεται να μην έχουν τη δυνατότητα επεξεργασίας ή ακόμη και προβολής όλων των τμημάτων που απεικονίζονται, ανάλογα με τα δικαιώματα που τους έχουν εκχωρηθεί.
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Screenshot: Calendar Page]}\vspace{3cm}}}
-    \caption{Η σελίδα του Ημερολογίου (Calendar).}
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Calendar Page Video.gif]}\vspace{3cm}}}
+    \caption{Η σελίδα του Ημερολογίου (Calendar). Το αρχικό ημερολόγιο έχει σχεδιαστεί ως ένα «Easy Calendar». Για τον βασικό χρήστη, λειτουργεί ως μια απλή λίστα καθηκόντων που δείχνει τι πρέπει να γίνει κάθε μέρα (αφίξεις, αναχωρήσεις), καθιστώντας το εξαιρετικά εύχρηστο για την καθημερινότητα. Ωστόσο, προσφέρει τη δυνατότητα προσθήκης περισσότερης λειτουργικότητας για πιο απαιτητικούς χρήστες, χωρίς να θυσιάζεται η ευκολία χρήσης.}
     \label{fig:calendar-page}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Screenshot: Messages Page]}\vspace{3cm}}}
-    \caption{Η σελίδα των Μηνυμάτων με AI capabilities.}
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Messages Page Video.gif]}\vspace{3cm}}}
+    \caption{Η σελίδα των Μηνυμάτων. Το σύστημα μηνυμάτων παρέχει δυνατότητες άμεσης επικοινωνίας, υποστηρίζοντας τη χρήση προτύπων (templates) και τη βελτίωση κειμένου μέσω AI.}
     \label{fig:messages-page}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: USERS (advanced dashboard).gif]}\vspace{3cm}}}
+    \caption{Διαχείριση Χρηστών (Users) στο Advanced Dashboard.}
+    \label{fig:users-dashboard}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: PLANS (advanced dashboard).gif]}\vspace{3cm}}}
+    \caption{Διαχείριση Πλάνων Χρέωσης (Plans) στο Advanced Dashboard.}
+    \label{fig:plans-dashboard}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: AUTO\_ACTIONS (advanced dashboard).gif]}\vspace{3cm}}}
+    \caption{Διαχείριση Αυτοματισμών (Auto Actions) στο Advanced Dashboard.}
+    \label{fig:auto-actions-dashboard}
 \end{figure}
 
 \section{Παρουσίαση του Generated Website}
 \label{sec:website-presentation}
 
+Η πλατφόρμα παρέχει τη δυνατότητα αυτόματης παραγωγής ιστοσελίδων για τα καταλύματα, προσφέροντας μια ολοκληρωμένη εμπειρία τόσο για τον διαχειριστή όσο και για τον επισκέπτη.
+
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Screenshot: Website Generation Admin Panel]}\vspace{3cm}}}
-    \caption{Διαδικασία παραγωγής Website από το περιβάλλον του διαχειριστή.}
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Website Generation (Admin).gif]}\vspace{3cm}}}
+    \caption{Διαδικασία παραγωγής Website από το περιβάλλον του διαχειριστή. Ο διαχειριστής μπορεί με απλά βήματα να δημιουργήσει και να δημοσιεύσει την ιστοσελίδα του καταλύματος, αξιοποιώντας τα δεδομένα που είναι ήδη καταχωρημένα στην πλατφόρμα.}
     \label{fig:website-generation}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Screenshot: Guest Website Navigation]}\vspace{3cm}}}
-    \caption{Πλοήγηση επισκέπτη στην παραγόμενη ιστοσελίδα.}
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Website Demo (Navigate inside Website like a guest).gif]}\vspace{3cm}}}
+    \caption{Πλοήγηση επισκέπτη στην παραγόμενη ιστοσελίδα. Η ιστοσελίδα που παράγεται είναι πλήρως λειτουργική, επιτρέποντας στον επισκέπτη να δει λεπτομέρειες του καταλύματος, φωτογραφίες και παροχές, καθώς και να προχωρήσει σε κράτηση.}
     \label{fig:website-navigation}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Screenshot: AI \& LLM Capabilities]}\vspace{3cm}}}
-    \caption{Δυνατότητες AI και LLM για την εξυπηρέτηση επισκεπτών.}
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Website Demo (LLM and AI capabilities that guests can use).gif]}\vspace{3cm}}}
+    \caption{Δυνατότητες AI και LLM για την εξυπηρέτηση επισκεπτών. Ενσωματωμένες δυνατότητες Τεχνητής Νοημοσύνης επιτρέπουν στους επισκέπτες να αλληλεπιδρούν με έξυπνους βοηθούς για να λαμβάνουν άμεσες απαντήσεις σε ερωτήματα σχετικά με το κατάλυμα και την περιοχή.}
     \label{fig:website-ai}
 \end{figure}
+
+\section{Smart Features \& LLM Integration}
+\label{sec:smart-features}
+
+Η ενσωμάτωση LLMs προσφέρει απτά οφέλη:
+
+\begin{itemize}
+    \item \textbf{Smart Chat (Platform):} Στο περιβάλλον μηνυμάτων, το AI προτείνει απαντήσεις λαμβάνοντας υπόψη το ιστορικό της συνομιλίας και τις πληροφορίες της κράτησης.
+    \item \textbf{Website AI Assistant (OpenRouter):} Στις ιστοσελίδες των καταλυμάτων (\code{/properties/[propertyId]}), υπάρχει η δυνατότητα ενεργοποίησης ενός \textbf{AI Chat Bubble}.
+    \begin{itemize}
+        \item \textbf{Configuration:} Ο Manager μπορεί να εισάγει ένα \code{OpenRouter API Key} στις ρυθμίσεις του Website.
+        \item \textbf{Context-Aware:} Το Chat Bubble είναι «Fixed» στη γωνία της οθόνης. Γνωρίζει τα πάντα για το κατάλυμα (παροχές, τοποθεσία) αλλά και δυναμικά δεδομένα όπως \textbf{τρέχουσα διαθεσιμότητα και τιμές}. Έτσι, μπορεί να απαντήσει σε ερωτήσεις τύπου «Είναι ελεύθερο το σπίτι για το επόμενο Σαββατοκύριακο και πόσο κοστίζει;» με ακρίβεια, λειτουργώντας ως ένας 24/7 ψηφιακός ρεσεψιονίστ.
+    \end{itemize}
+\end{itemize}
 
 \section{Τεχνικές Προκλήσεις και Λύσεις}
 \label{sec:technical-challenges}
@@ -1119,9 +1634,16 @@ if (triggerType.includes("before")) {
 \subsection{Απόδοση Μαζικών Εισαγωγών}
 \label{subsec:mass-import-performance}
 
-\textbf{Πρόβλημα:} Εισαγωγή ~60.000 records με standard lifecycle απαιτεί ώρες.
+\textbf{Πρόβλημα:} Εισαγωγή $\sim$60.000 records με standard lifecycle απαιτεί ώρες.
 
 \textbf{Λύση:} Hybrid strategy με direct DB operations για bulk, standard lifecycle για μεμονωμένες αλλαγές.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Performance Bottleneck Visualization]}\\\small Περιγραφή: Ένα bar chart με δύο μπάρες σύγκρισης. Αριστερή μπάρα (κόκκινη): "With Full Lifecycle - ~4 hours" με breakdown: 60,000 hook executions, 60,000 validation calls, 60,000 individual queries. Δεξιά μπάρα (πράσινη): "With Direct DB Operations - ~2 minutes" με breakdown: 1 bulk insert query, minimal overhead.\vspace{1cm}}}
+    \caption{Σύγκριση απόδοσης Import.}
+    \label{fig:perf-bottleneck}
+\end{figure}
 
 \begin{table}[H]
 \centering
@@ -1131,9 +1653,174 @@ if (triggerType.includes("before")) {
 \toprule
 \textbf{Περίπτωση} & \textbf{Μέθοδος} & \textbf{Πλεονέκτημα} \\
 \midrule
-Mass Property Import & Direct DB & 50$\times$ ταχύτερο \\
+Mass Property Import & Direct DB (\code{payload.db.create}) & 50$\times$ ταχύτερο \\
 Mass Rate Import & Bulk Insert & 1 query για χιλιάδες records \\
-Individual Updates & Standard Lifecycle & Consistency, hooks \\
+Individual Updates & Standard Lifecycle & Consistency, hooks execute \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{lstlisting}[caption={Mass import με direct DB}]
+// Mass import με direct DB operations
+const insertPropertyRates = async (rates: PropertyRate[]) => {
+  // Χρήση Drizzle για bulk insert
+  await db.insert(propertyRatesTable).values(
+    rates.map((rate) => ({
+      date: rate.date,
+      property: rate.property,
+      channelRoomId: rate.channelRoomId,
+      availabilityStatus: rate.availability.status,
+      price: rate.availability.price,
+      minNights: rate.availability.minNights,
+      maxNights: rate.availability.maxNights,
+    }))
+  );
+};
+\end{lstlisting}
+
+\subsection{Διαχείριση Σύνθετων Rate Structures}
+\label{subsec:rate-structures}
+
+\textbf{Πρόβλημα:} Το Beds24 στέλνει τα rates σε συμπτυγμένη μορφή (date ranges), ενώ η πλατφόρμα χρειάζεται ημερήσια granularity για:
+\begin{itemize}
+    \item Υπολογισμό διαθεσιμότητας
+    \item Σύνδεση με κρατήσεις
+    \item Υπολογισμό τιμών
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Rate Data Transformation]}\\\small Περιγραφή: Διάγραμμα μετατροπής δεδομένων. Αριστερά: "Beds24 Format" με ένα JSON object \{from: "2025-01-01", to: "2025-01-31", price: 100\}. Βέλος με ετικέτα "Expand to daily records". Δεξιά: "Platform Format" με 31 μικρά κελιά, κάθε ένα αναπαριστώντας μία ημέρα με τιμή €100.\vspace{1cm}}}
+    \caption{Μετατροπή δομής Rate.}
+    \label{fig:rate-transform}
+\end{figure}
+
+\textbf{Λύση - Date Range Expansion Algorithm:}
+
+\begin{lstlisting}[caption={Επέκταση date range}]
+// Επέκταση range σε μεμονωμένες ημέρες
+const expandDateRange = (range: DateRange): DailyRate[] => {
+  const days = eachDayOfInterval({
+    start: new Date(range.from),
+    end: new Date(range.to),
+  });
+
+  return days.map((day) => ({
+    date: Number(format(day, "yyyyMMdd")), // YYYYMMDD format
+    price: range.price,
+    minNights: range.minStay ?? 1,
+    maxNights: range.maxStay ?? 365,
+    status: range.override ?? "none",
+  }));
+};
+\end{lstlisting}
+
+\subsection{Multi-Tenant Data Isolation}
+\label{subsec:multi-tenant}
+
+\textbf{Πρόβλημα:} Η πλατφόρμα εξυπηρετεί πολλαπλούς Managers, καθένας με τους δικούς του Owners, Properties, και Bookings. Η απομόνωση δεδομένων είναι κρίσιμη:
+\begin{itemize}
+    \item Ο Manager Α δεν πρέπει ποτέ να δει δεδομένα του Manager Β
+    \item Ο Owner πρέπει να βλέψει μόνο τα δικά του properties
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Multi-Tenant Data Isolation]}\\\small Περιγραφή: Τρεις κάθετες στήλες που αναπαριστούν τρεις Managers (A, B, C). Κάθε στήλα περιέχει "bubble" για τα δικά τους δεδομένα: Properties, Owners, Bookings. Μεταξύ των στηλών υπάρχει μια διακεκομμένη κόκκινη γραμμή με ετικέτα "Isolation Boundary - No Cross-Access".\vspace{1cm}}}
+    \caption{Απομόνωση δεδομένων Multi-Tenant.}
+    \label{fig:multi-tenant}
+\end{figure}
+
+\textbf{Λύση - Query Filtering at Access Layer:}
+
+\begin{lstlisting}[caption={Query Filtering}]
+// Κάθε collection έχει access functions που φιλτράρουν βάσει ιεραρχίας
+export const readAccess = async ({ req }: { req: PayloadRequest }) => {
+  const user = req.user as User;
+
+  // Platform users: no filter
+  if (user.type === "platform-user") return true;
+
+  // Managers: only their properties
+  if (user.type === "manager") {
+    return { manager: { equals: user.id } };
+  }
+
+  // Owners: only properties assigned to them
+  if (user.type === "owner") {
+    return { owner: { equals: user.id } };
+  }
+
+  // Staff: properties of their parent owner/manager
+  if (user.type === "stuff") {
+    const parentId = user.ownedBy ?? user.managedBy;
+    return { owner: { equals: parentId } };
+  }
+
+  return false; // Deny by default
+};
+\end{lstlisting}
+
+\subsection{Time-Zone Management}
+\label{subsec:timezone}
+
+\textbf{Πρόβλημα:} Οι κρατήσεις μπορεί να γίνονται από επισκέπτες σε διαφορετικές ζώνες ώρας, αλλά το check-in/check-out αναφέρεται στην τοπική ώρα του καταλύματος.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Timezone Confusion Example]}\\\small Περιγραφή: Ένας κόσμος με τρεις τοποθεσίες επισημασμένες: New York (UTC-5), London (UTC), Athens (UTC+2). Βέλη δείχνουν: "Guest books at 11 PM New York time" $\to$ "Property's check-in is 3 PM Athens time next day" $\to$ "When should auto-action trigger?"\vspace{1cm}}}
+    \caption{Διαχείριση ζωνών ώρας.}
+    \label{fig:timezone}
+\end{figure}
+
+\textbf{Λύση - UTC Normalization + Property Timezone:}
+
+\begin{lstlisting}[caption={Υπολογισμός Trigger Time}]
+// Αποθήκευση πάντα σε UTC, μετατροπή βάσει property timezone
+const calculateTriggerTime = (booking, autoAction) => {
+  const propertyTimezone = booking.property.timezone ?? "Europe/Athens";
+
+  // Υπολογισμός check-in στην τοπική ώρα
+  const checkInLocal = formatInTimeZone(
+    new Date(booking.resource.checkInStartOfDay),
+    propertyTimezone,
+    "yyyy-MM-dd'T'HH:mm:ss"
+  );
+
+  // Εφαρμογή του trigger offset
+  const triggerTime = addHours(checkInLocal, -autoAction.timeInterval);
+
+  // Μετατροπή πίσω σε UTC για αποθήκευση
+  return toZonedTime(triggerTime, "UTC");
+};
+\end{lstlisting}
+
+\section{Στατιστικά και Μετρήσεις Κώδικα}
+\label{sec:code-stats}
+
+Η πλατφόρμα αποτελείται από σημαντικό volume κώδικα, οργανισμένο σε διακριτά modules:
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Code Statistics Dashboard]}\\\small Περιγραφή: Ένα dashboard με μετρικές κάρτες: "Total Lines of Code: $\sim$45,000", "TypeScript Files: $\sim$280", "PayloadCMS Collections: 12", "Custom API Endpoints: 15", "Cron Jobs: 3", "External Integrations: 5".\vspace{1cm}}}
+    \caption{Στατιστικά Κώδικα.}
+    \label{fig:code-stats}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Στατιστικά project}
+\label{tab:code-stats}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Κατηγορία} & \textbf{Αριθμός} & \textbf{Σημειώσεις} \\
+\midrule
+PayloadCMS Collections & 12 & Users, Bookings, Properties, etc. \\
+Custom Hooks & $\sim$35 & beforeChange, afterChange \\
+API Endpoints & 15 & Webhooks, Website API, Auth \\
+Cron Jobs & 3 & Hourly, Nightly, Monthly \\
+React Components & $\sim$50 & Calendar, Chat, Drawers \\
+Utility Functions & $\sim$100 & Date handling, formatting \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1147,7 +1834,9 @@ Individual Updates & Standard Lifecycle & Consistency, hooks \\
 \section{Αξιολόγηση Τεχνολογικών Επιλογών}
 \label{sec:tech-evaluation}
 
-Η υιοθέτηση του μοντέλου «Backend Framework» με το PayloadCMS v3 και η χρήση Serverless υποδομών απέδειξε ότι είναι δυνατή η ανάπτυξη πολύπλοκων εφαρμογών με ελάχιστους πόρους.
+Η υιοθέτηση του μοντέλου «Backend Framework» με το PayloadCMS v3 και η χρήση Serverless υποδομών απέδειξε ότι είναι δυνατή η ανάπτυξη πολύπλοκων εφαρμογών με ελάχιστους πόρους (Rapid Development). Η επιλογή της PostgreSQL έναντι της MongoDB δικαιώθηκε από την ανάγκη για αυστηρές σχέσεις μεταξύ των οντοτήτων (Manager-Owner-Property). Η μεγαλύτερη πρόκληση ήταν η διαχείριση της ασύγχρονης φύσης των Webhooks και η διασφάλιση της συνοχής των δεδομένων, η οποία αντιμετωπίστηκε επιτυχώς με τη χρήση transactions.
+
+Ένα σημείο που αναγνωρίζεται ως πεδίο μελλοντικής βελτιστοποίησης είναι η εμπειρία χρήστη (UX) στις περιοχές διαμόρφωσης του συστήματος, και συγκεκριμένα στη διαχείριση Χρηστών (Users), Αυτοματισμών (Auto Actions) και Πλάνων (Plans). Επί του παρόντος, αυτές οι λειτουργίες βασίζονται στο default στυλ του Payload CMS, το οποίο παρουσιάζει μια πιο σύνθετη εμπειρία χρήσης σε σχέση με το υπόλοιπο custom UI της πλατφόρμας. Η επιλογή αυτή έγινε με γνώμονα την εστίαση στην τελειοποίηση των εργαλείων καθημερινής διαχείρισης (ξενοδοχεία και διαμερίσματα), τα οποία αποτελούν τον πυρήνα της δραστηριότητας. Οι ρυθμίσεις Χρηστών, Πλάνων και Αυτοματισμών ενημερώνονται σπάνια και κυρίως από εκπαιδευμένους Managers, και λιγότερο από τους Owners, οι οποίοι επιζητούν μια έτοιμη λύση («out-of-the-box») που θα διαχειρίζεται για αυτούς ο Manager.
 
 \begin{table}[H]
 \centering
@@ -1194,6 +1883,18 @@ Next.js App Router & SSR, Server Actions & Learning curve \\
     \item Revenue per property/room
     \item Occupancy rates over time
     \item Booking source distribution
+    \item Commission breakdown trends
+\end{itemize}
+
+\subsection{Payment Integration}
+\label{subsec:payment-integration}
+
+Σύνδεση με payment gateways για:
+
+\begin{itemize}
+    \item Online bill payment από Owners
+    \item Direct booking payments στο website
+    \item Commission auto-deduction
 \end{itemize}
 
 % ============================================================================
@@ -1205,7 +1906,7 @@ Next.js App Router & SSR, Server Actions & Learning curve \\
 \section{Επίτευξη Στόχων}
 \label{sec:goal-achievement}
 
-Η πλατφόρμα Lunarety V2 επιτυγχάνει τον στόχο της να γεφυρώσει το χάσμα μεταξύ Channel Managers και ιδιοκτητών ακινήτων.
+Η πλατφόρμα Lunarety V2 επιτυγχάνει τον στόχο της να γεφυρώσει το χάσμα μεταξύ Channel Managers και ιδιοκτητών ακινήτων. Παρέχει στους Managers ένα ισχυρό εργαλείο για να προσφέρουν προστιθέμενη αξία στους πελάτες τους (Owners), ενώ παράλληλα αυτοματοποιεί χρονοβόρες διαδικασίες μέσω των Auto Actions και της Τεχνητής Νοημοσύνης.
 
 \begin{table}[H]
 \centering
@@ -1215,10 +1916,10 @@ Next.js App Router & SSR, Server Actions & Learning curve \\
 \toprule
 \textbf{Στόχος} & \textbf{Υλοποίηση} & \textbf{Αποτέλεσμα} \\
 \midrule
-Two-way sync & Webhooks + API integration & Real-time consistency \\
-Αυτοματοποίηση & Auto Actions (time/instant) & 80\% μείωση εργασιών \\
-Ιεραρχία χρηστών & 4-level system & Ανεξαρτησία διαχείρισης \\
-Generated websites & One-click Vercel deploy & 2-min deployment \\
+Two-way sync με Beds24 & Webhooks + API integration & Real-time data consistency \\
+Αυτοματοποίηση ειδοποιήσεων & Auto Actions με time-based και instant triggers & 80\% μείωση χειροκίνητων εργασιών \\
+Ιεραρχία χρηστών & 4-level user system με granular permissions & Ανεξαρτησία διαχείρισης ανά επίπεδο \\
+Generated websites & One-click Vercel deploy & 2-λεπτά deployment time \\
 AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέτηση \\
 \bottomrule
 \end{tabular}
@@ -1230,21 +1931,34 @@ AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέ
 \textbf{Αρχιτεκτονικές αποφάσεις που δικαιώθηκαν:}
 
 \begin{enumerate}
-    \item \textbf{PayloadCMS v3:} Το hook system αποδείχθηκε ιδανικό για complex business logic.
-    \item \textbf{PostgreSQL vs MongoDB:} Οι complex queries για billing και access control θα ήταν δυσκολότερες με document-based storage.
-    \item \textbf{Serverless Architecture:} Απλοποίησε το deployment και μείωσε τα operation costs.
-    \item \textbf{Monorepo Structure:} Διευκόλυνε τη συντήρηση και την κοινή χρήση τύπων.
+    \item \textbf{PayloadCMS v3:} Η επιλογή του PayloadCMS ως «Backend Framework» επέτρεψε ταχεία ανάπτυξη με type-safety. Το hook system αποδείχθηκε ιδανικό για complex business logic.
+    \item \textbf{PostgreSQL vs MongoDB:} Η επιλογή PostgreSQL δικαιώθηκε πλήρως. Οι complex queries για billing, access control, και analytics θα ήταν δυσκολότερες με document-based storage.
+    \item \textbf{Serverless Architecture:} Η χρήση Vercel serverless functions απλοποίησε το deployment και μείωσε τα operation costs, με trade-off τα occasional cold starts.
+    \item \textbf{Monorepo Structure:} Η οργάνωση σε monorepo διευκόλυνε τη συντήρηση και την κοινή χρήση τύπων μεταξύ frontend και backend.
 \end{enumerate}
+
+\section{Επιχειρηματικό Αντίκτυπο}
+\label{sec:business-impact}
+
+Η πλατφόρμα δημιουργεί νέες επιχειρηματικές ευκαιρίες:
+
+\begin{itemize}
+    \item \textbf{Για Managers:} Προσφέρουν premium υπηρεσίες στους Owners τους, με αυτοματοποιημένη τιμολόγηση και επαγγελματικά websites
+    \item \textbf{Για Owners:} Μειωμένη εξάρτηση από third-party OTAs (Airbnb, Booking) και χαμηλότερες προμήθειες
+    \item \textbf{Για Staff:} Απλοποιημένη πρόσβαση σε πληροφορίες κρατήσεων χωρίς να απαιτείται τεχνική κατάρτιση
+\end{itemize}
 
 \section{Βασικά Διδάγματα}
 \label{sec:lessons-learned}
 
 \begin{enumerate}
-    \item \textbf{Direct DB Operations για Mass Import:} Η παράκαμψη του lifecycle για bulk operations είναι απαραίτητη.
-    \item \textbf{Flag-based Loop Prevention:} Απλή και αποτελεσματική λύση για two-way sync.
-    \item \textbf{Feature-based Access Control:} Επιτρέπει παραμετροποίηση ανά Manager.
-    \item \textbf{AI as Enhancement:} Βελτιώνει την εμπειρία χωρίς να αντικαθιστά ανθρώπινη κρίση.
+    \item \textbf{Direct DB Operations για Mass Import:} Η παράκαμψη του lifecycle για bulk operations είναι απαραίτητη για αποδεκτή απόδοση.
+    \item \textbf{Flag-based Loop Prevention:} Η χρήση του \code{skipChannelSync} flag αποδείχθηκε απλή και αποτελεσματική λύση για τον two-way sync.
+    \item \textbf{Feature-based Access Control:} Η ευελιξία του συστήματος δικαιωμάτων επιτρέπει κάθε Manager να προσαρμόζει την εμπειρία για τους χρήστες του.
+    \item \textbf{AI as Enhancement:} Η AI ενσωμάτωση λειτουργεί καλύτερα ως «enhancement» παρά ως «replacement» -- βελτιώνει την εμπειρία χωρίς να αντικαθιστά ανθρώπινη κρίση.
 \end{enumerate}
+
+Η αρχιτεκτονική της πλατφόρμας επιτρέπει εύκολη επέκταση και συντήρηση, καθιστώντας την μια βιώσιμη λύση για τη σύγχρονη αγορά βραχυχρόνιας μίσθωσης.
 
 % ============================================================================
 % BIBLIOGRAPHY

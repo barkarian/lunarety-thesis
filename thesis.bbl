@@ -721,37 +721,6 @@
       \field{title}{Fundamentals of Software Architecture: An Engineering Approach}
       \field{year}{2020}
     \endentry
-    \entry{dndkit}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=9e2f0f23e801a0039cf59f7975ee3862}{%
-           family={{Claudéric Demers}},
-           familyi={C\bibinitperiod}}}%
-      }
-      \strng{namehash}{9e2f0f23e801a0039cf59f7975ee3862}
-      \strng{fullhash}{9e2f0f23e801a0039cf59f7975ee3862}
-      \strng{fullhashraw}{9e2f0f23e801a0039cf59f7975ee3862}
-      \strng{bibnamehash}{9e2f0f23e801a0039cf59f7975ee3862}
-      \strng{authorbibnamehash}{9e2f0f23e801a0039cf59f7975ee3862}
-      \strng{authornamehash}{9e2f0f23e801a0039cf59f7975ee3862}
-      \strng{authorfullhash}{9e2f0f23e801a0039cf59f7975ee3862}
-      \strng{authorfullhashraw}{9e2f0f23e801a0039cf59f7975ee3862}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{dnd kit Documentation}
-      \field{urlday}{1}
-      \field{urlmonth}{11}
-      \field{urlyear}{2024}
-      \field{year}{2024}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://dndkit.com/
-      \endverb
-      \verb{url}
-      \verb https://dndkit.com/
-      \endverb
-    \endentry
   \enddatalist
 \endrefsection
 \endinput
