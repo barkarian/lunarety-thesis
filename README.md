@@ -11,6 +11,10 @@ THESIS/
 ├── images/                   # Static images for documentation
 ├── presentation_assets/      # GIFs and videos for presentations
 ├── count_loc.py              # Lines of Code counter script
+├── thesis.tex                # LaTeX thesis source (main file)
+├── thesis.pdf                # Compiled PDF output
+├── references.bib            # Bibliography references
+├── MastersDoctoralThesis.cls # LaTeX document class
 ├── thesis.md                 # Thesis markdown source
 ├── thesis extended.md        # Thesis markdown source with extended content
 └── thesis.docx               # Thesis Word document
@@ -42,6 +46,59 @@ python count_loc.py
 #### Supported extensions:
 
 `.ts`, `.tsx`, `.js`, `.jsx`, `.css`, `.scss`, `.py`, `.html`, `.json`
+
+---
+
+## Compile LaTeX Thesis to PDF
+
+The thesis source is located at `thesis.tex`. It uses XeLaTeX for Greek language support and Biber for bibliography management.
+
+### Prerequisites
+
+Make sure you have a LaTeX distribution installed with XeLaTeX and Biber:
+
+```bash
+# macOS (MacTeX)
+brew install --cask mactex
+
+# Ubuntu/Debian
+sudo apt install texlive-full
+
+# Windows
+# Install MiKTeX from https://miktex.org/
+```
+
+### Compile PDF
+
+```bash
+# Navigate to the THESIS directory
+cd THESIS
+
+# Run the full compilation sequence
+xelatex -interaction=nonstopmode thesis.tex
+biber thesis
+xelatex -interaction=nonstopmode thesis.tex
+xelatex -interaction=nonstopmode thesis.tex
+```
+
+### Why Multiple Passes?
+
+| Pass | Purpose |
+| ---- | ------- |
+| 1st XeLaTeX | Initial compilation, generates `.bcf` for Biber |
+| Biber | Processes bibliography from `references.bib` |
+| 2nd XeLaTeX | Incorporates bibliography |
+| 3rd XeLaTeX | Resolves all cross-references (TOC, figures, tables) |
+
+### One-liner Command
+
+```bash
+cd THESIS && xelatex -interaction=nonstopmode thesis.tex && biber thesis && xelatex -interaction=nonstopmode thesis.tex && xelatex -interaction=nonstopmode thesis.tex
+```
+
+### Output
+
+The compiled PDF will be generated as `thesis.pdf` in the THESIS directory.
 
 ---
 
@@ -170,6 +227,9 @@ For consistent styling, create a `reference.docx` template:
 ## Quick Reference
 
 ```bash
+# Compile LaTeX thesis to PDF
+cd THESIS && xelatex -interaction=nonstopmode thesis.tex && biber thesis && xelatex -interaction=nonstopmode thesis.tex && xelatex -interaction=nonstopmode thesis.tex
+
 # Count lines of code
 python count_loc.py
 
