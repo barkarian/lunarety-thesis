@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.8)  15 DEC 2025 12:35
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.8)  15 DEC 2025 14:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,25 +6,12 @@ entering extended mode
 (./thesis.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2024/06/29 v1.4n Standard LaTeX document class
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+(./MastersDoctoralThesis.cls
+Document Class: MastersDoctoralThesis 2017/08/27 v1.6 LaTeXTemplates.com
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count192
 )
-\c@part=\count192
-\c@chapter=\count193
-\c@section=\count194
-\c@subsection=\count195
-\c@subsubsection=\count196
-\c@paragraph=\count197
-\c@subparagraph=\count198
-\c@figure=\count199
-\c@table=\count266
-\abovecaptionskip=\skip49
-\belowcaptionskip=\skip50
-\bibindent=\dimen141
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2025-01-18 L3 programming layer (loader) 
@@ -32,266 +19,144 @@ Package: expl3 2025-01-18 L3 programming layer (loader)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/l3backend/l3backend-xetex.de
 f
 File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
-\g__graphics_track_int=\count267
+\g__graphics_track_int=\count193
 \l__pdf_internal_box=\box52
-\g__pdf_backend_annotation_int=\count268
-\g__pdf_backend_link_int=\count269
+\g__pdf_backend_annotation_int=\count194
+\g__pdf_backend_link_int=\count195
 ))
 Package: xparse 2024-08-16 L3 Experimental document command parser
+) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 )
-Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
-Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTe
-X
-\l__fontspec_script_int=\count270
-\l__fontspec_language_int=\count271
-\l__fontspec_strnum_int=\count272
-\l__fontspec_tmp_int=\count273
-\l__fontspec_tmpa_int=\count274
-\l__fontspec_tmpb_int=\count275
-\l__fontspec_tmpc_int=\count276
-\l__fontspec_em_int=\count277
-\l__fontspec_emdef_int=\count278
-\l__fontspec_strong_int=\count279
-\l__fontspec_strongdef_int=\count280
-\l__fontspec_tmpa_dim=\dimen142
-\l__fontspec_tmpb_dim=\dimen143
-\l__fontspec_tmpc_dim=\dimen144
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+\c@part=\count196
+\c@chapter=\count197
+\c@section=\count198
+\c@subsection=\count199
+\c@subsubsection=\count266
+\c@paragraph=\count267
+\c@subparagraph=\count268
+\c@figure=\count269
+\c@table=\count270
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
 )
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2025/01/31 v2.4 Modern multilingual typesetting with XeLaT
-eX and LuaLaTeX
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count281
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-)
-\l_xpg_alias_keyvals_int=\count282
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
-File: gloss-latex.ldf polyglossia: module for default language
-))
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/gloss-greek.ldf
-File: gloss-greek.ldf polyglossia: module for Greek
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/xgreek-fixes.def
-)
-\@attic@num=\count283
-)
-
-Package polyglossia Info: Default language is greek
-
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/gloss-english.ld
-f
-File: gloss-english.ldf polyglossia: module for English
-)
-
-Package fontspec Info: 
-(fontspec)             Font family 'Helvetica(0)' created for font 'Helvetica'
-(fontspec)             with options [Ligatures=TeX,Ligatures=TeX].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"Helvetica/AAT:mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"Helvetica/B/AAT:mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"Helvetica/I/AAT:mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"Helvetica/BI/AAT:mapping=tex-text;"
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'HelveticaNeue(0)' created for font
-(fontspec)             'Helvetica Neue' with options
-(fontspec)             [Ligatures=TeX,Ligatures=TeX].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Helvetica
-(fontspec)             Neue/AAT:mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Helvetica
-(fontspec)             Neue/B/AAT:mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Helvetica
-(fontspec)             Neue/I/AAT:mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Helvetica
-(fontspec)             Neue/BI/AAT:mapping=tex-text;"
-
-
-Package fontspec Info: 
-(fontspec)             Menlo scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Menlo scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Menlo/B scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Menlo/I scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Menlo/BI scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'Menlo(0)' created for font 'Menlo' with
-(fontspec)             options
-(fontspec)             [Ligatures=TeX,WordSpace={1,0,0},HyphenChar=None,Punctua
-tionSpace=WordSpace,Scale=0.85].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.85]"Menlo/AAT:mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.85]"Menlo/B/AAT:mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.85]"Menlo/I/AAT:mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.85]"Menlo/BI/AAT:mapping=tex-text;"
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'Helvetica(1)' created for font 'Helvetica'
-(fontspec)             with options [Ligatures=TeX].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"Helvetica/AAT:mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"Helvetica/B/AAT:mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"Helvetica/I/AAT:mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"Helvetica/BI/AAT:mapping=tex-text;"
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'HelveticaNeue(1)' created for font
-(fontspec)             'Helvetica Neue' with options [Ligatures=TeX].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Helvetica
-(fontspec)             Neue/AAT:mapping=tex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Helvetica
-(fontspec)             Neue/B/AAT:mapping=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Helvetica
-(fontspec)             Neue/I/AAT:mapping=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Helvetica
-(fontspec)             Neue/BI/AAT:mapping=tex-text;"
-
-
-Package fontspec Info: 
-(fontspec)             Script 'Default' not explicitly supported within font
-(fontspec)             'Menlo'. Check the typeset output, and if it is okay
-(fontspec)             then ignore this warning. Otherwise a different font
-(fontspec)             should be chosen.
-
-
-Package fontspec Info: 
-(fontspec)             Menlo scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Menlo scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Menlo/B scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Menlo/I scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Menlo/BI scale = 0.85.
-
-
-Package fontspec Info: 
-(fontspec)             Font family 'Menlo(1)' created for font 'Menlo' with
-(fontspec)             options [Ligatures=TeX,Script=Default,Scale=0.85].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.85]"Menlo/OT:script=DFLT;language=dflt;mapping=t
-ex-text;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->s*[0.85]"Menlo/B/OT:script=DFLT;language=dflt;mapping
-=tex-text;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->s*[0.85]"Menlo/I/OT:script=DFLT;language=dflt;mapping
-=tex-text;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->s*[0.85]"Menlo/BI/OT:script=DFLT;language=dflt;mappin
-g=tex-text;"
-
- (/usr/local/texlive/2025basic/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-\Gm@cnth=\count284
-\Gm@cntv=\count285
-\c@Gm@tempcnt=\count286
-\Gm@bindingoffset=\dimen145
-\Gm@wd@mp=\dimen146
-\Gm@odd@mp=\dimen147
-\Gm@even@mp=\dimen148
-\Gm@layoutwidth=\dimen149
-\Gm@layoutheight=\dimen150
-\Gm@layouthoffset=\dimen151
-\Gm@layoutvoffset=\dimen152
-\Gm@dimlist=\toks18
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)))
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
 )
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
 
-\f@nch@headwidth=\skip51
-\f@nch@offset@elh=\skip52
-\f@nch@offset@erh=\skip53
-\f@nch@offset@olh=\skip54
-\f@nch@offset@orh=\skip55
-\f@nch@offset@elf=\skip56
-\f@nch@offset@erf=\skip57
-\f@nch@offset@olf=\skip58
-\f@nch@offset@orf=\skip59
-\f@nch@height=\skip60
-\f@nch@footalignment=\skip61
-\f@nch@widthL=\skip62
-\f@nch@widthC=\skip63
-\f@nch@widthR=\skip64
-\@temptokenb=\toks19
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2024/10/24 v3.43 KOMA-Script package (file load hooks)
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/koma-script/scrlfile-hook.st
+y
+Package: scrlfile-hook 2024/10/24 v3.43 KOMA-Script package (using LaTeX hooks)
+
+ (/usr/local/texlive/2025basic/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2024/10/24 v3.43 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 370.
+) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/scrhack/scrhack.sty
+Package: scrhack 2024-09-04 v3.42 scrhack emulation package
 )
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/setspaceenhanced/setspaceenh
+anced.sty
+Package: setspaceenhanced 2024-11-12 v1.04 improved setspace package
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
+\LTleft=\skip51
+\LTright=\skip52
+\LTpre=\skip53
+\LTpost=\skip54
+\LTchunksize=\count271
+\LTcapwidth=\dimen142
+\LT@head=\box53
+\LT@firsthead=\box54
+\LT@foot=\box55
+\LT@lastfoot=\box56
+\LT@gbox=\box57
+\LT@cols=\count272
+\LT@rows=\count273
+\c@LT@tables=\count274
+\c@LT@chunks=\count275
+\LT@p@ftn=\toks18
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
+\l__siunitx_number_uncert_offset_int=\count276
+\l__siunitx_number_exponent_fixed_int=\count277
+\l__siunitx_number_min_decimal_int=\count278
+\l__siunitx_number_min_integer_int=\count279
+\l__siunitx_number_round_precision_int=\count280
+\l__siunitx_number_lower_threshold_int=\count281
+\l__siunitx_number_upper_threshold_int=\count282
+\l__siunitx_number_group_first_int=\count283
+\l__siunitx_number_group_size_int=\count284
+\l__siunitx_number_group_minimum_int=\count285
+\l__siunitx_angle_tmp_dim=\dimen143
+\l__siunitx_angle_marker_box=\box58
+\l__siunitx_angle_unit_box=\box59
+\l__siunitx_compound_count_int=\count286
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen144
+))
+\l__siunitx_table_tmp_box=\box60
+\l__siunitx_table_tmp_dim=\dimen145
+\l__siunitx_table_column_width_dim=\dimen146
+\l__siunitx_table_integer_box=\box61
+\l__siunitx_table_decimal_box=\box62
+\l__siunitx_table_uncert_box=\box63
+\l__siunitx_table_before_box=\box64
+\l__siunitx_table_after_box=\box65
+\l__siunitx_table_before_dim=\dimen147
+\l__siunitx_table_carry_dim=\dimen148
+\l__siunitx_unit_tmp_int=\count287
+\l__siunitx_unit_position_int=\count288
+\l__siunitx_unit_total_int=\count289
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen149
+\ar@mcellbox=\box66
+\extrarowheight=\dimen150
+\NC@list=\toks20
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box67
+))
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -309,138 +174,51 @@ Package graphics Info: Driver file: xetex.def on input line 106.
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen153
-\Gin@req@width=\dimen154
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
 )
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count287
-\float@exts=\toks20
-\float@box=\box53
-\@float@everytoks=\toks21
-\@floatcapt=\box54
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen153
+\lightrulewidth=\dimen154
+\cmidrulewidth=\dimen155
+\belowrulesep=\dimen156
+\belowbottomsep=\dimen157
+\aboverulesep=\dimen158
+\abovetopsep=\dimen159
+\cmidrulesep=\dimen160
+\cmidrulekern=\dimen161
+\defaultaddspace=\dimen162
+\@cmidla=\count290
+\@cmidlb=\count291
+\@aboverulesep=\dimen163
+\@belowrulesep=\dimen164
+\@thisruleclass=\count292
+\@lastruleclass=\count293
+\@thisrulewidth=\dimen165
 )
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
-
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen155
-\captionmargin=\dimen156
-\caption@leftmargin=\dimen157
-\caption@rightmargin=\dimen158
-\caption@width=\dimen159
-\caption@indent=\dimen160
-\caption@parindent=\dimen161
-\caption@hangindent=\dimen162
+\caption@tempdima=\dimen166
+\captionmargin=\dimen167
+\caption@leftmargin=\dimen168
+\caption@rightmargin=\dimen169
+\caption@width=\dimen170
+\caption@indent=\dimen171
+\caption@parindent=\dimen172
+\caption@hangindent=\dimen173
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count288
-\c@continuedfloat=\count289
-Package caption Info: float package is loaded.
-)
-Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count290
-Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count291
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen163
-\lightrulewidth=\dimen164
-\cmidrulewidth=\dimen165
-\belowrulesep=\dimen166
-\belowbottomsep=\dimen167
-\aboverulesep=\dimen168
-\abovetopsep=\dimen169
-\cmidrulesep=\dimen170
-\cmidrulekern=\dimen171
-\defaultaddspace=\dimen172
-\@cmidla=\count292
-\@cmidlb=\count293
-\@aboverulesep=\dimen173
-\@belowrulesep=\dimen174
-\@thisruleclass=\count294
-\@lastruleclass=\count295
-\@thisrulewidth=\dimen175
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
-\LTleft=\skip65
-\LTright=\skip66
-\LTpre=\skip67
-\LTpost=\skip68
-\LTchunksize=\count296
-\LTcapwidth=\dimen176
-\LT@head=\box55
-\LT@firsthead=\box56
-\LT@foot=\box57
-\LT@lastfoot=\box58
-\LT@gbox=\box59
-\LT@cols=\count297
-\LT@rows=\count298
-\c@LT@tables=\count299
-\c@LT@chunks=\count300
-\LT@p@ftn=\toks22
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/array.sty
-Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
-\col@sep=\dimen177
-\ar@mcellbox=\box60
-\extrarowheight=\dimen178
-\NC@list=\toks23
-\extratabsurround=\skip69
-\backup@length=\skip70
-\ar@cellbox=\box61
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip71
-\multirow@cntb=\count301
-\multirow@dima=\skip72
-\bigstrutjot=\dimen179
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
-\TX@col@width=\dimen180
-\TX@old@table=\dimen181
-\TX@old@col=\dimen182
-\TX@target=\dimen183
-\TX@delta=\dimen184
-\TX@cols=\count302
-\TX@ftn=\toks24
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count303
-\lst@gtempboxa=\box62
-\lst@token=\toks25
-\lst@length=\count304
-\lst@currlwidth=\dimen185
-\lst@column=\count305
-\lst@pos=\count306
-\lst@lostspace=\dimen186
-\lst@width=\dimen187
-\lst@newlines=\count307
-\lst@lineno=\count308
-\lst@maxwidth=\dimen188
+\c@caption@flags=\count294
+\c@continuedfloat=\count295
+Package caption Info: longtable package is loaded.
 
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstpatch.sty
-File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count309
-\lst@skipnumbers=\count310
-\lst@framebox=\box63
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2024/09/23 1.10c listings configuration
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 ))
-Package: listings 2024/09/23 1.10c (Carsten Heinz)
-
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
@@ -459,104 +237,345 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
+\Gm@cnth=\count296
+\Gm@cntv=\count297
+\c@Gm@tempcnt=\count298
+\Gm@bindingoffset=\dimen174
+\Gm@wd@mp=\dimen175
+\Gm@odd@mp=\dimen176
+\Gm@even@mp=\dimen177
+\Gm@layoutwidth=\dimen178
+\Gm@layoutheight=\dimen179
+\Gm@layouthoffset=\dimen180
+\Gm@layoutvoffset=\dimen181
+\Gm@dimlist=\toks21
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/koma-script/scrlayer-scrpage
+.sty
+Package: scrlayer-scrpage 2024/10/24 v3.43 KOMA-Script package (end user interf
+ace for scrlayer)
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/koma-script/scrlayer.sty
+Package: scrlayer 2024/10/24 v3.43 KOMA-Script package (defining layers and pag
+e styles)
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+)
+\footheight=\skip57
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 218
+2.
+)
+Package scrbase Info: Unknown processing state.
+(scrbase)             Processing option `markcase=used'
+(scrbase)             of member `.scrlayer-scrpage.sty' of family
+(scrbase)             `KOMA' doesn't set
+(scrbase)             a valid state. This will be interpreted
+(scrbase)             as \FamilyKeyStateProcessed on input line 649.
+)) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count299
+\l__fontspec_language_int=\count300
+\l__fontspec_strnum_int=\count301
+\l__fontspec_tmp_int=\count302
+\l__fontspec_tmpa_int=\count303
+\l__fontspec_tmpb_int=\count304
+\l__fontspec_tmpc_int=\count305
+\l__fontspec_em_int=\count306
+\l__fontspec_emdef_int=\count307
+\l__fontspec_strong_int=\count308
+\l__fontspec_strongdef_int=\count309
+\l__fontspec_tmpa_dim=\dimen182
+\l__fontspec_tmpb_dim=\dimen183
+\l__fontspec_tmpc_dim=\dimen184
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/polyglossia.sty
+Package: polyglossia 2025/01/31 v2.4 Modern multilingual typesetting with XeLaT
+eX and LuaLaTeX
+\l_xpg_alias_keyvals_int=\count310
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/gloss-latex.ldf
+File: gloss-latex.ldf polyglossia: module for default language
+))
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/gloss-greek.ldf
+File: gloss-greek.ldf polyglossia: module for Greek
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/xgreek-fixes.def
+)
+\@attic@num=\count311
+)
+
+Package polyglossia Info: Default language is greek
+
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/polyglossia/gloss-english.ld
+f
+File: gloss-english.ldf polyglossia: module for English
+)
+
+Package fontspec Info: 
+(fontspec)             Script 'Greek' not explicitly supported within font
+(fontspec)             'Times New Roman'. Check the typeset output, and if it
+(fontspec)             is okay then ignore this warning. Otherwise a different
+(fontspec)             font should be chosen.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'TimesNewRoman(0)' created for font 'Times
+(fontspec)             New Roman' with options
+(fontspec)             [Ligatures=TeX,Script=Greek,Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/OT:script=grek;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/B/OT:script=grek;language=dflt;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/I/OT:script=grek;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/BI/OT:script=grek;language=dflt;mapping=tex-text;"
+
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'Arial(0)' created for font 'Arial' with
+(fontspec)             options [Ligatures=TeX,Script=Greek].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"Arial/OT:script=grek;language=dflt;mapping=tex-text;
+"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"Arial/B/OT:script=grek;language=dflt;mapping=tex-tex
+t;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"Arial/I/OT:script=grek;language=dflt;mapping=tex-tex
+t;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"Arial/BI/OT:script=grek;language=dflt;mapping=tex-te
+xt;"
+
+
+Package fontspec Info: 
+(fontspec)             Script 'Greek' not explicitly supported within font
+(fontspec)             'Courier New'. Check the typeset output, and if it is
+(fontspec)             okay then ignore this warning. Otherwise a different
+(fontspec)             font should be chosen.
+
+
+Package fontspec Info: 
+(fontspec)             Courier New scale = 0.9.
+
+
+Package fontspec Info: 
+(fontspec)             Courier New scale = 0.9.
+
+
+Package fontspec Info: 
+(fontspec)             Courier New/B scale = 0.9.
+
+
+Package fontspec Info: 
+(fontspec)             Courier New/I scale = 0.9.
+
+
+Package fontspec Info: 
+(fontspec)             Courier New/BI scale = 0.9.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'CourierNew(0)' created for font 'Courier
+(fontspec)             New' with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space,Scale=0.9,Script=Greek].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->s*[0.9]"Courier
+(fontspec)             New/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->s*[0.9]"Courier
+(fontspec)             New/B/OT:script=grek;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->s*[0.9]"Courier
+(fontspec)             New/I/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->s*[0.9]"Courier
+(fontspec)             New/BI/OT:script=grek;language=dflt;"
+
+
+Package fontspec Info: 
+(fontspec)             Script 'Greek' not explicitly supported within font
+(fontspec)             'Times New Roman'. Check the typeset output, and if it
+(fontspec)             is okay then ignore this warning. Otherwise a different
+(fontspec)             font should be chosen.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'TimesNewRoman(1)' created for font 'Times
+(fontspec)             New Roman' with options [Script=Greek].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/B/OT:script=grek;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/I/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Times New
+(fontspec)             Roman/BI/OT:script=grek;language=dflt;"
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'Arial(1)' created for font 'Arial' with
+(fontspec)             options [Script=Greek].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"Arial/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"Arial/B/OT:script=grek;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"Arial/I/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"Arial/BI/OT:script=grek;language=dflt;"
+
+
+Package fontspec Info: 
+(fontspec)             Script 'Greek' not explicitly supported within font
+(fontspec)             'Courier New'. Check the typeset output, and if it is
+(fontspec)             okay then ignore this warning. Otherwise a different
+(fontspec)             font should be chosen.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'CourierNew(1)' created for font 'Courier
+(fontspec)             New' with options [Script=Greek].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Courier
+(fontspec)             New/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Courier
+(fontspec)             New/B/OT:script=grek;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Courier
+(fontspec)             New/I/OT:script=grek;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Courier
+(fontspec)             New/BI/OT:script=grek;language=dflt;"
+
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/unicode-math/unicode-math.st
+y
+Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/unicode-math/unicode-math-xe
+tex.sty
+Package: unicode-math-xetex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLa
+TeX
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e
+.sty
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
-\@mathmargin=\skip73
+\@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2021/08/26 v2.01 AMS text
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks26
-\ex@=\dimen189
-))
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen190
+\pmbraise@=\dimen185
 )
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count311
+\inf@bad=\count312
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count312
-\leftroot@=\count313
+\uproot@=\count313
+\leftroot@=\count314
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count314
-\DOTSCASE@=\count315
+\classnum@=\count315
+\DOTSCASE@=\count316
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box64
-\strutbox@=\box65
+\Mathstrutbox@=\box68
+\strutbox@=\box69
 LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen191
+\big@size=\dimen186
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count316
+\macc@depth=\count317
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count317
+\c@MaxMatrixCols=\count318
 \dotsspace@=\muskip17
-\c@parentequation=\count318
-\dspbrk@lvl=\count319
-\tag@help=\toks27
-\row@=\count320
-\column@=\count321
-\maxfields@=\count322
-\andhelp@=\toks28
-\eqnshift@=\dimen192
-\alignsep@=\dimen193
-\tagshift@=\dimen194
-\tagwidth@=\dimen195
-\totwidth@=\dimen196
-\lineht@=\dimen197
-\@envbody=\toks29
-\multlinegap=\skip74
-\multlinetaggap=\skip75
-\mathdisplay@stack=\toks30
+\c@parentequation=\count319
+\dspbrk@lvl=\count320
+\tag@help=\toks22
+\row@=\count321
+\column@=\count322
+\maxfields@=\count323
+\andhelp@=\toks23
+\eqnshift@=\dimen187
+\alignsep@=\dimen188
+\tagshift@=\dimen189
+\tagwidth@=\dimen190
+\totwidth@=\dimen191
+\lineht@=\dimen192
+\@envbody=\toks24
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
+\g__um_fam_int=\count324
+\g__um_fonts_used_int=\count325
+\l__um_primecount_int=\count326
+\g__um_primekern_muskip=\muskip18
 
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/unicode-math/unicode-math-ta
+ble.tex)))
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
 
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.
-sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
 (/usr/local/texlive/2025basic/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -567,119 +586,10 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode not found.
-)) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/hycolor/hycolor.sty
-Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/refcount/refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/gettitlestring/gettitlestr
-ing.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-))
-\c@section@level=\count323
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
-)
-)
-\@linkdim=\dimen198
-\Hy@linkcounter=\count324
-\Hy@pagecounter=\count325
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/intcalc/intcalc.sty
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-)
-\Hy@SavedSpaceFactor=\count326
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
-)
-Package hyperref Info: Hyper figures OFF on input line 4157.
-Package hyperref Info: Link nesting OFF on input line 4162.
-Package hyperref Info: Hyper index ON on input line 4165.
-Package hyperref Info: Plain pages OFF on input line 4172.
-Package hyperref Info: Backreferencing OFF on input line 4177.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count327
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip18
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen199
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/bitset/bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
-))
-\Fld@menulength=\count328
-\Field@Width=\dimen256
-\Fld@charsize=\dimen257
-Package hyperref Info: Hyper figures OFF on input line 6042.
-Package hyperref Info: Link nesting OFF on input line 6047.
-Package hyperref Info: Hyper index ON on input line 6050.
-Package hyperref Info: backreferencing OFF on input line 6057.
-Package hyperref Info: Link coloring OFF on input line 6062.
-Package hyperref Info: Link coloring with OCG OFF on input line 6067.
-Package hyperref Info: PDF/A mode OFF on input line 6072.
- (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/atbegshi-ltx.sty
-Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
-package with kernel methods
-)
-\Hy@abspage=\count329
-\c@Item=\count330
-\c@Hfootnote=\count331
-)
-Package hyperref Info: Driver (autodetected): hxetex.
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2024-11-05 v7.01l Hyperref driver for XeTeX
-\pdfm@box=\box66
-\c@Hy@AnnotLevel=\count332
-\HyField@AnnotCount=\count333
-\Fld@listcount=\count334
-\c@bookmark@seq@number=\count335
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/rerunfilecheck/rerunfilechec
-k.sty
-Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
- (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
-kage
-with kernel methods
-)
-(/usr/local/texlive/2025basic/texmf-dist/tex/generic/uniquecounter/uniquecounte
-r.sty
-Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
-)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-85.
-)
-\Hy@SectionHShift=\skip76
-)
-Package hyperref Info: Option `colorlinks' set `true' on input line 128.
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
-
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count336
+\lrq@indent=\count327
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -687,63 +597,67 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count337
-\c@listtotal=\count338
-\c@listcount=\count339
-\c@liststart=\count340
-\c@liststop=\count341
-\c@citecount=\count342
-\c@citetotal=\count343
-\c@multicitecount=\count344
-\c@multicitetotal=\count345
-\c@instcount=\count346
-\c@maxnames=\count347
-\c@minnames=\count348
-\c@maxitems=\count349
-\c@minitems=\count350
-\c@citecounter=\count351
-\c@maxcitecounter=\count352
-\c@savedcitecounter=\count353
-\c@uniquelist=\count354
-\c@uniquename=\count355
-\c@refsection=\count356
-\c@refsegment=\count357
-\c@maxextratitle=\count358
-\c@maxextratitleyear=\count359
-\c@maxextraname=\count360
-\c@maxextradate=\count361
-\c@maxextraalpha=\count362
-\c@abbrvpenalty=\count363
-\c@highnamepenalty=\count364
-\c@lownamepenalty=\count365
-\c@maxparens=\count366
-\c@parenlevel=\count367
-\blx@tempcnta=\count368
-\blx@tempcntb=\count369
-\blx@tempcntc=\count370
-\c@blx@maxsection=\count371
-\blx@maxsegment@0=\count372
-\blx@notetype=\count373
-\blx@parenlevel@text=\count374
-\blx@parenlevel@foot=\count375
-\blx@sectionciteorder@0=\count376
-\blx@sectionciteorderinternal@0=\count377
-\blx@entrysetcounter=\count378
-\blx@biblioinstance=\count379
-\labelnumberwidth=\skip77
-\labelalphawidth=\skip78
-\biblabelsep=\skip79
-\bibitemsep=\skip80
-\bibnamesep=\skip81
-\bibinitsep=\skip82
-\bibparsep=\skip83
-\bibhang=\skip84
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip19
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count328
+\c@listtotal=\count329
+\c@listcount=\count330
+\c@liststart=\count331
+\c@liststop=\count332
+\c@citecount=\count333
+\c@citetotal=\count334
+\c@multicitecount=\count335
+\c@multicitetotal=\count336
+\c@instcount=\count337
+\c@maxnames=\count338
+\c@minnames=\count339
+\c@maxitems=\count340
+\c@minitems=\count341
+\c@citecounter=\count342
+\c@maxcitecounter=\count343
+\c@savedcitecounter=\count344
+\c@uniquelist=\count345
+\c@uniquename=\count346
+\c@refsection=\count347
+\c@refsegment=\count348
+\c@maxextratitle=\count349
+\c@maxextratitleyear=\count350
+\c@maxextraname=\count351
+\c@maxextradate=\count352
+\c@maxextraalpha=\count353
+\c@abbrvpenalty=\count354
+\c@highnamepenalty=\count355
+\c@lownamepenalty=\count356
+\c@maxparens=\count357
+\c@parenlevel=\count358
+\blx@tempcnta=\count359
+\blx@tempcntb=\count360
+\blx@tempcntc=\count361
+\c@blx@maxsection=\count362
+\blx@maxsegment@0=\count363
+\blx@notetype=\count364
+\blx@parenlevel@text=\count365
+\blx@parenlevel@foot=\count366
+\blx@sectionciteorder@0=\count367
+\blx@sectionciteorderinternal@0=\count368
+\blx@entrysetcounter=\count369
+\blx@biblioinstance=\count370
+\labelnumberwidth=\skip61
+\labelalphawidth=\skip62
+\biblabelsep=\skip63
+\bibitemsep=\skip64
+\bibnamesep=\skip65
+\bibinitsep=\skip66
+\bibparsep=\skip67
+\bibhang=\skip68
 \blx@bcfin=\read2
 \blx@bcfout=\write3
 \blx@langwohyphens=\language27
-\c@mincomprange=\count380
-\c@maxcomprange=\count381
-\c@mincompwidth=\count382
+\c@mincomprange=\count371
+\c@maxcomprange=\count372
+\c@mincompwidth=\count373
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -754,88 +668,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count383
-\c@savedafterword=\count384
-\c@annotator=\count385
-\c@savedannotator=\count386
-\c@author=\count387
-\c@savedauthor=\count388
-\c@bookauthor=\count389
-\c@savedbookauthor=\count390
-\c@commentator=\count391
-\c@savedcommentator=\count392
-\c@editor=\count393
-\c@savededitor=\count394
-\c@editora=\count395
-\c@savededitora=\count396
-\c@editorb=\count397
-\c@savededitorb=\count398
-\c@editorc=\count399
-\c@savededitorc=\count400
-\c@foreword=\count401
-\c@savedforeword=\count402
-\c@holder=\count403
-\c@savedholder=\count404
-\c@introduction=\count405
-\c@savedintroduction=\count406
-\c@namea=\count407
-\c@savednamea=\count408
-\c@nameb=\count409
-\c@savednameb=\count410
-\c@namec=\count411
-\c@savednamec=\count412
-\c@translator=\count413
-\c@savedtranslator=\count414
-\c@shortauthor=\count415
-\c@savedshortauthor=\count416
-\c@shorteditor=\count417
-\c@savedshorteditor=\count418
-\c@labelname=\count419
-\c@savedlabelname=\count420
-\c@institution=\count421
-\c@savedinstitution=\count422
-\c@lista=\count423
-\c@savedlista=\count424
-\c@listb=\count425
-\c@savedlistb=\count426
-\c@listc=\count427
-\c@savedlistc=\count428
-\c@listd=\count429
-\c@savedlistd=\count430
-\c@liste=\count431
-\c@savedliste=\count432
-\c@listf=\count433
-\c@savedlistf=\count434
-\c@location=\count435
-\c@savedlocation=\count436
-\c@organization=\count437
-\c@savedorganization=\count438
-\c@origlocation=\count439
-\c@savedoriglocation=\count440
-\c@origpublisher=\count441
-\c@savedorigpublisher=\count442
-\c@publisher=\count443
-\c@savedpublisher=\count444
-\c@language=\count445
-\c@savedlanguage=\count446
-\c@origlanguage=\count447
-\c@savedoriglanguage=\count448
-\c@pageref=\count449
-\c@savedpageref=\count450
-\shorthandwidth=\skip85
-\shortjournalwidth=\skip86
-\shortserieswidth=\skip87
-\shorttitlewidth=\skip88
-\shortauthorwidth=\skip89
-\shorteditorwidth=\skip90
-\locallabelnumberwidth=\skip91
-\locallabelalphawidth=\skip92
-\localshorthandwidth=\skip93
-\localshortjournalwidth=\skip94
-\localshortserieswidth=\skip95
-\localshorttitlewidth=\skip96
-\localshortauthorwidth=\skip97
-\localshorteditorwidth=\skip98
+\c@afterword=\count374
+\c@savedafterword=\count375
+\c@annotator=\count376
+\c@savedannotator=\count377
+\c@author=\count378
+\c@savedauthor=\count379
+\c@bookauthor=\count380
+\c@savedbookauthor=\count381
+\c@commentator=\count382
+\c@savedcommentator=\count383
+\c@editor=\count384
+\c@savededitor=\count385
+\c@editora=\count386
+\c@savededitora=\count387
+\c@editorb=\count388
+\c@savededitorb=\count389
+\c@editorc=\count390
+\c@savededitorc=\count391
+\c@foreword=\count392
+\c@savedforeword=\count393
+\c@holder=\count394
+\c@savedholder=\count395
+\c@introduction=\count396
+\c@savedintroduction=\count397
+\c@namea=\count398
+\c@savednamea=\count399
+\c@nameb=\count400
+\c@savednameb=\count401
+\c@namec=\count402
+\c@savednamec=\count403
+\c@translator=\count404
+\c@savedtranslator=\count405
+\c@shortauthor=\count406
+\c@savedshortauthor=\count407
+\c@shorteditor=\count408
+\c@savedshorteditor=\count409
+\c@labelname=\count410
+\c@savedlabelname=\count411
+\c@institution=\count412
+\c@savedinstitution=\count413
+\c@lista=\count414
+\c@savedlista=\count415
+\c@listb=\count416
+\c@savedlistb=\count417
+\c@listc=\count418
+\c@savedlistc=\count419
+\c@listd=\count420
+\c@savedlistd=\count421
+\c@liste=\count422
+\c@savedliste=\count423
+\c@listf=\count424
+\c@savedlistf=\count425
+\c@location=\count426
+\c@savedlocation=\count427
+\c@organization=\count428
+\c@savedorganization=\count429
+\c@origlocation=\count430
+\c@savedoriglocation=\count431
+\c@origpublisher=\count432
+\c@savedorigpublisher=\count433
+\c@publisher=\count434
+\c@savedpublisher=\count435
+\c@language=\count436
+\c@savedlanguage=\count437
+\c@origlanguage=\count438
+\c@savedoriglanguage=\count439
+\c@pageref=\count440
+\c@savedpageref=\count441
+\shorthandwidth=\skip69
+\shortjournalwidth=\skip70
+\shortserieswidth=\skip71
+\shorttitlewidth=\skip72
+\shortauthorwidth=\skip73
+\shorteditorwidth=\skip74
+\locallabelnumberwidth=\skip75
+\locallabelalphawidth=\skip76
+\localshorthandwidth=\skip77
+\localshortjournalwidth=\skip78
+\localshortserieswidth=\skip79
+\localshorttitlewidth=\skip80
+\localshortauthorwidth=\skip81
+\localshorteditorwidth=\skip82
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 
@@ -851,19 +765,27 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
-\c@textcitecount=\count451
-\c@textcitetotal=\count452
-\c@textcitemaxnames=\count453
-\c@biburlbigbreakpenalty=\count454
-\c@biburlbreakpenalty=\count455
-\c@biburlnumpenalty=\count456
-\c@biburlucpenalty=\count457
-\c@biburllcpenalty=\count458
-\biburlbigskip=\muskip19
-\biburlnumskip=\muskip20
-\biburlucskip=\muskip21
-\biburllcskip=\muskip22
-\c@smartand=\count459
+\c@textcitecount=\count442
+\c@textcitetotal=\count443
+\c@textcitemaxnames=\count444
+\c@biburlbigbreakpenalty=\count445
+\c@biburlbreakpenalty=\count446
+\c@biburlnumpenalty=\count447
+\c@biburlucpenalty=\count448
+\c@biburllcpenalty=\count449
+\biburlbigskip=\muskip20
+\biburlnumskip=\muskip21
+\biburlucskip=\muskip22
+\biburllcskip=\muskip23
+\c@smartand=\count450
+)
+Package biblatex Info: Trying to load natbib compatibility...
+Package biblatex Info: ... file 'blx-natbib.def' found.
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/blx-natbib.def
+File: blx-natbib.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
+ overwriting.
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -875,8 +797,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count460
-\c@bbx:relatedtotal=\count461
+\c@bbx:relatedcount=\count451
+\c@bbx:relatedtotal=\count452
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -911,113 +833,282 @@ Package biblatex Info: ... and expl3
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
-)) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/setspace/setspace.sty
-Package: setspace 2022/12/04 v6.7b set line spacing
+)) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count453
+\csq@gtype=\count454
+\csq@glevel=\count455
+\csq@qlevel=\count456
+\csq@maxlvl=\count457
+\csq@tshold=\count458
+\csq@ltx@everypar=\toks26
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box67
-\beforetitleunit=\skip99
-\aftertitleunit=\skip100
-\ttl@plus=\dimen258
-\ttl@minus=\dimen259
-\ttl@toksa=\toks31
-\titlewidth=\dimen260
-\titlewidthlast=\dimen261
-\titlewidthfirst=\dimen262
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
 )
-\@quotelevel=\count462
-\@quotereset=\count463
+Package csquotes Info: Enabling multilingual quotes.
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count459
+\float@exts=\toks27
+\float@box=\box70
+\@float@everytoks=\toks28
+\@floatcapt=\box71
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/floatbytocbasic/floatbytocba
+sic.sty
+Package: floatbytocbasic 2023-08-16 v1.0 improved float package using tocbasic
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2024/10/24 v3.43 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip83
+\scr@dte@tocline@numbox=\box72
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/xpatch/xpatch.sty
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+))
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write4
+
+Excluding comment 'comment')
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/algorithms/algorithm.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+Package tocbasic Info: omitting babel extension for `loa'
+(tocbasic)             because of missing \bbl@set@language on input line 96.
+\@float@every@algorithm=\toks29
+\c@algorithm=\count460
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/algorithmicx/algpseudocode.s
+ty
+Package: algpseudocode 
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/algorithmicx/algorithmicx.st
+y
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count461
+\c@ALG@rem=\count462
+\c@ALG@nested=\count463
+\ALG@tlm=\skip84
+\ALG@thistlm=\skip85
+\c@ALG@Lnr=\count464
+\c@ALG@blocknr=\count465
+\c@ALG@storecount=\count466
+\c@ALG@tmpcounter=\count467
+\ALG@tmplength=\skip86
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.
+sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/gettitlestring/gettitlestr
+ing.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count468
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen193
+\Hy@linkcounter=\count469
+\Hy@pagecounter=\count470
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count471
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count472
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen194
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count473
+\Field@Width=\dimen195
+\Fld@charsize=\dimen196
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+ (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count474
+\c@Item=\count475
+\c@Hfootnote=\count476
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2024-11-05 v7.01l Hyperref driver for XeTeX
+\pdfm@box=\box73
+\c@Hy@AnnotLevel=\count477
+\HyField@AnnotCount=\count478
+\Fld@listcount=\count479
+\c@bookmark@seq@number=\count480
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/rerunfilecheck/rerunfilechec
+k.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/uniquecounter/uniquecounte
+r.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip87
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count481
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count482
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip88
+\multirow@cntb=\count483
+\multirow@dima=\skip89
+\bigstrutjot=\dimen197
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen198
+\TX@old@table=\dimen199
+\TX@old@col=\dimen256
+\TX@target=\dimen257
+\TX@delta=\dimen258
+\TX@cols=\count484
+\TX@ftn=\toks30
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count485
+\lst@gtempboxa=\box74
+\lst@token=\toks31
+\lst@length=\count486
+\lst@currlwidth=\dimen259
+\lst@column=\count487
+\lst@pos=\count488
+\lst@lostspace=\dimen260
+\lst@width=\dimen261
+\lst@newlines=\count489
+\lst@lineno=\count490
+\lst@maxwidth=\dimen262
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count491
+\lst@skipnumbers=\count492
+\lst@framebox=\box75
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 202.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 202.
+Package hyperref Info: Option `colorlinks' set `true' on input line 202.
+Package hyperref Info: Option `unicode' set `true' on input line 202.
+Package hyperref Info: Option `breaklinks' set `true' on input line 202.
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'polyglossia' package.
 
 (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 169.
-LaTeX Font Info:    ... okay on input line 169.
-
-Package fontspec Info: 
-(fontspec)             Adjusting the maths setup (use [no-math] to avoid
-(fontspec)             this).
-
-\symlegacymaths=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 169.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 169.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 169.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 169.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 169.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 169.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 169.
-LaTeX Font Info:    Redeclaring math accent \check on input line 169.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 169.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 169.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 169.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 169.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 169.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 169.
-
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Helvetica(0)/m/n on input line 169.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 169.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/Helvetica(0)/m/n on input line 169.
-
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/Helvetica(0)/m/n --> TU/Helvetica(0)/m/n on input li
-ne 169.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Helvetica(0)/m/it on input line 169
-.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Helvetica(0)/b/n on input line 169.
-
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/HelveticaNeue(0)/m/n on input line 
-169.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/Menlo(0)/m/n on input line 169.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/Helvetica(0)/m/n --> TU/Helvetica(0)/b/n on input li
-ne 169.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/Helvetica(0)/b/it on input line 16
-9.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/HelveticaNeue(0)/b/n on input line
- 169.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/Menlo(0)/b/n on input line 169.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1026,22 +1117,23 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
-* h-part:(L,W,R)=(85.35826pt, 441.01773pt, 71.13188pt)
-* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* bindingoffset: 14.22636pt
+* modes: includehead includefoot twoside 
+* h-part:(L,W,R)=(71.13188pt, 404.02908pt, 108.12054pt)
+* v-part:(T,H,B)=(42.67912pt, 759.6886pt, 42.67912pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=441.01773pt
-* \textheight=702.78308pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-41.1381pt
-* \headheight=15.0pt
-* \headsep=25.0pt
+* \textwidth=404.02908pt
+* \textheight=688.34605pt
+* \oddsidemargin=13.08826pt
+* \evensidemargin=35.85056pt
+* \topmargin=-29.59087pt
+* \headheight=21.46875pt
+* \headsep=19.8738pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=85.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=98.0pt
+* \marginparsep=7.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
@@ -1053,24 +1145,199 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: hyperref package is loaded.
-Package caption Info: listings package is loaded.
-Package caption Info: longtable package is loaded.
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/caption/ltcaption.sty
-Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
-)
-Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count464
-Package hyperref Info: Link coloring ON on input line 169.
+Package scrbase Info: activating greek \abbrevname on input line 202.
+Package scrbase Info: activating greek \byname on input line 202.
+Package scrbase Info: activating greek \acknowledgementname on input line 202.
+Package scrbase Info: activating greek \authorshipname on input line 202.
+Package scrbase Info: activating greek \constantsname on input line 202.
+Package scrbase Info: activating greek \symbolsname on input line 202.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 2
+02.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line
+ 202.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 
+202.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/Arial(0)/m/n on input line 202.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/Arial(0)/b/n on input line 202.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/CourierNew(0)/m/n on input line 202
+.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/CourierNew(0)/b/n on input line 202
+.
 
-(./thesis.out) (./thesis.out)
-\@outlinefile=\write4
-\openout4 = `thesis.out'.
+Package fontspec Info: 
+(fontspec)             Font family 'latinmodern-math.otf(0)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script
+=Math,BoldFont={latinmodern-math.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[latinmodern-math.otf]/OT:script=math;language=dflt;
+"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[latinmodern-math.otf]/OT:script=math;language=dflt;
+"
 
+
+Package fontspec Info: 
+(fontspec)             Font family 'latinmodern-math.otf(1)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script
+=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=latinmodern-math.otf,Style
+=MathScript},{Size=-7.2,Font=latinmodern-math.otf,Style=MathScriptScript}},Bold
+Font={latinmodern-math.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <10.2->"[latinmodern-math.otf]/OT:script=math;language=d
+flt;"<7.2-10.2>"[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=0;"<-
+7.2>"[latinmodern-math.otf]/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[latinmodern-math.otf]/OT:script=math;language=dflt;
+"
+
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 202.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
+ line 202.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 202.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
+t line 202.
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 1.0001.
+
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 1.0001.
+
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 1.0001.
+
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 1.0001.
+
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 1.0001.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'latinmodern-math.otf(2)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script
+=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=latinmodern-math.otf,Style
+=MathScript},{Size=-7.2,Font=latinmodern-math.otf,Style=MathScriptScript}},Bold
+Font={latinmodern-math.otf},ScaleAgain=1.0001,FontAdjustment={\fontdimen
+(fontspec)             8\font =8.124pt\relax \fontdimen 9\font =4.728pt\relax
+(fontspec)             \fontdimen 10\font =5.328pt\relax \fontdimen 11\font
+(fontspec)             =8.232pt\relax \fontdimen 12\font =4.14pt\relax
+(fontspec)             \fontdimen 13\font =4.356pt\relax \fontdimen 14\font
+(fontspec)             =4.356pt\relax \fontdimen 15\font =3.468pt\relax
+(fontspec)             \fontdimen 16\font =2.964pt\relax \fontdimen 17\font
+(fontspec)             =2.964pt\relax \fontdimen 18\font =3.0pt\relax
+(fontspec)             \fontdimen 19\font =2.4pt\relax \fontdimen 22\font
+(fontspec)             =3.0pt\relax \fontdimen 20\font =0pt\relax \fontdimen
+(fontspec)             21\font =0pt\relax }].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <10.2->s*[1.0001]"[latinmodern-math.otf]/OT:script=math;
+language=dflt;"<7.2-10.2>s*[1.0001]"[latinmodern-math.otf]/OT:script=math;langu
+age=dflt;+ssty=0;"<-7.2>s*[1.0001]"[latinmodern-math.otf]/OT:script=math;langua
+ge=dflt;+ssty=1;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.0001]"[latinmodern-math.otf]/OT:script=math;lang
+uage=dflt;"
+
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 202.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
+t line 202.
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 202.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
+t line 202.
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 0.9999.
+
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 0.9999.
+
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 0.9999.
+
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 0.9999.
+
+
+Package fontspec Info: 
+(fontspec)             latinmodern-math scale = 0.9999.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'latinmodern-math.otf(3)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [BoldItalicFont={},ItalicFont={},SmallCapsFont={},Script
+=Math,SizeFeatures={{Size=10.2-},{Size=7.2-10.2,Font=latinmodern-math.otf,Style
+=MathScript},{Size=-7.2,Font=latinmodern-math.otf,Style=MathScriptScript}},Bold
+Font={latinmodern-math.otf},ScaleAgain=0.9999,FontAdjustment={\fontdimen
+(fontspec)             8\font =0.48pt\relax \fontdimen 9\font =2.4pt\relax
+(fontspec)             \fontdimen 10\font =2.004pt\relax \fontdimen 11\font
+(fontspec)             =1.332pt\relax \fontdimen 12\font =7.2pt\relax
+(fontspec)             \fontdimen 13\font =0pt\relax }].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <10.2->s*[0.9999]"[latinmodern-math.otf]/OT:script=math;
+language=dflt;"<7.2-10.2>s*[0.9999]"[latinmodern-math.otf]/OT:script=math;langu
+age=dflt;+ssty=0;"<-7.2>s*[0.9999]"[latinmodern-math.otf]/OT:script=math;langua
+ge=dflt;+ssty=1;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[0.9999]"[latinmodern-math.otf]/OT:script=math;lang
+uage=dflt;"
+
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 2
+02.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
+t line 202.
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 202
+.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
+t line 202.
 Package biblatex Info: Trying to load language 'american'...
 Package biblatex Info: ... file 'american.lbx' found.
-
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/lbx/american.lbx
 File: american.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 Package biblatex Info: Trying to load language 'english'...
@@ -1101,506 +1368,654 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
 
 (./thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 169.
-Package biblatex Info: Reference segment=0 on input line 169.
+Package biblatex Info: Reference section=0 on input line 202.
+Package biblatex Info: Reference segment=0 on input line 202.
+Package hyperref Info: Link coloring ON on input line 202.
+ (./thesis.out) (./thesis.out)
+\@outlinefile=\write5
+\openout5 = `thesis.out'.
+
+\c@lstlisting=\count493
+Package tocbasic Info: setting babel extension for `lol' on input line 202.
+
+
+LaTeX Font Warning: Font shape `TU/TimesNewRoman(1)/m/sc' undefined
+(Font)              using `TU/TimesNewRoman(1)/m/n' instead on input line 210.
+
+File: images/TUC_logo.png Graphic file (type bmp)
+<images/TUC_logo.png>
+
+
+[1
+
+
+
+]
+
+[2]
+--------------------
+ Περίληψη
+--------------------
+
+Overfull \hbox (17.48961pt too wide) in paragraph at lines 278--279
+\TU/TimesNewRoman(1)/m/sc/12 τουργίες σε πολλαπλά επίπεδα. Επιπλέον, αναπτύχθηκ
+ε ένας μηχανισμός «Auto Actions»
+ []
+
+
+
+LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/sl' in size <12> not avai
+lable
+(Font)              Font shape `TU/TimesNewRoman(1)/m/it' tried instead on inpu
+t line 281.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 12.00128pt on input line 281.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.40088pt on input line 281.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 281.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 281.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 8.3991pt on input line 281.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 281.
+[3
+
+
+]
+Overfull \hbox (2.69469pt too wide) in paragraph at lines 283--284
+\TU/TimesNewRoman(1)/b/n/12 Λέξεις-κλειδιά: \TU/TimesNewRoman(1)/m/sc/12 Proper
+ty Management System, Rapid Development, Large Language
+ []
+
+
+Overfull \hbox (9.599pt too wide) in paragraph at lines 283--284
+\TU/TimesNewRoman(1)/m/sc/12 Models, PayloadCMS, Next.js, TypeScript, Serverles
+s, Channel Manager, Auto Actions 
+ []
+
+
+
+[4]
+--------------------
+ Περίληψη
+--------------------
+
+
+LaTeX Font Info:    Font shape `TU/TimesNewRoman(0)/m/sl' in size <12> not avai
+lable
+(Font)              Font shape `TU/TimesNewRoman(0)/m/it' tried instead on inpu
+t line 306.
+[5
+
+]
+
+[6]
+--------------------
+ Acknowledgements
+--------------------
+
+
+[7
+
+]
+
+[8
+
+] (./thesis.toc
+
+[9]
+
+[10]
+
+[11])
+\tf@toc=\write6
+\openout6 = `thesis.toc'.
+
+
+
+[12] (./thesis.lof
+Overfull \hbox (27.30481pt too wide) in paragraph at lines 3--3
+ [][] [][][]\TU/TimesNewRoman(1)/m/sc/12 Το τεχνολογικό stack της πλατφόρμας (N
+ext.js, PayloadCMS, PostgreSQL, 
+ []
+
+
+
+[13
+
+]
+Overfull \hbox (2.71005pt too wide) in paragraph at lines 30--30
+ \TU/TimesNewRoman(1)/m/sc/12 ματωμένες δυνατότητες Τεχνητής Νοημοσύνης επιτρέπ
+ουν στους επι- 
+ []
+
+)
+\tf@lof=\write7
+\openout7 = `thesis.lof'.
+
+
+
+[14] (./thesis.lot)
+\tf@lot=\write8
+\openout8 = `thesis.lot'.
+
+
+
+[15
+
+]
+
+[16
+
+]
+
+[17]
+
+[18
+
+]
+--------------------
+ Dedicatory
+--------------------
+LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/sl' in size <17.28> not a
+vailable
+(Font)              Font shape `TU/TimesNewRoman(1)/m/it' tried instead on inpu
+t line 351.
+
+
+[19]
+
+[20
+
+]
+Κεφάλαιο 1.
 
 
 [1
 
 ]
+Overfull \hbox (5.24141pt too wide) in paragraph at lines 392--393
+[]\TU/TimesNewRoman(1)/m/sc/12 Η δημιουργία λογαριασμών για Owners μέσα στα υπά
+ρχοντα Channel Managers
+ []
+
+
 
 [2]
+Κεφάλαιο 2.
+File: ./images/tech_stack_logos.png Graphic file (type bmp)
+<./images/tech_stack_logos.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--415
+ []\TU/TimesNewRoman(1)/m/sc/10.95 Σχήμα 2.1: |Το τεχνολογικό stack της πλατφόρ
+μας (Next.js, 
+ []
+
+
 
 [3
 
 ]
-
-[4
-
-
-]
-Overfull \hbox (1.50096pt too wide) in paragraph at lines 251--252
-\TU/Helvetica(1)/m/n/12 Vercel), επιτρέποντας στους διαχειριστές να ξεκινούν με
- μηδενικό κόστος υπο-
+Overfull \hbox (23.55492pt too wide) in paragraph at lines 440--441
+\TU/TimesNewRoman(1)/m/sc/12 ναρτήσεις του Backend απευθείας, χωρίς την ανάγκη 
+ρητού ορισμού API Endpoints.
  []
 
 
-Overfull \hbox (0.33188pt too wide) in paragraph at lines 253--254
-[]\TU/Helvetica(1)/m/n/12 Κεντρικό στοιχείο της καινοτομίας αποτελεί η ενσωμάτω
-ση Large Language
+
+[4]
+Overfull \hbox (25.57344pt too wide) in paragraph at lines 460--461
+[]\TU/TimesNewRoman(1)/m/sc/12 Η βάση του frontend για τη δημιουργία επαναχρησι
+μοποιήσιμων components [[][]10[][]]. 
  []
 
 
-Overfull \hbox (9.48196pt too wide) in paragraph at lines 258--259
-\TU/Helvetica(1)/b/n/12 Λέξεις-κλειδιά: \TU/Helvetica(1)/m/n/12 Property Manage
-ment System, Rapid Development, Large Language
- []
-
-
-Overfull \hbox (10.98393pt too wide) in paragraph at lines 258--259
-\TU/Helvetica(1)/m/n/12 Models, PayloadCMS, Next.js, TypeScript, Serverless, Ch
-annel Manager, Auto Actions 
+Overfull \hbox (21.53047pt too wide) in paragraph at lines 470--471
+[]\TU/TimesNewRoman(1)/m/sc/12 Η βιβλιοθήκη \TU/CourierNew(1)/m/n/12 next-swagg
+er-doc \TU/TimesNewRoman(1)/m/sc/12 παράγει αυτόματα το documentation
  []
 
 
 
 [5]
-
-[6
-
-
-]
-
-[7]
-
-[8
-
-
-]
-
-[9]
-
-[10
-
-
-] (./thesis.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
-
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
-
-
-(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-[11]
-
-[12])
-\tf@toc=\write5
-\openout5 = `thesis.toc'.
-
-
-
-[13]
-
-[14
-
-
-] (./thesis.lof
-Overfull \hbox (42.0897pt too wide) in paragraph at lines 3--3
- [][] [][][]\TU/Helvetica(1)/m/n/12 Το τεχνολογικό stack της πλατφόρμας (Next.j
-s, PayloadCMS, PostgreSQL, 
+Overfull \hbox (2.2863pt too wide) in paragraph at lines 482--483
+[]\TU/TimesNewRoman(1)/m/sc/12 Για την υλοποίηση των AI λειτουργιών χρησιμοποιή
+θηκε το \TU/TimesNewRoman(1)/b/n/12 Vercel AI SDK (v5) \TU/TimesNewRoman(1)/m/s
+c/12 [[][]14[][]].
  []
 
 
-Overfull \hbox (1.00429pt too wide) in paragraph at lines 23--23
- [][] [][][]\TU/Helvetica(1)/m/n/12 Η σελίδα του Ημερολογίου (Calendar). Το αρχ
-ικό ημερολόγιο έχει 
+Overfull \hbox (25.45726pt too wide) in paragraph at lines 496--497
+[]\TU/TimesNewRoman(1)/b/n/12 Modern API: \TU/TimesNewRoman(1)/m/sc/12 Διαθέτει
+ ένα σύγχρονο, comprehensive API με υποστήριξη OpenAPI,
+ []
+
+
+Overfull \hbox (26.8674pt too wide) in paragraph at lines 496--497
+\TU/TimesNewRoman(1)/m/sc/12 το οποίο επιτρέπει την εύκολη παραγωγή κώδικα (μέσ
+ω \TU/CourierNew(1)/m/n/12 swagger-typescript-
  []
 
 
 
-[15])
-\tf@lof=\write6
-\openout6 = `thesis.lof'.
-
-
-
-[16] (./thesis.lot)
-\tf@lot=\write7
-\openout7 = `thesis.lot'.
-
-
-
-[17
-
-
-]
-
-[18
-
-
-]
-Κεφάλαιο 1.
-
-Overfull \hbox (15.06346pt too wide) in paragraph at lines 316--317
-\TU/Helvetica(1)/m/n/12 και η ανάπτυξη ενός ολοκληρωμένου πληροφοριακού συστήμα
-τος, του «Lunarety
- []
-
-
-Overfull \hbox (15.04758pt too wide) in paragraph at lines 324--325
-[]\TU/Helvetica(1)/m/n/12 Η δημιουργία ενός robust συστήματος διαχείρισης σχέσε
-ων Manager-Owner,
- []
-
-
-Overfull \hbox (10.37961pt too wide) in paragraph at lines 333--334
-[]\TU/Helvetica(1)/m/n/12 Η παρούσα εργασία απευθύνεται κυρίως σε επαγγελματίες
- Property Managers
- []
-
-
-
-[19]
-Overfull \hbox (1.68344pt too wide) in paragraph at lines 336--337
-[]\TU/Helvetica(1)/m/n/12 Οι Managers συχνά αναγκάζονται να χρησιμοποιούν πολύπ
-λοκα λογισμικά
- []
-
-
-Overfull \hbox (2.47252pt too wide) in paragraph at lines 337--338
-[]\TU/Helvetica(1)/m/n/12 Η ενημέρωση των Owners για κρατήσεις, πληρότητες και 
-οικονομικά στοι-
- []
-
-
-Overfull \hbox (27.38547pt too wide) in paragraph at lines 338--339
-[]\TU/Helvetica(1)/m/n/12 Η δημιουργία λογαριασμών για Owners μέσα στα υπάρχοντ
-α Channel Managers
- []
-
-
-
-[20]
-Κεφάλαιο 2.
-File: ./images/tech_stack_logos.png Graphic file (type bmp)
-<./images/tech_stack_logos.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 360--360
-[][]|\TU/Helvetica(1)/m/n/10.95 Το τεχνολογικό stack της πλατφόρμας (Next.js, P
-ayloadCMS,
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[21
-
-]
-
-[22]
-Overfull \hbox (47.98117pt too wide) in paragraph at lines 405--406
-[]\TU/Helvetica(1)/m/n/12 Η βάση του frontend για τη δημιουργία επαναχρησιμοποι
-ήσιμων components [[][]10[][]]. 
- []
-
-
-Overfull \hbox (15.85141pt too wide) in paragraph at lines 406--407
-[]\TU/Helvetica(1)/m/n/12 Χρησιμοποιήθηκε για τη διαχείριση της κατάστασης (sta
-te management)
- []
-
-LaTeX Font Info:    Font shape `TU/Menlo(1)/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 415.
-
-Overfull \hbox (9.8772pt too wide) in paragraph at lines 415--416
-[]\TU/Helvetica(1)/m/n/12 Η βιβλιοθήκη \TU/Menlo(1)/m/n/12 next-swagger-doc \TU
-/Helvetica(1)/m/n/12 παράγει αυτόματα το documentation
- []
-
-
-Overfull \hbox (0.14032pt too wide) in paragraph at lines 416--417
-[]\TU/Helvetica(1)/m/n/12 Η βιβλιοθήκη \TU/Menlo(1)/m/n/12 openapi-typescript-c
-odegen \TU/Helvetica(1)/m/n/12 χρησιμοποιείται στο Website
- []
-
-
-
-[23]
-Overfull \hbox (3.79942pt too wide) in paragraph at lines 441--442
-\TU/Helvetica(1)/m/n/12 OpenAPI, το οποίο επιτρέπει την εύκολη παραγωγή κώδικα 
-(μέσω \TU/Menlo(1)/m/n/12 swagger-
- []
-
-
-
-[24]
+[6]
 Κεφάλαιο 3.
 
-Overfull \hbox (19.21376pt too wide) in paragraph at lines 447--447
-|\TU/Helvetica(1)/b/n/24.88 Μεθοδολογία και Ανάλυση Απαιτήσεων| 
+Overfull \hbox (1.02678pt too wide) in paragraph at lines 513--514
+[]\TU/TimesNewRoman(1)/b/n/12 Managers: \TU/TimesNewRoman(1)/m/sc/12 Ο κεντρικό
+ς κόμβος. Συνδέουν το Channel Manager τους, δημιουρ-
  []
 
 
-Overfull \hbox (7.87114pt too wide) in paragraph at lines 456--457
-[]\TU/Helvetica(0)/b/n/12 Platform Users (Admins): \TU/Helvetica(1)/m/n/12 Οι δ
-ιαχειριστές της πλατφόρμας Lunarety. Έχουν
+Overfull \hbox (5.0198pt too wide) in paragraph at lines 529--539
+ [][] 
  []
 
 
 
-[25
+[7
 
 ]
+
+[8]
 File: ./images/user_hierarchy.png Graphic file (type bmp)
 <./images/user_hierarchy.png>
 
 
-[26]
+[9]
 
-[27]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 545.
-LaTeX Font Info:    Font shape `TU/Menlo(1)/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 545.
-LaTeX Font Info:    Font shape `TU/Menlo(1)/b/n' will be
-(Font)              scaled to size 8.50006pt on input line 559.
+[10]
+Overfull \hbox (21.92409pt too wide) in paragraph at lines 653--664
+ [][] 
+ []
 
-
-[28]
 File: ./images/system_architecture.png Graphic file (type bmp)
 <./images/system_architecture.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-[29]
-
-[30]
-Overfull \hbox (9.60703pt too wide) in paragraph at lines 634--635
-[]\TU/Helvetica(1)/m/n/12 Η βάση δεδομένων (PostgreSQL) οργανώνεται γύρω από τι
-ς κύριες collections
- []
-
-
-Overfull \hbox (15.52864pt too wide) in paragraph at lines 648--648
-[]|\TU/Helvetica(1)/m/n/12 Χρεώσεις/Τιμολόγια|  
+[11]
+Overfull \hbox (8.97588pt too wide) in paragraph at lines 681--682
+[]\TU/TimesNewRoman(1)/b/n/12 Users: \TU/TimesNewRoman(1)/m/sc/12 Περιλαμβάνει 
+ιεραρχικές σχέσεις (parent-child) για τη σύνδεση Manager-
  []
 
 
 
-[31]
-Overfull \hbox (50.80852pt too wide) in paragraph at lines 709--710
-[]\TU/Menlo(1)/m/n/12 syncChannelBooking_beforeChangeHook \TU/Helvetica(1)/m/n/
-12 (beforeChange) – Υπολογισμός commissions,
- []
+[12]
 
+[13]
 File: ./erd/data_model_erd.png Graphic file (type bmp)
 <./erd/data_model_erd.png>
 
 
-[32]
+[14]
 
-[33]
+[15]
 
-[34
+[16
 
 ]
 Κεφάλαιο 4.
 
-
-[35]
-Overfull \hbox (8.35194pt too wide) in paragraph at lines 751--752
-[]\TU/Helvetica(0)/b/n/12 Webhook Configuration: \TU/Helvetica(1)/m/n/12 Για κά
-θε Property, ρυθμίζεται αυτόματα το Beds24
+Overfull \hbox (117.58029pt too wide) in paragraph at lines 791--792
+\TU/TimesNewRoman(1)/m/sc/12 του Beds24 ώστε να στέλνει Webhooks στο endpoint τ
+ης πλατφόρμας (\TU/CourierNew(1)/m/n/12 /api/webhooks/channel-
  []
 
-LaTeX Font Info:    Font shape `TU/Menlo(1)/m/it' will be
-(Font)              scaled to size 8.50006pt on input line 755.
 
-Overfull \hbox (27.48927pt too wide) in paragraph at lines 760--761
+
+[17]
+Overfull \hbox (4.59793pt too wide) in paragraph at lines 806--807
+[]\TU/TimesNewRoman(1)/b/n/12 User ID Retrieval: \TU/TimesNewRoman(1)/m/sc/12 Α
+νακτάται το \TU/CourierNew(1)/m/n/12 channelManagerUserId \TU/TimesNewRoman(1)/
+m/sc/12 από το Beds24. 
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 811--811
+ []\TU/TimesNewRoman(1)/m/sc/10.95 Listing 4.1: |Αυτόματη ρύθμιση webhooks κατά
+ την εισαγωγή 
+ []
+
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00107pt on input line 814.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line 814.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 814.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 814.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 814.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 814.
+
+Overfull \hbox (140.9761pt too wide) in paragraph at lines 817--818
 [][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 File: ./images/booking_import_flowchart.jpg Graphic file (type bmp)
 <./images/booking_import_flowchart.jpg>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-[36]
-
-[37]
-Overfull \hbox (1.31932pt too wide) in paragraph at lines 815--816
-[]\TU/Helvetica(1)/m/n/12 Όταν μια κράτηση δημιουργείται ή ενημερώνεται στο Bed
-s24, η πλατφόρμα
+[18]
+Overfull \hbox (25.85774pt too wide) in paragraph at lines 840--841
+\TU/TimesNewRoman(1)/m/sc/12 εισάγει εκατοντάδες ή χιλιάδες κρατήσεις. Χρησιμοπ
+οιείται η \TU/CourierNew(1)/m/n/12 payload.db.create()
  []
 
+
+
+[19]
 File: ./images/commission_structure.png Graphic file (type bmp)
 <./images/commission_structure.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 4595) in paragraph at lines 889--889
+ []\TU/TimesNewRoman(1)/m/sc/10.95 Σχήμα 4.2: |Τριπλή δομή προμηθειών (Three-Ti
+er Commission 
+ []
 
 
 
-[38]
+[20]
+Overfull \hbox (84.58911pt too wide) in paragraph at lines 913--914
+[]\TU/TimesNewRoman(1)/m/sc/12 Για κρατήσεις από το generated website, το πεδίο
+ \TU/CourierNew(1)/m/n/12 source \TU/TimesNewRoman(1)/m/sc/12 ορίζεται αντίστοι
+χα (\TU/CourierNew(1)/m/n/12 websitePlatform\TU/TimesNewRoman(1)/m/sc/12 ,
+ []
+
 File: ./images/booking_sync.png Graphic file (type bmp)
 <./images/booking_sync.png>
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-[39]
-
-[40]
-
-[41]
-
-[42]
-Overfull \hbox (17.45445pt too wide) in paragraph at lines 977--978
-\TU/Helvetica(1)/m/n/12 αναζήτηση και κατηγοριοποιώντας τα rates σε: \TU/Menlo(
-1)/m/n/12 ratesToCreate \TU/Helvetica(1)/m/n/12 (νέα), \TU/Menlo(1)/m/n/12 rate
-sToUpdate
+[21]
+Overfull \hbox (33.19943pt too wide) in paragraph at lines 925--926
+[]\TU/TimesNewRoman(1)/m/sc/12 Κάθε κράτηση συνδέεται με τα αντίστοιχα Property
+Rate records μέσω του \TU/CourierNew(1)/m/n/12 relatedRates
  []
 
 
-Overfull \hbox (70.44809pt too wide) in paragraph at lines 987--996
+
+[22]
+
+[23]
+
+[24]
+Overfull \hbox (80.9872pt too wide) in paragraph at lines 1044--1053
  [][] 
  []
 
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.95116pt on input line 1057.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.00085pt on input line 1057.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 10.94882pt on input line 1057.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 1057.
 
 
-[43]
-Overfull \hbox (9.02032pt too wide) in paragraph at lines 1028--1029
-[]\TU/Helvetica(0)/b/n/12 Για Users: \TU/Menlo(1)/m/n/12 Telegram\TU/Helvetica(
-1)/m/n/12 . Οι χρήστες μπορούν να κάνουν Subscribe στο Telegram
+[25]
+Overfull \hbox (27.73369pt too wide) in paragraph at lines 1073--1074
+[]\TU/TimesNewRoman(1)/b/n/12 Notifications to Users: \TU/TimesNewRoman(1)/m/sc
+/12 Ειδοποιήσεις προς τους χρήστες της πλατφόρμας (Managers,
+ []
+
+
+Overfull \hbox (5.78653pt too wide) in paragraph at lines 1085--1086
+[]\TU/TimesNewRoman(1)/b/n/12 Για Users: \TU/CourierNew(1)/m/n/12 Telegram\TU/T
+imesNewRoman(1)/m/sc/12 . Οι χρήστες μπορούν να κάνουν Subscribe στο Telegram
  []
 
 File: ./images/auto_actions.png Graphic file (type bmp)
 <./images/auto_actions.png>
 
 
-[44]
-Overfull \hbox (2.22433pt too wide) in paragraph at lines 1044--1045
-[]\TU/Helvetica(1)/m/n/12 Σύνταξη \TU/Menlo(1)/m/n/12 [object.property] \TU/Hel
-vetica(1)/m/n/12 για πρόσβαση σε εμφωλευ-
- []
-
-Missing character: There is no 🏠 (U+1F3E0) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
+[26]
+Missing character: There is no 🏠 (U+1F3E0) in font Courier New/OT:script=grek;l
+anguage=dflt;!
+Missing character: There is no 👤 (U+1F464) in font Courier New/OT:script=grek;l
+anguage=dflt;!
 
 
-[45]
-Missing character: There is no 👤 (U+1F464) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
-Missing character: There is no 👪 (U+1F46A) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
-Missing character: There is no 📆 (U+1F4C6) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
-Missing character: There is no 📍 (U+1F4CD) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
-Missing character: There is no 💰 (U+1F4B0) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
-Missing character: There is no 💲 (U+1F4B2) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
-Missing character: There is no 📞 (U+1F4DE) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
-Missing character: There is no 🗨 (U+1F5E8) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
-Missing character: There is no 🗨 (U+1F5E8) in font Menlo Regular/OT:script=DFLT
-;language=dflt;mapping=tex-text;!
+[27]
+Missing character: There is no 👪 (U+1F46A) in font Courier New/OT:script=grek;l
+anguage=dflt;!
+Missing character: There is no 📆 (U+1F4C6) in font Courier New/OT:script=grek;l
+anguage=dflt;!
+Missing character: There is no 📍 (U+1F4CD) in font Courier New/OT:script=grek;l
+anguage=dflt;!
+Missing character: There is no 💰 (U+1F4B0) in font Courier New/OT:script=grek;l
+anguage=dflt;!
+Missing character: There is no 💲 (U+1F4B2) in font Courier New/OT:script=grek;l
+anguage=dflt;!
+Missing character: There is no 📞 (U+1F4DE) in font Courier New/OT:script=grek;l
+anguage=dflt;!
+Missing character: There is no ✉ (U+2709) in font Courier New/OT:script=grek;la
+nguage=dflt;!
+Missing character: There is no 🗨 (U+1F5E8) in font Courier New/OT:script=grek;l
+anguage=dflt;!
+Missing character: There is no 🗨 (U+1F5E8) in font Courier New/OT:script=grek;l
+anguage=dflt;!
 
-Overfull \hbox (7.90884pt too wide) in paragraph at lines 1080--1081
-[]\TU/Helvetica(0)/b/n/12 Trigger Types: \TU/Menlo(1)/m/n/12 before-checkin\TU/
-Helvetica(1)/m/n/12 , \TU/Menlo(1)/m/n/12 after-checkout\TU/Helvetica(1)/m/n/12
- , \TU/Menlo(1)/m/n/12 after-cancellation\TU/Helvetica(1)/m/n/12 , \TU/Menlo(1)
-/m/n/12 after-
+Overfull \hbox (46.43492pt too wide) in paragraph at lines 1137--1138
+[]\TU/TimesNewRoman(1)/b/n/12 Trigger Types: \TU/CourierNew(1)/m/n/12 before-ch
+eckin\TU/TimesNewRoman(1)/m/sc/12 , \TU/CourierNew(1)/m/n/12 after-checkout\TU/
+TimesNewRoman(1)/m/sc/12 , \TU/CourierNew(1)/m/n/12 after-cancellation\TU/Times
+NewRoman(1)/m/sc/12 ,
  []
 
 
 
-[46]
+[28]
+Overfull \hbox (49.85573pt too wide) in paragraph at lines 1149--1159
+ [][] 
+ []
+
 File: ./images/time_based_triggers_scenario.png Graphic file (type bmp)
 <./images/time_based_triggers_scenario.png>
 
-Underfull \vbox (badness 1688) has occurred while \output is active []
 
-
-
-[47]
-
-[48]
-Overfull \hbox (21.24596pt too wide) in paragraph at lines 1158--1159
-[]\TU/Helvetica(1)/m/n/12 Η τιμολόγηση και η διαχείριση οικονομικών σχέσεων μετ
-αξύ Platform, Managers
- []
-
-
-Overfull \hbox (31.23534pt too wide) in paragraph at lines 1170--1171
-[]\TU/Helvetica(1)/m/n/12 Επιπλέον, τα Billing records δημιουργούνται όταν υπάρ
-χουν \TU/Helvetica(0)/b/n/12 unallocated bookings
- []
-
-
-Overfull \hbox (0.21077pt too wide) in paragraph at lines 1187--1188
-[]\TU/Helvetica(1)/m/n/12 Στην αρχή κάθε μήνα, εκτελείται αυτόματα το \TU/Menlo
-(1)/m/n/12 everyMonthCron \TU/Helvetica(1)/m/n/12 που δημιουρ-
- []
-
-
-
-[49]
-Overfull \hbox (196.0255pt too wide) in paragraph at lines 1198--1207
+[29]
+Overfull \hbox (37.02957pt too wide) in paragraph at lines 1201--1210
  [][] 
  []
 
 
 
-[50]
-Overfull \hbox (8.68214pt too wide) in paragraph at lines 1264--1265
-\TU/Helvetica(1)/m/n/12 για κάθε Owner ή Staff μέσω του πεδίου \TU/Menlo(1)/m/n
-/12 settings.features\TU/Helvetica(1)/m/n/12 . Τα διαθέσιμα features
+[30]
+
+[31]
+Overfull \hbox (175.89088pt too wide) in paragraph at lines 1255--1264
+ [][] 
  []
 
 
-Overfull \hbox (1.80592pt too wide) in paragraph at lines 1264--1265
-\TU/Helvetica(1)/m/n/12 αφορούν τα Bookings (περιεχόμενο, τιμές, στοιχεία επικο
-ινωνίας), τα Messages
+Overfull \hbox (3.7063pt too wide) in paragraph at lines 1266--1267
+[]\TU/TimesNewRoman(1)/m/sc/12 Όταν ο χρήστης πατάει το «Recalculate» button, τ
+ο \TU/CourierNew(1)/m/n/12 billingBeforeChangeHook
+ []
+
+
+Overfull \hbox (2.47974pt too wide) in paragraph at lines 1266--1267
+\TU/TimesNewRoman(1)/m/sc/12 επανυπολογίζει τις χρεώσεις, αναζητώντας όλες τις 
+κρατήσεις της περιόδου και αθροί-
  []
 
 
 
-[51]
-Overfull \hbox (11.76463pt too wide) in paragraph at lines 1294--1295
-\TU/Helvetica(1)/m/n/12 μές, στοιχεία επικοινωνίας) ακόμη και αν ο χρήστης έχει
- πρόσβαση στο collection. 
+[32]
+Overfull \hbox (0.11751pt too wide) in paragraph at lines 1321--1322
+\TU/TimesNewRoman(1)/m/sc/12 κάθε Owner ή Staff μέσω του πεδίου \TU/CourierNew(
+1)/m/n/12 settings.features\TU/TimesNewRoman(1)/m/sc/12 . Τα διαθέσιμα features
+
  []
 
 
-Overfull \hbox (3.72055pt too wide) in paragraph at lines 1298--1299
-[] []\TU/Helvetica(0)/b/n/12 Παράδειγμα Σεναρίου:[] \TU/Helvetica(1)/m/n/12 Ένα
-ς Manager δημιουργεί έναν χρήστη «Καθαριστής»
+Overfull \hbox (1.03253pt too wide) in paragraph at lines 1321--1322
+\TU/TimesNewRoman(1)/m/sc/12 αφορούν τα Bookings (περιεχόμενο, τιμές, στοιχεία 
+επικοινωνίας), τα Messages (ορα-
+ []
+
+
+Overfull \hbox (2.62918pt too wide) in paragraph at lines 1321--1322
+\TU/TimesNewRoman(1)/m/sc/12 τότητα και δυνατότητα απάντησης), το Property (περ
+ιεχόμενο και rates), και το Billing
+ []
+
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
+k;language=dflt;!
+
+
+[33]
+Overfull \hbox (15.54514pt too wide) in paragraph at lines 1355--1356
+ []\TU/TimesNewRoman(1)/b/n/12 Παράδειγμα Σεναρίου:[] \TU/TimesNewRoman(1)/m/sc
+/12 Ένας Manager δημιουργεί έναν χρήστη «Καθαριστής» (Staff)
  []
 
 File: ./images/access_control_decision_tree.png Graphic file (type bmp)
 <./images/access_control_decision_tree.png>
 
-Underfull \vbox (badness 8170) has occurred while \output is active []
 
+[34]
 
+[35]
 
-[52]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[53]
-
-[54]
-Overfull \hbox (40.28082pt too wide) in paragraph at lines 1375--1386
+[36]
+Overfull \hbox (61.65651pt too wide) in paragraph at lines 1432--1443
  [][] 
  []
 
 
 
+[37]
+
+[38]
+
+[39]
+Overfull \hbox (4.54424pt too wide) in paragraph at lines 1551--1552
+[]\TU/TimesNewRoman(1)/b/n/12 Platform Website: \TU/TimesNewRoman(1)/m/sc/12 Έν
+α συγκεντρωτικό website με όλα τα ακίνητα του Manager 
+ []
+
+
+
+[40]
+Overfull \hbox (10.44664pt too wide) in paragraph at lines 1585--1586
+\TU/TimesNewRoman(1)/m/sc/12 request ανά ημέρα), ακολουθείται άλλη στρατηγική. 
+Γίνεται πρώτα μαζικό update
+ []
+
+
+
+[41]
+
+[42
+
+]
+Κεφάλαιο 5.
+
+
+[43]
+Underfull \hbox (badness 1377) in paragraph at lines 1624--1624
+ []\TU/TimesNewRoman(1)/m/sc/10.95 Σχήμα 5.4: |Διαχείριση Πλάνων Χρέωσης (Plans
+) στο Advanced 
+ []
+
+
+
+[44]
+
+[45]
+
+[46]
+Overfull \hbox (162.43777pt too wide) in paragraph at lines 1668--1669
+[]\TU/TimesNewRoman(1)/b/n/12 Website AI Assistant (OpenRouter): \TU/TimesNewRo
+man(1)/m/sc/12 Στις ιστοσελίδες των καταλυμάτων (\TU/CourierNew(1)/m/n/12 /prop
+erties/[propertyId]\TU/TimesNewRoman(1)/m/sc/12 ),
+ []
+
+
+
+[47]
+Overfull \hbox (43.00026pt too wide) in paragraph at lines 1710--1719
+ [][] 
+ []
+
+
+
+[48]
+
+[49]
+
+[50]
+
+[51]
+
+[52]
+Κεφάλαιο 6.
+
+Overfull \hbox (0.34784pt too wide) in paragraph at lines 1896--1897
+[]\TU/TimesNewRoman(1)/m/sc/12 Η υιοθέτηση του μοντέλου «Backend Framework» με 
+το PayloadCMS v3 και η χρήση
+ []
+
+
+
+[53
+
+]
+
+[54]
+
 [55]
 
-[56]
+[56
+
+]
+Κεφάλαιο 7.
+
 
 [57]
-Overfull \hbox (3.74146pt too wide) in paragraph at lines 1509--1510
-[]\TU/Helvetica(0)/b/n/12 Φίλτρα: \TU/Helvetica(1)/m/n/12 Δυνατότητα επιλογής σ
-υγκεκριμένων καταλυμάτων για προβολή. 
+Overfull \hbox (3.43486pt too wide) in paragraph at lines 2008--2009
+[]\TU/TimesNewRoman(1)/b/n/12 Για Staff: \TU/TimesNewRoman(1)/m/sc/12 Απλοποιημ
+ένη πρόσβαση σε πληροφορίες κρατήσεων χωρίς να απαι-
+ []
+
+
+Overfull \hbox (11.04907pt too wide) in paragraph at lines 2018--2019
+[]\TU/TimesNewRoman(1)/b/n/12 AI as Enhancement: \TU/TimesNewRoman(1)/m/sc/12 Η
+ AI ενσωμάτωση λειτουργεί καλύτερα ως «enhancement»
  []
 
 
@@ -1612,162 +2027,82 @@ Overfull \hbox (3.74146pt too wide) in paragraph at lines 1509--1510
 [60
 
 ]
-Κεφάλαιο 5.
+Overfull \hbox (26.4567pt too wide) in paragraph at lines 2030--2030
+[]\TU/TimesNewRoman(1)/m/sc/12 PayloadCMS. \TU/TimesNewRoman(1)/m/it/12 Payload
+CMS Documentation\TU/TimesNewRoman(1)/m/sc/12 . 2024. url: [][]$[][][][][] [] [
+] [] [][][][][][][][][][] []
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Overfull \hbox (6.86078pt too wide) in paragraph at lines 2030--2030
+[]\TU/TimesNewRoman(1)/m/sc/12 Eric Jonas []κ.ά. []«  Cloud Programming Simplif
+ied: A Berkeley View on Serverless
+ []
+
+
+Overfull \hbox (1.69281pt too wide) in paragraph at lines 2030--2030
+[]\TU/TimesNewRoman(1)/m/sc/12 Alex Banks []και []Eve Porcello. \TU/TimesNewRom
+an(1)/m/it/12 Learning React: Modern Patterns for Developing
+ []
+
+
+Overfull \hbox (15.10123pt too wide) in paragraph at lines 2030--2030
+[]\TU/TimesNewRoman(1)/m/sc/12 OpenRouter. \TU/TimesNewRoman(1)/m/it/12 OpenRou
+ter Documentation\TU/TimesNewRoman(1)/m/sc/12 . 2024. url: [][]$[][][][][] [] [
+] [] [][][][][][][][][][] []
+ []
 
 
 
-[61]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[61
+
+]
+Overfull \hbox (17.88809pt too wide) in paragraph at lines 2030--2030
+[]\TU/TimesNewRoman(1)/m/sc/12 Rob Law, Daniel Leung []και []Ivan Chan. «  Prog
+ress and Development of Information
+ []
 
 
 
 [62]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[63]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[64]
-
-[65]
-Overfull \hbox (20.1443pt too wide) in paragraph at lines 1652--1661
- [][] 
- []
-
-
-
-[66]
-Overfull \hbox (1.11255pt too wide) in paragraph at lines 1684--1685
-[]\TU/Helvetica(0)/b/n/12 Πρόβλημα: \TU/Helvetica(1)/m/n/12 Το Beds24 στέλνει τ
-α rates σε συμπτυγμένη μορφή (date ranges),
- []
-
-
-
-[67]
-
-[68]
-
-[69]
-
-[70]
-Κεφάλαιο 6.
-
-
-[71
-
-]
-
-[72]
-Κεφάλαιο 7.
-
-Overfull \hbox (11.2975pt too wide) in paragraph at lines 1909--1910
-\TU/Helvetica(1)/m/n/12 σμα μεταξύ Channel Managers και ιδιοκτητών ακινήτων. Πα
-ρέχει στους Managers
- []
-
-
-
-[73
-
-]
-Overfull \hbox (29.7362pt too wide) in paragraph at lines 1958--1959
-[]\TU/Helvetica(0)/b/n/12 AI as Enhancement: \TU/Helvetica(1)/m/n/12 Η AI ενσωμ
-άτωση λειτουργεί καλύτερα ως «enhancement»
- []
-
-
-
-[74]
-Overfull \hbox (3.62738pt too wide) in paragraph at lines 1966--1966
-[]\TU/Helvetica(1)/m/n/12 PayloadCMS. \TU/Helvetica(1)/m/it/12 PayloadCMS Docum
-entation\TU/Helvetica(1)/m/n/12 . 2024. URL: [][]$[][][][][] [] [] [] [][][][][
-][][][][][] []
- []
-
-
-Overfull \hbox (4.82693pt too wide) in paragraph at lines 1966--1966
-[]\TU/Helvetica(1)/m/n/12 Drizzle Team. \TU/Helvetica(1)/m/it/12 Drizzle ORM Do
-cumentation\TU/Helvetica(1)/m/n/12 . 2024. URL: [][]$[][][][][] [] [] [] [][][]
- [] [][][][][][][] []
- []
-
-
-Overfull \hbox (2.20657pt too wide) in paragraph at lines 1966--1966
-[]\TU/Helvetica(1)/m/n/12 pmndrs. \TU/Helvetica(1)/m/it/12 Zustand Documentatio
-n\TU/Helvetica(1)/m/n/12 . 2024. URL: [][]$[][][][][] [] [] [] [][][][] [] [][]
-[][] [] [][] [] [][][][][][][]$[][]
- []
-
-
-Overfull \hbox (12.9526pt too wide) in paragraph at lines 1966--1966
-[]\TU/Helvetica(1)/m/n/12 OpenAPI Initiative. \TU/Helvetica(1)/m/it/12 OpenAPI 
-Specification\TU/Helvetica(1)/m/n/12 . 2024. URL: [][]$[][][][][] [] [] [] [][]
-[][] [] [][][][][][][][] []
- []
-
-
-
-[75
-
-]
-Overfull \hbox (14.36919pt too wide) in paragraph at lines 1966--1966
-[]\TU/Helvetica(1)/m/n/12 Rob Law, Daniel Leung []και []Ivan Chan. “Progress an
-d Development of Information
- []
-
-
-Overfull \hbox (22.52296pt too wide) in paragraph at lines 1966--1966
-\TU/Helvetica(1)/m/n/12 Technology in the Hospitality Industry: Evidence from C
-ornell Hospitality Quarterly”.
- []
-
-
-Overfull \hbox (36.76984pt too wide) in paragraph at lines 1966--1966
-[]\TU/Helvetica(1)/m/n/12 Mark Richards []και []Neal Ford. \TU/Helvetica(1)/m/i
-t/12 Fundamentals of Software Architecture: An Engineering
- []
-
-
-
-[76]
 Παράρτημα \Greeknumeral {1}.
 
 
-[77
+[63
 
 ]
 
-[78
+[64
 
 ]
 Παράρτημα \Greeknumeral {2}.
 
 
-[79] (./thesis.aux)
+[65] (./thesis.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-01-18>
+L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 1A54509DA248808AC5211007158CD924;23349.
+(rerunfilecheck)             Checksum: 5051169DE2A3294037E84E8F57120D36;23528.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25461 strings out of 475338
- 495558 string characters out of 5760919
- 1489066 words of memory out of 5000000
- 48084 multiletter control sequences out of 15000+600000
- 567577 words of font info for 130 fonts, out of 8000000 for 9000
+ 37140 strings out of 475338
+ 814035 string characters out of 5760919
+ 1866433 words of memory out of 5000000
+ 59673 multiletter control sequences out of 15000+600000
+ 563194 words of font info for 126 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 79i,12n,93p,1199b,5358s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 95i,21n,122p,1183b,5561s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thesis.pdf (79 pages).
+Output written on thesis.pdf (85 pages).

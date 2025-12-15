@@ -1,59 +1,92 @@
-%!TEX program = xelatex
-% ============================================================================
-% ΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ - ΠΟΛΥΤΕΧΝΕΙΟ ΚΡΗΤΗΣ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MHL Thesis LaTeX Template
+% Διπλωματική Εργασία - Πολυτεχνείο Κρήτης
 % Σχεδιασμός και Υλοποίηση Πλατφόρμας Διαχείρισης Τουριστικών Καταλυμάτων
 % με Έμφαση στο Rapid Development και την Ενσωμάτωση LLMs
 % 
 % Συγγραφέας: Θεόδωρος Μπάρκας
 % Επιβλέπων: Καθ. Μιχαήλ Γ. Λαγουδάκης
 % Ημερομηνία: Νοέμβριος 2025
-% ============================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[12pt,a4paper,twoside,openright]{report}
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+% Using polyglossia instead of babel for XeLaTeX
+% \PassOptionsToPackage{english,main=greek}{babel}
+\documentclass[
+	12pt, % The default document font size, options: 10pt, 11pt, 12pt
+	% oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+	greek,
+	onehalfspacing, % Single line spacing, alternatives: singlespacing or doublespacing
+	%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+	%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+	liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+	toctotoc, % Uncomment to add the main table of contents to the table of contents
+	parskip, % Uncomment to add space between paragraphs
+	%nohyperref, % Uncomment to not load the hyperref package
+	headsepline, % Uncomment to get a line under the header
+	% chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+	% consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
 
-% ============================================================================
-% PACKAGES
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
 
-% Language and Encoding
+% XeLaTeX font configuration for proper Greek support
 \usepackage{fontspec}
 \usepackage{polyglossia}
 \setdefaultlanguage{greek}
 \setotherlanguage{english}
 
-% Use system fonts - Helvetica has Greek support
-\defaultfontfeatures{Ligatures=TeX}
-\setmainfont{Helvetica}
-\setsansfont{Helvetica Neue}
-\setmonofont{Menlo}[Scale=0.85]
+% Set fonts with Greek support (using system fonts)
+\setmainfont{Times New Roman}[
+  Script=Greek,
+  Ligatures=TeX
+]
+\setsansfont{Arial}[
+  Script=Greek
+]
+\setmonofont{Courier New}[
+  Scale=0.9,
+  Script=Greek
+]
 
-% Define Greek font explicitly
-\newfontfamily\greekfont{Helvetica}
-\newfontfamily\greekfontsf{Helvetica Neue}
-\newfontfamily\greekfonttt{Menlo}[Script=Default,Scale=0.85]
+% Define Greek font explicitly for polyglossia
+\newfontfamily\greekfont{Times New Roman}[Script=Greek]
+\newfontfamily\greekfontsf{Arial}[Script=Greek]
+\newfontfamily\greekfonttt{Courier New}[Script=Greek]
 
-% Page Layout
-\usepackage[
-    top=2.5cm,
-    bottom=2.5cm,
-    left=3cm,
-    right=2.5cm,
-    headheight=15pt
-]{geometry}
+% Fallback for math
+\usepackage{unicode-math}
 
-% Headers and Footers
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\leftmark}
-\fancyhead[LO]{\rightmark}
-\renewcommand{\headrulewidth}{0.4pt}
+% Override Greek caption names for polyglossia compatibility
+\gappto\captionsgreek{%
+  \renewcommand{\abbrevname}{Συντομογραφίες}%
+  \renewcommand{\byname}{του/της}%
+  \renewcommand{\abstractname}{Περίληψη}%
+  \renewcommand{\acknowledgementname}{Ευχαριστίες}%
+  \renewcommand{\contentsname}{Περιεχόμενα}%
+  \renewcommand{\listfigurename}{Κατάλογος Σχημάτων}%
+  \renewcommand{\listtablename}{Κατάλογος Πινάκων}%
+  \renewcommand{\chaptername}{Κεφάλαιο}%
+  \renewcommand{\bibname}{Βιβλιογραφία}%
+}
 
-% Graphics and Figures
-\usepackage{graphicx}
+\usepackage[backend=biber,style=numeric,natbib=true,sorting=none]{biblatex} % Use the bibtex backend with the numeric citation style
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+\usepackage[section]{placeins}
 \usepackage{float}
+\usepackage{comment}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
 \usepackage{subcaption}
+
+% Graphics path
 \graphicspath{{./images/}{./erd/}{./presentation_assets/}}
 
 % Tables
@@ -68,7 +101,6 @@
 
 % Code Listings
 \usepackage{listings}
-\usepackage{xcolor}
 
 \definecolor{codebg}{RGB}{248,248,248}
 \definecolor{codeframe}{RGB}{200,200,200}
@@ -112,88 +144,110 @@
 
 \lstset{style=typescript}
 
-% Mathematics
-\usepackage{amsmath}
-\usepackage{amssymb}
+\makeatletter
+\makeatother
+\def\infinity{\rotatebox{90}{8}}
+\addtocontents{loa}{\def\string\figurename{Algorithm}}
 
-% Hyperlinks and References
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue!60!black,
-    citecolor=green!50!black,
-    urlcolor=blue!70!black,
-    pdftitle={Σχεδιασμός και Υλοποίηση Πλατφόρμας Διαχείρισης Τουριστικών Καταλυμάτων},
-    pdfauthor={Θεόδωρος Μπάρκας},
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY FILES
+%----------------------------------------------------------------------------------------
+
+\addbibresource{references.bib} % The filename of the bibliography
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.5cm, % Inner margin
+	outer=3.8cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
 }
 
-% Bibliography
-\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
-\addbibresource{references.bib}
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
 
-% Captions
-\usepackage{caption}
-\captionsetup{
-    font=small,
-    labelfont=bf,
-    format=hang,
-    margin=10pt
+\thesistitle{Σχεδιασμός και Υλοποίηση Πλατφόρμας Διαχείρισης Τουριστικών Καταλυμάτων με Έμφαση στο Rapid Development και την Ενσωμάτωση LLMs} % Your thesis title
+\author{Θεόδωρος \textsc{Μπάρκας}} % Your name
+\supervisor{Καθ. Μιχαήλ Γ. \textsc{Λαγουδάκης}} % Your supervisor's name
+\degree{Ηλεκτρολόγος Μηχανικός και Μηχανικός Υπολογιστών} % Your degree name
+\subject{Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών} % Your subject area
+\keywords{Διπλωματική Εργασία} % Keywords for your thesis
+\university{\href{https://www.tuc.gr/}{Πολυτεχνείο Κρήτης}} % Your university's name and URL
+\department{\href{https://www.ece.tuc.gr/}{Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών}} % Your department's name and URL
+\group{\href{https://www.mhl.tuc.gr/}{Εργαστήριο Μικροεπεξεργαστών και Υλικού}} % Your research group's name and URL
+\faculty{} % Your faculty's name and URL
+
+\AtBeginDocument{
+	\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+	\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+	\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 }
-
-% Spacing
-\usepackage{setspace}
-\onehalfspacing
-
-% Chapter and Section Formatting
-\usepackage{titlesec}
-\titleformat{\chapter}[display]
-    {\normalfont\huge\bfseries}
-    {\chaptertitlename\ \thechapter}
-    {20pt}
-    {\Huge}
-\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
-
-% Table of Contents Depth
-\setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{3}
 
 % Custom Commands
 \newcommand{\code}[1]{\texttt{#1}}
 \newcommand{\emphasis}[1]{\textit{#1}}
 \newcommand{\important}[1]{\textbf{#1}}
 
-% ============================================================================
-% DOCUMENT
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-% ============================================================================
-% TITLE PAGE
-% ============================================================================
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
 \begin{titlepage}
-    \centering
-    \vspace*{1cm}
-    
-    {\large\bfseries ΠΟΛΥΤΕΧΝΕΙΟ ΚΡΗΤΗΣ}\\[0.3cm]
-    {\large ΣΧΟΛΗ ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ}\\[2cm]
-    
-    \rule{\textwidth}{1.5pt}\\[0.5cm]
-    {\LARGE\bfseries ΣΧΕΔΙΑΣΜΟΣ ΚΑΙ ΥΛΟΠΟΙΗΣΗ ΠΛΑΤΦΟΡΜΑΣ ΔΙΑΧΕΙΡΙΣΗΣ ΤΟΥΡΙΣΤΙΚΩΝ ΚΑΤΑΛΥΜΑΤΩΝ ΜΕ ΕΜΦΑΣΗ ΣΤΟ RAPID DEVELOPMENT ΚΑΙ ΤΗΝ ΕΝΣΩΜΑΤΩΣΗ LLMs}\\[0.5cm]
-    \rule{\textwidth}{1.5pt}\\[2cm]
-    
-    {\Large ΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ}\\[2cm]
-    
-    {\Large\bfseries ΘΕΟΔΩΡΟΣ ΜΠΑΡΚΑΣ}\\[3cm]
-    
-    \vfill
-    
-    {\large ΧΑΝΙΑ, ΝΟΕΜΒΡΙΟΣ 2025}
+	\begin{center}
+		{\scshape\LARGE \univname\par}
+		\vspace{0.3cm} % University name
+		\textsc{\Large Διπλωματική Εργασία}\\[0.3cm] % Thesis type
+
+		\HRule \\[0.3cm] % Horizontal line
+		{\LARGE \bfseries \ttitle\par}\vspace{0.3cm} % Thesis title (reduced from \huge)
+		\HRule \\[0.3cm] % Horizontal line
+
+		\begin{minipage}[t]{0.4\textwidth}
+			\begin{flushleft} \large
+				\emph{Συγγραφέας:}\\
+				\href{https://github.com/barkarian}{\authorname} % Author name
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}[t]{0.5\textwidth}
+			\begin{flushright} \large
+				\emph{Εξεταστική Επιτροπή:} \\
+				\href{https://www.ece.tuc.gr/el/index.php?id=4109&tx_tuclabspersonnel_list[person]=313&tx_tuclabspersonnel_list[action]=person&tx_tuclabspersonnel_list[controller]=List}{\supname}\\ % Supervisor name
+				\href{https://www.tuc.gr/el/index.php?id=5639&tx_tuclabspersonnel_pi3[personid]=285}{Καθ. Αντώνιος \textsc{Δεληγιαννάκης}}\\
+				\href{https://www.tuc.gr/el/index.php?id=5639&tx_tuclabspersonnel_pi3[personid]=361}{Αναπλ. Καθ. Βασίλειος \textsc{Σαμολαδάς}}
+			\end{flushright}
+		\end{minipage}\\[0.2cm]
+
+		\includegraphics[scale=0.18]{images/TUC_logo.png} % University/department logo (reduced from 0.21)
+		
+		\vfill
+
+		\normalsize \textit{Διπλωματική εργασία που υποβλήθηκε για την απόκτηση\\ του διπλώματος \degreename}\\[0.2cm] % University requirement text
+		\textit{στην}\\[0.3cm]
+		\deptname\\\groupname\\[1cm] % Research group name and department name
+
+		\vfill
+
+		{\large Χανιά, Νοέμβριος 2025}\\
+	\end{center}
 \end{titlepage}
 
-% ============================================================================
-% COPYRIGHT PAGE
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
 \thispagestyle{empty}
 \vspace*{\fill}
 
@@ -201,51 +255,22 @@
 
 \vspace{0.5cm}
 
-\noindent«Απαγορεύεται η αντιγραφή, αποθήκευση και διανομή της παρούσας εργασίας, εξ ολοκλήρου ή τμήματος αυτής, για εμπορικό σκοπό. Επιτρέπεται η ανατύπωση, αποθήκευση και διανομή για μη κερδοσκοπικό σκοπό, εκπαιδευτικού ή ερευνητικού χαρακτήρα, με την προϋπόθεση να αναφέρεται η πηγή προέλευσης. Ερωτήματα που αφορούν τη χρήση της εργασίας για άλλη χρήση θα πρέπει να απευθύνονται προς τον συγγραφέα.
+\noindent«Απαγορεύεται η αντιγραφή, αποθήκευση και διανομή της παρούσας εργασίας, εξ ολοκλήρου ή τμήματος αυτής, για εμπορικό σκοπό. Επιτρέπεται η ανατύπωση, αποθήκευση και διανομή για μη κερδοσκοπικό σκοπό, εκπαιδευτικού ή ερευνητικού χαρακτήρα, με την προϋπόθεση να αναφέρεται η πηγή προέλευσης. Ερωτήματα που αφορούν τη χρήση της εργασίας για άλλη χρήση θα πρέπει να απευθύνονται προς τον συγγραφέα.»
 
 \vspace{0.3cm}
 
-\noindent Οι απόψεις και τα συμπεράσματα που περιέχονται σε αυτό το έγγραφο εκφράζουν τον συγγραφέα και δεν πρέπει να ερμηνευθεί ότι αντιπροσωπεύουν τις επίσημες θέσεις του Πολυτεχνείου Κρήτης.»
+\noindent«Οι απόψεις και τα συμπεράσματα που περιέχονται σε αυτό το έγγραφο εκφράζουν τον συγγραφέα και δεν πρέπει να ερμηνευθεί ότι αντιπροσωπεύουν τις επίσημες θέσεις του Πολυτεχνείου Κρήτης.»
 
 \vspace*{\fill}
 \clearpage
 
-% ============================================================================
-% COMMITTEE PAGE
-% ============================================================================
-\thispagestyle{empty}
-\vspace*{3cm}
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE Greek
+%----------------------------------------------------------------------------------------
 
-\begin{center}
-    {\Large\bfseries ΕΞΕΤΑΣΤΙΚΗ ΕΠΙΤΡΟΠΗ}
-\end{center}
-
-\vspace{2cm}
-
-\begin{enumerate}
-    \item \textbf{Καθηγητής Μιχαήλ Γ. Λαγουδάκης} (Επιβλέπων)\\
-    Πολυτεχνείο Κρήτης, Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών
-    
-    \vspace{1cm}
-    
-    \item \textbf{Καθηγητής Αντώνιος Δεληγιαννάκης}\\
-    Πολυτεχνείο Κρήτης, Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών
-    
-    \vspace{1cm}
-    
-    \item \textbf{Αναπληρωτής Καθηγητής Βασίλειος Σαμολαδάς}\\
-    Πολυτεχνείο Κρήτης, Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών
-\end{enumerate}
-
-\vspace*{\fill}
-\clearpage
-
-% ============================================================================
-% ABSTRACT (GREEK)
-% ============================================================================
-\chapter*{Περίληψη}
-\addcontentsline{toc}{chapter}{Περίληψη}
-
+\begin{abstract}
+	\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+	
 Η παρούσα διπλωματική εργασία πραγματεύεται τον σχεδιασμό και την υλοποίηση της πλατφόρμας «Lunarety V2», ενός προηγμένου συστήματος διαχείρισης τουριστικών καταλυμάτων (Property Management System -- PMS) που αξιοποιεί σύγχρονες τεχνολογίες για να προσφέρει λύσεις Rapid Development και ενσωμάτωση Τεχνητής Νοημοσύνης (LLMs). Σκοπός της εργασίας είναι η κάλυψη του κενού που υπάρχει στην αγορά για ένα εργαλείο που απευθύνεται σε διαχειριστές ακινήτων (Managers) οι οποίοι επιβλέπουν πολλαπλούς ιδιοκτήτες (Owners), προσφέροντας διαφάνεια, αυτοματισμό και ευκολία χρήσης που λείπει από τα παραδοσιακά Channel Managers.
 
 Η μεθοδολογία ανάπτυξης βασίστηκε στη χρήση του PayloadCMS v3.0, το οποίο λειτουργεί ως ένα πλήρες backend framework εντός του Next.js, προσφέροντας Code-First ορισμό δομών δεδομένων και ισχυρή τυποποίηση μέσω TypeScript. Η βάση δεδομένων υλοποιήθηκε σε PostgreSQL με χρήση Drizzle ORM, εξασφαλίζοντας ακεραιότητα και ταχύτητα. Η πλατφόρμα ακολουθεί αρχιτεκτονική Monorepo και είναι σχεδιασμένη για Serverless Deployment (π.χ. Vercel), επιτρέποντας στους διαχειριστές να ξεκινούν με μηδενικό κόστος υποδομής και να κλιμακώνονται ανάλογα με τις ανάγκες τους.
@@ -256,16 +281,17 @@
 
 \vspace{1cm}
 \noindent\textbf{Λέξεις-κλειδιά:} Property Management System, Rapid Development, Large Language Models, PayloadCMS, Next.js, TypeScript, Serverless, Channel Manager, Auto Actions
+	
+\end{abstract}
 
-\clearpage
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE English
+%----------------------------------------------------------------------------------------
 
-% ============================================================================
-% ABSTRACT (ENGLISH)
-% ============================================================================
-\chapter*{Abstract}
-\addcontentsline{toc}{chapter}{Abstract}
-
-\begin{english}
+\begin{abstract}
+	\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+    \selectlanguage{english}
+	
 This diploma thesis deals with the design and implementation of the «Lunarety V2» platform, an advanced Property Management System (PMS) that leverages modern technologies to offer Rapid Development solutions and Large Language Model (LLM) integration. The purpose of this work is to bridge the market gap for a tool tailored to Property Managers overseeing multiple Owners, offering transparency, automation, and ease of use often missing from traditional Channel Managers.
 
 The development methodology was based on PayloadCMS v3.0, acting as a full backend framework within Next.js, offering Code-First data structure definitions and strong typing via TypeScript. The database was implemented in PostgreSQL using Drizzle ORM, ensuring data integrity and performance. The platform follows a Monorepo architecture and is designed for Serverless Deployment (e.g., Vercel), allowing managers to start with zero infrastructure costs and scale as needed.
@@ -276,37 +302,65 @@ This work contributes to understanding how modern software architectures and Rap
 
 \vspace{1cm}
 \noindent\textbf{Keywords:} Property Management System, Rapid Development, Large Language Models, PayloadCMS, Next.js, TypeScript, Serverless, Channel Manager, Auto Actions
-\end{english}
 
-\clearpage
+\end{abstract}
 
-% ============================================================================
-% PREFACE / ACKNOWLEDGEMENTS
-% ============================================================================
-\chapter*{Πρόλογος}
-\addcontentsline{toc}{chapter}{Πρόλογος}
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
 
-Θα ήθελα να ευχαριστήσω... (Placeholder for Acknowledgements)
+\begin{acknowledgements}
+	\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+	Θα ήθελα να ευχαριστήσω... (Placeholder for Acknowledgements)
+\end{acknowledgements}
 
-\clearpage
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
 
-% ============================================================================
-% TABLE OF CONTENTS
-% ============================================================================
-\tableofcontents
-\clearpage
+\tableofcontents % Prints the main table of contents
+\listoffigures % Prints the list of figures
+\listoftables % Prints the list of tables
 
-\listoffigures
-\addcontentsline{toc}{chapter}{Κατάλογος Εικόνων}
-\clearpage
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
 
-\listoftables
-\addcontentsline{toc}{chapter}{Κατάλογος Πινάκων}
-\clearpage
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+	\textbf{PMS}	& \textbf{P}roperty \textbf{M}anagement \textbf{S}ystem\\
+	\textbf{LLM}	& \textbf{L}arge \textbf{L}anguage \textbf{M}odel\\
+	\textbf{CMS}	& \textbf{C}ontent \textbf{M}anagement \textbf{S}ystem\\
+	\textbf{API}	& \textbf{A}pplication \textbf{P}rogramming \textbf{I}nterface\\
+	\textbf{OTA}	& \textbf{O}nline \textbf{T}ravel \textbf{A}gency\\
+	\textbf{ORM}	& \textbf{O}bject \textbf{R}elational \textbf{M}apping\\
+	\textbf{SDK}	& \textbf{S}oftware \textbf{D}evelopment \textbf{K}it\\
+	\textbf{SSR}	& \textbf{S}erver \textbf{S}ide \textbf{R}endering\\
+	\textbf{SSG}	& \textbf{S}tatic \textbf{S}ite \textbf{G}eneration\\
+	\textbf{RAD}	& \textbf{R}apid \textbf{A}pplication \textbf{D}evelopment\\
+	\textbf{UI}		& \textbf{U}ser \textbf{I}nterface\\
+	\textbf{UX}		& \textbf{U}ser \textbf{E}xperience\\
+	\textbf{ERD}	& \textbf{E}ntity \textbf{R}elationship \textbf{D}iagram\\
+	\textbf{DTO}	& \textbf{D}ata \textbf{T}ransfer \textbf{O}bject\\
+	\textbf{ACID}	& \textbf{A}tomicity \textbf{C}onsistency \textbf{I}solation \textbf{D}urability\\
+\end{abbreviations}
 
-% ============================================================================
-% CHAPTER 1: INTRODUCTION
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{Αφιερωμένο στην οικογένεια και τους φίλους μου\ldots}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1: INTRODUCTION
+%----------------------------------------------------------------------------------------
+
 \chapter{Εισαγωγή}
 \label{chap:introduction}
 
@@ -345,9 +399,10 @@ This work contributes to understanding how modern software architectures and Rap
 
 Πέρα από την επιχειρησιακή της αξία, η εργασία αυτή αποτελεί μελέτη περίπτωσης για το πώς σύγχρονες τεχνολογίες (Next.js, PayloadCMS, Serverless) συμβάλλουν στο Rapid Application Development (RAD)~\cite{rapid_development}. Η δυνατότητα γρήγορης ανάπτυξης, εύκολου deployment (Serverless)~\cite{vercel} και άμεσης προσαρμογής (Code-First schema) επιτρέπει σε μικρές ομάδες ή μεμονωμένους developers να παράγουν λογισμικό επιχειρησιακού επιπέδου (Enterprise Grade) σε ελάχιστο χρόνο.
 
-% ============================================================================
-% CHAPTER 2: THEORETICAL BACKGROUND
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2: THEORETICAL BACKGROUND
+%----------------------------------------------------------------------------------------
+
 \chapter{Θεωρητικό Υπόβαθρο}
 \label{chap:theory}
 
@@ -441,9 +496,10 @@ This work contributes to understanding how modern software architectures and Rap
     \item \textbf{Modern API:} Διαθέτει ένα σύγχρονο, comprehensive API με υποστήριξη OpenAPI, το οποίο επιτρέπει την εύκολη παραγωγή κώδικα (μέσω \code{swagger-typescript-api}) και την άμεση προσαρμογή σε μελλοντικά updates.
 \end{enumerate}
 
-% ============================================================================
-% CHAPTER 3: METHODOLOGY & REQUIREMENTS ANALYSIS
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3: METHODOLOGY & REQUIREMENTS ANALYSIS
+%----------------------------------------------------------------------------------------
+
 \chapter{Μεθοδολογία και Ανάλυση Απαιτήσεων}
 \label{chap:methodology}
 
@@ -717,9 +773,10 @@ Resend & Email sending & \code{lib/email/} \\
     \label{fig:erd}
 \end{figure}
 
-% ============================================================================
-% CHAPTER 4: IMPLEMENTATION
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	CHAPTER 4: IMPLEMENTATION
+%----------------------------------------------------------------------------------------
+
 \chapter{Υλοποίηση}
 \label{chap:implementation}
 
@@ -1528,9 +1585,10 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \item \textbf{Availability Update:} Για να αποφευχθεί ο φόρτος στο Channel Manager (ένα request ανά ημέρα), ακολουθείται άλλη στρατηγική. Γίνεται πρώτα μαζικό update στο Channel Manager και, εφόσον επιτύχει, ενημερώνονται απευθείας τα Rates στη βάση δεδομένων (Direct DB Update), παρακάμπτοντας τα hooks για ταχύτητα.
 \end{itemize}
 
-% ============================================================================
-% CHAPTER 5: RESULTS
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	CHAPTER 5: RESULTS
+%----------------------------------------------------------------------------------------
+
 \chapter{Αποτελέσματα}
 \label{chap:results}
 
@@ -1825,9 +1883,10 @@ Utility Functions & $\sim$100 & Date handling, formatting \\
 \end{tabular}
 \end{table}
 
-% ============================================================================
-% CHAPTER 6: DISCUSSION
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	CHAPTER 6: DISCUSSION
+%----------------------------------------------------------------------------------------
+
 \chapter{Συζήτηση}
 \label{chap:discussion}
 
@@ -1897,9 +1956,10 @@ Next.js App Router & SSR, Server Actions & Learning curve \\
     \item Commission auto-deduction
 \end{itemize}
 
-% ============================================================================
-% CHAPTER 7: CONCLUSIONS
-% ============================================================================
+%----------------------------------------------------------------------------------------
+%	CHAPTER 7: CONCLUSIONS
+%----------------------------------------------------------------------------------------
+
 \chapter{Συμπεράσματα}
 \label{chap:conclusions}
 
@@ -1960,15 +2020,20 @@ AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέ
 
 Η αρχιτεκτονική της πλατφόρμας επιτρέπει εύκολη επέκταση και συντήρηση, καθιστώντας την μια βιώσιμη λύση για τη σύγχρονη αγορά βραχυχρόνιας μίσθωσης.
 
-% ============================================================================
-% BIBLIOGRAPHY
-% ============================================================================
-\printbibliography[heading=bibintoc,title={Βιβλιογραφία}]
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
 
-% ============================================================================
-% APPENDICES
-% ============================================================================
-\appendix
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Βιβλιογραφία}
+\printbibliography[title={Βιβλιογραφία}]
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
 \chapter{Δομή Webhook Payload}
 \label{app:webhook}
