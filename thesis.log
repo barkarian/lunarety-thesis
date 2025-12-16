@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.8)  16 DEC 2025 18:12
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.8)  16 DEC 2025 18:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2197,8 +2197,8 @@ Overfull \hbox (1.68477pt too wide) in paragraph at lines 1105--1106
 ους δημιουργίας/ενημέρωσης
  []
 
-File: ./images/booking_import_flowchart.jpg Graphic file (type bmp)
-<./images/booking_import_flowchart.jpg>
+File: ./images/booking_import_flowchart.png Graphic file (type bmp)
+<./images/booking_import_flowchart.png>
 
 
 [27]
@@ -2840,8 +2840,8 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37185 strings out of 475338
- 815105 string characters out of 5760919
+ 37184 strings out of 475338
+ 815101 string characters out of 5760919
  1895430 words of memory out of 5000000
  59708 multiletter control sequences out of 15000+600000
  563274 words of font info for 136 fonts, out of 8000000 for 9000
