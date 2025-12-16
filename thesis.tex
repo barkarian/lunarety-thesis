@@ -16,7 +16,7 @@
 % \PassOptionsToPackage{english,main=greek}{babel}
 \documentclass[
 	12pt, % The default document font size, options: 10pt, 11pt, 12pt
-	% oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+	oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
 	greek,
 	onehalfspacing, % Single line spacing, alternatives: singlespacing or doublespacing
 	%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
@@ -513,12 +513,14 @@ This work contributes to understanding how modern software architectures and Rap
     \item[Local API:] Το Next.js σε συνδυασμό με το PayloadCMS το οποίο παρέχει το \code{localAPI}.Το \code{localAPI} επιτρέπει τυποποιημένη (typed) πρόσβαση στη βάση δεδομένων από οποιαδήποτε server function. Αυτό σημαίνει ότι μπορούμε να καλέσουμε \code{payload.find()}, \code{payload.create()}, \code{payload.update()} κ.λπ. με πλήρες autocomplete και type-checking, χωρίς να χρειαζόμαστε HTTP requests.
 \end{description}
 
+\newpage
 \subsection{PayloadCMS: Ο Πυρήνας του Συστήματος}
 \label{subsec:payloadcms}
 
 Το PayloadCMS (ειδικά από την έκδοση 3.0 και μετά) διαφοροποιείται σημαντικά από τα παραδοσιακά CMS (όπως το WordPress ή το Strapi)~\cite{payloadcms}. Λειτουργεί πρωτίστως ως ένα \textbf{Backend Framework} που τρέχει εντός του Next.js, παρόμοια με το Django ή το Laravel, αλλά με τη δύναμη του TypeScript. Αποτελεί τον πυρήνα της πλατφόρμας Lunarety V2 και η κατανόησή του είναι θεμελιώδης για την κατανόηση της αρχιτεκτονικής.
 
 \subsubsection{CollectionConfig: Ο Ενιαίος Ορισμός}
+\label{subsubsec:collectionconfig}
 
 Το κεντρικό concept του PayloadCMS είναι το \textbf{CollectionConfig}. Ένα μόνο αντικείμενο TypeScript ορίζει ταυτόχρονα:
 
@@ -587,18 +589,20 @@ export const Bookings: CollectionConfig = {
   ],
 };
 \end{lstlisting}
-  
-  Στο παραπάνω παράδειγμα:
-  
-  \begin{itemize}
-      \item Το \code{relationship} field type δημιουργεί σχέσεις μεταξύ collections, υποστηρίζοντας one-to-one, one-to-many, και many-to-many relations.
-      \item Το \code{join} field δημιουργεί «virtual» πεδία που υπολογίζονται δυναμικά χωρίς να αποθηκεύονται στη βάση, συνδέοντας εγγραφές μέσω της παράμετρου \code{on} και φιλτράροντας με \code{where}.
-      \item Το \code{filterOptions} φιλτράρει δυναμικά τις επιλογές ενός relationship field βάσει του χρήστη ή άλλων παραμέτρων.
-      \item Το \code{admin.components.Field} επιτρέπει την αντικατάσταση του default input με ένα custom React component (\code{CustomPriceEditor}).
-      \item Το \code{admin.condition} καθορίζει πότε ένα πεδίο είναι ορατό στο UI βάσει δυναμικής λογικής (π.χ. δικαιώματα χρήστη).
-  \end{itemize}
+
+\newpage
+Στο παραπάνω παράδειγμα:
+
+\begin{itemize}
+    \item Το \code{relationship} field type δημιουργεί σχέσεις μεταξύ collections, υποστηρίζοντας one-to-one, one-to-many, και many-to-many relations.
+    \item Το \code{join} field δημιουργεί «virtual» πεδία που υπολογίζονται δυναμικά χωρίς να αποθηκεύονται στη βάση, συνδέοντας εγγραφές μέσω της παράμετρου \code{on} και φιλτράροντας με \code{where}.
+    \item Το \code{filterOptions} φιλτράρει δυναμικά τις επιλογές ενός relationship field βάσει του χρήστη ή άλλων παραμέτρων.
+    \item Το \code{admin.components.Field} επιτρέπει την αντικατάσταση του default input με ένα custom React component (\code{CustomPriceEditor}).
+    \item Το \code{admin.condition} καθορίζει πότε ένα πεδίο είναι ορατό στο UI βάσει δυναμικής λογικής (π.χ. δικαιώματα χρήστη).
+\end{itemize}
 
 \subsubsection{Lifecycle Hooks και Direct Database Access}
+\label{subsubsec:lifecycle-hooks}
 
 Το PayloadCMS παρέχει ένα ισχυρό σύστημα hooks που επιτρέπει την εκτέλεση κώδικα σε συγκεκριμένα σημεία του κύκλου ζωής ενός document:
 
@@ -631,6 +635,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 Αυτή η ευελιξία είναι κρίσιμη για την απόδοση. Κατά την αρχική εισαγωγή ενός Manager (με χιλιάδες rates και bookings), η χρήση του \code{payload.db} αντί του \code{payload.create()} μπορεί να μειώσει τον χρόνο εκτέλεσης από ώρες σε λεπτά.
 
 \subsubsection{Drizzle ORM: Το Υποκείμενο Επίπεδο}
+\label{subsubsec:drizzle-orm}
 
 Το PayloadCMS χρησιμοποιεί το \textbf{Drizzle ORM}~\cite{drizzle} ως το υποκείμενο επίπεδο επικοινωνίας με τη βάση δεδομένων. Το Drizzle είναι ένα ελαφρύ, type-safe ORM που:
 
