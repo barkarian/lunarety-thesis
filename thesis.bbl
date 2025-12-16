@@ -19,63 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
-    \entry{rapid_development}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=f9a9b23864bfb154d68897e7817cedf0}{%
-           family={Martin},
-           familyi={M\bibinitperiod},
-           given={James},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{f9a9b23864bfb154d68897e7817cedf0}
-      \strng{fullhash}{f9a9b23864bfb154d68897e7817cedf0}
-      \strng{fullhashraw}{f9a9b23864bfb154d68897e7817cedf0}
-      \strng{bibnamehash}{f9a9b23864bfb154d68897e7817cedf0}
-      \strng{authorbibnamehash}{f9a9b23864bfb154d68897e7817cedf0}
-      \strng{authornamehash}{f9a9b23864bfb154d68897e7817cedf0}
-      \strng{authorfullhash}{f9a9b23864bfb154d68897e7817cedf0}
-      \strng{authorfullhashraw}{f9a9b23864bfb154d68897e7817cedf0}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-0023767753}
-      \field{journaltitle}{Macmillan Publishing}
-      \field{title}{Rapid Application Development}
-      \field{year}{1991}
-    \endentry
-    \entry{vercel}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=dc173d57136dbe619cbccee88ee6421c}{%
-           family={{Vercel}},
-           familyi={V\bibinitperiod}}}%
-      }
-      \strng{namehash}{dc173d57136dbe619cbccee88ee6421c}
-      \strng{fullhash}{dc173d57136dbe619cbccee88ee6421c}
-      \strng{fullhashraw}{dc173d57136dbe619cbccee88ee6421c}
-      \strng{bibnamehash}{dc173d57136dbe619cbccee88ee6421c}
-      \strng{authorbibnamehash}{dc173d57136dbe619cbccee88ee6421c}
-      \strng{authornamehash}{dc173d57136dbe619cbccee88ee6421c}
-      \strng{authorfullhash}{dc173d57136dbe619cbccee88ee6421c}
-      \strng{authorfullhashraw}{dc173d57136dbe619cbccee88ee6421c}
-      \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Vercel Deployment Documentation}
-      \field{urlday}{1}
-      \field{urlmonth}{11}
-      \field{urlyear}{2024}
-      \field{year}{2024}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://vercel.com/docs
-      \endverb
-      \verb{url}
-      \verb https://vercel.com/docs
-      \endverb
-    \endentry
     \entry{typescript}{book}{}{}
       \name{author}{1}{}{%
         {{hash=bde1e289da0750ba083734527b4f1388}{%
@@ -95,8 +38,8 @@
       \strng{authornamehash}{bde1e289da0750ba083734527b4f1388}
       \strng{authorfullhash}{bde1e289da0750ba083734527b4f1388}
       \strng{authorfullhashraw}{bde1e289da0750ba083734527b4f1388}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1492037651}
@@ -117,8 +60,8 @@
       \strng{authornamehash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
       \strng{authorfullhash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
       \strng{authorfullhashraw}{d82dfd8fad2c4b57c10b4ac98227ae2a}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{PayloadCMS Documentation}
@@ -148,9 +91,9 @@
       \strng{authornamehash}{dc173d57136dbe619cbccee88ee6421c}
       \strng{authorfullhash}{dc173d57136dbe619cbccee88ee6421c}
       \strng{authorfullhashraw}{dc173d57136dbe619cbccee88ee6421c}
-      \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Next.js Documentation}
@@ -245,8 +188,8 @@
       \strng{authornamehash}{65ab23a5e132774bcc3f34c58643d1c1}
       \strng{authorfullhash}{940459bd0d6ccebd69c757b1a11a50fd}
       \strng{authorfullhashraw}{940459bd0d6ccebd69c757b1a11a50fd}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Technical Report No. UCB/EECS-2019-3}
@@ -267,8 +210,8 @@
       \strng{authornamehash}{36423acfb135ffe286ea438eafcb0bc6}
       \strng{authorfullhash}{36423acfb135ffe286ea438eafcb0bc6}
       \strng{authorfullhashraw}{36423acfb135ffe286ea438eafcb0bc6}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{PostgreSQL Documentation}
@@ -298,8 +241,8 @@
       \strng{authornamehash}{ab445a6d3690ce7ec76562abd8f24d08}
       \strng{authorfullhash}{ab445a6d3690ce7ec76562abd8f24d08}
       \strng{authorfullhashraw}{ab445a6d3690ce7ec76562abd8f24d08}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Drizzle ORM Documentation}
@@ -329,8 +272,8 @@
       \strng{authornamehash}{63651b303126a9017bbdab177f35182b}
       \strng{authorfullhash}{63651b303126a9017bbdab177f35182b}
       \strng{authorfullhashraw}{63651b303126a9017bbdab177f35182b}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Shadcn UI Documentation}
@@ -370,8 +313,8 @@
       \strng{authornamehash}{7646e1ed14965980c5bfbf5d108be9b1}
       \strng{authorfullhash}{7646e1ed14965980c5bfbf5d108be9b1}
       \strng{authorfullhashraw}{7646e1ed14965980c5bfbf5d108be9b1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2nd}
@@ -393,8 +336,8 @@
       \strng{authornamehash}{774de16517c80d69a6b299b89561367e}
       \strng{authorfullhash}{774de16517c80d69a6b299b89561367e}
       \strng{authorfullhashraw}{774de16517c80d69a6b299b89561367e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Zustand Documentation}
@@ -424,8 +367,8 @@
       \strng{authornamehash}{2140293a9301207642312840ece53671}
       \strng{authorfullhash}{2140293a9301207642312840ece53671}
       \strng{authorfullhashraw}{2140293a9301207642312840ece53671}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{OpenAPI Specification}
@@ -529,7 +472,7 @@
       \strng{authornamehash}{dc173d57136dbe619cbccee88ee6421c}
       \strng{authorfullhash}{dc173d57136dbe619cbccee88ee6421c}
       \strng{authorfullhashraw}{dc173d57136dbe619cbccee88ee6421c}
-      \field{extraname}{3}
+      \field{extraname}{2}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}

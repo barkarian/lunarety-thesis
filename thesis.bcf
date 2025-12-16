@@ -2373,25 +2373,23 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">rapid_development</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">vercel</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">typescript</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">payloadcms</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">nextjs</bcf:citekey>
-    <bcf:citekey order="5" intorder="2">serverless</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">postgresql</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">drizzle</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">shadcn</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">react</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">zustand</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">openapi</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">llm_applications</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">vercelai</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">openrouter</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">beds24api</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">pms_systems</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">design_patterns</bcf:citekey>
-    <bcf:citekey order="17" intorder="2">software_architecture</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">typescript</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">payloadcms</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">nextjs</bcf:citekey>
+    <bcf:citekey order="3" intorder="2">serverless</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">postgresql</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">drizzle</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">shadcn</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">react</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">zustand</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">openapi</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">llm_applications</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">vercelai</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">openrouter</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">beds24api</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">pms_systems</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">design_patterns</bcf:citekey>
+    <bcf:citekey order="15" intorder="2">software_architecture</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
