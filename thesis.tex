@@ -534,75 +534,69 @@ This work contributes to understanding how modern software architectures and Rap
 Το \code{join} field είναι ιδιαίτερα χρήσιμο καθώς δημιουργεί «virtual» πεδία που δεν αποθηκεύονται στη βάση αλλά υπολογίζονται δυναμικά. Η παράμετρος \code{where} επιτρέπει φιλτράρισμα των σχετιζόμενων εγγραφών.
 
 \newpage
-\begin{lstlisting}[caption={Παράδειγμα CollectionConfig με custom components και conditional logic}]
-  import { CollectionConfig } from 'payload/types';
-  import { CustomPriceEditor } from './components/CustomPriceEditor';
-  
-  export const Bookings: CollectionConfig = {
-    slug: 'bookings',
-    // Access control
-    access: {
-      read: ({ req: { user } }) => {
-        return true;
-      },
+\begin{lstlisting}[caption={Παράδειγμα CollectionConfig με custom components και conditional logic},basicstyle=\scriptsize\ttfamily,aboveskip=0pt,belowskip=0pt,lineskip=0pt]
+import { CollectionConfig } from 'payload/types';
+import { CustomPriceEditor } from './components/CustomPriceEditor';
+
+export const Bookings: CollectionConfig = {
+  slug: 'bookings',
+  // Access control
+  access: {
+    read: ({ req: { user } }) => {
+      return true;
     },
-    // Database schema + UI fields
-    fields: [
-      {
-        name: 'mainBooking',
-        type: 'relationship',
-        relationTo: 'bookings',
-        required:false,
-        // filterOptions: Dynamic filtering based on user
-        filterOptions: ({ user }) => ({
-          manager: { equals: user.id },
-        }),
-      },
-      {
-        name:'relatedBookings',
-        type: 'join',
-        collection: 'bookings',
-        on: 'mainBooking',
-        where: {
-          status: {
-            not_in: ['cancelled'],
-          },
+  },
+  // Database schema + UI fields
+  fields: [
+    {
+      name: 'mainBooking',
+      type: 'relationship',
+      relationTo: 'bookings',
+      required:false,
+      // filterOptions: Dynamic filtering based on user
+      filterOptions: ({ user }) => ({
+        manager: { equals: user.id },
+      }),
+    },
+    {
+      name:'relatedBookings',
+      type: 'join',
+      collection: 'bookings',
+      on: 'mainBooking',
+      where: {
+        status: {
+          not_in: ['cancelled'],
         },
       },
-      {
-        name: 'totalAmount',
-        type: 'number',
-        required: true,
-        admin: {
-          // Custom React component for the Admin UI
-          components: {
-            Field: CustomPriceEditor,
-          },
-          // Conditional display: only show if user has permission
-          condition: (data, siblingData, { user }) => {
-            return user.settings.bookings.canModifyPrices
-          },
+    },
+    {
+      name: 'totalAmount',
+      type: 'number',
+      required: true,
+      admin: {
+        // Custom React component for the Admin UI
+        components: {
+          Field: CustomPriceEditor,
+        },
+        // Conditional display: only show if user has permission
+        condition: (data, siblingData, { user }) => {
+          return user.settings.bookings.canModifyPrices
         },
       },
-    ],
-    // Lifecycle hooks
-    hooks: {
-      beforeChange: [calculateCommission, syncToChannelManager],
-      afterChange: [sendNotifications, updateRelatedRates],
     },
-  };
-  \end{lstlisting}
+  ],
+};
+\end{lstlisting}
   
   Στο παραπάνω παράδειγμα:
   
   \begin{itemize}
+      \item Το \code{relationship} field type δημιουργεί σχέσεις μεταξύ collections, υποστηρίζοντας one-to-one, one-to-many, και many-to-many relations.
+      \item Το \code{join} field δημιουργεί «virtual» πεδία που υπολογίζονται δυναμικά χωρίς να αποθηκεύονται στη βάση, συνδέοντας εγγραφές μέσω της παράμετρου \code{on} και φιλτράροντας με \code{where}.
+      \item Το \code{filterOptions} φιλτράρει δυναμικά τις επιλογές ενός relationship field βάσει του χρήστη ή άλλων παραμέτρων.
       \item Το \code{admin.components.Field} επιτρέπει την αντικατάσταση του default input με ένα custom React component (\code{CustomPriceEditor}).
       \item Το \code{admin.condition} καθορίζει πότε ένα πεδίο είναι ορατό στο UI βάσει δυναμικής λογικής (π.χ. δικαιώματα χρήστη).
-      \item Το \code{filterOptions} φιλτράρει δυναμικά τις επιλογές ενός relationship field.
-      \item Τα \code{hooks} ορίζουν τη business logic που εκτελείται κατά τον κύκλο ζωής του document.
   \end{itemize}
-  
-  \subsubsection{Relations και Joins}
 
 \subsubsection{Lifecycle Hooks και Direct Database Access}
 
