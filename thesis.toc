@@ -20,124 +20,124 @@
 \contentsline {subsection}{\numberline {2.1.1}TypeScript και Type Consistency}{7}{subsection.19}%
 \contentsline {subsection}{\numberline {2.1.2}Next.js ως Θεμέλιο της Αρχιτεκτονικής}{7}{subsection.20}%
 \contentsline {subsection}{\numberline {2.1.3}PayloadCMS: Ο Πυρήνας του Συστήματος}{8}{subsection.21}%
-\contentsline {subsubsection}{CollectionConfig: Ο Ενιαίος Ορισμός}{8}{section*.22}%
-\contentsline {subsubsection}{Lifecycle Hooks και Direct Database Access}{10}{section*.79}%
-\contentsline {subsubsection}{Drizzle ORM: Το Υποκείμενο Επίπεδο}{11}{section*.97}%
-\contentsline {subsection}{\numberline {2.1.4}PostgreSQL ως Βάση Δεδομένων}{11}{subsection.98}%
-\contentsline {subsection}{\numberline {2.1.5}Shadcn UI, React και Zustand}{11}{subsection.99}%
-\contentsline {subsection}{\numberline {2.1.6}Swagger/OpenAPI και Code Generation}{12}{subsection.100}%
-\contentsline {section}{\numberline {2.2}Large Language Models (LLMs)}{12}{section.101}%
-\contentsline {subsection}{\numberline {2.2.1}Vercel AI SDK και Streaming}{12}{subsection.102}%
-\contentsline {subsection}{\numberline {2.2.2}OpenRouter και Πρόσβαση σε Μοντέλα}{12}{subsection.103}%
-\contentsline {section}{\numberline {2.3}Channel Managers και Διασυνδεσιμότητα}{13}{section.104}%
-\contentsline {subsection}{\numberline {2.3.1}Τι είναι ο Channel Manager}{13}{subsection.105}%
-\contentsline {paragraph}{Βασικές Λειτουργίες Channel Manager:}{13}{section*.107}%
-\contentsline {subsection}{\numberline {2.3.2}Γιατί είναι Απαραίτητοι οι Channel Managers}{13}{subsection.108}%
-\contentsline {paragraph}{Παράδειγμα Πρακτικής Εφαρμογής:}{14}{section*.112}%
-\contentsline {subsection}{\numberline {2.3.3}Επιλογή του Beds24}{14}{subsection.113}%
-\contentsline {chapter}{\numberline {3}Μεθοδολογία και Ανάλυση Απαιτήσεων}{15}{chapter.118}%
-\contentsline {section}{\numberline {3.1}Ρόλοι και Ιεραρχία Χρηστών}{15}{section.119}%
-\contentsline {subsection}{\numberline {3.1.1}Τύποι Χρηστών (User Types)}{15}{subsection.124}%
-\contentsline {paragraph}{Platform Users (Admins):}{16}{section*.126}%
-\contentsline {paragraph}{Managers:}{16}{section*.127}%
-\contentsline {paragraph}{Owners:}{16}{section*.128}%
-\contentsline {paragraph}{Staff:}{16}{section*.129}%
-\contentsline {subsection}{\numberline {3.1.2}Ιεραρχικές Σχέσεις και Billing}{17}{subsection.130}%
-\contentsline {section}{\numberline {3.2}Αρχιτεκτονική Συστήματος (Monorepo)}{17}{section.132}%
-\contentsline {subsection}{\numberline {3.2.1}Δομή Monorepo}{18}{subsection.133}%
-\contentsline {subsection}{\numberline {3.2.2}Βασικά Components}{18}{subsection.149}%
-\contentsline {paragraph}{PayloadCMS Core:}{18}{section*.150}%
-\contentsline {paragraph}{Next.js App Router:}{18}{section*.151}%
-\contentsline {paragraph}{Channel Manager API Layer:}{18}{section*.152}%
-\contentsline {subsection}{\numberline {3.2.3}External Integrations}{19}{subsection.153}%
-\contentsline {section}{\numberline {3.3}Μοντέλο Δεδομένων και Σχέσεις}{20}{section.156}%
-\contentsline {subsection}{\numberline {3.3.1}Κύριες Οντότητες (Collections)}{21}{subsection.157}%
-\contentsline {subsection}{\numberline {3.3.2}Σχέσεις Μεταξύ Οντοτήτων}{21}{subsection.159}%
-\contentsline {paragraph}{Property $\leftrightarrow $ Users:}{21}{section*.160}%
-\contentsline {paragraph}{Bookings $\leftrightarrow $ Property $\leftrightarrow $ Users:}{21}{section*.161}%
-\contentsline {paragraph}{Property Rates $\leftrightarrow $ Property $\leftrightarrow $ Bookings:}{22}{section*.162}%
-\contentsline {paragraph}{Auto Actions $\leftrightarrow $ Booking $\leftrightarrow $ Users/Properties:}{22}{section*.163}%
-\contentsline {subsection}{\numberline {3.3.3}Hook System και Lifecycle}{22}{subsection.164}%
-\contentsline {paragraph}{Παράδειγμα Hook Chain για Booking Creation:}{22}{section*.166}%
-\contentsline {chapter}{\numberline {4}Υλοποίηση}{24}{chapter.171}%
-\contentsline {section}{\numberline {4.1}Διαχείριση Κρατήσεων και Συγχρονισμός}{24}{section.172}%
-\contentsline {subsection}{\numberline {4.1.1}Αρχική Σύνδεση και Ρύθμιση Webhooks}{24}{subsection.178}%
-\contentsline {subsection}{\numberline {4.1.2}Μέθοδοι Εισαγωγής Κρατήσεων}{25}{subsection.197}%
-\contentsline {subsubsection}{Α) Mass Import (Property Syncing)}{26}{section*.199}%
-\contentsline {subsubsection}{Β) Webhook Updates (Channel Manager Triggers)}{27}{section*.226}%
-\contentsline {subsubsection}{Γ) UI-Based Booking Creation}{27}{section*.233}%
-\contentsline {subsubsection}{Δ) Website Booking Creation}{29}{section*.251}%
-\contentsline {subsection}{\numberline {4.1.3}Σύστημα Σύνδεσης με Property Rates}{29}{subsection.253}%
-\contentsline {paragraph}{linkRatesToBooking Hook:}{30}{lstlisting.255}%
-\contentsline {paragraph}{touchNightlyRates Hook (Cascade Update):}{30}{section*.280}%
-\contentsline {subsection}{\numberline {4.1.4}Διαχείριση Transactions και Ασφάλεια Δεδομένων}{31}{subsection.304}%
-\contentsline {subsection}{\numberline {4.1.5}Εισαγωγή Properties και Βελτιστοποίηση Property Rates}{31}{subsection.314}%
-\contentsline {paragraph}{Μαζικές Εισαγωγές και Απευθείας Πρόσβαση στη Βάση:}{31}{section*.315}%
-\contentsline {paragraph}{Αρχικοποίηση και Καθημερινή Συντήρηση:}{32}{section*.316}%
-\contentsline {paragraph}{Στρατηγική Εισαγωγής Rates:}{32}{section*.317}%
-\contentsline {paragraph}{Ευρετηρίαση (Indexing) για Βελτιστοποίηση:}{32}{section*.318}%
-\contentsline {paragraph}{Ενημέρωση Rates κατά την Εισαγωγή:}{32}{section*.319}%
-\contentsline {paragraph}{Αλγόριθμος Σύγκρισης Rates:}{32}{section*.320}%
-\contentsline {paragraph}{Βελτιστοποίηση Απόδοσης:}{32}{section*.321}%
-\contentsline {section}{\numberline {4.2}Μηχανισμός Auto Actions}{33}{section.324}%
-\contentsline {subsection}{\numberline {4.2.1}Κατηγορίες Auto Actions}{33}{subsection.325}%
-\contentsline {subsection}{\numberline {4.2.2}Κανάλια Επικοινωνίας}{33}{subsection.329}%
-\contentsline {subsection}{\numberline {4.2.3}Μηχανισμός Προτύπων (Template Engine)}{34}{subsection.331}%
-\contentsline {paragraph}{Τεχνική Υλοποίηση:}{35}{section*.350}%
-\contentsline {paragraph}{Μελλοντική Επέκταση (GUI):}{35}{section*.351}%
-\contentsline {subsection}{\numberline {4.2.4}Time-based Triggers (Cron Jobs)}{35}{subsection.352}%
-\contentsline {subsection}{\numberline {4.2.5}Instant Triggers (Webhooks)}{37}{subsection.369}%
-\contentsline {subsection}{\numberline {4.2.6}Αρχιτεκτονική Cron Jobs}{38}{subsection.370}%
-\contentsline {section}{\numberline {4.3}Σύστημα Χρέωσης και Τιμολόγησης}{38}{section.372}%
-\contentsline {subsection}{\numberline {4.3.1}Αρχιτεκτονική Χρέωσης}{38}{subsection.373}%
-\contentsline {subsection}{\numberline {4.3.2}Αυτόματη Μηνιαία Δημιουργία Bills (Cron Job)}{38}{subsection.376}%
-\contentsline {subsection}{\numberline {4.3.3}Ανάλυση Χρεώσεων (Pricing Breakdown)}{39}{subsection.377}%
-\contentsline {subsection}{\numberline {4.3.4}Προβολή Bills ανά Ρόλο Χρήστη}{39}{subsection.379}%
-\contentsline {subsection}{\numberline {4.3.5}Κατάσταση Πληρωμής}{39}{subsection.381}%
-\contentsline {subsection}{\numberline {4.3.6}Σύστημα Ελέγχου Πρόσβασης (Access Control System)}{40}{subsection.383}%
-\contentsline {paragraph}{Plan Features Configuration:}{40}{section*.386}%
-\contentsline {paragraph}{Πίνακας Δικαιωμάτων ανά Συνδυασμό:}{40}{table.caption.388}%
-\contentsline {paragraph}{Υλοποίηση Access Functions:}{41}{section*.389}%
-\contentsline {paragraph}{Field-Level Access Control:}{41}{section*.390}%
-\contentsline {paragraph}{Παράδειγμα Σεναρίου:}{41}{section*.391}%
-\contentsline {section}{\numberline {4.4}Αυτοματοποιημένη Παραγωγή Ιστοσελίδων}{42}{section.395}%
-\contentsline {subsection}{\numberline {4.4.1}Δομή και Λειτουργία Website}{42}{subsection.396}%
-\contentsline {subsection}{\numberline {4.4.2}Website API Endpoints}{43}{subsection.401}%
-\contentsline {paragraph}{Αλγόριθμος Ελέγχου Διαθεσιμότητας:}{44}{lstlisting.405}%
-\contentsline {subsection}{\numberline {4.4.3}Deploy URL \& Vercel Integration}{45}{subsection.439}%
-\contentsline {subsection}{\numberline {4.4.4}Website Booking Creation Flow}{45}{subsection.445}%
-\contentsline {subsection}{\numberline {4.4.5}Επιχειρηματικές Ευκαιρίες (Platform as OTA)}{46}{subsection.468}%
-\contentsline {section}{\numberline {4.5}Περιβάλλον Χρήστη (Platform UI)}{47}{section.470}%
-\contentsline {subsection}{\numberline {4.5.1}Dashboard και Calendar}{47}{subsection.471}%
-\contentsline {subsection}{\numberline {4.5.2}Σύστημα Μηνυμάτων}{47}{subsection.472}%
-\contentsline {subsection}{\numberline {4.5.3}Διαχείριση Δικαιωμάτων και Drawers}{48}{subsection.473}%
-\contentsline {paragraph}{Παράδειγμα:}{48}{section*.474}%
-\contentsline {paragraph}{Στρατηγικές Ενημέρωσης (Update Strategies):}{48}{section*.475}%
-\contentsline {chapter}{\numberline {5}Αποτελέσματα}{49}{chapter.476}%
-\contentsline {section}{\numberline {5.1}Παρουσίαση της Πλατφόρμας}{49}{section.477}%
-\contentsline {section}{\numberline {5.2}Παρουσίαση του Generated Website}{51}{section.483}%
-\contentsline {section}{\numberline {5.3}Smart Features \& LLM Integration}{53}{section.487}%
-\contentsline {section}{\numberline {5.4}Τεχνικές Προκλήσεις και Λύσεις}{54}{section.488}%
-\contentsline {subsection}{\numberline {5.4.1}Συγχρονισμός Δεδομένων με External APIs}{54}{subsection.489}%
-\contentsline {subsection}{\numberline {5.4.2}Αποφυγή Infinite Loops}{54}{subsection.490}%
-\contentsline {subsection}{\numberline {5.4.3}Απόδοση Μαζικών Εισαγωγών}{54}{subsection.491}%
-\contentsline {subsection}{\numberline {5.4.4}Διαχείριση Σύνθετων Rate Structures}{55}{subsection.510}%
-\contentsline {subsection}{\numberline {5.4.5}Multi-Tenant Data Isolation}{56}{subsection.528}%
-\contentsline {subsection}{\numberline {5.4.6}Time-Zone Management}{57}{subsection.556}%
-\contentsline {section}{\numberline {5.5}Στατιστικά και Μετρήσεις Κώδικα}{58}{section.576}%
-\contentsline {chapter}{\numberline {6}Συζήτηση}{59}{chapter.579}%
-\contentsline {section}{\numberline {6.1}Αξιολόγηση Τεχνολογικών Επιλογών}{59}{section.580}%
-\contentsline {section}{\numberline {6.2}Μελλοντικές Βελτιώσεις}{60}{section.582}%
-\contentsline {subsection}{\numberline {6.2.1}Βελτίωση UX στο Admin Panel}{60}{subsection.583}%
-\contentsline {subsection}{\numberline {6.2.2}Επέκταση Channel Manager Support}{60}{subsection.584}%
-\contentsline {subsection}{\numberline {6.2.3}Mobile Application}{60}{subsection.585}%
-\contentsline {subsection}{\numberline {6.2.4}Advanced Analytics Dashboard}{60}{subsection.586}%
-\contentsline {subsection}{\numberline {6.2.5}Payment Integration}{61}{subsection.587}%
-\contentsline {chapter}{\numberline {7}Συμπεράσματα}{62}{chapter.588}%
-\contentsline {section}{\numberline {7.1}Επίτευξη Στόχων}{62}{section.589}%
-\contentsline {section}{\numberline {7.2}Τεχνικά Συμπεράσματα}{62}{section.591}%
-\contentsline {section}{\numberline {7.3}Επιχειρηματικό Αντίκτυπο}{63}{section.596}%
-\contentsline {section}{\numberline {7.4}Βασικά Διδάγματα}{63}{section.597}%
-\contentsline {chapter}{Βιβλιογραφία}{65}{section*.602}%
-\contentsline {chapter}{\numberline {A}Δομή Webhook Payload}{67}{appendix.604}%
-\contentsline {chapter}{\numberline {B}Παράδειγμα Auto Action Query}{68}{appendix.615}%
+\contentsline {subsubsection}{CollectionConfig: Ο Ενιαίος Ορισμός}{8}{section*.23}%
+\contentsline {subsubsection}{Lifecycle Hooks και Direct Database Access}{11}{section*.80}%
+\contentsline {subsubsection}{Drizzle ORM: Το Υποκείμενο Επίπεδο}{12}{section*.98}%
+\contentsline {subsection}{\numberline {2.1.4}PostgreSQL ως Βάση Δεδομένων}{12}{subsection.99}%
+\contentsline {subsection}{\numberline {2.1.5}Shadcn UI, React και Zustand}{12}{subsection.100}%
+\contentsline {subsection}{\numberline {2.1.6}Swagger/OpenAPI και Code Generation}{13}{subsection.101}%
+\contentsline {section}{\numberline {2.2}Large Language Models (LLMs)}{13}{section.103}%
+\contentsline {subsection}{\numberline {2.2.1}Vercel AI SDK και Streaming}{14}{subsection.104}%
+\contentsline {subsection}{\numberline {2.2.2}OpenRouter και Πρόσβαση σε Μοντέλα}{14}{subsection.105}%
+\contentsline {section}{\numberline {2.3}Channel Managers και Διασυνδεσιμότητα}{14}{section.107}%
+\contentsline {subsection}{\numberline {2.3.1}Τι είναι ο Channel Manager}{14}{subsection.108}%
+\contentsline {paragraph}{Βασικές Λειτουργίες Channel Manager:}{15}{section*.110}%
+\contentsline {subsection}{\numberline {2.3.2}Γιατί είναι Απαραίτητοι οι Channel Managers}{15}{subsection.111}%
+\contentsline {paragraph}{Παράδειγμα Πρακτικής Εφαρμογής:}{16}{section*.115}%
+\contentsline {subsection}{\numberline {2.3.3}Επιλογή του Beds24}{16}{subsection.116}%
+\contentsline {chapter}{\numberline {3}Μεθοδολογία και Ανάλυση Απαιτήσεων}{17}{chapter.121}%
+\contentsline {section}{\numberline {3.1}Ρόλοι και Ιεραρχία Χρηστών}{17}{section.122}%
+\contentsline {subsection}{\numberline {3.1.1}Τύποι Χρηστών (User Types)}{17}{subsection.127}%
+\contentsline {paragraph}{Platform Users (Admins):}{18}{section*.129}%
+\contentsline {paragraph}{Managers:}{18}{section*.130}%
+\contentsline {paragraph}{Owners:}{18}{section*.131}%
+\contentsline {paragraph}{Staff:}{18}{section*.132}%
+\contentsline {subsection}{\numberline {3.1.2}Ιεραρχικές Σχέσεις και Billing}{19}{subsection.133}%
+\contentsline {section}{\numberline {3.2}Αρχιτεκτονική Συστήματος (Monorepo)}{19}{section.135}%
+\contentsline {subsection}{\numberline {3.2.1}Δομή Monorepo}{20}{subsection.136}%
+\contentsline {subsection}{\numberline {3.2.2}Βασικά Components}{20}{subsection.152}%
+\contentsline {paragraph}{PayloadCMS Core:}{20}{section*.153}%
+\contentsline {paragraph}{Next.js App Router:}{20}{section*.154}%
+\contentsline {paragraph}{Channel Manager API Layer:}{20}{section*.155}%
+\contentsline {subsection}{\numberline {3.2.3}External Integrations}{21}{subsection.156}%
+\contentsline {section}{\numberline {3.3}Μοντέλο Δεδομένων και Σχέσεις}{22}{section.159}%
+\contentsline {subsection}{\numberline {3.3.1}Κύριες Οντότητες (Collections)}{23}{subsection.160}%
+\contentsline {subsection}{\numberline {3.3.2}Σχέσεις Μεταξύ Οντοτήτων}{23}{subsection.162}%
+\contentsline {paragraph}{Property $\leftrightarrow $ Users:}{23}{section*.163}%
+\contentsline {paragraph}{Bookings $\leftrightarrow $ Property $\leftrightarrow $ Users:}{23}{section*.164}%
+\contentsline {paragraph}{Property Rates $\leftrightarrow $ Property $\leftrightarrow $ Bookings:}{24}{section*.165}%
+\contentsline {paragraph}{Auto Actions $\leftrightarrow $ Booking $\leftrightarrow $ Users/Properties:}{24}{section*.166}%
+\contentsline {subsection}{\numberline {3.3.3}Hook System και Lifecycle}{24}{subsection.167}%
+\contentsline {paragraph}{Παράδειγμα Hook Chain για Booking Creation:}{24}{section*.169}%
+\contentsline {chapter}{\numberline {4}Υλοποίηση}{26}{chapter.174}%
+\contentsline {section}{\numberline {4.1}Διαχείριση Κρατήσεων και Συγχρονισμός}{26}{section.175}%
+\contentsline {subsection}{\numberline {4.1.1}Αρχική Σύνδεση και Ρύθμιση Webhooks}{26}{subsection.181}%
+\contentsline {subsection}{\numberline {4.1.2}Μέθοδοι Εισαγωγής Κρατήσεων}{27}{subsection.200}%
+\contentsline {subsubsection}{Α) Mass Import (Property Syncing)}{28}{section*.202}%
+\contentsline {subsubsection}{Β) Webhook Updates (Channel Manager Triggers)}{29}{section*.229}%
+\contentsline {subsubsection}{Γ) UI-Based Booking Creation}{29}{section*.236}%
+\contentsline {subsubsection}{Δ) Website Booking Creation}{31}{section*.254}%
+\contentsline {subsection}{\numberline {4.1.3}Σύστημα Σύνδεσης με Property Rates}{31}{subsection.256}%
+\contentsline {paragraph}{linkRatesToBooking Hook:}{32}{lstlisting.258}%
+\contentsline {paragraph}{touchNightlyRates Hook (Cascade Update):}{32}{section*.283}%
+\contentsline {subsection}{\numberline {4.1.4}Διαχείριση Transactions και Ασφάλεια Δεδομένων}{33}{subsection.307}%
+\contentsline {subsection}{\numberline {4.1.5}Εισαγωγή Properties και Βελτιστοποίηση Property Rates}{33}{subsection.317}%
+\contentsline {paragraph}{Μαζικές Εισαγωγές και Απευθείας Πρόσβαση στη Βάση:}{33}{section*.318}%
+\contentsline {paragraph}{Αρχικοποίηση και Καθημερινή Συντήρηση:}{34}{section*.319}%
+\contentsline {paragraph}{Στρατηγική Εισαγωγής Rates:}{34}{section*.320}%
+\contentsline {paragraph}{Ευρετηρίαση (Indexing) για Βελτιστοποίηση:}{34}{section*.321}%
+\contentsline {paragraph}{Ενημέρωση Rates κατά την Εισαγωγή:}{34}{section*.322}%
+\contentsline {paragraph}{Αλγόριθμος Σύγκρισης Rates:}{34}{section*.323}%
+\contentsline {paragraph}{Βελτιστοποίηση Απόδοσης:}{34}{section*.324}%
+\contentsline {section}{\numberline {4.2}Μηχανισμός Auto Actions}{35}{section.327}%
+\contentsline {subsection}{\numberline {4.2.1}Κατηγορίες Auto Actions}{35}{subsection.328}%
+\contentsline {subsection}{\numberline {4.2.2}Κανάλια Επικοινωνίας}{35}{subsection.332}%
+\contentsline {subsection}{\numberline {4.2.3}Μηχανισμός Προτύπων (Template Engine)}{36}{subsection.334}%
+\contentsline {paragraph}{Τεχνική Υλοποίηση:}{37}{section*.353}%
+\contentsline {paragraph}{Μελλοντική Επέκταση (GUI):}{37}{section*.354}%
+\contentsline {subsection}{\numberline {4.2.4}Time-based Triggers (Cron Jobs)}{37}{subsection.355}%
+\contentsline {subsection}{\numberline {4.2.5}Instant Triggers (Webhooks)}{39}{subsection.372}%
+\contentsline {subsection}{\numberline {4.2.6}Αρχιτεκτονική Cron Jobs}{40}{subsection.373}%
+\contentsline {section}{\numberline {4.3}Σύστημα Χρέωσης και Τιμολόγησης}{40}{section.375}%
+\contentsline {subsection}{\numberline {4.3.1}Αρχιτεκτονική Χρέωσης}{40}{subsection.376}%
+\contentsline {subsection}{\numberline {4.3.2}Αυτόματη Μηνιαία Δημιουργία Bills (Cron Job)}{40}{subsection.379}%
+\contentsline {subsection}{\numberline {4.3.3}Ανάλυση Χρεώσεων (Pricing Breakdown)}{41}{subsection.380}%
+\contentsline {subsection}{\numberline {4.3.4}Προβολή Bills ανά Ρόλο Χρήστη}{41}{subsection.382}%
+\contentsline {subsection}{\numberline {4.3.5}Κατάσταση Πληρωμής}{41}{subsection.384}%
+\contentsline {subsection}{\numberline {4.3.6}Σύστημα Ελέγχου Πρόσβασης (Access Control System)}{42}{subsection.386}%
+\contentsline {paragraph}{Plan Features Configuration:}{42}{section*.389}%
+\contentsline {paragraph}{Πίνακας Δικαιωμάτων ανά Συνδυασμό:}{42}{table.caption.391}%
+\contentsline {paragraph}{Υλοποίηση Access Functions:}{43}{section*.392}%
+\contentsline {paragraph}{Field-Level Access Control:}{43}{section*.393}%
+\contentsline {paragraph}{Παράδειγμα Σεναρίου:}{43}{section*.394}%
+\contentsline {section}{\numberline {4.4}Αυτοματοποιημένη Παραγωγή Ιστοσελίδων}{44}{section.398}%
+\contentsline {subsection}{\numberline {4.4.1}Δομή και Λειτουργία Website}{44}{subsection.399}%
+\contentsline {subsection}{\numberline {4.4.2}Website API Endpoints}{45}{subsection.404}%
+\contentsline {paragraph}{Αλγόριθμος Ελέγχου Διαθεσιμότητας:}{46}{lstlisting.408}%
+\contentsline {subsection}{\numberline {4.4.3}Deploy URL \& Vercel Integration}{47}{subsection.442}%
+\contentsline {subsection}{\numberline {4.4.4}Website Booking Creation Flow}{47}{subsection.448}%
+\contentsline {subsection}{\numberline {4.4.5}Επιχειρηματικές Ευκαιρίες (Platform as OTA)}{48}{subsection.471}%
+\contentsline {section}{\numberline {4.5}Περιβάλλον Χρήστη (Platform UI)}{49}{section.473}%
+\contentsline {subsection}{\numberline {4.5.1}Dashboard και Calendar}{49}{subsection.474}%
+\contentsline {subsection}{\numberline {4.5.2}Σύστημα Μηνυμάτων}{49}{subsection.475}%
+\contentsline {subsection}{\numberline {4.5.3}Διαχείριση Δικαιωμάτων και Drawers}{50}{subsection.476}%
+\contentsline {paragraph}{Παράδειγμα:}{50}{section*.477}%
+\contentsline {paragraph}{Στρατηγικές Ενημέρωσης (Update Strategies):}{50}{section*.478}%
+\contentsline {chapter}{\numberline {5}Αποτελέσματα}{51}{chapter.479}%
+\contentsline {section}{\numberline {5.1}Παρουσίαση της Πλατφόρμας}{51}{section.480}%
+\contentsline {section}{\numberline {5.2}Παρουσίαση του Generated Website}{53}{section.486}%
+\contentsline {section}{\numberline {5.3}Smart Features \& LLM Integration}{55}{section.490}%
+\contentsline {section}{\numberline {5.4}Τεχνικές Προκλήσεις και Λύσεις}{56}{section.491}%
+\contentsline {subsection}{\numberline {5.4.1}Συγχρονισμός Δεδομένων με External APIs}{56}{subsection.492}%
+\contentsline {subsection}{\numberline {5.4.2}Αποφυγή Infinite Loops}{56}{subsection.493}%
+\contentsline {subsection}{\numberline {5.4.3}Απόδοση Μαζικών Εισαγωγών}{56}{subsection.494}%
+\contentsline {subsection}{\numberline {5.4.4}Διαχείριση Σύνθετων Rate Structures}{57}{subsection.513}%
+\contentsline {subsection}{\numberline {5.4.5}Multi-Tenant Data Isolation}{58}{subsection.531}%
+\contentsline {subsection}{\numberline {5.4.6}Time-Zone Management}{59}{subsection.559}%
+\contentsline {section}{\numberline {5.5}Στατιστικά και Μετρήσεις Κώδικα}{60}{section.579}%
+\contentsline {chapter}{\numberline {6}Συζήτηση}{61}{chapter.582}%
+\contentsline {section}{\numberline {6.1}Αξιολόγηση Τεχνολογικών Επιλογών}{61}{section.583}%
+\contentsline {section}{\numberline {6.2}Μελλοντικές Βελτιώσεις}{62}{section.585}%
+\contentsline {subsection}{\numberline {6.2.1}Βελτίωση UX στο Admin Panel}{62}{subsection.586}%
+\contentsline {subsection}{\numberline {6.2.2}Επέκταση Channel Manager Support}{62}{subsection.587}%
+\contentsline {subsection}{\numberline {6.2.3}Mobile Application}{62}{subsection.588}%
+\contentsline {subsection}{\numberline {6.2.4}Advanced Analytics Dashboard}{62}{subsection.589}%
+\contentsline {subsection}{\numberline {6.2.5}Payment Integration}{63}{subsection.590}%
+\contentsline {chapter}{\numberline {7}Συμπεράσματα}{64}{chapter.591}%
+\contentsline {section}{\numberline {7.1}Επίτευξη Στόχων}{64}{section.592}%
+\contentsline {section}{\numberline {7.2}Τεχνικά Συμπεράσματα}{64}{section.594}%
+\contentsline {section}{\numberline {7.3}Επιχειρηματικό Αντίκτυπο}{65}{section.599}%
+\contentsline {section}{\numberline {7.4}Βασικά Διδάγματα}{65}{section.600}%
+\contentsline {chapter}{Βιβλιογραφία}{67}{section*.605}%
+\contentsline {chapter}{\numberline {A}Δομή Webhook Payload}{69}{appendix.607}%
+\contentsline {chapter}{\numberline {B}Παράδειγμα Auto Action Query}{70}{appendix.618}%

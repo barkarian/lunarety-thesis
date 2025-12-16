@@ -519,6 +519,13 @@ This work contributes to understanding how modern software architectures and Rap
 
 Το PayloadCMS (ειδικά από την έκδοση 3.0 και μετά) διαφοροποιείται σημαντικά από τα παραδοσιακά CMS (όπως το WordPress ή το Strapi)~\cite{payloadcms}. Λειτουργεί πρωτίστως ως ένα \textbf{Backend Framework} που τρέχει εντός του Next.js, παρόμοια με το Django ή το Laravel, αλλά με τη δύναμη του TypeScript. Αποτελεί τον πυρήνα της πλατφόρμας Lunarety V2 και η κατανόησή του είναι θεμελιώδης για την κατανόηση της αρχιτεκτονικής.
 
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: PayloadCMS Architecture]}\\\small Περιγραφή: Διάγραμμα που δείχνει το PayloadCMS στο κέντρο, με βέλη προς τα εξής στοιχεία: ORM (Drizzle), Lifecycles (Hooks), Admin UI, REST API, GraphQL API, Local API. Το διάγραμμα υπογραμμίζει πώς ένα μόνο CollectionConfig ορίζει όλα αυτά τα στοιχεία ταυτόχρονα, δείχνοντας την ενότητα και την αυτοματοποίηση που προσφέρει το PayloadCMS.\vspace{1cm}}}
+    \caption{Αρχιτεκτονική PayloadCMS: Ένας ενιαίος ορισμός δημιουργεί πολλαπλά επίπεδα λειτουργικότητας.}
+    \label{fig:payloadcms-arch}
+\end{figure}
+
 \subsubsection{CollectionConfig: Ο Ενιαίος Ορισμός}
 \label{subsubsec:collectionconfig}
 
@@ -677,6 +684,13 @@ await db.insert(bookingsTable).values(bookingsArray);
     \item[Client:] Η βιβλιοθήκη \code{openapi-typescript-codegen} χρησιμοποιείται στο Website project για να παράγει έναν πλήρως τυποποιημένο client (SDK), εξασφαλίζοντας ότι το Website είναι πάντα συγχρονισμένο με τις αλλαγές στο API της πλατφόρμας.
 \end{description}
 
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: OpenAPI/Swagger Code Generation Flow]}\\\small Περιγραφή: Διάγραμμα που δείχνει τη ροή από το API Documentation προς την αυτόματη παραγωγή Client. Στο αριστερό μέρος: «API Endpoints» → «OpenAPI/Swagger Documentation» (παραγόμενο από \code{next-swagger-doc}). Στο κέντρο: «OpenAPI Specification (YAML/JSON)». Στο δεξί μέρος: «TypeScript Client SDK» (παραγόμενο από \code{openapi-typescript-codegen}) → «Website Project». Βέλη δείχνουν τη ροή: API → Documentation → Specification → Client Generation → Website. Ετικέτες: «Automatic Documentation», «Type-Safe Client», «Synchronized API». Το διάγραμμα υπογραμμίζει πώς ένα OpenAPI specification μπορεί να χρησιμοποιηθεί για την αυτόματη παραγωγή ενός πλήρως τυποποιημένου client, εξαλείφοντας manual integration work.\vspace{1cm}}}
+    \caption{Ροή παραγωγής Client από OpenAPI/Swagger Documentation.}
+    \label{fig:openapi-codegen-flow}
+\end{figure}
+
 \section{Large Language Models (LLMs)}
 \label{sec:llms}
 
@@ -691,6 +705,13 @@ await db.insert(bookingsTable).values(bookingsArray);
 \label{subsec:openrouter}
 
 Η πλατφόρμα δεν συνδέεται απευθείας με έναν πάροχο (π.χ. OpenAI), αλλά χρησιμοποιεί το \textbf{OpenRouter}~\cite{openrouter}. Το OpenRouter λειτουργεί ως ένας ενδιάμεσος κόμβος (gateway) που παρέχει πρόσβαση σε πληθώρα μοντέλων (GPT-4, Claude 3.5 Sonnet, Llama 3, κ.α.) μέσω ενός ενιαίου API. Αυτό δίνει την ευελιξία στον χρήστη να επιλέξει το μοντέλο που ταιριάζει καλύτερα στις ανάγκες και το budget του, χωρίς αλλαγές στον κώδικα.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: OpenRouter Architecture]}\\\small Περιγραφή: Διάγραμμα που δείχνει το OpenRouter στο κέντρο, με βέλη προς πολλαπλά LLM μοντέλα (GPT-4, Claude 3.5 Sonnet, Llama 3, Mistral, κ.α.) στη μία πλευρά και βέλη προς την Πλατφόρμα Lunarety V2 στην άλλη. Ετικέτες: «Unified API», «Model Selection», «Single Integration Point». Το διάγραμμα υπογραμμίζει πώς το OpenRouter λειτουργεί ως gateway που επιτρέπει πρόσβαση σε πληθώρα μοντέλων μέσω ενός ενιαίου API, εξαλείφοντας την ανάγκη για πολλαπλές ενσωματώσεις.\vspace{1cm}}}
+    \caption{Αρχιτεκτονική OpenRouter: Ένας ενδιάμεσος κόμβος για πρόσβαση σε πληθώρα LLM μοντέλων.}
+    \label{fig:openrouter-arch}
+\end{figure}
 
 \section{Channel Managers και Διασυνδεσιμότητα}
 \label{sec:channel-managers}

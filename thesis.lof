@@ -1,39 +1,42 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces \xpg@aux {}{english}Το τεχνολογικό stack της πλατφόρμας (Next.js, PayloadCMS, PostgreSQL, κ.α.).}}{6}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \xpg@aux {}{english}Αρχιτεκτονική Channel Manager ως ενδιάμεσου κόμβου.}}{13}{figure.caption.106}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \xpg@aux {}{english}Αρχιτεκτονική PayloadCMS: Ένας ενιαίος ορισμός δημιουργεί πολλαπλά επίπεδα λειτουργικότητας.}}{8}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \xpg@aux {}{english}Ροή παραγωγής Client από OpenAPI/Swagger Documentation.}}{13}{figure.caption.102}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \xpg@aux {}{english}Αρχιτεκτονική OpenRouter: Ένας ενδιάμεσος κόμβος για πρόσβαση σε πληθώρα LLM μοντέλων.}}{14}{figure.caption.106}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces \xpg@aux {}{english}Αρχιτεκτονική Channel Manager ως ενδιάμεσου κόμβου.}}{15}{figure.caption.109}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{english}Ιεραρχική δομή ρόλων χρηστών στην πλατφόρμα.}}{17}{figure.caption.131}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{english}Διάγραμμα αρχιτεκτονικής συστήματος (Monorepo).}}{20}{figure.caption.155}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{english}Entity Relationship Diagram (ERD) του μοντέλου δεδομένων της πλατφόρμας.}}{23}{figure.caption.170}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{english}Ιεραρχική δομή ρόλων χρηστών στην πλατφόρμα.}}{19}{figure.caption.134}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{english}Διάγραμμα αρχιτεκτονικής συστήματος (Monorepo).}}{22}{figure.caption.158}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{english}Entity Relationship Diagram (ERD) του μοντέλου δεδομένων της πλατφόρμας.}}{25}{figure.caption.173}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \xpg@aux {}{english}Μέθοδοι εισαγωγής κρατήσεων στην πλατφόρμα.}}{26}{figure.caption.198}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {}{english}Τριπλή δομή προμηθειών (Three-Tier Commission Structure).}}{28}{figure.caption.234}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \xpg@aux {}{english}Ροή δεδομένων συγχρονισμού κρατήσεων με το Beds24.}}{29}{figure.caption.252}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces \xpg@aux {}{english}Σύγκριση απόδοσης εισαγωγής rates.}}{33}{figure.caption.323}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces \xpg@aux {}{english}Διάγραμμα ροής εκτέλεσης των Auto Actions.}}{34}{figure.caption.330}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces \xpg@aux {}{english}Σενάρια λειτουργίας Time-based Triggers για κράτηση της τελευταίας στιγμής (1 μέρα πριν την άφιξη). Στο Σενάριο 1 (μικρό παράθυρο 5 ωρών), η κράτηση χάνει τον κανόνα «2 μέρες πριν» και δεν στέλνεται μήνυμα. Στο Σενάριο 2 (μεγάλο παράθυρο 2 ημερών), η κράτηση εμπίπτει στο παράθυρο και το μήνυμα (π.χ. «The key to open your door is : 2004») αποστέλλεται κανονικά.}}{37}{figure.caption.368}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces \xpg@aux {}{english}Διεπαφή χρήστη Billing.}}{40}{figure.caption.382}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces \xpg@aux {}{english}Decision tree για τον έλεγχο πρόσβασης.}}{42}{figure.caption.394}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces \xpg@aux {}{english}Αρχιτεκτονική σελίδων Website.}}{43}{figure.caption.397}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \xpg@aux {}{english}Ροή επικοινωνίας Website API.}}{44}{figure.caption.402}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces \xpg@aux {}{english}Διαδικασία One-Click Deploy.}}{45}{figure.caption.440}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces \xpg@aux {}{english}Ταξίδι κράτησης επισκέπτη.}}{46}{figure.caption.446}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces \xpg@aux {}{english}Επιχειρηματικό μοντέλο Platform as OTA.}}{47}{figure.caption.469}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \xpg@aux {}{english}Μέθοδοι εισαγωγής κρατήσεων στην πλατφόρμα.}}{28}{figure.caption.201}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {}{english}Τριπλή δομή προμηθειών (Three-Tier Commission Structure).}}{30}{figure.caption.237}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \xpg@aux {}{english}Ροή δεδομένων συγχρονισμού κρατήσεων με το Beds24.}}{31}{figure.caption.255}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \xpg@aux {}{english}Σύγκριση απόδοσης εισαγωγής rates.}}{35}{figure.caption.326}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \xpg@aux {}{english}Διάγραμμα ροής εκτέλεσης των Auto Actions.}}{36}{figure.caption.333}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \xpg@aux {}{english}Σενάρια λειτουργίας Time-based Triggers για κράτηση της τελευταίας στιγμής (1 μέρα πριν την άφιξη). Στο Σενάριο 1 (μικρό παράθυρο 5 ωρών), η κράτηση χάνει τον κανόνα «2 μέρες πριν» και δεν στέλνεται μήνυμα. Στο Σενάριο 2 (μεγάλο παράθυρο 2 ημερών), η κράτηση εμπίπτει στο παράθυρο και το μήνυμα (π.χ. «The key to open your door is : 2004») αποστέλλεται κανονικά.}}{39}{figure.caption.371}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \xpg@aux {}{english}Διεπαφή χρήστη Billing.}}{42}{figure.caption.385}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \xpg@aux {}{english}Decision tree για τον έλεγχο πρόσβασης.}}{44}{figure.caption.397}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \xpg@aux {}{english}Αρχιτεκτονική σελίδων Website.}}{45}{figure.caption.400}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \xpg@aux {}{english}Ροή επικοινωνίας Website API.}}{46}{figure.caption.405}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \xpg@aux {}{english}Διαδικασία One-Click Deploy.}}{47}{figure.caption.443}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces \xpg@aux {}{english}Ταξίδι κράτησης επισκέπτη.}}{48}{figure.caption.449}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces \xpg@aux {}{english}Επιχειρηματικό μοντέλο Platform as OTA.}}{49}{figure.caption.472}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \xpg@aux {}{english}Η σελίδα του Ημερολογίου (Calendar). Το αρχικό ημερολόγιο έχει σχεδιαστεί ως ένα «Easy Calendar». Για τον βασικό χρήστη, λειτουργεί ως μια απλή λίστα καθηκόντων που δείχνει τι πρέπει να γίνει κάθε μέρα (αφίξεις, αναχωρήσεις), καθιστώντας το εξαιρετικά εύχρηστο για την καθημερινότητα. Ωστόσο, προσφέρει τη δυνατότητα προσθήκης περισσότερης λειτουργικότητας για πιο απαιτητικούς χρήστες, χωρίς να θυσιάζεται η ευκολία χρήσης.}}{49}{figure.caption.478}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \xpg@aux {}{english}Η σελίδα των Μηνυμάτων. Το σύστημα μηνυμάτων παρέχει δυνατότητες άμεσης επικοινωνίας, υποστηρίζοντας τη χρήση προτύπων (templates) και τη βελτίωση κειμένου μέσω AI.}}{50}{figure.caption.479}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces \xpg@aux {}{english}Διαχείριση Χρηστών (Users) στο Advanced Dashboard.}}{50}{figure.caption.480}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces \xpg@aux {}{english}Διαχείριση Πλάνων Χρέωσης (Plans) στο Advanced Dashboard.}}{51}{figure.caption.481}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces \xpg@aux {}{english}Διαχείριση Αυτοματισμών (Auto Actions) στο Advanced Dashboard.}}{51}{figure.caption.482}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces \xpg@aux {}{english}Διαδικασία παραγωγής Website από το περιβάλλον του διαχειριστή. Ο διαχειριστής μπορεί με απλά βήματα να δημιουργήσει και να δημοσιεύσει την ιστοσελίδα του καταλύματος, αξιοποιώντας τα δεδομένα που είναι ήδη καταχωρημένα στην πλατφόρμα.}}{52}{figure.caption.484}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces \xpg@aux {}{english}Πλοήγηση επισκέπτη στην παραγόμενη ιστοσελίδα. Η ιστοσελίδα που παράγεται είναι πλήρως λειτουργική, επιτρέποντας στον επισκέπτη να δει λεπτομέρειες του καταλύματος, φωτογραφίες και παροχές, καθώς και να προχωρήσει σε κράτηση.}}{52}{figure.caption.485}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces \xpg@aux {}{english}Δυνατότητες AI και LLM για την εξυπηρέτηση επισκεπτών. Ενσωματωμένες δυνατότητες Τεχνητής Νοημοσύνης επιτρέπουν στους επισκέπτες να αλληλεπιδρούν με έξυπνους βοηθούς για να λαμβάνουν άμεσες απαντήσεις σε ερωτήματα σχετικά με το κατάλυμα και την περιοχή.}}{53}{figure.caption.486}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces \xpg@aux {}{english}Σύγκριση απόδοσης Import.}}{54}{figure.caption.492}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces \xpg@aux {}{english}Μετατροπή δομής Rate.}}{55}{figure.caption.511}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces \xpg@aux {}{english}Απομόνωση δεδομένων Multi-Tenant.}}{56}{figure.caption.529}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces \xpg@aux {}{english}Διαχείριση ζωνών ώρας.}}{57}{figure.caption.557}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces \xpg@aux {}{english}Στατιστικά Κώδικα.}}{58}{figure.caption.577}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \xpg@aux {}{english}Η σελίδα του Ημερολογίου (Calendar). Το αρχικό ημερολόγιο έχει σχεδιαστεί ως ένα «Easy Calendar». Για τον βασικό χρήστη, λειτουργεί ως μια απλή λίστα καθηκόντων που δείχνει τι πρέπει να γίνει κάθε μέρα (αφίξεις, αναχωρήσεις), καθιστώντας το εξαιρετικά εύχρηστο για την καθημερινότητα. Ωστόσο, προσφέρει τη δυνατότητα προσθήκης περισσότερης λειτουργικότητας για πιο απαιτητικούς χρήστες, χωρίς να θυσιάζεται η ευκολία χρήσης.}}{51}{figure.caption.481}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \xpg@aux {}{english}Η σελίδα των Μηνυμάτων. Το σύστημα μηνυμάτων παρέχει δυνατότητες άμεσης επικοινωνίας, υποστηρίζοντας τη χρήση προτύπων (templates) και τη βελτίωση κειμένου μέσω AI.}}{52}{figure.caption.482}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \xpg@aux {}{english}Διαχείριση Χρηστών (Users) στο Advanced Dashboard.}}{52}{figure.caption.483}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \xpg@aux {}{english}Διαχείριση Πλάνων Χρέωσης (Plans) στο Advanced Dashboard.}}{53}{figure.caption.484}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces \xpg@aux {}{english}Διαχείριση Αυτοματισμών (Auto Actions) στο Advanced Dashboard.}}{53}{figure.caption.485}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces \xpg@aux {}{english}Διαδικασία παραγωγής Website από το περιβάλλον του διαχειριστή. Ο διαχειριστής μπορεί με απλά βήματα να δημιουργήσει και να δημοσιεύσει την ιστοσελίδα του καταλύματος, αξιοποιώντας τα δεδομένα που είναι ήδη καταχωρημένα στην πλατφόρμα.}}{54}{figure.caption.487}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces \xpg@aux {}{english}Πλοήγηση επισκέπτη στην παραγόμενη ιστοσελίδα. Η ιστοσελίδα που παράγεται είναι πλήρως λειτουργική, επιτρέποντας στον επισκέπτη να δει λεπτομέρειες του καταλύματος, φωτογραφίες και παροχές, καθώς και να προχωρήσει σε κράτηση.}}{54}{figure.caption.488}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces \xpg@aux {}{english}Δυνατότητες AI και LLM για την εξυπηρέτηση επισκεπτών. Ενσωματωμένες δυνατότητες Τεχνητής Νοημοσύνης επιτρέπουν στους επισκέπτες να αλληλεπιδρούν με έξυπνους βοηθούς για να λαμβάνουν άμεσες απαντήσεις σε ερωτήματα σχετικά με το κατάλυμα και την περιοχή.}}{55}{figure.caption.489}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces \xpg@aux {}{english}Σύγκριση απόδοσης Import.}}{56}{figure.caption.495}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces \xpg@aux {}{english}Μετατροπή δομής Rate.}}{57}{figure.caption.514}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces \xpg@aux {}{english}Απομόνωση δεδομένων Multi-Tenant.}}{58}{figure.caption.532}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces \xpg@aux {}{english}Διαχείριση ζωνών ώρας.}}{59}{figure.caption.560}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces \xpg@aux {}{english}Στατιστικά Κώδικα.}}{60}{figure.caption.580}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
