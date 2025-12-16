@@ -502,34 +502,214 @@ This work contributes to understanding how modern software architectures and Rap
 
 Η επιλογή της TypeScript έναντι της JavaScript αποτέλεσε μονόδρομο για την ανάπτυξη μιας σύγχρονης, κλιμακώσιμης εφαρμογής~\cite{typescript}. Η στατική τυποποίηση (static typing) που προσφέρει εξασφαλίζει «Type Consistency» σε όλο το εύρος της εφαρμογής (Fullstack). Αυτό σημαίνει ότι τα δεδομένα που επιστρέφει το Backend είναι εγγυημένα συμβατά με αυτά που περιμένει το Frontend, μειώνοντας δραματικά τα runtime errors και επιταχύνοντας την ανάπτυξη μέσω του IntelliSense.
 
-\subsection{PayloadCMS: Backend Framework vs CMS}
-\label{subsec:payloadcms}
-
-Το PayloadCMS (ειδικά από την έκδοση 3.0 και μετά) διαφοροποιείται σημαντικά από τα παραδοσιακά CMS (όπως το WordPress ή το Strapi)~\cite{payloadcms}. Λειτουργεί πρωτίστως ως ένα Backend Framework που τρέχει εντός του Next.js, παρόμοια με το Django ή το Laravel, αλλά με τη δύναμη του TypeScript.
-
-\begin{description}
-    \item[Code-First Collections:] Οι δομές δεδομένων (Collections) ορίζονται αποκλειστικά μέσω κώδικα (TypeScript objects), λειτουργώντας ταυτόχρονα ως σχήμα βάσης δεδομένων, μοντέλο API και διεπαφή διαχείρισης.
-    \item[Next.js Integration:] Το backend (Admin panel, API routes, Auth) είναι ενσωματωμένο στην εφαρμογή Next.js, μετατρέποντάς την σε μια full-stack λύση χωρίς την ανάγκη ξεχωριστού server.
-\end{description}
-
-\subsection{Next.js, Server Actions και Monorepo}
+\subsection{Next.js ως Θεμέλιο της Αρχιτεκτονικής}
 \label{subsec:nextjs}
 
-Το Next.js επιλέχθηκε όχι μόνο για τις δυνατότητες Rendering (SSR, SSG) αλλά και για την άριστη συμβατότητά του με Serverless υποδομές~\cite{nextjs,serverless}.
+Το Next.js επιλέχθηκε όχι μόνο για τις δυνατότητες Rendering (SSR, SSG) αλλά και για την άριστη συμβατότητά του με Serverless υποδομές~\cite{nextjs,serverless}. Αποτελεί το θεμέλιο πάνω στο οποίο χτίζεται ολόκληρη η πλατφόρμα, καθώς το PayloadCMS v3 είναι σχεδιασμένο να τρέχει εντός του Next.js.
 
 \begin{description}
     \item[Server Actions:] Μια κρίσιμη λειτουργία που επιτρέπει στο Frontend να καλεί συναρτήσεις του Backend απευθείας, χωρίς την ανάγκη ρητού ορισμού API Endpoints. Αυτό απλοποιεί τη διαχείριση δεδομένων και διατηρεί την τυποποίηση (types) από άκρη σε άκρη.
-    \item[Monorepo:] Η διατήρηση όλου του κώδικα (Frontend, Backend, Webhooks) σε ένα ενιαίο Repository επιτρέπει την κοινή χρήση τύπων και utilities, εξαλείφοντας την ανάγκη για συγχρονισμό μεταξύ διαφορετικών projects.
+    \item[Monorepo Architecture:] Η διατήρηση όλου του κώδικα (Frontend, Backend, Webhooks) σε ένα ενιαίο Repository επιτρέπει την κοινή χρήση τύπων και utilities, εξαλείφοντας την ανάγκη για συγχρονισμό μεταξύ διαφορετικών projects. Η ενσωμάτωση του PayloadCMS στο Next.js καθιστά αυτή την αρχιτεκτονική φυσική και εύκολη στη συντήρηση.
+    \item[Local API:] Το Next.js σε συνδυασμό με το PayloadCMS το οποίο παρέχει το \code{localAPI}.Το \code{localAPI} επιτρέπει τυποποιημένη (typed) πρόσβαση στη βάση δεδομένων από οποιαδήποτε server function. Αυτό σημαίνει ότι μπορούμε να καλέσουμε \code{payload.find()}, \code{payload.create()}, \code{payload.update()} κ.λπ. με πλήρες autocomplete και type-checking, χωρίς να χρειαζόμαστε HTTP requests.
 \end{description}
 
-\subsection{PostgreSQL και Drizzle ORM}
+\subsection{PayloadCMS: Ο Πυρήνας του Συστήματος}
+\label{subsec:payloadcms}
+
+Το PayloadCMS (ειδικά από την έκδοση 3.0 και μετά) διαφοροποιείται σημαντικά από τα παραδοσιακά CMS (όπως το WordPress ή το Strapi)~\cite{payloadcms}. Λειτουργεί πρωτίστως ως ένα \textbf{Backend Framework} που τρέχει εντός του Next.js, παρόμοια με το Django ή το Laravel, αλλά με τη δύναμη του TypeScript. Αποτελεί τον πυρήνα της πλατφόρμας Lunarety V2 και η κατανόησή του είναι θεμελιώδης για την κατανόηση της αρχιτεκτονικής.
+
+\subsubsection{CollectionConfig: Ο Ενιαίος Ορισμός}
+
+Το κεντρικό concept του PayloadCMS είναι το \textbf{CollectionConfig}. Ένα μόνο αντικείμενο TypeScript ορίζει ταυτόχρονα:
+
+\begin{enumerate}
+    \item \textbf{Το σχήμα της βάσης δεδομένων (ORM):} Παρόμοια με τα Django Models ή τα Laravel Eloquent Models, τα fields ορίζουν τις στήλες του πίνακα.
+    \item \textbf{Το REST/GraphQL API:} Αυτόματη δημιουργία endpoints για CRUD operations.
+    \item \textbf{Τη διεπαφή διαχείρισης (Admin UI):} Ένα πλήρως λειτουργικό admin panel που παράγεται αυτόματα.
+    \item \textbf{Τη συμπεριφορά και τη λογική:} Hooks, access control, validation---όλα μέσα στο ίδιο config.
+\end{enumerate}
+
+\begin{lstlisting}[caption={Παράδειγμα CollectionConfig με custom components και conditional logic}]
+import { CollectionConfig } from 'payload/types';
+import { CustomPriceEditor } from './components/CustomPriceEditor';
+
+export const Bookings: CollectionConfig = {
+  slug: 'bookings',
+  // Access control
+  access: {
+    read: ({ req: { user } }) => {
+      return true;
+    },
+  },
+  // Database schema + UI fields
+  fields: [
+    {
+      name: 'mainBooking',
+      type: 'relationship',
+      relationTo: 'bookings',
+      required:false,
+      // filterOptions: Dynamic filtering based on user
+      filterOptions: ({ user }) => ({
+        manager: { equals: user.id },
+      }),
+    },
+    {
+      name:'relatedBookings',
+      type: 'join',
+      collection: 'bookings',
+      on: 'mainBooking',
+      where: {
+        status: {
+          not_in: ['cancelled'],
+        },
+      },
+    },
+    {
+      name: 'pricing',
+      type: 'group',
+      fields: [
+        {
+          name: 'totalAmount',
+          type: 'number',
+          required: true,
+          admin: {
+            // Custom React component for the Admin UI
+            components: {
+              Field: CustomPriceEditor,
+            },
+            // Conditional display: only show if user has permission
+            condition: (data, siblingData, { user }) => {
+              return user.settings.bookings.canModifyPrices
+            },
+          },
+        },
+      ],
+    },
+  ],
+  // Lifecycle hooks
+  hooks: {
+    beforeChange: [calculateCommission, syncToChannelManager],
+    afterChange: [sendNotifications, updateRelatedRates],
+  },
+};
+\end{lstlisting}
+
+Στο παραπάνω παράδειγμα:
+
+\begin{itemize}
+    \item Το \code{admin.components.Field} επιτρέπει την αντικατάσταση του default input με ένα custom React component (\code{CustomPriceEditor}).
+    \item Το \code{admin.condition} καθορίζει πότε ένα πεδίο είναι ορατό στο UI βάσει δυναμικής λογικής (π.χ. δικαιώματα χρήστη).
+    \item Το \code{filterOptions} φιλτράρει δυναμικά τις επιλογές ενός relationship field.
+    \item Τα \code{hooks} ορίζουν τη business logic που εκτελείται κατά τον κύκλο ζωής του document.
+\end{itemize}
+
+\subsubsection{Relations και Joins}
+
+Το PayloadCMS υποστηρίζει πλούσιες σχέσεις μεταξύ collections μέσω του \code{relationship} field type. Υποστηρίζονται one-to-one, one-to-many, και many-to-many σχέσεις, καθώς και polymorphic relations (ένα πεδίο που μπορεί να δείχνει σε πολλαπλά collections).
+
+\begin{lstlisting}[caption={Παράδειγμα Relations με filterOptions και where clauses}]
+// Property Collection - One-to-Many με Bookings
+export const Properties: CollectionConfig = {
+  slug: 'properties',
+  fields: [
+    {
+      name: 'manager',
+      type: 'relationship',
+      relationTo: 'users',
+      required: true,
+      // Filter: Show only users of type 'manager'
+      filterOptions: {
+        type: { equals: 'manager' },
+      },
+    },
+    {
+      name: 'owner',
+      type: 'relationship',
+      relationTo: 'users',
+      // Dynamic filter based on the selected manager
+      filterOptions: ({ siblingData }) => ({
+        type: { equals: 'owner' },
+        managedBy: { equals: siblingData.manager },
+      }),
+    },
+    // Virtual/Join field - reverse lookup
+    {
+      name: 'bookings',
+      type: 'join',
+      collection: 'bookings',
+      on: 'property', // Field in bookings that references this property
+      where: {
+        status: { not_equals: 'cancelled' },
+      },
+    },
+  ],
+};
+
+// Querying with depth and where clauses
+const properties = await payload.find({
+  collection: 'properties',
+  where: {
+    manager: { equals: currentUser.id },
+    'owner.plan.planCommission.commissionType': { equals: 'percentage' },
+  },
+  depth: 2, // Populate nested relationships
+});
+\end{lstlisting}
+
+Το \code{join} field είναι ιδιαίτερα χρήσιμο καθώς δημιουργεί «virtual» πεδία που δεν αποθηκεύονται στη βάση αλλά υπολογίζονται δυναμικά. Η παράμετρος \code{where} επιτρέπει φιλτράρισμα των σχετιζόμενων εγγραφών.
+
+\subsubsection{Lifecycle Hooks και Direct Database Access}
+
+Το PayloadCMS παρέχει ένα ισχυρό σύστημα hooks που επιτρέπει την εκτέλεση κώδικα σε συγκεκριμένα σημεία του κύκλου ζωής ενός document:
+
+\begin{itemize}
+    \item \code{beforeValidate}, \code{beforeChange}, \code{beforeRead}, \code{beforeDelete}
+    \item \code{afterChange}, \code{afterRead}, \code{afterDelete}
+\end{itemize}
+
+Ωστόσο, για operations μεγάλης κλίμακας (mass imports), τα hooks μπορούν να δημιουργήσουν σημαντικό overhead. Για αυτό το λόγο, το PayloadCMS επιτρέπει \textbf{απευθείας πρόσβαση στη βάση δεδομένων}:
+
+\begin{lstlisting}[caption={Standard Lifecycle vs Direct Database Access}]
+// STANDARD: Full lifecycle - hooks execute, validation runs
+const booking = await payload.create({
+  collection: 'bookings',
+  data: bookingData,
+});
+
+// DIRECT DB: Bypass lifecycle - for mass operations
+// Uses Drizzle ORM under the hood
+await payload.db.create({
+  collection: 'bookings',
+  data: dtoPayloadToPayloadDb(bookingData),
+});
+
+// Even lower level: Direct Drizzle access
+const db = payload.db.drizzle;
+await db.insert(bookingsTable).values(bookingsArray);
+\end{lstlisting}
+
+Αυτή η ευελιξία είναι κρίσιμη για την απόδοση. Κατά την αρχική εισαγωγή ενός Manager (με χιλιάδες rates και bookings), η χρήση του \code{payload.db} αντί του \code{payload.create()} μπορεί να μειώσει τον χρόνο εκτέλεσης από ώρες σε λεπτά.
+
+\subsubsection{Drizzle ORM: Το Υποκείμενο Επίπεδο}
+
+Το PayloadCMS χρησιμοποιεί το \textbf{Drizzle ORM}~\cite{drizzle} ως το υποκείμενο επίπεδο επικοινωνίας με τη βάση δεδομένων. Το Drizzle είναι ένα ελαφρύ, type-safe ORM που:
+
+\begin{itemize}
+    \item Παράγει αυτόματα TypeScript types από το schema
+    \item Επιτρέπει raw SQL queries όταν χρειάζεται
+    \item Υποστηρίζει migrations για εξέλιξη του schema
+    \item Είναι σημαντικά πιο performant από βαρύτερα ORMs
+\end{itemize}
+
+\subsection{PostgreSQL ως Βάση Δεδομένων}
 \label{subsec:postgresql}
 
-Η πλατφόρμα βασίζεται στην PostgreSQL~\cite{postgresql}, μια ισχυρή σχεσιακή βάση δεδομένων. Η επικοινωνία με τη βάση γίνεται μέσω του Drizzle ORM~\cite{drizzle}, το οποίο είναι πλήρως συμβατό με το PayloadCMS.
+Η πλατφόρμα βασίζεται στην PostgreSQL~\cite{postgresql}, μια ισχυρή σχεσιακή βάση δεδομένων. Η επιλογή της PostgreSQL έναντι της MongoDB (που υποστηριζόταν στο PayloadCMS v2) έγινε λόγω:
 
 \begin{description}
-    \item[Low-Level Capabilities:] Το Drizzle επιτρέπει στον developer να γράψει σύνθετα SQL queries όταν οι abstraction layers του CMS δεν επαρκούν, προσφέροντας απόλυτο έλεγχο στην απόδοση.
-    \item[Type Safety:] Πλήρης τυποποίηση των queries βάσει του σχήματος της βάσης.
+    \item[ACID Transactions:] Κρίσιμο για τη διατήρηση συνέπειας κατά τον συγχρονισμό με τον Channel Manager.
+    \item[Complex Queries:] Οι πολύπλοκες αναζητήσεις για billing, access control, και analytics είναι πιο αποδοτικές σε σχεσιακή βάση.
+    \item[Relational Integrity:] Οι αυστηρές σχέσεις Manager-Owner-Property-Booking απαιτούν foreign keys και referential integrity.
 \end{description}
 
 \subsection{Shadcn UI, React και Zustand}
@@ -570,11 +750,60 @@ This work contributes to understanding how modern software architectures and Rap
 \section{Channel Managers και Διασυνδεσιμότητα}
 \label{sec:channel-managers}
 
+\subsection{Τι είναι ο Channel Manager}
+\label{subsec:what-is-channel-manager}
+
+Ο \textbf{Channel Manager} είναι ένα λογισμικό που λειτουργεί ως ενδιάμεσος κόμβος μεταξύ των καταλυμάτων και των Online Travel Agencies (OTAs) όπως το Airbnb, το Booking.com, η Expedia, και η Vrbo~\cite{pms_systems}. Ο κύριος ρόλος του είναι να διατηρεί \textbf{συγχρονισμένες τις τιμές και τη διαθεσιμότητα} σε όλα τα κανάλια πώλησης σε πραγματικό χρόνο.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: Channel Manager Architecture]}\\\small Περιγραφή: Διάγραμμα που δείχνει τον Channel Manager στο κέντρο, με βέλη προς τα OTAs (Airbnb, Booking.com, Expedia, Vrbo) στη μία πλευρά και βέλη προς τα Properties/PMS στην άλλη. Ετικέτες: «Rates \& Availability Sync», «Booking Notifications», «Two-way Communication».\vspace{1cm}}}
+    \caption{Αρχιτεκτονική Channel Manager ως ενδιάμεσου κόμβου.}
+    \label{fig:channel-manager-arch}
+\end{figure}
+
+\paragraph{Βασικές Λειτουργίες Channel Manager:}
+
+\begin{itemize}
+    \item \textbf{Συγχρονισμός Διαθεσιμότητας:} Όταν ένα δωμάτιο κλείνει στο Airbnb, ο Channel Manager ενημερώνει αυτόματα το Booking.com και όλα τα άλλα συνδεδεμένα κανάλια ότι το δωμάτιο δεν είναι πλέον διαθέσιμο. Αυτό αποτρέπει τις overbookings.
+    \item \textbf{Συγχρονισμός Τιμών:} Επιτρέπει τον ορισμό τιμών από ένα κεντρικό σημείο, οι οποίες διανέμονται σε όλα τα κανάλια.
+    \item \textbf{Κεντρική Διαχείριση Κρατήσεων:} Όλες οι κρατήσεις από διαφορετικά κανάλια συγκεντρώνονται σε ένα σημείο.
+    \item \textbf{Επικοινωνία με Guests:} Πολλοί Channel Managers προσφέρουν unified inbox για μηνύματα από όλα τα κανάλια.
+\end{itemize}
+
+\subsection{Γιατί είναι Απαραίτητοι οι Channel Managers}
+\label{subsec:why-channel-managers}
+
+Ένα κρίσιμο ερώτημα είναι: \textit{Γιατί δεν συνδέεται η πλατφόρμα απευθείας με τα OTAs;} Η απάντηση είναι πολύπλευρη:
+
+\begin{enumerate}
+    \item \textbf{Περιορισμένη Πρόσβαση σε APIs:} Τα μεγάλα OTAs όπως το \textbf{Airbnb} και το \textbf{Booking.com} δεν παρέχουν δημόσια API access σε τρίτους developers. Η πρόσβαση στα APIs τους απαιτεί:
+    \begin{itemize}
+        \item Εγκεκριμένη συνεργασία (Partnership Agreement)
+        \item Αυστηρές διαδικασίες πιστοποίησης
+        \item Ελάχιστο volume κρατήσεων (συνήθως χιλιάδες ανά μήνα)
+        \item Νομική οντότητα και ασφάλιση
+    \end{itemize}
+    Αυτό καθιστά την απευθείας σύνδεση αδύνατη για τις περισσότερες εταιρείες και startups.
+    
+    \item \textbf{Τεχνική Πολυπλοκότητα:} Κάθε OTA έχει διαφορετικό API format, authentication mechanism, και business logic. Η υποστήριξη πολλαπλών OTAs απευθείας θα απαιτούσε τεράστια προσπάθεια ανάπτυξης και συντήρησης.
+    
+    \item \textbf{Reliability και Support:} Οι Channel Managers έχουν dedicated teams για τη διατήρηση της σύνδεσης με τα OTAs, την αντιμετώπιση API changes, και την επίλυση προβλημάτων.
+\end{enumerate}
+
+\paragraph{Παράδειγμα Πρακτικής Εφαρμογής:}
+Η πλατφόρμα Lunarety V2 δεν μπορεί να λάβει απευθείας API access από το Airbnb ή το Booking.com. Ωστόσο, μέσω της σύνδεσης με τον Channel Manager \textbf{Beds24}, αποκτά πρόσβαση σε όλες τις κρατήσεις και τα μηνύματα από αυτά τα κανάλια. Το Beds24 λειτουργεί ως «γέφυρα» που μεταφράζει τις κλήσεις της πλατφόρμας σε κλήσεις προς τα OTAs.
+
+\subsection{Επιλογή του Beds24}
+\label{subsec:beds24-selection}
+
 Η επιλογή του \textbf{Beds24}~\cite{beds24api} ως Channel Manager δεν ήταν τυχαία. Επιλέχθηκε διότι:
 
 \begin{enumerate}
-    \item \textbf{Δημοφιλία \& Κόστος:} Είναι μια από τις πιο διαδεδομένες και οικονομικές λύσεις στην αγορά~\cite{pms_systems}.
+    \item \textbf{Δημοφιλία \& Κόστος:} Είναι μια από τις πιο διαδεδομένες και οικονομικές λύσεις στην αγορά, με ιδιαίτερη δημοτικότητα στην Ευρώπη.
     \item \textbf{Modern API:} Διαθέτει ένα σύγχρονο, comprehensive API με υποστήριξη OpenAPI, το οποίο επιτρέπει την εύκολη παραγωγή κώδικα (μέσω \code{swagger-typescript-api}) και την άμεση προσαρμογή σε μελλοντικά updates.
+    \item \textbf{Webhook Support:} Υποστηρίζει real-time webhooks για νέες κρατήσεις και μηνύματα, επιτρέποντας instant ενημερώσεις αντί για polling.
+    \item \textbf{Πλήρες Feature Set:} Υποστηρίζει τιμές ανά ημέρα, restrictions (min/max stay), μηνύματα guests, και πολλαπλά κανάλια.
 \end{enumerate}
 
 %----------------------------------------------------------------------------------------

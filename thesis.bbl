@@ -46,37 +46,6 @@
       \field{title}{Programming TypeScript: Making Your JavaScript Applications Scale}
       \field{year}{2019}
     \endentry
-    \entry{payloadcms}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=d82dfd8fad2c4b57c10b4ac98227ae2a}{%
-           family={{PayloadCMS}},
-           familyi={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
-      \strng{fullhash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
-      \strng{fullhashraw}{d82dfd8fad2c4b57c10b4ac98227ae2a}
-      \strng{bibnamehash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
-      \strng{authorbibnamehash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
-      \strng{authornamehash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
-      \strng{authorfullhash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
-      \strng{authorfullhashraw}{d82dfd8fad2c4b57c10b4ac98227ae2a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{PayloadCMS Documentation}
-      \field{urlday}{1}
-      \field{urlmonth}{11}
-      \field{urlyear}{2024}
-      \field{year}{2024}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://payloadcms.com/docs
-      \endverb
-      \verb{url}
-      \verb https://payloadcms.com/docs
-      \endverb
-    \endentry
     \entry{nextjs}{online}{}{}
       \name{author}{1}{}{%
         {{hash=dc173d57136dbe619cbccee88ee6421c}{%
@@ -92,8 +61,8 @@
       \strng{authorfullhash}{dc173d57136dbe619cbccee88ee6421c}
       \strng{authorfullhashraw}{dc173d57136dbe619cbccee88ee6421c}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Next.js Documentation}
@@ -188,43 +157,43 @@
       \strng{authornamehash}{65ab23a5e132774bcc3f34c58643d1c1}
       \strng{authorfullhash}{940459bd0d6ccebd69c757b1a11a50fd}
       \strng{authorfullhashraw}{940459bd0d6ccebd69c757b1a11a50fd}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Technical Report No. UCB/EECS-2019-3}
       \field{title}{Cloud Programming Simplified: A Berkeley View on Serverless Computing}
       \field{year}{2019}
     \endentry
-    \entry{postgresql}{online}{}{}
+    \entry{payloadcms}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=36423acfb135ffe286ea438eafcb0bc6}{%
-           family={{PostgreSQL Global Development Group}},
+        {{hash=d82dfd8fad2c4b57c10b4ac98227ae2a}{%
+           family={{PayloadCMS}},
            familyi={P\bibinitperiod}}}%
       }
-      \strng{namehash}{36423acfb135ffe286ea438eafcb0bc6}
-      \strng{fullhash}{36423acfb135ffe286ea438eafcb0bc6}
-      \strng{fullhashraw}{36423acfb135ffe286ea438eafcb0bc6}
-      \strng{bibnamehash}{36423acfb135ffe286ea438eafcb0bc6}
-      \strng{authorbibnamehash}{36423acfb135ffe286ea438eafcb0bc6}
-      \strng{authornamehash}{36423acfb135ffe286ea438eafcb0bc6}
-      \strng{authorfullhash}{36423acfb135ffe286ea438eafcb0bc6}
-      \strng{authorfullhashraw}{36423acfb135ffe286ea438eafcb0bc6}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \strng{namehash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
+      \strng{fullhash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
+      \strng{fullhashraw}{d82dfd8fad2c4b57c10b4ac98227ae2a}
+      \strng{bibnamehash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
+      \strng{authorbibnamehash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
+      \strng{authornamehash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
+      \strng{authorfullhash}{d82dfd8fad2c4b57c10b4ac98227ae2a}
+      \strng{authorfullhashraw}{d82dfd8fad2c4b57c10b4ac98227ae2a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{PostgreSQL Documentation}
+      \field{title}{PayloadCMS Documentation}
       \field{urlday}{1}
       \field{urlmonth}{11}
       \field{urlyear}{2024}
       \field{year}{2024}
       \field{urldateera}{ce}
       \verb{urlraw}
-      \verb https://www.postgresql.org/docs/
+      \verb https://payloadcms.com/docs
       \endverb
       \verb{url}
-      \verb https://www.postgresql.org/docs/
+      \verb https://payloadcms.com/docs
       \endverb
     \endentry
     \entry{drizzle}{online}{}{}
@@ -241,8 +210,8 @@
       \strng{authornamehash}{ab445a6d3690ce7ec76562abd8f24d08}
       \strng{authorfullhash}{ab445a6d3690ce7ec76562abd8f24d08}
       \strng{authorfullhashraw}{ab445a6d3690ce7ec76562abd8f24d08}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Drizzle ORM Documentation}
@@ -256,6 +225,37 @@
       \endverb
       \verb{url}
       \verb https://orm.drizzle.team/
+      \endverb
+    \endentry
+    \entry{postgresql}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=36423acfb135ffe286ea438eafcb0bc6}{%
+           family={{PostgreSQL Global Development Group}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{36423acfb135ffe286ea438eafcb0bc6}
+      \strng{fullhash}{36423acfb135ffe286ea438eafcb0bc6}
+      \strng{fullhashraw}{36423acfb135ffe286ea438eafcb0bc6}
+      \strng{bibnamehash}{36423acfb135ffe286ea438eafcb0bc6}
+      \strng{authorbibnamehash}{36423acfb135ffe286ea438eafcb0bc6}
+      \strng{authornamehash}{36423acfb135ffe286ea438eafcb0bc6}
+      \strng{authorfullhash}{36423acfb135ffe286ea438eafcb0bc6}
+      \strng{authorfullhashraw}{36423acfb135ffe286ea438eafcb0bc6}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{PostgreSQL Documentation}
+      \field{urlday}{1}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/
       \endverb
     \endentry
     \entry{shadcn}{online}{}{}
@@ -521,37 +521,6 @@
       \verb https://openrouter.ai/docs
       \endverb
     \endentry
-    \entry{beds24api}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=ed6a9ee013d5e94879fc05e9bc271d67}{%
-           family={{Beds24}},
-           familyi={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{ed6a9ee013d5e94879fc05e9bc271d67}
-      \strng{fullhash}{ed6a9ee013d5e94879fc05e9bc271d67}
-      \strng{fullhashraw}{ed6a9ee013d5e94879fc05e9bc271d67}
-      \strng{bibnamehash}{ed6a9ee013d5e94879fc05e9bc271d67}
-      \strng{authorbibnamehash}{ed6a9ee013d5e94879fc05e9bc271d67}
-      \strng{authornamehash}{ed6a9ee013d5e94879fc05e9bc271d67}
-      \strng{authorfullhash}{ed6a9ee013d5e94879fc05e9bc271d67}
-      \strng{authorfullhashraw}{ed6a9ee013d5e94879fc05e9bc271d67}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Beds24 API Documentation v2.0}
-      \field{urlday}{1}
-      \field{urlmonth}{11}
-      \field{urlyear}{2024}
-      \field{year}{2024}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://beds24.com/api/v2/
-      \endverb
-      \verb{url}
-      \verb https://beds24.com/api/v2/
-      \endverb
-    \endentry
     \entry{pms_systems}{article}{}{}
       \name{author}{3}{}{%
         {{hash=80c3fd59847468e74adcee84537e8d51}{%
@@ -589,6 +558,37 @@
       \field{year}{2020}
       \field{pages}{19\bibrangedash 45}
       \range{pages}{27}
+    \endentry
+    \entry{beds24api}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=ed6a9ee013d5e94879fc05e9bc271d67}{%
+           family={{Beds24}},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed6a9ee013d5e94879fc05e9bc271d67}
+      \strng{fullhash}{ed6a9ee013d5e94879fc05e9bc271d67}
+      \strng{fullhashraw}{ed6a9ee013d5e94879fc05e9bc271d67}
+      \strng{bibnamehash}{ed6a9ee013d5e94879fc05e9bc271d67}
+      \strng{authorbibnamehash}{ed6a9ee013d5e94879fc05e9bc271d67}
+      \strng{authornamehash}{ed6a9ee013d5e94879fc05e9bc271d67}
+      \strng{authorfullhash}{ed6a9ee013d5e94879fc05e9bc271d67}
+      \strng{authorfullhashraw}{ed6a9ee013d5e94879fc05e9bc271d67}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Beds24 API Documentation v2.0}
+      \field{urlday}{1}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://beds24.com/api/v2/
+      \endverb
+      \verb{url}
+      \verb https://beds24.com/api/v2/
+      \endverb
     \endentry
     \entry{design_patterns}{book}{}{}
       \name{author}{4}{}{%
