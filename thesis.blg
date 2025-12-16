@@ -1,15 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'thesis.blg'
-[40] biber-darwin:342> INFO - === Tue Dec 16, 2025, 18:21:10
+[41] biber-darwin:342> INFO - === Tue Dec 16, 2025, 19:26:41
 [50] Biber.pm:421> INFO - Reading 'thesis.bcf'
 [92] Biber.pm:1002> INFO - Found 17 citekeys in bib section 0
-[101] Biber.pm:4487> INFO - Processing section 0
-[107] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
-[108] bibtex.pm:1713> INFO - LaTeX decoding ...
-[117] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[198] UCollate.pm:68> INFO - Overriding locale 'el-GR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[198] UCollate.pm:68> INFO - Overriding locale 'el-GR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[198] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'el-GR'
-[198] Biber.pm:4313> INFO - No sort tailoring available for locale 'el-GR'
-[209] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[218] bbl.pm:779> INFO - Output to thesis.bbl
+[100] Biber.pm:4487> INFO - Processing section 0
+[105] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[107] bibtex.pm:1713> INFO - LaTeX decoding ...
+[115] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[196] UCollate.pm:68> INFO - Overriding locale 'el-GR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[196] UCollate.pm:68> INFO - Overriding locale 'el-GR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[196] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'el-GR'
+[196] Biber.pm:4313> INFO - No sort tailoring available for locale 'el-GR'
+[205] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[209] bbl.pm:779> INFO - Output to thesis.bbl

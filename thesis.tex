@@ -521,7 +521,7 @@ This work contributes to understanding how modern software architectures and Rap
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: PayloadCMS Architecture]}\\\small Περιγραφή: Διάγραμμα που δείχνει το PayloadCMS στο κέντρο, με βέλη προς τα εξής στοιχεία: ORM (Drizzle), Lifecycles (Hooks), Admin UI, REST API, GraphQL API, Local API. Το διάγραμμα υπογραμμίζει πώς ένα μόνο CollectionConfig ορίζει όλα αυτά τα στοιχεία ταυτόχρονα, δείχνοντας την ενότητα και την αυτοματοποίηση που προσφέρει το PayloadCMS.\vspace{1cm}}}
+    \includegraphics[width=\textwidth]{images/payloadCms_architecture_diagram.png}
     \caption{Αρχιτεκτονική PayloadCMS: Ένας ενιαίος ορισμός δημιουργεί πολλαπλά επίπεδα λειτουργικότητας.}
     \label{fig:payloadcms-arch}
 \end{figure}
@@ -686,7 +686,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: OpenAPI/Swagger Code Generation Flow]}\\\small Περιγραφή: Διάγραμμα που δείχνει τη ροή από το API Documentation προς την αυτόματη παραγωγή Client. Στο αριστερό μέρος: «API Endpoints» → «OpenAPI/Swagger Documentation» (παραγόμενο από \code{next-swagger-doc}). Στο κέντρο: «OpenAPI Specification (YAML/JSON)». Στο δεξί μέρος: «TypeScript Client SDK» (παραγόμενο από \code{openapi-typescript-codegen}) → «Website Project». Βέλη δείχνουν τη ροή: API → Documentation → Specification → Client Generation → Website. Ετικέτες: «Automatic Documentation», «Type-Safe Client», «Synchronized API». Το διάγραμμα υπογραμμίζει πώς ένα OpenAPI specification μπορεί να χρησιμοποιηθεί για την αυτόματη παραγωγή ενός πλήρως τυποποιημένου client, εξαλείφοντας manual integration work.\vspace{1cm}}}
+    \includegraphics[width=\textwidth]{images/swagger_code_generation_flow.png}
     \caption{Ροή παραγωγής Client από OpenAPI/Swagger Documentation.}
     \label{fig:openapi-codegen-flow}
 \end{figure}
@@ -708,7 +708,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: OpenRouter Architecture]}\\\small Περιγραφή: Διάγραμμα που δείχνει το OpenRouter στο κέντρο, με βέλη προς πολλαπλά LLM μοντέλα (GPT-4, Claude 3.5 Sonnet, Llama 3, Mistral, κ.α.) στη μία πλευρά και βέλη προς την Πλατφόρμα Lunarety V2 στην άλλη. Ετικέτες: «Unified API», «Model Selection», «Single Integration Point». Το διάγραμμα υπογραμμίζει πώς το OpenRouter λειτουργεί ως gateway που επιτρέπει πρόσβαση σε πληθώρα μοντέλων μέσω ενός ενιαίου API, εξαλείφοντας την ανάγκη για πολλαπλές ενσωματώσεις.\vspace{1cm}}}
+    \includegraphics[width=\textwidth]{images/openrouter_architecture.png}
     \caption{Αρχιτεκτονική OpenRouter: Ένας ενδιάμεσος κόμβος για πρόσβαση σε πληθώρα LLM μοντέλων.}
     \label{fig:openrouter-arch}
 \end{figure}
@@ -723,7 +723,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[ΔΙΑΓΡΑΜΜΑ: Channel Manager Architecture]}\\\small Περιγραφή: Διάγραμμα που δείχνει τον Channel Manager στο κέντρο, με βέλη προς τα OTAs (Airbnb, Booking.com, Expedia, Vrbo) στη μία πλευρά και βέλη προς τα Properties/PMS στην άλλη. Ετικέτες: «Rates \& Availability Sync», «Booking Notifications», «Two-way Communication».\vspace{1cm}}}
+    \includegraphics[width=\textwidth]{images/channel_manager_infographic.png}
     \caption{Αρχιτεκτονική Channel Manager ως ενδιάμεσου κόμβου.}
     \label{fig:channel-manager-arch}
 \end{figure}
