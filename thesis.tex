@@ -273,7 +273,7 @@
 \begin{abstract}
 	\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
 	
-Η παρούσα διπλωματική εργασία πραγματεύεται τον σχεδιασμό και την υλοποίηση της πλατφόρμας «Lunarety V2», ενός προηγμένου συστήματος διαχείρισης τουριστικών καταλυμάτων (Property Management System -- PMS) που αξιοποιεί σύγχρονες τεχνολογίες για να προσφέρει λύσεις Rapid Development και ενσωμάτωση Τεχνητής Νοημοσύνης (LLMs). Σκοπός της εργασίας είναι η κάλυψη του κενού που υπάρχει στην αγορά για ένα εργαλείο που απευθύνεται σε διαχειριστές ακινήτων (Managers) οι οποίοι επιβλέπουν πολλαπλούς ιδιοκτήτες (Owners), προσφέροντας διαφάνεια, αυτοματισμό και ευκολία χρήσης που λείπει από τα παραδοσιακά Channel Managers.
+Η παρούσα διπλωματική εργασία πραγματεύεται τον σχεδιασμό και την υλοποίηση της πλατφόρμας «Lunarety», ενός προηγμένου συστήματος διαχείρισης τουριστικών καταλυμάτων (Property Management System -- PMS) που αξιοποιεί σύγχρονες τεχνολογίες για να προσφέρει λύσεις Rapid Development και ενσωμάτωση Τεχνητής Νοημοσύνης (LLMs). Σκοπός της εργασίας είναι η κάλυψη του κενού που υπάρχει στην αγορά για ένα εργαλείο που απευθύνεται σε διαχειριστές ακινήτων (Managers) οι οποίοι επιβλέπουν πολλαπλούς ιδιοκτήτες (Owners), προσφέροντας διαφάνεια, αυτοματισμό και ευκολία χρήσης που λείπει από τα παραδοσιακά Channel Managers.
 
 Η μεθοδολογία ανάπτυξης βασίστηκε στη χρήση του PayloadCMS v3.0, το οποίο λειτουργεί ως ένα πλήρες backend framework εντός του Next.js, προσφέροντας Code-First ορισμό δομών δεδομένων και ισχυρή τυποποίηση μέσω TypeScript. Η βάση δεδομένων υλοποιήθηκε σε PostgreSQL με χρήση Drizzle ORM, εξασφαλίζοντας ακεραιότητα και ταχύτητα. Η πλατφόρμα ακολουθεί αρχιτεκτονική Monorepo και είναι σχεδιασμένη για Serverless Deployment (π.χ. Vercel), επιτρέποντας στους διαχειριστές να ξεκινούν με μηδενικό κόστος υποδομής και να κλιμακώνονται ανάλογα με τις ανάγκες τους.
 
@@ -311,7 +311,7 @@
 	\bigskip
 \end{center}
 
-This diploma thesis deals with the design and implementation of the «Lunarety V2» platform, an advanced Property Management System (PMS) that leverages modern technologies to offer Rapid Development solutions and Large Language Model (LLM) integration. The purpose of this work is to bridge the market gap for a tool tailored to Property Managers overseeing multiple Owners, offering transparency, automation, and ease of use often missing from traditional Channel Managers.
+This diploma thesis deals with the design and implementation of the «Lunarety» platform, an advanced Property Management System (PMS) that leverages modern technologies to offer Rapid Development solutions and Large Language Model (LLM) integration. The purpose of this work is to bridge the market gap for a tool tailored to Property Managers overseeing multiple Owners, offering transparency, automation, and ease of use often missing from traditional Channel Managers.
 
 The development methodology was based on PayloadCMS v3.0, acting as a full backend framework within Next.js, offering Code-First data structure definitions and strong typing via TypeScript. The database was implemented in PostgreSQL using Drizzle ORM, ensuring data integrity and performance. The platform follows a Monorepo architecture and is designed for Serverless Deployment (e.g., Vercel), allowing managers to start with zero infrastructure costs and scale as needed.
 
@@ -388,11 +388,11 @@ This work contributes to understanding how modern software architectures and Rap
 \section{Αντικείμενο της Μελέτης}
 \label{sec:subject}
 
-Το αντικείμενο της παρούσας διπλωματικής εργασίας είναι ο σχεδιασμός και η ανάπτυξη ενός ολοκληρωμένου πληροφοριακού συστήματος, του «Lunarety V2», για τη διαχείριση τουριστικών καταλυμάτων. Η πλατφόρμα δεν αποτελεί απλώς ένα ακόμη PMS, αλλά μια ολιστική λύση που στοχεύει στην κεντρικοποίηση των λειτουργιών που απαιτούνται από επαγγελματίες διαχειριστές (Managers) και τους πελάτες τους, τους ιδιοκτήτες ακινήτων (Owners). Πέρα από τις βασικές λειτουργίες διαχείρισης κρατήσεων και συγχρονισμού ημερολογίων, η πλατφόρμα ενσωματώνει προηγμένες δυνατότητες Τεχνητής Νοημοσύνης (LLMs) για την υποβοήθηση της επικοινωνίας και την παροχή έξυπνων υπηρεσιών.
+Το αντικείμενο της παρούσας διπλωματικής εργασίας είναι ο σχεδιασμός και η ανάπτυξη ενός ολοκληρωμένου πληροφοριακού συστήματος, του «Lunarety», για τη διαχείριση τουριστικών καταλυμάτων. Η πλατφόρμα δεν αποτελεί απλώς ένα ακόμη PMS, αλλά μια ολιστική λύση που στοχεύει στην κεντρικοποίηση των λειτουργιών που απαιτούνται από επαγγελματίες διαχειριστές (Managers) και τους πελάτες τους, τους ιδιοκτήτες ακινήτων (Owners). Πέρα από τις βασικές λειτουργίες διαχείρισης κρατήσεων και συγχρονισμού ημερολογίων, η πλατφόρμα ενσωματώνει προηγμένες δυνατότητες Τεχνητής Νοημοσύνης (LLMs) για την υποβοήθηση της επικοινωνίας και την παροχή έξυπνων υπηρεσιών.
 
 Κεντρική φιλοσοφία της πλατφόρμας είναι η \textbf{διαχείριση της πολυπλοκότητας ανά ρόλο χρήστη}. Κάθε χρήστης---είτε πρόκειται για Manager, Owner, είτε για απλό προσωπικό (Staff)---αντικρίζει ένα απλό και κατανοητό περιβάλλον εργασίας που περιλαμβάνει μόνο τις πληροφορίες και τις λειτουργίες που αφορούν τον δικό του ρόλο και τις δικές του ευθύνες. Η πολυπλοκότητα του συστήματος παραμένει κρυμμένη από τους χρήστες που δεν χρειάζεται να την γνωρίζουν, ενώ αποκαλύπτεται σταδιακά σε αυτούς που την χρειάζονται. Αυτή η προσέγγιση εξασφαλίζει ότι κάθε χρήστης έχει πλήρη εικόνα για τη δική του εργασία και λογοδοσία, χωρίς να επιβαρύνεται με περιττές πληροφορίες---ένα χαρακτηριστικό που απουσιάζει από τα περισσότερα υπάρχοντα συστήματα PMS.
 
-Επιπλέον, η πλατφόρμα αναγνωρίζει τον \textbf{Property Manager ως εντολοδόχο που δικαιούται προμήθειας}. Τα περισσότερα συστήματα PMS αντιμετωπίζουν τον ιδιοκτήτη ως κάποιον που πληρώνει προμήθεια μόνο στα OTAs (Booking.com, Airbnb), αγνοώντας τη σχέση Manager-Owner. Αυτό αναγκάζει τους Managers να επεξεργάζονται χειροκίνητα τα τιμολόγια και να τα αποστέλλουν στους πελάτες τους. Το Lunarety V2 ενσωματώνει αυτή τη σχέση στον πυρήνα του, αυτοματοποιώντας τον υπολογισμό και την τιμολόγηση των προμηθειών μεταξύ όλων των εμπλεκόμενων μερών.
+Επιπλέον, η πλατφόρμα αναγνωρίζει τον \textbf{Property Manager ως εντολοδόχο που δικαιούται προμήθειας}. Τα περισσότερα συστήματα PMS αντιμετωπίζουν τον ιδιοκτήτη ως κάποιον που πληρώνει προμήθεια μόνο στα OTAs (Booking.com, Airbnb), αγνοώντας τη σχέση Manager-Owner. Αυτό αναγκάζει τους Managers να επεξεργάζονται χειροκίνητα τα τιμολόγια και να τα αποστέλλουν στους πελάτες τους. Το Lunarety ενσωματώνει αυτή τη σχέση στον πυρήνα του, αυτοματοποιώντας τον υπολογισμό και την τιμολόγηση των προμηθειών μεταξύ όλων των εμπλεκόμενων μερών.
 
 Τέλος, η πλατφόρμα διαθέτει ένα \textbf{σύγχρονο και διαισθητικό περιβάλλον χρήστη}, σχεδιασμένο να λειτουργεί άψογα τόσο σε desktop όσο και σε κινητές συσκευές. Η διεπαφή ακολουθεί καθιερωμένα πρότυπα UX που είναι οικεία στους χρήστες από εφαρμογές καθημερινής χρήσης, μειώνοντας δραστικά τον χρόνο εκμάθησης ακόμη και για χρήστες που δυσκολεύονται να υιοθετήσουν νέες τεχνολογίες.
 
@@ -408,12 +408,12 @@ This work contributes to understanding how modern software architectures and Rap
     \item Τα υπάρχοντα συστήματα δεν αναγνωρίζουν τον Manager ως εντολοδόχο με δικαίωμα προμήθειας, αναγκάζοντάς τον να διαχειρίζεται χειροκίνητα τη χρέωση και τιμολόγηση των πελατών του.
 \end{itemize}
 
-Το Lunarety V2 έρχεται να καλύψει αυτό το κενό, προσφέροντας μια ενδιάμεση, φιλική προς τον χρήστη πλατφόρμα, όπου ο Manager ορίζει τα δικαιώματα, τις συνδρομές και την πρόσβαση των Owners, παρέχοντάς τους ακριβώς την πληροφορία που χρειάζονται σε πραγματικό χρόνο.
+Το Lunarety έρχεται να καλύψει αυτό το κενό, προσφέροντας μια ενδιάμεση, φιλική προς τον χρήστη πλατφόρμα, όπου ο Manager ορίζει τα δικαιώματα, τις συνδρομές και την πρόσβαση των Owners, παρέχοντάς τους ακριβώς την πληροφορία που χρειάζονται σε πραγματικό χρόνο.
 
 \subsection{Αρχιτεκτονική Channel Adapter}
 \label{subsec:channel-adapter}
 
-Αντί να αντικαταστήσει τους υπάρχοντες Channel Managers, η πλατφόρμα σχεδιάστηκε ώστε να \textbf{λειτουργεί επιπρόσθετα σε αυτούς} μέσω μιας αρχιτεκτονικής Channel Adapters. Αυτή η προσέγγιση επιτρέπει στους Managers να συνεχίσουν να χρησιμοποιούν τα υπάρχοντα εργαλεία τους (π.χ. Beds24) για τον συγχρονισμό με τα OTAs, ενώ παράλληλα επεκτείνουν τη λειτουργικότητά τους με τα χαρακτηριστικά του Lunarety V2.
+Αντί να αντικαταστήσει τους υπάρχοντες Channel Managers, η πλατφόρμα σχεδιάστηκε ώστε να \textbf{λειτουργεί επιπρόσθετα σε αυτούς} μέσω μιας αρχιτεκτονικής Channel Adapters. Αυτή η προσέγγιση επιτρέπει στους Managers να συνεχίσουν να χρησιμοποιούν τα υπάρχοντα εργαλεία τους (π.χ. Beds24) για τον συγχρονισμό με τα OTAs, ενώ παράλληλα επεκτείνουν τη λειτουργικότητά τους με τα χαρακτηριστικά του Lunarety.
 
 Επί του παρόντος, η πλατφόρμα υποστηρίζει ένα Channel Manager (Beds24), αλλά η αρχιτεκτονική έχει σχεδιαστεί ώστε να επιτρέπει την εύκολη προσθήκη νέων Adapters για επιπλέον Channel Managers στο μέλλον. Κάθε Adapter μεταφράζει τις κλήσεις της πλατφόρμας στο αντίστοιχο API του Channel Manager, διατηρώντας τον υπόλοιπο κώδικα της εφαρμογής ανεξάρτητο από τον συγκεκριμένο πάροχο.
 
@@ -447,7 +447,7 @@ This work contributes to understanding how modern software architectures and Rap
 \section{Συνεισφορά της Πλατφόρμας}
 \label{sec:platform-contribution}
 
-Η πλατφόρμα Lunarety V2 συνεισφέρει ουσιαστικά στην καθημερινότητα όλων των εμπλεκομένων στη διαχείριση τουριστικών καταλυμάτων:
+Η πλατφόρμα Lunarety συνεισφέρει ουσιαστικά στην καθημερινότητα όλων των εμπλεκομένων στη διαχείριση τουριστικών καταλυμάτων:
 
 \begin{description}
     \item[Για τους Property Managers:] Παρέχει ένα κεντρικό εργαλείο διαχείρισης όλων των πελατών τους (Owners) με αυτοματοποιημένη τιμολόγηση, διαφανή υπολογισμό προμηθειών και πλήρη έλεγχο των δικαιωμάτων πρόσβασης. Ο Manager μπορεί να εστιάσει στην ανάπτυξη της επιχείρησής του αντί να χάνει χρόνο σε διοικητικές εργασίες.
@@ -680,7 +680,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 \subsection{PostgreSQL: Σχεσιακή Βάση Δεδομένων}
 \label{subsec:postgresql}
 
-Η PostgreSQL~\cite{postgresql} είναι μια ισχυρή, open-source σχεσιακή βάση δεδομένων με δεκαετίες ανάπτυξης. Υποστηρίζεται από το PayloadCMS v3 ως η κύρια βάση δεδομένων (αντικαθιστώντας τη MongoDB που υποστηριζόταν στην έκδοση v2).
+Η PostgreSQL~\cite{postgresql} είναι μια ισχυρή, open-source σχεσιακή βάση δεδομένων με δεκαετίες ανάπτυξης. Υποστηρίζεται από το PayloadCMS v3 ως η κύρια βάση δεδομένων (αντικαθιστώντας τη MongoDB που υποστηριζόταν στην έκδοση).
 
 \begin{description}
     \item[ACID Transactions:] Η PostgreSQL εγγυάται Atomicity, Consistency, Isolation, Durability -- κρίσιμο για εφαρμογές που απαιτούν συνέπεια δεδομένων κατά τον συγχρονισμό με εξωτερικά συστήματα.
@@ -812,7 +812,7 @@ await db.insert(bookingsTable).values(bookingsArray);
     \item \textbf{Platform Users (Admins):} Οι διαχειριστές της πλατφόρμας Lunarety. Έχουν καθολική εποπτεία.
     \item \textbf{Managers:} Ο κεντρικός κόμβος. Συνδέουν το Channel Manager τους, δημιουργούν πλάνα χρέωσης και εισάγουν τους Owners τους.
     \item \textbf{Owners:} Πελάτες του Manager. Βλέπουν μόνο τα δικά τους ακίνητα και οικονομικά στοιχεία. Η πρόσβασή τους καθορίζεται αυστηρά από τον Manager.
-    \item \textbf{Staff:} Υπάλληλοι (καθαριστές, υποδοχή) που ανήκουν είτε σε Manager είτε σε Owner, με περιορισμένα δικαιώματα (π.χ. view-only στο ημερολόγιο).
+    \item \textbf{Staff:} Υπάλληλοι (καθαριστές, υποδοχή) που ανήκουν σε Manager ή προαιρετικά και σε Owner, με περιορισμένα δικαιώματα. Η πρόσβασή τους καθορίζεται αυστηρά από τον Manager ή Owner τους.
 \end{enumerate}
 
 Το σύστημα υλοποιεί ένα εύκαμπτο μοντέλο δικαιωμάτων που επιτρέπει τον έλεγχο σε κάθε επίπεδο.
@@ -841,39 +841,40 @@ await db.insert(bookingsTable).values(bookingsArray);
 \paragraph{Platform Users (Admins):}
 \begin{itemize}
     \item Πλήρης πρόσβαση σε όλα τα δεδομένα της πλατφόρμας (Admin View)
-    \item Δημιουργία και διαχείριση Plans (πλάνα χρέωσης)
-    \item Εποπτεία όλων των Managers, χωρίς να είναι «γονείς» τους ιεραρχικά, αλλά έχοντας δυνατότητα διαχείρισης.
+    \item Δημιουργία και διαχείριση Platform Plans (πλάνα χρέωσης πλατφόρμας)
+    \item Εποπτεία όλων των Users, Properties, χωρίς να είναι «γονείς» τους ιεραρχικά, αλλά έχοντας δυνατότητα διαχείρισης.
 \end{itemize}
 
 \paragraph{Managers:}
 \begin{itemize}
     \item Σύνδεση με Channel Manager (Beds24)
     \item Εισαγωγή και διαχείριση Properties
-    \item Δημιουργία Owners και Staff
-    \item Ορισμός δικαιωμάτων για τους υφισταμένους
-    \item Δυνατότητα παραμετροποίησης των δικών τους access configurations
-    \item Δημιουργία και διαχείριση Auto Actions
-    \item Δημιουργία Websites για τα ακίνητα
+    \item Δημιουργία Owners και Staff *
+    \item Ορισμός δικαιωμάτων για τους υφισταμένους *
+    \item Δημιουργία και διαχείριση Auto Actions *
+    \item Δημιουργία Websites για τα ακίνητα *
 \end{itemize}
 
 \paragraph{Owners:}
 \begin{itemize}
-    \item Προβολή/επεξεργασία μόνο των ακινήτων που τους έχουν ανατεθεί
-    \item Δικαιώματα καθορίζονται πλήρως από τον Manager
-    \item Δημιουργία Staff που ανήκουν σε αυτούς
+    \item Προβολή/επεξεργασία μόνο των ακινήτων που τους έχουν ανατεθεί *
+    \item Δικαιώματα καθορίζονται πλήρως από τον Manager, Platform User
+    \item Δημιουργία Staff που ανήκουν σε αυτούς *
 \end{itemize}
 
 \paragraph{Staff:}
 \begin{itemize}
-    \item Ελάχιστα δικαιώματα (συνήθως view-only)
-    \item Δεν μπορούν να δημιουργήσουν άλλους χρήστες
+    \item Δυνατότητα αντίστοιχων δικαιωμάτων με τον Owner
+    \item Συνήθως περιορισμένα δικαιώματα που οριστούν από τους Προϊστάμενους τους
     \item Χρήσιμοι για εργασίες καθαρισμού, check-in, κ.λπ.
 \end{itemize}
+
+\noindent\textit{* Οι δυνατότητες με αστερίσκο είναι διαθέσιμες μόνο εφόσον έχουν ανατεθεί τα αντίστοιχα δικαιώματα από τους Προϊσταμένους τους.}
 
 \subsection{Ιεραρχικές Σχέσεις και Billing}
 \label{subsec:hierarchical-relations}
 
-Κάθε Owner ανήκει σε έναν Manager/Platform-User, ενώ το Staff μπορεί να ανήκει σε Manager ή Owner. Η σχέση αυτή καθορίζει την πρόσβαση και τη ροή των χρεώσεων. Κάθε Manager και Owner συνδέεται με ένα Plan που καθορίζει τις χρεώσεις και τα features.
+Κάθε Owner ανήκει σε έναν Manager, ενώ το Staff ανήκει σε Manager και σε Owner. Η σχέση αυτή καθορίζει την πρόσβαση και τη ροή των χρεώσεων. Κάθε Manager και Owner συνδέεται με ένα Plan που καθορίζει τις χρεώσεις και τα features.
 
 \begin{figure}[H]
     \centering
@@ -900,12 +901,12 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 Η πλατφόρμα αποτελείται από δύο ξεχωριστά repositories:
 
-\subsubsection{Platform Repository (lunarety-v2)}
+\subsubsection{Platform Repository (lunarety)}
 
 Το κύριο repository περιέχει τον πυρήνα της πλατφόρμας:
 
 \begin{english}
-\begin{lstlisting}[style=text,caption={Δομή καταλόγων της Πλατφόρμας (lunarety-v2)}]
+\begin{lstlisting}[style=text,caption={Δομή καταλόγων της Πλατφόρμας (lunarety)}]
 lunarety-v2/
 |-- src/
 |   |-- app/                    # Next.js App Router
@@ -2323,7 +2324,7 @@ Next.js App Router & SSR, Server Actions & Learning curve \\
 \section{Επίτευξη Στόχων}
 \label{sec:goal-achievement}
 
-Η πλατφόρμα Lunarety V2 επιτυγχάνει τον στόχο της να γεφυρώσει το χάσμα μεταξύ Channel Managers και ιδιοκτητών ακινήτων. Παρέχει στους Managers ένα ισχυρό εργαλείο για να προσφέρουν προστιθέμενη αξία στους πελάτες τους (Owners), ενώ παράλληλα αυτοματοποιεί χρονοβόρες διαδικασίες μέσω των Auto Actions και της Τεχνητής Νοημοσύνης.
+Η πλατφόρμα Lunarety επιτυγχάνει τον στόχο της να γεφυρώσει το χάσμα μεταξύ Channel Managers και ιδιοκτητών ακινήτων. Παρέχει στους Managers ένα ισχυρό εργαλείο για να προσφέρουν προστιθέμενη αξία στους πελάτες τους (Owners), ενώ παράλληλα αυτοματοποιεί χρονοβόρες διαδικασίες μέσω των Auto Actions και της Τεχνητής Νοημοσύνης.
 
 \begin{table}[H]
 \centering
