@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.8)  16 DEC 2025 19:43
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.12.8)  17 DEC 2025 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1825,15 +1825,9 @@ Chapter 2.
 File: ./images/tech_stack_logos.png Graphic file (type bmp)
 <./images/tech_stack_logos.png>
 
-Overfull \hbox (11.05196pt too wide) in paragraph at lines 503--504
-\TU/TimesNewRoman(0)/m/n/12 Η επιλογή της TypeScript έναντι της JavaScript αποτ
-έλεσε μονόδρομο για την ανάπτυξη
- []
-
-
-Overfull \hbox (10.03603pt too wide) in paragraph at lines 503--504
-\TU/TimesNewRoman(0)/m/n/12 (Fullstack). Αυτό σημαίνει ότι τα δεδομένα που επισ
-τρέφει το Backend είναι εγγυημένα
+Overfull \hbox (11.08694pt too wide) in paragraph at lines 503--504
+\TU/TimesNewRoman(0)/m/n/12 TypeScript έχει καθιερωθεί ως το standard για την α
+νάπτυξη σύγχρονων, κλιμακώσιμων
  []
 
 
@@ -1841,77 +1835,116 @@ Overfull \hbox (10.03603pt too wide) in paragraph at lines 503--504
 [6
 
 ]
-Overfull \hbox (30.97092pt too wide) in paragraph at lines 511--512
-[]\TU/TimesNewRoman(0)/m/n/12 Μια κρίσιμη λειτουργία που επιτρέπει στο Frontend
- να καλεί συναρτήσεις
+Overfull \hbox (4.19063pt too wide) in paragraph at lines 508--509
+\TU/TimesNewRoman(0)/m/n/12 Η \TU/TimesNewRoman(0)/b/n/12 Serverless Architectu
+re \TU/TimesNewRoman(0)/m/n/12 [[][]2[][]] αποτελεί ένα μοντέλο cloud computing
+ όπου ο πάροχος
  []
 
 
-Overfull \hbox (2.56317pt too wide) in paragraph at lines 511--512
-\TU/TimesNewRoman(0)/m/n/12 του Backend απευθείας, χωρίς την ανάγκη ρητού ορισμ
-ού API Endpoints. Αυτό
- []
-
-LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 513.
-
-Overfull \hbox (32.81215pt too wide) in paragraph at lines 513--514
-[]\TU/TimesNewRoman(0)/m/n/12 Το Next.js σε συνδυασμό με το PayloadCMS το οποίο
- παρέχει το \TU/CourierNew(0)/m/n/12 localAPI\TU/TimesNewRoman(0)/m/n/12 .Το
+Overfull \hbox (13.10274pt too wide) in paragraph at lines 513--514
+[]\TU/TimesNewRoman(0)/b/n/12 Pay-per-use: \TU/TimesNewRoman(0)/m/n/12 Η χρέωση
+ γίνεται βάσει πραγματικής χρήσης (αριθμός εκτελέσεων,
  []
 
 
-Overfull \hbox (11.3868pt too wide) in paragraph at lines 513--514
-\TU/CourierNew(0)/m/n/12 payload.find()\TU/TimesNewRoman(0)/m/n/12 , \TU/Courie
-rNew(0)/m/n/12 payload.create()\TU/TimesNewRoman(0)/m/n/12 , \TU/CourierNew(0)/
-m/n/12 payload.update() \TU/TimesNewRoman(0)/m/n/12 κ.λπ. με πλήρες
+Overfull \hbox (26.32211pt too wide) in paragraph at lines 519--520
+\TU/TimesNewRoman(0)/m/n/12 εκτελείται σε απομονωμένο περιβάλλον, ξεκινά όταν κ
+αλείται (cold start), και τερματίζεται
+ []
+
+
+Overfull \hbox (14.4725pt too wide) in paragraph at lines 523--524
+[]\TU/TimesNewRoman(0)/m/n/12 Μηδενικό αρχικό κόστος υποδομής, αυτόματη κλιμάκω
+ση, μειωμένη
+ []
+
+
+Overfull \hbox (20.04984pt too wide) in paragraph at lines 524--525
+[]\TU/TimesNewRoman(0)/m/n/12 Cold starts (καθυστέρηση κατά την πρώτη κλήση), ό
+ρια χρόνου εκτέλεσης
  []
 
 
 
 [7]
-Overfull \hbox (3.92566pt too wide) in paragraph at lines 520--521
-\TU/TimesNewRoman(0)/m/n/12 από τα παραδοσιακά CMS (όπως το WordPress ή το Stra
-pi) [[][]4[][]]. Λειτουργεί πρωτίστως
+Overfull \hbox (15.47678pt too wide) in paragraph at lines 532--533
+\TU/TimesNewRoman(0)/m/n/12 Το Next.js [[][]3[][]] είναι ένα open-source React 
+framework που αναπτύσσεται και συντηρείται
  []
 
 
-Overfull \hbox (26.44162pt too wide) in paragraph at lines 520--521
-\TU/TimesNewRoman(0)/m/n/12 Lunarety V2 και η κατανόησή του είναι θεμελιώδης γι
-α την κατανόηση της αρχιτεκτονικής. 
+Overfull \hbox (2.56317pt too wide) in paragraph at lines 535--536
+\TU/TimesNewRoman(0)/m/n/12 του Backend απευθείας, χωρίς την ανάγκη ρητού ορισμ
+ού API Endpoints. Αυτό
  []
 
+
+Overfull \hbox (3.06314pt too wide) in paragraph at lines 536--537
+\TU/TimesNewRoman(0)/m/n/12 κώδικα (Frontend, Backend, Webhooks) σε ένα ενιαίο 
+Repository, επιτρέποντας
+ []
+
+
+Overfull \hbox (12.68185pt too wide) in paragraph at lines 536--537
+\TU/TimesNewRoman(0)/m/n/12 την κοινή χρήση τύπων και utilities και εξαλείφοντα
+ς την ανάγκη για συγχρονισμό
+ []
+
+LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 537.
+
+Overfull \hbox (3.38399pt too wide) in paragraph at lines 537--538
+[]\TU/TimesNewRoman(0)/m/n/12 Όταν συνδυάζεται με CMS frameworks όπως το Payloa
+dCMS, το Next.js
+ []
+
+
+Overfull \hbox (5.027pt too wide) in paragraph at lines 537--538
+\TU/TimesNewRoman(0)/m/n/12 υποστηρίζει \TU/CourierNew(0)/m/n/12 localAPI \TU/T
+imesNewRoman(0)/m/n/12 – τυποποιημένη (typed) πρόσβαση στη βάση δεδομένων
+ []
+
+
+Overfull \hbox (21.61003pt too wide) in paragraph at lines 537--538
+\TU/TimesNewRoman(0)/m/n/12 από οποιαδήποτε server function. Αυτό επιτρέπει κλή
+σεις όπως \TU/CourierNew(0)/m/n/12 payload.find()\TU/TimesNewRoman(0)/m/n/12 ,
+ []
+
+
+
+[8]
 File: images/payloadCms_architecture_diagram.png Graphic file (type bmp)
 <images/payloadCms_architecture_diagram.png>
 
-Underfull \hbox (badness 2027) in paragraph at lines 525--525
+Underfull \hbox (badness 2027) in paragraph at lines 549--549
  []\TU/TimesNewRoman(0)/m/sc/10.95 Figure 2.2: |Αρχιτεκτονική PayloadCMS: Ένας 
 ενιαίος ορισμός 
  []
 
 
-Overfull \hbox (15.12488pt too wide) in paragraph at lines 532--533
+Overfull \hbox (15.12488pt too wide) in paragraph at lines 556--557
 \TU/TimesNewRoman(0)/m/n/12 Το κεντρικό concept του PayloadCMS είναι το \TU/Tim
 esNewRoman(0)/b/n/12 CollectionConfig\TU/TimesNewRoman(0)/m/n/12 . Ένα μόνο αντ
 ικείμενο
  []
 
 
-Overfull \hbox (0.15219pt too wide) in paragraph at lines 538--539
+Overfull \hbox (0.15219pt too wide) in paragraph at lines 562--563
 []\TU/TimesNewRoman(0)/b/n/12 Τη συμπεριφορά και τη λογική: \TU/TimesNewRoman(0
 )/m/n/12 Hooks, access control, validation—όλα μέσα
  []
 
 
-Overfull \hbox (34.36314pt too wide) in paragraph at lines 541--542
+Overfull \hbox (34.36314pt too wide) in paragraph at lines 565--566
 []\TU/TimesNewRoman(0)/m/n/12 Το PayloadCMS υποστηρίζει πλούσιες σχέσεις μεταξύ
  collections μέσω του \TU/CourierNew(0)/m/n/12 relationship
  []
 
 
 
-[8]
-Overfull \hbox (15.77603pt too wide) in paragraph at lines 543--544
+[9]
+Overfull \hbox (15.77603pt too wide) in paragraph at lines 567--568
 \TU/TimesNewRoman(0)/m/n/12 αποθηκεύονται στη βάση αλλά υπολογίζονται δυναμικά.
  Η παράμετρος \TU/CourierNew(0)/m/n/12 where \TU/TimesNewRoman(0)/m/n/12 επιτρέ
 πει
@@ -1919,167 +1952,215 @@ Overfull \hbox (15.77603pt too wide) in paragraph at lines 543--544
 
 
 
-[9]
-LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 546.
-LaTeX Font Info:    Font shape `TU/CourierNew(0)/b/n' will be
-(Font)              scaled to size 7.19995pt on input line 547.
-LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/it' will be
-(Font)              scaled to size 7.19995pt on input line 552.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 554.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 554.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 554.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 554.
-
-
 [10]
-Overfull \hbox (29.7575pt too wide) in paragraph at lines 604--605
+LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 570.
+LaTeX Font Info:    Font shape `TU/CourierNew(0)/b/n' will be
+(Font)              scaled to size 7.19995pt on input line 571.
+LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/it' will be
+(Font)              scaled to size 7.19995pt on input line 576.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.00085pt on input line 578.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 578.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 578.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 578.
+
+
+[11]
+Overfull \hbox (29.7575pt too wide) in paragraph at lines 628--629
 []\TU/TimesNewRoman(0)/m/n/12 Το \TU/CourierNew(0)/m/n/12 relationship \TU/Time
 sNewRoman(0)/m/n/12 field type δημιουργεί σχέσεις μεταξύ collections, υποστηρίζ
 οντας
  []
 
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 623.
+(Font)              scaled to size 8.99994pt on input line 647.
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/m/it' will be
-(Font)              scaled to size 8.99994pt on input line 624.
+(Font)              scaled to size 8.99994pt on input line 648.
 LaTeX Font Info:    Font shape `TU/CourierNew(0)/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 625.
+(Font)              scaled to size 8.99994pt on input line 649.
 
 
-[11]
-Overfull \hbox (64.98776pt too wide) in paragraph at lines 642--643
+[12]
+Overfull \hbox (64.98776pt too wide) in paragraph at lines 666--667
 \TU/TimesNewRoman(0)/m/n/12 Manager (με χιλιάδες rates και bookings), η χρήση τ
 ου \TU/CourierNew(0)/m/n/12 payload.db \TU/TimesNewRoman(0)/m/n/12 αντί του \TU
 /CourierNew(0)/m/n/12 payload.create()
  []
 
 
-Overfull \hbox (26.65547pt too wide) in paragraph at lines 647--648
-\TU/TimesNewRoman(0)/m/n/12 Το PayloadCMS χρησιμοποιεί το \TU/TimesNewRoman(0)/
-b/n/12 Drizzle ORM \TU/TimesNewRoman(0)/m/n/12 [[][]5[][]] ως το υποκείμενο επί
-πεδο επικοινωνίας
+Overfull \hbox (11.48048pt too wide) in paragraph at lines 671--672
+\TU/TimesNewRoman(0)/m/n/12 Το \TU/TimesNewRoman(0)/b/n/12 Drizzle ORM \TU/Time
+sNewRoman(0)/m/n/12 [[][]5[][]] είναι ένα σύγχρονο, ελαφρύ TypeScript ORM που χ
+ρησιμοποιείται
  []
 
 
-Overfull \hbox (22.26584pt too wide) in paragraph at lines 664--665
-[]\TU/TimesNewRoman(0)/m/n/12 Οι αυστηρές σχέσεις Manager-Owner-Property-Bookin
-g απαιτούν
+Overfull \hbox (8.56042pt too wide) in paragraph at lines 671--672
+\TU/TimesNewRoman(0)/m/n/12 από το PayloadCMS v3 για την επικοινωνία με τη βάση
+ δεδομένων. Τα χαρακτηριστικά
  []
 
 
-
-[12]
-Overfull \hbox (25.03732pt too wide) in paragraph at lines 684--685
-\TU/TimesNewRoman(0)/m/n/12 site project για να παράγει έναν πλήρως τυποποιημέν
-ο client (SDK), εξασφαλίζοντας
+Overfull \hbox (13.64845pt too wide) in paragraph at lines 683--684
+\TU/TimesNewRoman(0)/m/n/12 Η PostgreSQL [[][]6[][]] είναι μια ισχυρή, open-sou
+rce σχεσιακή βάση δεδομένων με δεκαετίες
  []
 
 
-Overfull \hbox (16.7668pt too wide) in paragraph at lines 684--685
-\TU/TimesNewRoman(0)/m/n/12 ότι το Website είναι πάντα συγχρονισμένο με τις αλλ
-αγές στο API της πλατφόρμας. 
- []
-
-File: images/swagger_code_generation_flow.png Graphic file (type bmp)
-<images/swagger_code_generation_flow.png>
-
-Overfull \hbox (20.52365pt too wide) in paragraph at lines 697--698
-\TU/TimesNewRoman(0)/m/n/12 τα LLMs μπορούν να αναλύσουν το context μιας κράτησ
-ης και να προτείνουν απαντήσεις,
+Overfull \hbox (12.3092pt too wide) in paragraph at lines 686--687
+[]\TU/TimesNewRoman(0)/m/n/12 Η PostgreSQL εγγυάται Atomicity, Consistency, Iso
+lation, Dura-
  []
 
 
-Overfull \hbox (2.30295pt too wide) in paragraph at lines 697--698
-\TU/TimesNewRoman(0)/m/n/12 να μεταφράσουν μηνύματα ή να λειτουργήσουν ως virtu
-al concierges στις ιστοσελίδες
+Overfull \hbox (4.14865pt too wide) in paragraph at lines 688--689
+[]\TU/TimesNewRoman(0)/m/n/12 Υποστηρίζει foreign keys και referential integrit
+y για αυστηρές
  []
 
 
-Overfull \hbox (2.2863pt too wide) in paragraph at lines 702--703
-\TU/TimesNewRoman(0)/m/n/12 Για την υλοποίηση των AI λειτουργιών χρησιμοποιήθηκ
-ε το \TU/TimesNewRoman(0)/b/n/12 Vercel AI SDK (v5) \TU/TimesNewRoman(0)/m/n/12
- [[][]12[][]].
+Overfull \hbox (13.06857pt too wide) in paragraph at lines 694--695
+\TU/TimesNewRoman(0)/m/n/12 διαφέρει από τις παραδοσιακές βιβλιοθήκες (όπως το 
+Material UI). Αντί να εγκαθίσταται
+ []
+
+
+Overfull \hbox (12.80649pt too wide) in paragraph at lines 694--695
+\TU/TimesNewRoman(0)/m/n/12 ως npm package, ο κώδικας αντιγράφεται απευθείας μέ
+σα στο project, δίνοντας απόλυτη
+ []
+
+
+Overfull \hbox (36.67891pt too wide) in paragraph at lines 697--698
+[]\TU/TimesNewRoman(0)/m/n/12 Η δημοφιλέστερη JavaScript βιβλιοθήκη για τη δημι
+ουργία επαναχρησιμοποιήσιμων
  []
 
 
 
 [13]
-Overfull \hbox (18.89441pt too wide) in paragraph at lines 707--708
-\TU/TimesNewRoman(0)/m/n/12 Η πλατφόρμα δεν συνδέεται απευθείας με έναν πάροχο 
-(π.χ. OpenAI), αλλά χρησιμοποιεί
+Overfull \hbox (0.23741pt too wide) in paragraph at lines 707--708
+[]\TU/TimesNewRoman(0)/m/n/12 Βιβλιοθήκες όπως το \TU/CourierNew(0)/m/n/12 next
+-swagger-doc \TU/TimesNewRoman(0)/m/n/12 παράγουν
+ []
+
+
+Overfull \hbox (2.89713pt too wide) in paragraph at lines 708--709
+[]\TU/TimesNewRoman(0)/m/n/12 Εργαλεία όπως το \TU/CourierNew(0)/m/n/12 openapi
+-typescript-codegen \TU/TimesNewRoman(0)/m/n/12 παράγουν
+ []
+
+File: images/swagger_code_generation_flow.png Graphic file (type bmp)
+<images/swagger_code_generation_flow.png>
+
+Overfull \hbox (8.62521pt too wide) in paragraph at lines 721--722
+\TU/TimesNewRoman(0)/m/n/12 Τα Large Language Models (LLMs) είναι νευρωνικά δίκ
+τυα εκπαιδευμένα σε τεράστιες
+ []
+
+
+Overfull \hbox (15.0264pt too wide) in paragraph at lines 721--722
+\TU/TimesNewRoman(0)/m/n/12 Google, επιτρέπουν την ενσωμάτωση δυνατοτήτων τεχνη
+τής νοημοσύνης σε εφαρμογές.
+ []
+
+
+
+[14]
+Overfull \hbox (20.34102pt too wide) in paragraph at lines 726--727
+\TU/TimesNewRoman(0)/m/n/12 Το \TU/TimesNewRoman(0)/b/n/12 Vercel AI SDK \TU/Ti
+mesNewRoman(0)/m/n/12 [[][]12[][]] είναι μια open-source βιβλιοθήκη που απλοποι
+εί την ενσωμάτωση
+ []
+
+
+Overfull \hbox (13.13074pt too wide) in paragraph at lines 726--727
+\TU/TimesNewRoman(0)/m/n/12 LLMs σε web εφαρμογές. Η κύρια δυνατότητά του είναι
+ το \TU/TimesNewRoman(0)/b/n/12 Streaming \TU/TimesNewRoman(0)/m/n/12 (ροή δεδο
+μένων)
+ []
+
+
+Overfull \hbox (5.59853pt too wide) in paragraph at lines 726--727
+\TU/TimesNewRoman(0)/m/n/12 περιμένει ο χρήστης ολόκληρη την απάντηση. Αυτό βελ
+τιώνει σημαντικά την εμπειρία
  []
 
 File: images/openrouter_architecture.png Graphic file (type bmp)
 <images/openrouter_architecture.png>
 
 
-[14]
+[15]
 File: images/channel_manager_infographic.png Graphic file (type bmp)
 <images/channel_manager_infographic.png>
 
 
-[15]
-Overfull \hbox (7.08095pt too wide) in paragraph at lines 734--735
+[16]
+Overfull \hbox (7.08095pt too wide) in paragraph at lines 758--759
 \TU/TimesNewRoman(0)/m/n/12 συνδεδεμένα κανάλια ότι το δωμάτιο δεν είναι πλέον 
 διαθέσιμο. Αυτό αποτρέπει
  []
 
 
-Overfull \hbox (12.13107pt too wide) in paragraph at lines 736--737
+Overfull \hbox (12.13107pt too wide) in paragraph at lines 760--761
 []\TU/TimesNewRoman(0)/b/n/12 Κεντρική Διαχείριση Κρατήσεων: \TU/TimesNewRoman(
 0)/m/n/12 Όλες οι κρατήσεις από διαφορετικά κανάλια
  []
 
 
 
-[16]
-Overfull \hbox (12.93817pt too wide) in paragraph at lines 755--756
+[17]
+Overfull \hbox (12.93817pt too wide) in paragraph at lines 779--780
 \TU/TimesNewRoman(0)/m/n/12 cation mechanism, και business logic. Η υποστήριξη 
 πολλαπλών OTAs απευθείας
  []
 
 
-Overfull \hbox (1.31642pt too wide) in paragraph at lines 770--771
-[]\TU/TimesNewRoman(0)/b/n/12 Modern API: \TU/TimesNewRoman(0)/m/n/12 Διαθέτει 
-ένα σύγχρονο, comprehensive API με υποστήριξη Ope-
+Overfull \hbox (20.44649pt too wide) in paragraph at lines 785--786
+ []\TU/TimesNewRoman(0)/b/n/12 Παράδειγμα Πρακτικής Εφαρμογής:[] \TU/TimesNewRo
+man(0)/m/n/12 Ένα τυπικό PMS δεν μπορεί να λάβει απευθείας
  []
 
 
-Overfull \hbox (66.9594pt too wide) in paragraph at lines 770--771
-\TU/TimesNewRoman(0)/m/n/12 nAPI, το οποίο επιτρέπει την εύκολη παραγωγή κώδικα
- (μέσω \TU/CourierNew(0)/m/n/12 swagger-typescript-api\TU/TimesNewRoman(0)/m/n/
-12 )
+Overfull \hbox (48.97041pt too wide) in paragraph at lines 790--791
+\TU/TimesNewRoman(0)/m/n/12 αγορά, με ιδιαίτερη δημοτικότητα στην Ευρώπη. Τα κύ
+ρια χαρακτηριστικά του περιλαμβάνουν: 
+ []
+
+
+Overfull \hbox (22.94142pt too wide) in paragraph at lines 793--794
+\TU/TimesNewRoman(0)/m/n/12 nAPI specification, επιτρέποντας την αυτόματη παραγ
+ωγή κώδικα (μέσω εργαλείων
  []
 
 
 
-[17]
+[18]
 Chapter 3.
 
-Overfull \hbox (23.05731pt too wide) in paragraph at lines 789--790
+Overfull \hbox (23.05731pt too wide) in paragraph at lines 813--814
 []\TU/TimesNewRoman(0)/b/n/12 Managers: \TU/TimesNewRoman(0)/m/n/12 Ο κεντρικός
  κόμβος. Συνδέουν το Channel Manager τους, δημιουργούν
  []
 
 
-Overfull \hbox (7.209pt too wide) in paragraph at lines 799--800
+Overfull \hbox (7.209pt too wide) in paragraph at lines 823--824
 \TU/TimesNewRoman(0)/m/n/12 Η πλατφόρμα υποστηρίζει τέσσερις διακριτούς τύπους 
 χρηστών, όπως παρουσιάζονται
  []
 
 
 
-[18
+[19
 
 ]
 
-[19]
-Overfull \hbox (10.28113pt too wide) in paragraph at lines 852--853
+[20]
+Overfull \hbox (10.28113pt too wide) in paragraph at lines 876--877
 \TU/TimesNewRoman(0)/m/n/12 σε Manager ή Owner. Η σχέση αυτή καθορίζει την πρόσ
 βαση και τη ροή των χρεώσεων.
  []
@@ -2087,23 +2168,23 @@ Overfull \hbox (10.28113pt too wide) in paragraph at lines 852--853
 File: ./images/user_hierarchy.png Graphic file (type bmp)
 <./images/user_hierarchy.png>
 
-Overfull \hbox (19.67891pt too wide) in paragraph at lines 872--873
+Overfull \hbox (19.67891pt too wide) in paragraph at lines 896--897
 []\TU/TimesNewRoman(0)/m/n/12 Η πλατφόρμα εξασφαλίζει συνοχή μεταξύ των διαφορε
 τικών components και διευκολύνει
  []
 
 
 
-[20]
-Overfull \hbox (28.08029pt too wide) in paragraph at lines 920--921
+[21]
+Overfull \hbox (28.08029pt too wide) in paragraph at lines 944--945
 []\TU/TimesNewRoman(0)/m/n/12 Το κρίσιμο σημείο αυτής της αρχιτεκτονικής είναι 
 ότι ολόκληρη η πλατφόρμα χρησιμοποιεί
  []
 
 
 
-[21]
-Overfull \hbox (1.03941pt too wide) in paragraph at lines 929--940
+[22]
+Overfull \hbox (1.03941pt too wide) in paragraph at lines 953--964
  [][] 
  []
 
@@ -2111,40 +2192,40 @@ File: ./images/system_architecture.png Graphic file (type bmp)
 <./images/system_architecture.png>
 
 
-[22]
-Overfull \hbox (3.45804pt too wide) in paragraph at lines 949--950
+[23]
+Overfull \hbox (3.45804pt too wide) in paragraph at lines 973--974
 \TU/TimesNewRoman(0)/m/n/12 GitHub, σχεδιασμένο να λειτουργεί ως template για τ
 ις ιστοσελίδες των καταλυμάτων,
  []
 
 
-Overfull \hbox (10.47287pt too wide) in paragraph at lines 957--958
+Overfull \hbox (10.47287pt too wide) in paragraph at lines 981--982
 []\TU/TimesNewRoman(0)/b/n/12 Users: \TU/TimesNewRoman(0)/m/n/12 Περιλαμβάνει ι
 εραρχικές σχέσεις (parent-child) για τη σύνδεση Manager-
  []
 
 
-Overfull \hbox (25.02951pt too wide) in paragraph at lines 959--960
+Overfull \hbox (25.02951pt too wide) in paragraph at lines 983--984
 []\TU/TimesNewRoman(0)/b/n/12 Bookings: \TU/TimesNewRoman(0)/m/n/12 Κεντρικός π
 ίνακας κρατήσεων με πλήρη στοιχεία πελάτη και οικονομικά
  []
 
 
 
-[23]
-Overfull \hbox (19.60228pt too wide) in paragraph at lines 979--979
+[24]
+Overfull \hbox (19.60228pt too wide) in paragraph at lines 1003--1003
 []|\TU/CourierNew(0)/m/n/12 property-rates|  
  []
 
 
-Overfull \hbox (6.64024pt too wide) in paragraph at lines 981--981
+Overfull \hbox (6.64024pt too wide) in paragraph at lines 1005--1005
 []|\TU/CourierNew(0)/m/n/12 auto-actions|  
  []
 
 
 
-[24]
-Overfull \hbox (4.82777pt too wide) in paragraph at lines 1041--1042
+[25]
+Overfull \hbox (4.82777pt too wide) in paragraph at lines 1065--1066
 []\TU/CourierNew(0)/m/n/12 syncChannelBooking_beforeChangeHook \TU/TimesNewRoma
 n(0)/m/n/12 (beforeChange) – Υπολογισμός
  []
@@ -2152,56 +2233,56 @@ n(0)/m/n/12 (beforeChange) – Υπολογισμός
 File: ./erd/data_model_erd.png Graphic file (type bmp)
 <./erd/data_model_erd.png>
 
-Underfull \hbox (badness 2538) in paragraph at lines 1048--1048
+Underfull \hbox (badness 2538) in paragraph at lines 1072--1072
  []\TU/TimesNewRoman(0)/m/sc/10.95 Figure 3.3: |Entity Relationship Diagram (ER
 D) του μοντέλου 
  []
 
 
 
-[25]
-
 [26]
+
+[27]
 Chapter 4.
 
-Overfull \hbox (5.2463pt too wide) in paragraph at lines 1066--1067
+Overfull \hbox (5.2463pt too wide) in paragraph at lines 1090--1091
 \TU/TimesNewRoman(0)/m/n/12 μαζική εισαγωγή (Import) όλων των Properties και τω
 ν Rates που είναι ορισμένα
  []
 
 
-Overfull \hbox (264.2771pt too wide) in paragraph at lines 1067--1068
+Overfull \hbox (264.2771pt too wide) in paragraph at lines 1091--1092
 \TU/TimesNewRoman(0)/m/n/12 του Beds24 ώστε να στέλνει Webhooks στο endpoint τη
 ς πλατφόρμας (\TU/CourierNew(0)/m/n/12 /api/webhooks/channel-managers/beds24/bo
 okings\TU/TimesNewRoman(0)/m/n/12 ). 
  []
 
 
-Overfull \hbox (5.19649pt too wide) in paragraph at lines 1072--1073
+Overfull \hbox (5.19649pt too wide) in paragraph at lines 1096--1097
 []\TU/TimesNewRoman(0)/m/n/12 Η διαχείριση κρατήσεων αποτελεί τον πυρήνα της πλ
 ατφόρμας και απαιτεί προσεκτικό
  []
 
 
 
-[27
+[28
 
 ]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 1090.
+(Font)              scaled to size 10.00107pt on input line 1114.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 1090.
+(Font)              scaled to size 7.00075pt on input line 1114.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 1090.
+(Font)              scaled to size 9.99893pt on input line 1114.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 1090.
+(Font)              scaled to size 6.99925pt on input line 1114.
 
-Overfull \hbox (89.9717pt too wide) in paragraph at lines 1093--1094
+Overfull \hbox (89.9717pt too wide) in paragraph at lines 1117--1118
 [][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (1.68477pt too wide) in paragraph at lines 1105--1106
+Overfull \hbox (1.68477pt too wide) in paragraph at lines 1129--1130
 \TU/TimesNewRoman(0)/m/n/12 Η πλατφόρμα υποστηρίζει τέσσερις διαφορετικές μεθόδ
 ους δημιουργίας/ενημέρωσης
  []
@@ -2210,16 +2291,16 @@ File: ./images/booking_import_flowchart.png Graphic file (type bmp)
 <./images/booking_import_flowchart.png>
 
 
-[28]
-Overfull \hbox (13.83539pt too wide) in paragraph at lines 1116--1117
+[29]
+Overfull \hbox (13.83539pt too wide) in paragraph at lines 1140--1141
 \TU/TimesNewRoman(0)/m/n/12 εισάγει εκατοντάδες ή χιλιάδες κρατήσεις. Χρησιμοπο
 ιείται η \TU/CourierNew(0)/m/n/12 payload.db.create()
  []
 
 
 
-[29]
-Overfull \hbox (1.70023pt too wide) in paragraph at lines 1148--1149
+[30]
+Overfull \hbox (1.70023pt too wide) in paragraph at lines 1172--1173
 \TU/TimesNewRoman(0)/m/n/12 Όταν μια κράτηση δημιουργείται ή ενημερώνεται στο B
 eds24, η πλατφόρμα λαμβάνει
  []
@@ -2228,8 +2309,8 @@ File: ./images/commission_structure.png Graphic file (type bmp)
 <./images/commission_structure.png>
 
 
-[30]
-Overfull \hbox (69.66473pt too wide) in paragraph at lines 1189--1190
+[31]
+Overfull \hbox (69.66473pt too wide) in paragraph at lines 1213--1214
 \TU/TimesNewRoman(0)/m/n/12 Για κρατήσεις από το generated website, το πεδίο \T
 U/CourierNew(0)/m/n/12 source \TU/TimesNewRoman(0)/m/n/12 ορίζεται αντίστοιχα (
 \TU/CourierNew(0)/m/n/12 websitePlatform\TU/TimesNewRoman(0)/m/n/12 ,
@@ -2239,86 +2320,86 @@ File: ./images/booking_sync.png Graphic file (type bmp)
 <./images/booking_sync.png>
 
 
-[31]
-Overfull \hbox (24.5575pt too wide) in paragraph at lines 1201--1202
+[32]
+Overfull \hbox (24.5575pt too wide) in paragraph at lines 1225--1226
 \TU/TimesNewRoman(0)/m/n/12 Κάθε κράτηση συνδέεται με τα αντίστοιχα PropertyRat
 e records μέσω του \TU/CourierNew(0)/m/n/12 relatedRates
  []
 
 
 
-[32]
-Overfull \hbox (11.3967pt too wide) in paragraph at lines 1240--1241
+[33]
+Overfull \hbox (11.3967pt too wide) in paragraph at lines 1264--1265
  []\TU/TimesNewRoman(0)/b/n/12 touchNightlyRates Hook (Cascade Update):[] \TU/T
 imesNewRoman(0)/m/n/12 Μετά την αποθήκευση μιας κράτησης,
  []
 
 
-Overfull \hbox (21.2424pt too wide) in paragraph at lines 1240--1241
+Overfull \hbox (21.2424pt too wide) in paragraph at lines 1264--1265
 \TU/TimesNewRoman(0)/m/n/12 χρειάζεται να ενημερωθούν τα σχετικά rates ώστε να 
 αντικατοπτρίζουν τη νέα κατάσταση.
  []
 
 
 
-[33]
-Overfull \hbox (19.85764pt too wide) in paragraph at lines 1270--1271
+[34]
+Overfull \hbox (19.85764pt too wide) in paragraph at lines 1294--1295
 \TU/TimesNewRoman(0)/m/n/12 Όλες οι κρίσιμες λειτουργίες εκτελούνται εντός data
 base transactions για να εξασφαλιστεί
  []
 
 
-Overfull \hbox (2.90205pt too wide) in paragraph at lines 1286--1287
+Overfull \hbox (2.90205pt too wide) in paragraph at lines 1310--1311
 \TU/TimesNewRoman(0)/m/n/12 λειτουργίες σε επίπεδο απόδοσης. Για ένα τυπικό κατ
 άλυμα με 4 δωμάτια, το σύστημα
  []
 
 
 
-[34]
-Overfull \hbox (10.6553pt too wide) in paragraph at lines 1302--1303
+[35]
+Overfull \hbox (10.6553pt too wide) in paragraph at lines 1326--1327
 \TU/TimesNewRoman(0)/m/n/12 ένα booking, το σύστημα χρειάζεται να ενημερώσει \T
 U/TimesNewRoman(0)/b/n/12 όλα τα προηγούμενα και τρέχοντα
  []
 
 
-Overfull \hbox (52.90964pt too wide) in paragraph at lines 1310--1311
+Overfull \hbox (52.90964pt too wide) in paragraph at lines 1334--1335
 \TU/TimesNewRoman(0)/m/n/12 και κατηγοριοποιώντας τα rates σε: \TU/CourierNew(0
 )/m/n/12 ratesToCreate \TU/TimesNewRoman(0)/m/n/12 (νέα), \TU/CourierNew(0)/m/n
 /12 ratesToUpdate \TU/TimesNewRoman(0)/m/n/12 (τροποποιημένα),
  []
 
 
-Overfull \hbox (65.14365pt too wide) in paragraph at lines 1320--1329
+Overfull \hbox (65.14365pt too wide) in paragraph at lines 1344--1353
  [][] 
  []
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.95116pt on input line 1333.
+(Font)              scaled to size 10.95116pt on input line 1357.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.94882pt on input line 1333.
+(Font)              scaled to size 10.94882pt on input line 1357.
 
 
-[35]
-Overfull \hbox (4.90842pt too wide) in paragraph at lines 1349--1350
+[36]
+Overfull \hbox (4.90842pt too wide) in paragraph at lines 1373--1374
 []\TU/TimesNewRoman(0)/b/n/12 Notifications to Users: \TU/TimesNewRoman(0)/m/n/
 12 Ειδοποιήσεις προς τους χρήστες της πλατφόρμας (Man-
  []
 
 
-Overfull \hbox (13.53017pt too wide) in paragraph at lines 1350--1351
+Overfull \hbox (13.53017pt too wide) in paragraph at lines 1374--1375
 []\TU/TimesNewRoman(0)/b/n/12 Property Notifications to Guests: \TU/TimesNewRom
 an(0)/m/n/12 Μηνύματα προς τους επισκέπτες (π.χ. οδηγίες
  []
 
 
-Overfull \hbox (1.45139pt too wide) in paragraph at lines 1357--1358
+Overfull \hbox (1.45139pt too wide) in paragraph at lines 1381--1382
 \TU/TimesNewRoman(0)/m/n/12 Το σύστημα υποστηρίζει πολλαπλά κανάλια (\TU/Courie
 rNew(0)/m/n/12 preferableChannels\TU/TimesNewRoman(0)/m/n/12 ) και προσπαθεί
  []
 
 
-Overfull \hbox (14.7909pt too wide) in paragraph at lines 1361--1362
+Overfull \hbox (14.7909pt too wide) in paragraph at lines 1385--1386
 \TU/TimesNewRoman(0)/m/n/12 τους. Η αρχιτεκτονική είναι σχεδιασμένη ώστε να επι
 τρέπει την εύκολη προσθήκη
  []
@@ -2327,14 +2408,14 @@ File: ./images/auto_actions.png Graphic file (type bmp)
 <./images/auto_actions.png>
 
 
-[36]
-Overfull \hbox (22.69302pt too wide) in paragraph at lines 1377--1378
+[37]
+Overfull \hbox (22.69302pt too wide) in paragraph at lines 1401--1402
 []\TU/TimesNewRoman(0)/m/n/12 Σύνταξη \TU/CourierNew(0)/m/n/12 [object.property
 ] \TU/TimesNewRoman(0)/m/n/12 για πρόσβαση σε εμφωλευμένα
  []
 
 
-Overfull \hbox (1.07942pt too wide) in paragraph at lines 1378--1379
+Overfull \hbox (1.07942pt too wide) in paragraph at lines 1402--1403
 []\TU/TimesNewRoman(0)/m/n/12 Σύνταξη \TU/CourierNew(0)/m/n/12 {condition?? res
 ult} \TU/TimesNewRoman(0)/m/n/12 για εμφάνιση κειμένου υπό
  []
@@ -2345,7 +2426,7 @@ Missing character: There is no 👤 (U+1F464) in font Courier New/OT:script=grek
 anguage=dflt;!
 
 
-[37]
+[38]
 Missing character: There is no 👪 (U+1F46A) in font Courier New/OT:script=grek;l
 anguage=dflt;!
 Missing character: There is no 📆 (U+1F4C6) in font Courier New/OT:script=grek;l
@@ -2365,19 +2446,19 @@ anguage=dflt;!
 Missing character: There is no 🗨 (U+1F5E8) in font Courier New/OT:script=grek;l
 anguage=dflt;!
 
-Overfull \hbox (31.7082pt too wide) in paragraph at lines 1402--1403
+Overfull \hbox (31.7082pt too wide) in paragraph at lines 1426--1427
  []\TU/TimesNewRoman(0)/b/n/12 Τεχνική Υλοποίηση:[] \TU/TimesNewRoman(0)/m/n/12
  Η υλοποίηση βασίζεται σε Regular Expressions για την αναγνώριση
  []
 
 
-Overfull \hbox (3.33304pt too wide) in paragraph at lines 1405--1406
+Overfull \hbox (3.33304pt too wide) in paragraph at lines 1429--1430
  []\TU/TimesNewRoman(0)/b/n/12 Μελλοντική Επέκταση (GUI):[] \TU/TimesNewRoman(0
 )/m/n/12 Επί του παρόντος, η σύνταξη των προτύπων γίνεται
  []
 
 
-Overfull \hbox (15.20255pt too wide) in paragraph at lines 1413--1414
+Overfull \hbox (15.20255pt too wide) in paragraph at lines 1437--1438
 []\TU/TimesNewRoman(0)/b/n/12 Trigger Types: \TU/CourierNew(0)/m/n/12 before-ch
 eckin\TU/TimesNewRoman(0)/m/n/12 , \TU/CourierNew(0)/m/n/12 after-checkout\TU/T
 imesNewRoman(0)/m/n/12 , \TU/CourierNew(0)/m/n/12 after-cancellation\TU/TimesNe
@@ -2386,14 +2467,14 @@ wRoman(0)/m/n/12 ,
 
 
 
-[38]
-Overfull \hbox (1.64442pt too wide) in paragraph at lines 1416--1417
+[39]
+Overfull \hbox (1.64442pt too wide) in paragraph at lines 1440--1441
 \TU/TimesNewRoman(0)/m/n/12 κρατήσεις με \TU/CourierNew(0)/m/n/12 checkInDate \
 TU/TimesNewRoman(0)/m/n/12 που εμπίπτει στο διάστημα [Τώρα + 48 ώρες,
  []
 
 
-Overfull \hbox (17.44849pt too wide) in paragraph at lines 1425--1435
+Overfull \hbox (17.44849pt too wide) in paragraph at lines 1449--1459
  [][] 
  []
 
@@ -2401,59 +2482,59 @@ File: ./images/time_based_triggers_scenario.png Graphic file (type bmp)
 <./images/time_based_triggers_scenario.png>
 
 
-[39]
-Overfull \hbox (0.17665pt too wide) in paragraph at lines 1467--1468
+[40]
+Overfull \hbox (0.17665pt too wide) in paragraph at lines 1491--1492
 []\TU/TimesNewRoman(0)/b/n/12 Υλοποίηση: \TU/TimesNewRoman(0)/m/n/12 Αυτές οι ε
 νέργειες δεν περιμένουν το Cron. Καλούνται απευθείας
  []
 
 
-Overfull \hbox (14.70459pt too wide) in paragraph at lines 1477--1486
+Overfull \hbox (14.70459pt too wide) in paragraph at lines 1501--1510
  [][] 
  []
 
 
 
-[40]
-Overfull \hbox (37.829pt too wide) in paragraph at lines 1491--1492
+[41]
+Overfull \hbox (37.829pt too wide) in paragraph at lines 1515--1516
 \TU/TimesNewRoman(0)/m/n/12 Owners αποτεύει κρίσιμο κομμάτι της πλατφόρμας. Το 
 σύστημα υλοποιεί αυτοματοποιημένη
  []
 
 
-Overfull \hbox (6.26941pt too wide) in paragraph at lines 1513--1514
+Overfull \hbox (6.26941pt too wide) in paragraph at lines 1537--1538
 []\TU/TimesNewRoman(0)/b/n/12 Owner Bill: \TU/TimesNewRoman(0)/m/n/12 Ο Owner (
 Debtor) οφείλει στον Manager (Creditor). Περιλαμβάνει
  []
 
 
-Overfull \hbox (42.44519pt too wide) in paragraph at lines 1514--1515
+Overfull \hbox (42.44519pt too wide) in paragraph at lines 1538--1539
 []\TU/TimesNewRoman(0)/b/n/12 Manager Bill: \TU/TimesNewRoman(0)/m/n/12 Ο Manag
 er (Debtor) οφείλει στην Πλατφόρμα (Creditor). Περιλαμβάνει
  []
 
 
-Overfull \hbox (12.91689pt too wide) in paragraph at lines 1520--1521
+Overfull \hbox (12.91689pt too wide) in paragraph at lines 1544--1545
 \TU/TimesNewRoman(0)/m/n/12 δημιουργία του κατάλληλου billing record ανά χρήστη
 . Όλες οι λειτουργίες εκτελούνται
  []
 
 
 
-[41]
-Overfull \hbox (162.928pt too wide) in paragraph at lines 1531--1540
+[42]
+Overfull \hbox (162.928pt too wide) in paragraph at lines 1555--1564
  [][] 
  []
 
 
-Overfull \hbox (30.4932pt too wide) in paragraph at lines 1542--1543
+Overfull \hbox (30.4932pt too wide) in paragraph at lines 1566--1567
 \TU/TimesNewRoman(0)/m/n/12 επανυπολογίζει τις χρεώσεις, αναζητώντας όλες τις κ
 ρατήσεις της περιόδου και αθροίζοντας
  []
 
 
 
-[42]
+[43]
 Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
 k;language=dflt;mapping=tex-text;!
 Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
@@ -2485,27 +2566,27 @@ k;language=dflt;mapping=tex-text;!
 Missing character: There is no ✓ (U+2713) in font Times New Roman/OT:script=gre
 k;language=dflt;mapping=tex-text;!
 
-Overfull \hbox (29.95529pt too wide) in paragraph at lines 1623--1624
+Overfull \hbox (29.95529pt too wide) in paragraph at lines 1647--1648
  []\TU/TimesNewRoman(0)/b/n/12 Υλοποίηση Access Functions:[] \TU/TimesNewRoman(
 0)/m/n/12 Κάθε collection διαθέτει access functions που αξιολογούν
  []
 
 
-Overfull \hbox (8.15596pt too wide) in paragraph at lines 1623--1624
+Overfull \hbox (8.15596pt too wide) in paragraph at lines 1647--1648
 \TU/TimesNewRoman(0)/m/n/12 τον συνδυασμό ρόλου και features. Για παράδειγμα, ο
 ι Platform Users έχουν πρόσβαση
  []
 
 
 
-[43]
-Overfull \hbox (15.54514pt too wide) in paragraph at lines 1631--1632
+[44]
+Overfull \hbox (15.54514pt too wide) in paragraph at lines 1655--1656
  []\TU/TimesNewRoman(0)/b/n/12 Παράδειγμα Σεναρίου:[] \TU/TimesNewRoman(0)/m/n/
 12 Ένας Manager δημιουργεί έναν χρήστη «Καθαριστής» (Staff)
  []
 
 
-Overfull \hbox (26.20256pt too wide) in paragraph at lines 1636--1637
+Overfull \hbox (26.20256pt too wide) in paragraph at lines 1660--1661
 []\TU/CourierNew(0)/m/n/12 bookings.contactDetails: 'none' \TU/TimesNewRoman(0)
 /m/n/12 – Δεν μπορεί να δει στοιχεία επικοινωνίας 
  []
@@ -2514,292 +2595,292 @@ File: ./images/access_control_decision_tree.png Graphic file (type bmp)
 <./images/access_control_decision_tree.png>
 
 
-[44]
-Overfull \hbox (24.01485pt too wide) in paragraph at lines 1656--1657
+[45]
+Overfull \hbox (24.01485pt too wide) in paragraph at lines 1680--1681
 \TU/TimesNewRoman(0)/m/n/12 Η πλατφόρμα παρέχει τη δυνατότητα αυτόματης παραγωγ
 ής ιστοσελίδων για καταλύματα,
  []
 
 
 
-[45]
-Overfull \hbox (6.4006pt too wide) in paragraph at lines 1677--1678
+[46]
+Overfull \hbox (6.4006pt too wide) in paragraph at lines 1701--1702
 []\TU/TimesNewRoman(0)/b/n/12 Property Page (/properties/[propertyId]): \TU/Tim
 esNewRoman(0)/m/n/12 Σελίδα λεπτομερειών καταλύματος 
  []
 
 
-Overfull \hbox (3.58224pt too wide) in paragraph at lines 1684--1685
+Overfull \hbox (3.58224pt too wide) in paragraph at lines 1708--1709
 []\TU/TimesNewRoman(0)/b/n/12 Booking Management (/booking/[bookingId]): \TU/Ti
 mesNewRoman(0)/m/n/12 Σελίδα διαχείρισης κράτησης
  []
 
 
 
-[46]
-Overfull \hbox (41.492pt too wide) in paragraph at lines 1708--1719
+[47]
+Overfull \hbox (41.492pt too wide) in paragraph at lines 1732--1743
  [][] 
  []
 
 
 
-[47]
-
 [48]
 
 [49]
-Overfull \hbox (3.62032pt too wide) in paragraph at lines 1840--1841
+
+[50]
+Overfull \hbox (3.62032pt too wide) in paragraph at lines 1864--1865
 []\TU/TimesNewRoman(0)/b/n/12 Επιλογή Κρατήσεων: \TU/TimesNewRoman(0)/m/n/12 Ο 
 χρήστης επιλέγει μια κράτηση για να δει λεπτομέρειες
  []
 
 
-Overfull \hbox (6.8293pt too wide) in paragraph at lines 1841--1842
+Overfull \hbox (6.8293pt too wide) in paragraph at lines 1865--1866
 []\TU/TimesNewRoman(0)/b/n/12 Επιλογή Ημερομηνιών: \TU/TimesNewRoman(0)/m/n/12 
 Ο χρήστης επιλέγει ένα εύρος ημερομηνιών και μπορεί
  []
 
 
-Overfull \hbox (28.56044pt too wide) in paragraph at lines 1848--1849
+Overfull \hbox (28.56044pt too wide) in paragraph at lines 1872--1873
 \TU/TimesNewRoman(0)/m/n/12 απευθείας στα συνδεδεμένα OTAs μέσω της διεπαφής συ
 νομιλίας. Στη σελίδα \TU/CourierNew(0)/m/n/12 /messages\TU/TimesNewRoman(0)/m/n
 /12 ,
  []
 
 
-Overfull \hbox (29.39163pt too wide) in paragraph at lines 1848--1849
+Overfull \hbox (29.39163pt too wide) in paragraph at lines 1872--1873
 \TU/TimesNewRoman(0)/m/n/12 παρέχεται πρόσβαση σε όλα τα πρόσφατα μηνύματα, τα 
 οποία επιστρέφονται ταξινομημένα
  []
 
 
 
-[50]
-Overfull \hbox (5.98065pt too wide) in paragraph at lines 1853--1854
+[51]
+Overfull \hbox (5.98065pt too wide) in paragraph at lines 1877--1878
 \TU/TimesNewRoman(0)/m/n/12 Η επεξεργασία γίνεται μέσω UI Drawers με δυναμικό π
 εριεχόμενο βάσει δικαιωμάτων. 
  []
 
 
 
-[51]
+[52]
 Chapter 5.
 
-Overfull \hbox (15.63934pt too wide) in paragraph at lines 1874--1875
+Overfull \hbox (15.63934pt too wide) in paragraph at lines 1898--1899
 \TU/TimesNewRoman(0)/m/n/12 Η πλατφόρμα προσφέρει ένα μοντέρνο, responsive περι
 βάλλον εργασίας. Στα παρακάτω
  []
 
 
-Overfull \hbox (22.829pt too wide) in paragraph at lines 1874--1875
+Overfull \hbox (22.829pt too wide) in paragraph at lines 1898--1899
 \TU/TimesNewRoman(0)/m/n/12 δικαιώματα (Admin/Manager). Είναι σημαντικό να τονι
 στεί ότι χρήστες με διαφορετικούς
  []
 
 
-Overfull \hbox (15.38382pt too wide) in paragraph at lines 1874--1875
+Overfull \hbox (15.38382pt too wide) in paragraph at lines 1898--1899
 \TU/TimesNewRoman(0)/m/n/12 ακόμη και προβολής όλων των τμημάτων που απεικονίζο
 νται, ανάλογα με τα δικαιώματα
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 1879--1879
+Underfull \hbox (badness 1014) in paragraph at lines 1903--1903
  []\TU/TimesNewRoman(0)/m/sc/10.95 Figure 5.1: |Η σελίδα του Ημερολογίου (Calen
 dar). Το αρχικό 
  []
 
 
 
-[52
+[53
 
 ]
 
-[53]
-Overfull \hbox (37.12422pt too wide) in paragraph at lines 1914--1915
+[54]
+Overfull \hbox (37.12422pt too wide) in paragraph at lines 1938--1939
 \TU/TimesNewRoman(0)/m/n/12 Η πλατφόρμα παρέχει τη δυνατότητα αυτόματης παραγωγ
 ής ιστοσελίδων για τα καταλύματα,
  []
 
 
 
-[54]
-Underfull \hbox (badness 4569) in paragraph at lines 1933--1933
+[55]
+Underfull \hbox (badness 4569) in paragraph at lines 1957--1957
  []\TU/TimesNewRoman(0)/m/sc/10.95 Figure 5.8: |Δυνατότητες AI και LLM για την 
 εξυπηρέτηση 
  []
 
 
 
-[55]
-Overfull \hbox (15.22658pt too wide) in paragraph at lines 1943--1944
+[56]
+Overfull \hbox (15.22658pt too wide) in paragraph at lines 1967--1968
 []\TU/TimesNewRoman(0)/b/n/12 Smart Chat (Platform): \TU/TimesNewRoman(0)/m/n/1
 2 Στο περιβάλλον μηνυμάτων, το AI προτείνει απαντήσεις
  []
 
 
-Overfull \hbox (19.17209pt too wide) in paragraph at lines 1943--1944
+Overfull \hbox (19.17209pt too wide) in paragraph at lines 1967--1968
 \TU/TimesNewRoman(0)/m/n/12 λαμβάνοντας υπόψη το ιστορικό της συνομιλίας και τι
 ς πληροφορίες της κράτησης. 
  []
 
 
-Overfull \hbox (146.6509pt too wide) in paragraph at lines 1944--1945
+Overfull \hbox (146.6509pt too wide) in paragraph at lines 1968--1969
 []\TU/TimesNewRoman(0)/b/n/12 Website AI Assistant (OpenRouter): \TU/TimesNewRo
 man(0)/m/n/12 Στις ιστοσελίδες των καταλυμάτων (\TU/CourierNew(0)/m/n/12 /prope
 rties/[propertyId]\TU/TimesNewRoman(0)/m/n/12 ),
  []
 
 
-Overfull \hbox (13.48105pt too wide) in paragraph at lines 1947--1948
+Overfull \hbox (13.48105pt too wide) in paragraph at lines 1971--1972
 \TU/TimesNewRoman(0)/m/n/12 Γνωρίζει τα πάντα για το κατάλυμα (παροχές, τοποθεσ
 ία) αλλά και δυναμικά
  []
 
 
-Overfull \hbox (1.79291pt too wide) in paragraph at lines 1947--1948
+Overfull \hbox (1.79291pt too wide) in paragraph at lines 1971--1972
 \TU/TimesNewRoman(0)/m/n/12 Σαββατοκύριακο και πόσο κοστίζει;» με ακρίβεια, λει
 τουργώντας ως ένας
  []
 
 
 
-[56]
-Overfull \hbox (31.11134pt too wide) in paragraph at lines 1973--1974
+[57]
+Overfull \hbox (31.11134pt too wide) in paragraph at lines 1997--1998
 []\TU/TimesNewRoman(0)/b/n/12 Λύση: \TU/TimesNewRoman(0)/m/n/12 Hybrid strategy
  με direct DB operations για bulk, standard lifecycle για μεμονωμένες
  []
 
 
-Overfull \hbox (30.75752pt too wide) in paragraph at lines 1986--1995
+Overfull \hbox (30.75752pt too wide) in paragraph at lines 2010--2019
  [][] 
  []
 
 
 
-[57]
-
 [58]
-Overfull \hbox (2.71681pt too wide) in paragraph at lines 2055--2056
+
+[59]
+Overfull \hbox (2.71681pt too wide) in paragraph at lines 2079--2080
 \TU/TimesNewRoman(0)/b/n/12 Πρόβλημα: \TU/TimesNewRoman(0)/m/n/12 Η πλατφόρμα ε
 ξυπηρετεί πολλαπλούς Managers, καθένας με τους δικούς
  []
 
 
 
-[59]
-
 [60]
 
 [61]
+
+[62]
 Chapter 6.
 
-Overfull \hbox (0.34784pt too wide) in paragraph at lines 2172--2173
+Overfull \hbox (0.34784pt too wide) in paragraph at lines 2196--2197
 \TU/TimesNewRoman(0)/m/n/12 Η υιοθέτηση του μοντέλου «Backend Framework» με το 
 PayloadCMS v3 και η χρήση
  []
 
 
-Overfull \hbox (16.4159pt too wide) in paragraph at lines 2172--2173
+Overfull \hbox (16.4159pt too wide) in paragraph at lines 2196--2197
 \TU/TimesNewRoman(0)/m/n/12 (Manager-Owner-Property). Η μεγαλύτερη πρόκληση ήτα
 ν η διαχείριση της ασύγχρονης
  []
 
 
-Overfull \hbox (42.77249pt too wide) in paragraph at lines 2172--2173
+Overfull \hbox (42.77249pt too wide) in paragraph at lines 2196--2197
 \TU/TimesNewRoman(0)/m/n/12 φύσης των Webhooks και η διασφάλιση της συνοχής των
  δεδομένων, η οποία αντιμετωπίστηκε
  []
 
 
-Overfull \hbox (8.08615pt too wide) in paragraph at lines 2174--2175
+Overfull \hbox (8.08615pt too wide) in paragraph at lines 2198--2199
 []\TU/TimesNewRoman(0)/m/n/12 Ένα σημείο που αναγνωρίζεται ως πεδίο μελλοντικής
  βελτιστοποίησης είναι η εμπειρία
  []
 
 
-Overfull \hbox (3.75607pt too wide) in paragraph at lines 2174--2175
+Overfull \hbox (3.75607pt too wide) in paragraph at lines 2198--2199
 \TU/TimesNewRoman(0)/m/n/12 CMS, το οποίο παρουσιάζει μια πιο σύνθετη εμπειρία 
 χρήσης σε σχέση με το υπόλοιπο
  []
 
 
-Overfull \hbox (5.22678pt too wide) in paragraph at lines 2174--2175
+Overfull \hbox (5.22678pt too wide) in paragraph at lines 2198--2199
 \TU/TimesNewRoman(0)/m/n/12 τελειοποίηση των εργαλείων καθημερινής διαχείρισης 
 (ξενοδοχεία και διαμερίσματα),
  []
 
 
-Overfull \hbox (3.44893pt too wide) in paragraph at lines 2174--2175
+Overfull \hbox (3.44893pt too wide) in paragraph at lines 2198--2199
 \TU/TimesNewRoman(0)/m/n/12 τα οποία αποτελούν τον πυρήνα της δραστηριότητας. Ο
 ι ρυθμίσεις Χρηστών, Πλάνων
  []
 
 
 
-[62
+[63
 
 ]
 
-[63]
-
 [64]
+
+[65]
 Chapter 7.
 
-Overfull \hbox (0.76259pt too wide) in paragraph at lines 2270--2271
+Overfull \hbox (0.76259pt too wide) in paragraph at lines 2294--2295
 \TU/TimesNewRoman(0)/m/n/12 επέτρεψε ταχεία ανάπτυξη με type-safety. Το hook sy
 stem αποδείχθηκε ιδανικό
  []
 
 
 
-[65
+[66
 
 ]
-Overfull \hbox (65.81741pt too wide) in paragraph at lines 2282--2283
+Overfull \hbox (65.81741pt too wide) in paragraph at lines 2306--2307
 []\TU/TimesNewRoman(0)/b/n/12 Για Managers: \TU/TimesNewRoman(0)/m/n/12 Προσφέρ
 ουν premium υπηρεσίες στους Owners τους, με αυτοματοποιημένη
  []
 
 
-Overfull \hbox (18.2554pt too wide) in paragraph at lines 2292--2293
+Overfull \hbox (18.2554pt too wide) in paragraph at lines 2316--2317
 []\TU/TimesNewRoman(0)/b/n/12 Flag-based Loop Prevention: \TU/TimesNewRoman(0)/
 m/n/12 Η χρήση του \TU/CourierNew(0)/m/n/12 skipChannelSync \TU/TimesNewRoman(0
 )/m/n/12 flag αποδείχθηκε
  []
 
 
-Overfull \hbox (25.96681pt too wide) in paragraph at lines 2297--2298
+Overfull \hbox (25.96681pt too wide) in paragraph at lines 2321--2322
 []\TU/TimesNewRoman(0)/m/n/12 Η αρχιτεκτονική της πλατφόρμας επιτρέπει εύκολη ε
 πέκταση και συντήρηση, καθιστώντας
  []
 
 
 
-[66]
-
 [67]
-Overfull \hbox (12.77377pt too wide) in paragraph at lines 2306--2306
+
+[68]
+Overfull \hbox (12.77377pt too wide) in paragraph at lines 2330--2330
 []\TU/TimesNewRoman(0)/m/sc/12 PayloadCMS. \TU/TimesNewRoman(0)/m/it/12 Payload
 CMS Documentation\TU/TimesNewRoman(0)/m/sc/12 . 2024. url: [][]$[][][][][] [] [
 ] [] [][][][][][][][][][] []
  []
 
 
-Overfull \hbox (17.70596pt too wide) in paragraph at lines 2306--2306
+Overfull \hbox (17.70596pt too wide) in paragraph at lines 2330--2330
 []\TU/TimesNewRoman(0)/m/sc/12 Drizzle Team. \TU/TimesNewRoman(0)/m/it/12 Drizz
 le ORM Documentation\TU/TimesNewRoman(0)/m/sc/12 . 2024. url: [][]$[][][][][] [
 ] [] [] [][][] [] [][][][][][][] []
  []
 
 
-Overfull \hbox (28.17581pt too wide) in paragraph at lines 2306--2306
+Overfull \hbox (28.17581pt too wide) in paragraph at lines 2330--2330
 []\TU/TimesNewRoman(0)/m/sc/12 OpenAPI Initiative. \TU/TimesNewRoman(0)/m/it/12
  OpenAPI Specification\TU/TimesNewRoman(0)/m/sc/12 . 2024. url: [][]$[][][][][]
  [] [] [] [][][][] [] [][][][][][][][] []
  []
 
 
-Overfull \hbox (1.4183pt too wide) in paragraph at lines 2306--2306
+Overfull \hbox (1.4183pt too wide) in paragraph at lines 2330--2330
 []\TU/TimesNewRoman(0)/m/sc/12 OpenRouter. \TU/TimesNewRoman(0)/m/it/12 OpenRou
 ter Documentation\TU/TimesNewRoman(0)/m/sc/12 . 2024. url: [][]$[][][][][] [] [
 ] [] [][][][][][][][][][] []
@@ -2807,22 +2888,22 @@ ter Documentation\TU/TimesNewRoman(0)/m/sc/12 . 2024. url: [][]$[][][][][] [] [
 
 
 
-[68
+[69
 
 
 ]
 
-[69]
+[70]
 Appendix A.
 
 
-[70
+[71
 
 ]
 Appendix B.
 
 
-[71
+[72
 
 ] (./thesis.aux)
  ***********
@@ -2837,18 +2918,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F3F7BA2E47FFA03EF2A9871746ED09A0;26050.
+(rerunfilecheck)             Checksum: 64CE5DA5A225C1BBCE05CF92C8ED9833;26359.
 Package logreq Info: Writing requests to 'thesis.run.xml'.
 \openout1 = `thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37218 strings out of 475338
- 816575 string characters out of 5760919
- 1895430 words of memory out of 5000000
- 59739 multiletter control sequences out of 15000+600000
+ 37219 strings out of 475338
+ 816584 string characters out of 5760919
+ 1895545 words of memory out of 5000000
+ 59740 multiletter control sequences out of 15000+600000
  563266 words of font info for 135 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  95i,21n,122p,1183b,5653s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on thesis.pdf (87 pages).
+Output written on thesis.pdf (88 pages).

@@ -493,31 +493,55 @@ This work contributes to understanding how modern software architectures and Rap
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{tech_stack_logos.png}
-    \caption{Το τεχνολογικό stack της πλατφόρμας (Next.js, PayloadCMS, PostgreSQL, κ.α.).}
+    \caption{Σύγχρονο τεχνολογικό stack για web εφαρμογές (Next.js, PayloadCMS, PostgreSQL, κ.α.).}
     \label{fig:tech-stack}
 \end{figure}
 
 \subsection{TypeScript και Type Consistency}
 \label{subsec:typescript}
 
-Η επιλογή της TypeScript έναντι της JavaScript αποτέλεσε μονόδρομο για την ανάπτυξη μιας σύγχρονης, κλιμακώσιμης εφαρμογής~\cite{typescript}. Η στατική τυποποίηση (static typing) που προσφέρει εξασφαλίζει «Type Consistency» σε όλο το εύρος της εφαρμογής (Fullstack). Αυτό σημαίνει ότι τα δεδομένα που επιστρέφει το Backend είναι εγγυημένα συμβατά με αυτά που περιμένει το Frontend, μειώνοντας δραματικά τα runtime errors και επιταχύνοντας την ανάπτυξη μέσω του IntelliSense.
+Η TypeScript~\cite{typescript} είναι ένα superset της JavaScript που προσθέτει στατική τυποποίηση (static typing). Η στατική τυποποίηση εξασφαλίζει «Type Consistency» σε ολόκληρη την εφαρμογή (Fullstack), που σημαίνει ότι τα δεδομένα που επιστρέφει το Backend είναι εγγυημένα συμβατά με αυτά που περιμένει το Frontend. Αυτό μειώνει δραματικά τα runtime errors και επιταχύνει την ανάπτυξη μέσω του IntelliSense. Η TypeScript έχει καθιερωθεί ως το standard για την ανάπτυξη σύγχρονων, κλιμακώσιμων web εφαρμογών.
 
-\subsection{Next.js ως Θεμέλιο της Αρχιτεκτονικής}
+\subsection{Serverless Architecture}
+\label{subsec:serverless}
+
+Η \textbf{Serverless Architecture}~\cite{serverless} αποτελεί ένα μοντέλο cloud computing όπου ο πάροχος (π.χ. AWS, Vercel, Google Cloud) διαχειρίζεται αυτόματα την υποδομή των servers. Παρά το όνομά της, η serverless αρχιτεκτονική δεν σημαίνει απουσία servers -- απλώς ο προγραμματιστής δεν χρειάζεται να τους διαχειρίζεται.
+
+\paragraph{Βασικά Χαρακτηριστικά:}
+\begin{itemize}
+    \item \textbf{Auto-scaling:} Η υποδομή κλιμακώνεται αυτόματα ανάλογα με το φορτίο. Από μηδέν instances όταν δεν υπάρχει traffic, έως χιλιάδες όταν απαιτείται.
+    \item \textbf{Pay-per-use:} Η χρέωση γίνεται βάσει πραγματικής χρήσης (αριθμός εκτελέσεων, χρόνος εκτέλεσης) αντί για σταθερό μηνιαίο κόστος server.
+    \item \textbf{Zero DevOps:} Δεν απαιτείται διαχείριση servers, patches, ή υποδομής -- ο προγραμματιστής εστιάζει μόνο στον κώδικα.
+    \item \textbf{Event-driven:} Οι συναρτήσεις εκτελούνται ως απάντηση σε events (HTTP requests, database triggers, scheduled tasks).
+\end{itemize}
+
+\paragraph{Functions as a Service (FaaS):}
+Το κυριότερο μοντέλο serverless είναι το \textbf{FaaS}, όπου ο κώδικας οργανώνεται σε μικρές, ανεξάρτητες συναρτήσεις. Κάθε συνάρτηση εκτελείται σε απομονωμένο περιβάλλον, ξεκινά όταν καλείται (cold start), και τερματίζεται μετά την ολοκλήρωση.
+
+\paragraph{Πλεονεκτήματα και Περιορισμοί:}
+\begin{description}
+    \item[Πλεονεκτήματα:] Μηδενικό αρχικό κόστος υποδομής, αυτόματη κλιμάκωση, μειωμένη πολυπλοκότητα deployment, ιδανικό για startups και MVPs.
+    \item[Περιορισμοί:] Cold starts (καθυστέρηση κατά την πρώτη κλήση), όρια χρόνου εκτέλεσης (συνήθως 10-60 δευτερόλεπτα), περιορισμένος έλεγχος υποδομής.
+\end{description}
+
+Πλατφόρμες όπως η \textbf{Vercel}, το \textbf{AWS Lambda}, και το \textbf{Google Cloud Functions} αποτελούν δημοφιλείς παρόχους serverless υπηρεσιών για web εφαρμογές.
+
+\subsection{Next.js: Ένα Full-Stack React Framework}
 \label{subsec:nextjs}
 
-Το Next.js επιλέχθηκε όχι μόνο για τις δυνατότητες Rendering (SSR, SSG) αλλά και για την άριστη συμβατότητά του με Serverless υποδομές~\cite{nextjs,serverless}. Αποτελεί το θεμέλιο πάνω στο οποίο χτίζεται ολόκληρη η πλατφόρμα, καθώς το PayloadCMS v3 είναι σχεδιασμένο να τρέχει εντός του Next.js.
+Το Next.js~\cite{nextjs} είναι ένα open-source React framework που αναπτύσσεται και συντηρείται από την Vercel. Προσφέρει δυνατότητες Server-Side Rendering (SSR) και Static Site Generation (SSG), καθιστώντας το ιδανικό για Serverless deployments~\cite{serverless}. Η αρχιτεκτονική του επιτρέπει σε frameworks όπως το PayloadCMS v3 να τρέχουν εντός του, δημιουργώντας ένα ενοποιημένο full-stack περιβάλλον.
 
 \begin{description}
-    \item[Server Actions:] Μια κρίσιμη λειτουργία που επιτρέπει στο Frontend να καλεί συναρτήσεις του Backend απευθείας, χωρίς την ανάγκη ρητού ορισμού API Endpoints. Αυτό απλοποιεί τη διαχείριση δεδομένων και διατηρεί την τυποποίηση (types) από άκρη σε άκρη.
-    \item[Monorepo Architecture:] Η διατήρηση όλου του κώδικα (Frontend, Backend, Webhooks) σε ένα ενιαίο Repository επιτρέπει την κοινή χρήση τύπων και utilities, εξαλείφοντας την ανάγκη για συγχρονισμό μεταξύ διαφορετικών projects. Η ενσωμάτωση του PayloadCMS στο Next.js καθιστά αυτή την αρχιτεκτονική φυσική και εύκολη στη συντήρηση.
-    \item[Local API:] Το Next.js σε συνδυασμό με το PayloadCMS το οποίο παρέχει το \code{localAPI}.Το \code{localAPI} επιτρέπει τυποποιημένη (typed) πρόσβαση στη βάση δεδομένων από οποιαδήποτε server function. Αυτό σημαίνει ότι μπορούμε να καλέσουμε \code{payload.find()}, \code{payload.create()}, \code{payload.update()} κ.λπ. με πλήρες autocomplete και type-checking, χωρίς να χρειαζόμαστε HTTP requests.
+    \item[Server Actions:] Μια λειτουργία που επιτρέπει στο Frontend να καλεί συναρτήσεις του Backend απευθείας, χωρίς την ανάγκη ρητού ορισμού API Endpoints. Αυτό απλοποιεί τη διαχείριση δεδομένων και διατηρεί την τυποποίηση (types) από άκρη σε άκρη.
+    \item[Monorepo Architecture:] Η δομή του Next.js υποστηρίζει τη διατήρηση όλου του κώδικα (Frontend, Backend, Webhooks) σε ένα ενιαίο Repository, επιτρέποντας την κοινή χρήση τύπων και utilities και εξαλείφοντας την ανάγκη για συγχρονισμό μεταξύ διαφορετικών projects.
+    \item[Local API:] Όταν συνδυάζεται με CMS frameworks όπως το PayloadCMS, το Next.js υποστηρίζει \code{localAPI} -- τυποποιημένη (typed) πρόσβαση στη βάση δεδομένων από οποιαδήποτε server function. Αυτό επιτρέπει κλήσεις όπως \code{payload.find()}, \code{payload.create()}, \code{payload.update()} με πλήρες autocomplete και type-checking, χωρίς HTTP requests.
 \end{description}
 
 \newpage
-\subsection{PayloadCMS: Ο Πυρήνας του Συστήματος}
+\subsection{PayloadCMS: Ένα Modern Backend Framework}
 \label{subsec:payloadcms}
 
-Το PayloadCMS (ειδικά από την έκδοση 3.0 και μετά) διαφοροποιείται σημαντικά από τα παραδοσιακά CMS (όπως το WordPress ή το Strapi)~\cite{payloadcms}. Λειτουργεί πρωτίστως ως ένα \textbf{Backend Framework} που τρέχει εντός του Next.js, παρόμοια με το Django ή το Laravel, αλλά με τη δύναμη του TypeScript. Αποτελεί τον πυρήνα της πλατφόρμας Lunarety V2 και η κατανόησή του είναι θεμελιώδης για την κατανόηση της αρχιτεκτονικής.
+Το PayloadCMS~\cite{payloadcms} (ειδικά από την έκδοση 3.0 και μετά) διαφοροποιείται σημαντικά από τα παραδοσιακά CMS (όπως το WordPress ή το Strapi). Λειτουργεί πρωτίστως ως ένα \textbf{Backend Framework} που τρέχει εντός του Next.js, παρόμοια με το Django ή το Laravel, αλλά με τη δύναμη του TypeScript. Η κατανόηση των δυνατοτήτων του είναι θεμελιώδης για την κατανόηση σύγχρονων αρχιτεκτονικών web εφαρμογών.
 
 \begin{figure}[H]
     \centering
@@ -641,47 +665,47 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 Αυτή η ευελιξία είναι κρίσιμη για την απόδοση. Κατά την αρχική εισαγωγή ενός Manager (με χιλιάδες rates και bookings), η χρήση του \code{payload.db} αντί του \code{payload.create()} μπορεί να μειώσει τον χρόνο εκτέλεσης από ώρες σε λεπτά.
 
-\subsubsection{Drizzle ORM: Το Υποκείμενο Επίπεδο}
+\subsubsection{Drizzle ORM: Type-Safe Database Access}
 \label{subsubsec:drizzle-orm}
 
-Το PayloadCMS χρησιμοποιεί το \textbf{Drizzle ORM}~\cite{drizzle} ως το υποκείμενο επίπεδο επικοινωνίας με τη βάση δεδομένων. Το Drizzle είναι ένα ελαφρύ, type-safe ORM που:
+Το \textbf{Drizzle ORM}~\cite{drizzle} είναι ένα σύγχρονο, ελαφρύ TypeScript ORM που χρησιμοποιείται από το PayloadCMS v3 για την επικοινωνία με τη βάση δεδομένων. Τα χαρακτηριστικά του περιλαμβάνουν:
 
 \begin{itemize}
-    \item Παράγει αυτόματα TypeScript types από το schema
-    \item Επιτρέπει raw SQL queries όταν χρειάζεται
-    \item Υποστηρίζει migrations για εξέλιξη του schema
-    \item Είναι σημαντικά πιο performant από βαρύτερα ORMs
+    \item Αυτόματη παραγωγή TypeScript types από το schema
+    \item Δυνατότητα raw SQL queries όταν χρειάζεται
+    \item Υποστήριξη migrations για εξέλιξη του schema
+    \item Υψηλή απόδοση συγκριτικά με βαρύτερα ORMs (όπως το Prisma)
 \end{itemize}
 
-\subsection{PostgreSQL ως Βάση Δεδομένων}
+\subsection{PostgreSQL: Σχεσιακή Βάση Δεδομένων}
 \label{subsec:postgresql}
 
-Η πλατφόρμα βασίζεται στην PostgreSQL~\cite{postgresql}, μια ισχυρή σχεσιακή βάση δεδομένων. Η επιλογή της PostgreSQL έναντι της MongoDB (που υποστηριζόταν στο PayloadCMS v2) έγινε λόγω:
+Η PostgreSQL~\cite{postgresql} είναι μια ισχυρή, open-source σχεσιακή βάση δεδομένων με δεκαετίες ανάπτυξης. Υποστηρίζεται από το PayloadCMS v3 ως η κύρια βάση δεδομένων (αντικαθιστώντας τη MongoDB που υποστηριζόταν στην έκδοση v2).
 
 \begin{description}
-    \item[ACID Transactions:] Κρίσιμο για τη διατήρηση συνέπειας κατά τον συγχρονισμό με τον Channel Manager.
-    \item[Complex Queries:] Οι πολύπλοκες αναζητήσεις για billing, access control, και analytics είναι πιο αποδοτικές σε σχεσιακή βάση.
-    \item[Relational Integrity:] Οι αυστηρές σχέσεις Manager-Owner-Property-Booking απαιτούν foreign keys και referential integrity.
+    \item[ACID Transactions:] Η PostgreSQL εγγυάται Atomicity, Consistency, Isolation, Durability -- κρίσιμο για εφαρμογές που απαιτούν συνέπεια δεδομένων κατά τον συγχρονισμό με εξωτερικά συστήματα.
+    \item[Complex Queries:] Η σχεσιακή δομή επιτρέπει πολύπλοκες αναζητήσεις (JOINs, aggregations) που είναι πιο αποδοτικές από τα αντίστοιχα document-based queries.
+    \item[Relational Integrity:] Υποστηρίζει foreign keys και referential integrity για αυστηρές σχέσεις μεταξύ οντοτήτων.
 \end{description}
 
 \subsection{Shadcn UI, React και Zustand}
 \label{subsec:shadcn}
 
-Για το User Interface χρησιμοποιήθηκε το Shadcn UI~\cite{shadcn}, το οποίο διαφέρει από τις παραδοσιακές βιβλιοθήκες (όπως το Material UI) καθώς δεν είναι ένα npm package, αλλά κώδικας που αντιγράφεται μέσα στο project. Αυτό δίνει απόλυτη ελευθερία παραμετροποίησης.
+Το Shadcn UI~\cite{shadcn} είναι μια συλλογή επαναχρησιμοποιήσιμων UI components που διαφέρει από τις παραδοσιακές βιβλιοθήκες (όπως το Material UI). Αντί να εγκαθίσταται ως npm package, ο κώδικας αντιγράφεται απευθείας μέσα στο project, δίνοντας απόλυτη ελευθερία παραμετροποίησης.
 
 \begin{description}
-    \item[React:] Η βάση του frontend για τη δημιουργία επαναχρησιμοποιήσιμων components~\cite{react}.
-    \item[Zustand:] Χρησιμοποιήθηκε για τη διαχείριση της κατάστασης (state management) της εφαρμογής~\cite{zustand}, προσφέροντας μια πιο απλή και ελαφριά εναλλακτική στο Redux.
+    \item[React:] Η δημοφιλέστερη JavaScript βιβλιοθήκη για τη δημιουργία επαναχρησιμοποιήσιμων UI components~\cite{react}, που αποτελεί τη βάση του σύγχρονου frontend development.
+    \item[Zustand:] Ένα ελαφρύ state management library~\cite{zustand} που προσφέρει απλούστερη εναλλακτική στο Redux για τη διαχείριση της κατάστασης React εφαρμογών.
 \end{description}
 
 \subsection{Swagger/OpenAPI και Code Generation}
 \label{subsec:openapi}
 
-Για την επικοινωνία μεταξύ της Πλατφόρμας και των Websites, χρησιμοποιήθηκε το πρότυπο OpenAPI (Swagger)~\cite{openapi}.
+Το OpenAPI (πρώην Swagger)~\cite{openapi} είναι ένα πρότυπο για την περιγραφή RESTful APIs. Επιτρέπει την αυτόματη παραγωγή documentation και client SDKs.
 
 \begin{description}
-    \item[Generation:] Η βιβλιοθήκη \code{next-swagger-doc} παράγει αυτόματα το documentation του API.
-    \item[Client:] Η βιβλιοθήκη \code{openapi-typescript-codegen} χρησιμοποιείται στο Website project για να παράγει έναν πλήρως τυποποιημένο client (SDK), εξασφαλίζοντας ότι το Website είναι πάντα συγχρονισμένο με τις αλλαγές στο API της πλατφόρμας.
+    \item[Documentation Generation:] Βιβλιοθήκες όπως το \code{next-swagger-doc} παράγουν αυτόματα API documentation από τον κώδικα.
+    \item[Client Generation:] Εργαλεία όπως το \code{openapi-typescript-codegen} παράγουν πλήρως τυποποιημένους TypeScript clients (SDKs) από OpenAPI specifications, εξασφαλίζοντας συγχρονισμό μεταξύ API και consumers.
 \end{description}
 
 \begin{figure}[H]
@@ -694,17 +718,17 @@ await db.insert(bookingsTable).values(bookingsArray);
 \section{Large Language Models (LLMs)}
 \label{sec:llms}
 
-Η ενσωμάτωση LLMs (μέσω API όπως OpenAI ή Anthropic) μεταμορφώνει τις εφαρμογές από στατικά εργαλεία σε έξυπνους βοηθούς~\cite{llm_applications}. Στο πλαίσιο του PMS, τα LLMs μπορούν να αναλύσουν το context μιας κράτησης και να προτείνουν απαντήσεις, να μεταφράσουν μηνύματα ή να λειτουργήσουν ως virtual concierges στις ιστοσελίδες των καταλυμάτων.
+Τα Large Language Models (LLMs) είναι νευρωνικά δίκτυα εκπαιδευμένα σε τεράστιες ποσότητες κειμένου~\cite{llm_applications}. Μέσω APIs από παρόχους όπως OpenAI, Anthropic, ή Google, επιτρέπουν την ενσωμάτωση δυνατοτήτων τεχνητής νοημοσύνης σε εφαρμογές. Στο πλαίσιο Property Management Systems (PMS), τα LLMs μπορούν να αναλύσουν το context μιας κράτησης και να προτείνουν απαντήσεις, να μεταφράσουν μηνύματα σε πολλαπλές γλώσσες, ή να λειτουργήσουν ως virtual concierges σε ιστοσελίδες καταλυμάτων.
 
 \subsection{Vercel AI SDK και Streaming}
 \label{subsec:vercel-ai}
 
-Για την υλοποίηση των AI λειτουργιών χρησιμοποιήθηκε το \textbf{Vercel AI SDK (v5)}~\cite{vercelai}. Το SDK αυτό επιλέχθηκε διότι απλοποιεί δραματικά τη διαδικασία του \textbf{Streaming} (ροή δεδομένων), επιτρέποντας στο UI να εμφανίζει την απάντηση του AI σταδιακά (λέξη-λέξη) καθώς παράγεται, βελτιώνοντας την εμπειρία χρήστη.
+Το \textbf{Vercel AI SDK}~\cite{vercelai} είναι μια open-source βιβλιοθήκη που απλοποιεί την ενσωμάτωση LLMs σε web εφαρμογές. Η κύρια δυνατότητά του είναι το \textbf{Streaming} (ροή δεδομένων) -- η απάντηση του AI εμφανίζεται σταδιακά (λέξη-λέξη) καθώς παράγεται, αντί να περιμένει ο χρήστης ολόκληρη την απάντηση. Αυτό βελτιώνει σημαντικά την εμπειρία χρήστη σε AI-powered chat interfaces.
 
-\subsection{OpenRouter και Πρόσβαση σε Μοντέλα}
+\subsection{OpenRouter: Ενοποιημένη Πρόσβαση σε LLM Μοντέλα}
 \label{subsec:openrouter}
 
-Η πλατφόρμα δεν συνδέεται απευθείας με έναν πάροχο (π.χ. OpenAI), αλλά χρησιμοποιεί το \textbf{OpenRouter}~\cite{openrouter}. Το OpenRouter λειτουργεί ως ένας ενδιάμεσος κόμβος (gateway) που παρέχει πρόσβαση σε πληθώρα μοντέλων (GPT-4, Claude 3.5 Sonnet, Llama 3, κ.α.) μέσω ενός ενιαίου API. Αυτό δίνει την ευελιξία στον χρήστη να επιλέξει το μοντέλο που ταιριάζει καλύτερα στις ανάγκες και το budget του, χωρίς αλλαγές στον κώδικα.
+Το \textbf{OpenRouter}~\cite{openrouter} είναι ένας ενδιάμεσος κόμβος (gateway) που παρέχει πρόσβαση σε πληθώρα LLM μοντέλων (GPT-4, Claude 3.5 Sonnet, Llama 3, κ.α.) μέσω ενός ενιαίου API. Αντί να συνδέεται μια εφαρμογή απευθείας με κάθε πάροχο (OpenAI, Anthropic, Meta), το OpenRouter επιτρέπει την αλλαγή μοντέλου χωρίς τροποποίηση κώδικα. Αυτό δίνει ευελιξία επιλογής μοντέλου βάσει αναγκών και budget.
 
 \begin{figure}[H]
     \centering
@@ -719,7 +743,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 \subsection{Τι είναι ο Channel Manager}
 \label{subsec:what-is-channel-manager}
 
-Ο \textbf{Channel Manager} είναι ένα λογισμικό που λειτουργεί ως ενδιάμεσος κόμβος μεταξύ των καταλυμάτων και των Online Travel Agencies (OTAs) όπως το Airbnb, το Booking.com, η Expedia, και η Vrbo~\cite{pms_systems}. Ο κύριος ρόλος του είναι να διατηρεί \textbf{συγχρονισμένες τις τιμές και τη διαθεσιμότητα} σε όλα τα κανάλια πώλησης σε πραγματικό χρόνο.
+Ο \textbf{Channel Manager}~\cite{pms_systems} είναι ένα λογισμικό που λειτουργεί ως ενδιάμεσος κόμβος μεταξύ των καταλυμάτων και των Online Travel Agencies (OTAs) όπως το Airbnb, το Booking.com, η Expedia, και η Vrbo. Ο κύριος ρόλος του είναι να διατηρεί \textbf{συγχρονισμένες τις τιμές και τη διαθεσιμότητα} σε όλα τα κανάλια πώλησης σε πραγματικό χρόνο.
 
 \begin{figure}[H]
     \centering
@@ -740,7 +764,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 \subsection{Γιατί είναι Απαραίτητοι οι Channel Managers}
 \label{subsec:why-channel-managers}
 
-Ένα κρίσιμο ερώτημα είναι: \textit{Γιατί δεν συνδέoνται τα PMS (ή και η Πλατφόρμα μας) απευθείας με τα OTAs;} Η απάντηση είναι πολύπλευρη:
+Ένα κρίσιμο ερώτημα είναι: \textit{Γιατί δεν συνδέονται τα PMS απευθείας με τα OTAs;} Η απάντηση είναι πολύπλευρη:
 
 \begin{enumerate}
     \item \textbf{Περιορισμένη Πρόσβαση σε APIs:} Τα μεγάλα OTAs όπως το \textbf{Airbnb} και το \textbf{Booking.com} δεν παρέχουν δημόσια API access σε τρίτους developers. Η πρόσβαση στα APIs τους απαιτεί:
@@ -758,18 +782,18 @@ await db.insert(bookingsTable).values(bookingsArray);
 \end{enumerate}
 
 \paragraph{Παράδειγμα Πρακτικής Εφαρμογής:}
-Η πλατφόρμα Lunarety V2 δεν μπορεί να λάβει απευθείας API access από το Airbnb ή το Booking.com. Ωστόσο, μέσω της σύνδεσης με τον Channel Manager \textbf{Beds24}, αποκτά πρόσβαση σε όλες τις κρατήσεις και τα μηνύματα από αυτά τα κανάλια. Το Beds24 λειτουργεί ως «γέφυρα» που μεταφράζει τις κλήσεις της πλατφόρμας σε κλήσεις προς τα OTAs.
+Ένα τυπικό PMS δεν μπορεί να λάβει απευθείας API access από το Airbnb ή το Booking.com. Ωστόσο, μέσω της σύνδεσης με έναν Channel Manager (όπως το Beds24), αποκτά πρόσβαση σε όλες τις κρατήσεις και τα μηνύματα από αυτά τα κανάλια. Ο Channel Manager λειτουργεί ως «γέφυρα» που μεταφράζει τις κλήσεις του PMS σε κλήσεις προς τα OTAs.
 
-\subsection{Επιλογή του Beds24}
-\label{subsec:beds24-selection}
+\subsection{Beds24: Ένας Δημοφιλής Channel Manager}
+\label{subsec:beds24}
 
-Η επιλογή του \textbf{Beds24}~\cite{beds24api} ως Channel Manager δεν ήταν τυχαία. Επιλέχθηκε διότι:
+Το \textbf{Beds24}~\cite{beds24api} είναι ένας από τους πιο διαδεδομένους Channel Managers στην αγορά, με ιδιαίτερη δημοτικότητα στην Ευρώπη. Τα κύρια χαρακτηριστικά του περιλαμβάνουν:
 
 \begin{enumerate}
-    \item \textbf{Δημοφιλία \& Κόστος:} Είναι μια από τις πιο διαδεδομένες και οικονομικές λύσεις στην αγορά, με ιδιαίτερη δημοτικότητα στην Ευρώπη.
-    \item \textbf{Modern API:} Διαθέτει ένα σύγχρονο, comprehensive API με υποστήριξη OpenAPI, το οποίο επιτρέπει την εύκολη παραγωγή κώδικα (μέσω \code{swagger-typescript-api}) και την άμεση προσαρμογή σε μελλοντικά updates.
+    \item \textbf{Modern API:} Διαθέτει σύγχρονο, comprehensive API με υποστήριξη OpenAPI specification, επιτρέποντας την αυτόματη παραγωγή κώδικα (μέσω εργαλείων όπως το \code{swagger-typescript-api}).
     \item \textbf{Webhook Support:} Υποστηρίζει real-time webhooks για νέες κρατήσεις και μηνύματα, επιτρέποντας instant ενημερώσεις αντί για polling.
-    \item \textbf{Πλήρες Feature Set:} Υποστηρίζει τιμές ανά ημέρα, restrictions (min/max stay), μηνύματα guests, και πολλαπλά κανάλια.
+    \item \textbf{Πλήρες Feature Set:} Υποστηρίζει τιμές ανά ημέρα, restrictions (min/max stay), μηνύματα guests, και σύνδεση με πολλαπλά κανάλια (Airbnb, Booking.com, κ.α.).
+    \item \textbf{Ανταγωνιστική Τιμολόγηση:} Προσφέρει οικονομικές επιλογές συγκριτικά με άλλους Channel Managers της αγοράς.
 \end{enumerate}
 
 %----------------------------------------------------------------------------------------
