@@ -471,7 +471,7 @@ This work contributes to understanding how modern software architectures and Rap
     
     \item[Κεφάλαιο 3 -- Μεθοδολογία και Ανάλυση Απαιτήσεων:] Αναλύεται η ιεραρχία χρηστών της πλατφόρμας, η αρχιτεκτονική του συστήματος (Monorepo), το μοντέλο δεδομένων και οι σχέσεις μεταξύ των οντοτήτων.
     
-    \item[Κεφάλαιο 4 -- Υλοποίηση:] Περιγράφεται λεπτομερώς η υλοποίηση των βασικών λειτουργιών: διαχείριση κρατήσεων και συγχρονισμός με τον Channel Manager, μηχανισμός Auto Actions, σύστημα χρέωσης και τιμολόγησης, έλεγχος πρόσβασης, και αυτοματοποιημένη παραγωγή ιστοσελίδων.
+    \item[Κεφάλαιο 4 -- Υλοποίηση:] Περιγράφεται λεπτομερώς η υλοποίηση των βασικών λειτουργιών: διαχείριση κρατήσεων και συγχρονισμός με τον Channel Manager, μηχανισμός Auto Actions, σύστημα χρέωσης και τιμολόγησης, αρχιτεκτονική lifecycle hooks μεταξύ collections, έλεγχος πρόσβασης, και αυτοματοποιημένη παραγωγή ιστοσελίδων.
     
     \item[Κεφάλαιο 5 -- Αποτελέσματα:] Παρουσιάζεται η πλατφόρμα μέσω screenshots και GIFs, τα smart features με ενσωμάτωση LLM, καθώς και οι τεχνικές προκλήσεις που αντιμετωπίστηκαν μαζί με τις λύσεις τους.
     
@@ -1701,6 +1701,35 @@ Billing & visibility: view & \checkmark & \checkmark Own bills & \textit{If allo
     \caption{Decision tree για τον έλεγχο πρόσβασης.}
     \label{fig:access-control}
 \end{figure}
+
+\section{Αρχιτεκτονική Lifecycle Hooks Μεταξύ Collections}
+\label{sec:collection-lifecycles}
+
+Ένα από τα πιο κρίσιμα αρχιτεκτονικά στοιχεία της πλατφόρμας είναι ο τρόπος με τον οποίο οι διαφορετικές συλλογές (Collections) αλληλεπιδρούν μεταξύ τους μέσω του συστήματος lifecycle hooks. Το Σχήμα~\ref{fig:collection-lifecycles} απεικονίζει αναλυτικά τις ροές που ενεργοποιούνται κατά την αλλαγή δεδομένων σε κάθε collection: \textbf{Users}, \textbf{Properties}, \textbf{Bookings} και \textbf{Billings}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{collection_lifecycles_that_updates_other_collections.png}
+    \caption{Διάγραμμα ροής lifecycle hooks μεταξύ των κύριων Collections της πλατφόρμας. Κάθε collection ενεργοποιεί συγκεκριμένες ροές βάσει συνθηκών, με τελικό σημείο σύγκλισης τα PropertyRates.}
+    \label{fig:collection-lifecycles}
+\end{figure}
+
+Όπως φαίνεται στο διάγραμμα, κάθε collection έχει το δικό του \code{on:change} trigger που ενεργοποιεί διαφορετικές διαδρομές ανάλογα με τις συνθήκες. Τα βασικά αρχιτεκτονικά patterns που προκύπτουν από αυτή τη σχεδίαση είναι τα εξής:
+
+\subsection{Βασικά Αρχιτεκτονικά Patterns}
+\label{subsec:lifecycle-patterns}
+
+\paragraph{Στρατηγική «Κύματος» (Ripple Effect):}
+Η αρχιτεκτονική είναι σχεδιασμένη ώστε μια αλλαγή στο ανώτερο επίπεδο να διαδίδεται προς τα κάτω στη μικρότερη μονάδα (το Rate). Τόσο οι αλλαγές σε Properties όσο και σε Bookings καταλήγουν να ενεργοποιούν το lifecycle των \code{propertyRates}, διασφαλίζοντας ότι η λογική τιμολόγησης είναι πάντα ακριβής.
+
+\paragraph{Αποτροπή Βρόχων (\code{skipChannelSync}):}
+Ο αμφίδρομος συγχρονισμός (Local DB $\leftrightarrow$ Beds24) είναι επιρρεπής σε «ηχώ». Το \code{skipChannelSync} flag αποτρέπει το σύστημα από το να προσπαθήσει να ενημερώσει πίσω τον Channel Manager με δεδομένα που μόλις έλαβε από αυτόν.
+
+\paragraph{Ισορροπία Απόδοσης vs Ακρίβειας:}
+Σε πολλά ORMs, η εκτέλεση \code{updateMany} παρακάμπτει τα lifecycle hooks. Το σύστημα εκτελεί τις ενημερώσεις rates «ένα-ένα» για να διασφαλίσει ότι οι event listeners ενεργοποιούνται για κάθε record. Αν και αυτή η προσέγγιση είναι αργή, συνήθως εκτελείται μόνο μία φορά ανά Property κατά το onboarding.
+
+\paragraph{Διαχείριση Κατάστασης (State Management):}
+Η διάκριση μεταξύ \code{imported} και \code{active} properties επιτρέπει την ασφαλή εισαγωγή δεδομένων από τον Channel Manager (staging) πριν ξεκινήσει η επεξεργασία live κρατήσεων.
 
 \section{Αυτοματοποιημένη Παραγωγή Ιστοσελίδων}
 \label{sec:website-generation}
