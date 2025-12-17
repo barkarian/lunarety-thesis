@@ -1109,6 +1109,39 @@ Resend & Email sending & \code{lib/email/} \\
 \chapter{Υλοποίηση}
 \label{chap:implementation}
 
+Πριν αναλύσουμε τις επιμέρους λειτουργίες της πλατφόρμας, είναι σημαντικό να κατανοήσουμε τη θεμελιώδη αρχιτεκτονική που διέπει τον τρόπο με τον οποίο τα δεδομένα αλληλεπιδρούν μεταξύ τους. Το σύστημα lifecycle hooks αποτελεί τον πυρήνα αυτής της αρχιτεκτονικής και καθορίζει πώς οι αλλαγές σε ένα collection επηρεάζουν τα υπόλοιπα.
+
+\section{Αρχιτεκτονική Lifecycle Hooks Μεταξύ Collections}
+\label{sec:collection-lifecycles}
+
+Ένα από τα πιο κρίσιμα αρχιτεκτονικά στοιχεία της πλατφόρμας είναι ο τρόπος με τον οποίο οι διαφορετικές συλλογές (Collections) αλληλεπιδρούν μεταξύ τους μέσω του συστήματος lifecycle hooks. Το Σχήμα~\ref{fig:collection-lifecycles} απεικονίζει αναλυτικά τις ροές που ενεργοποιούνται κατά την αλλαγή δεδομένων σε κάθε collection: \textbf{Users}, \textbf{Properties}, \textbf{Bookings} και \textbf{Billings}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{collection_lifecycles_that_updates_other_collections.png}
+    \caption{Διάγραμμα ροής lifecycle hooks μεταξύ των κύριων Collections της πλατφόρμας. Κάθε collection ενεργοποιεί συγκεκριμένες ροές βάσει συνθηκών, με τελικό σημείο σύγκλισης τα PropertyRates.}
+    \label{fig:collection-lifecycles}
+\end{figure}
+
+Όπως φαίνεται στο διάγραμμα, κάθε collection έχει το δικό του \code{on:change} trigger που ενεργοποιεί διαφορετικές διαδρομές ανάλογα με τις συνθήκες. Τα βασικά αρχιτεκτονικά patterns που προκύπτουν από αυτή τη σχεδίαση είναι τα εξής:
+
+\subsection{Βασικά Αρχιτεκτονικά Patterns}
+\label{subsec:lifecycle-patterns}
+
+\paragraph{Στρατηγική «Κύματος» (Ripple Effect):}
+Η αρχιτεκτονική είναι σχεδιασμένη ώστε μια αλλαγή στο ανώτερο επίπεδο να διαδίδεται προς τα κάτω στη μικρότερη μονάδα (το Rate). Τόσο οι αλλαγές σε Properties όσο και σε Bookings καταλήγουν να ενεργοποιούν το lifecycle των \code{propertyRates}, διασφαλίζοντας ότι η λογική τιμολόγησης είναι πάντα ακριβής.
+
+\paragraph{Αποτροπή Βρόχων (\code{skipChannelSync}):}
+Ο αμφίδρομος συγχρονισμός (Local DB $\leftrightarrow$ Beds24) είναι επιρρεπής σε «ηχώ». Το \code{skipChannelSync} flag αποτρέπει το σύστημα από το να προσπαθήσει να ενημερώσει πίσω τον Channel Manager με δεδομένα που μόλις έλαβε από αυτόν.
+
+\paragraph{Ισορροπία Απόδοσης vs Ακρίβειας:}
+Σε πολλά ORMs, η εκτέλεση \code{updateMany} παρακάμπτει τα lifecycle hooks. Το σύστημα εκτελεί τις ενημερώσεις rates «ένα-ένα» για να διασφαλίσει ότι οι event listeners ενεργοποιούνται για κάθε record. Αν και αυτή η προσέγγιση είναι αργή, συνήθως εκτελείται μόνο μία φορά ανά Property κατά το onboarding.
+
+\paragraph{Διαχείριση Κατάστασης (State Management):}
+Η διάκριση μεταξύ \code{imported} και \code{active} properties επιτρέπει την ασφαλή εισαγωγή δεδομένων από τον Channel Manager (staging) πριν ξεκινήσει η επεξεργασία live κρατήσεων.
+
+Με αυτή την αρχιτεκτονική ως βάση, οι επόμενες ενότητες αναλύουν λεπτομερώς τις επιμέρους υλοποιήσεις κάθε λειτουργίας.
+
 \section{Διαχείριση Κρατήσεων και Συγχρονισμός}
 \label{sec:booking-sync}
 
@@ -1116,7 +1149,7 @@ Resend & Email sending & \code{lib/email/} \\
 
 \begin{enumerate}
     \item \textbf{Σύνδεση Λογαριασμού:} Ο Manager εισάγει το API Key του Beds24.
-    \item     \item \textbf{Token Refresh:} Μια φορά την ημέρα και κατα το Initialization γίνεται αυτόματη ανανέωση του Beds24 token κάθε Manager μέσω του refresh token, ώστε να διασφαλίζεται απρόσκοπτη επικοινωνία με το Channel Manager.
+    \item \textbf{Token Refresh:} Μια φορά την ημέρα και κατα το Initialization γίνεται αυτόματη ανανέωση του Beds24 token κάθε Manager μέσω του refresh token, ώστε να διασφαλίζεται απρόσκοπτη επικοινωνία με το Channel Manager.
     \item \textbf{Initial Import:} Κατά την εισαγωγή του κλειδιού, το σύστημα εκτελεί μια μαζική εισαγωγή (Import) όλων των Properties και των Rates που είναι ορισμένα στο Channel Manager.
     \item \textbf{Webhook Configuration:} Το σύστημα αυτόματα ενημερώνει τις ρυθμίσεις του Channel Manager (Beds24) ώστε να στέλνει Webhooks στο endpoint της πλατφόρμας (\code{/api/webhooks/channel-managers/beds24/bookings}).
     \item \textbf{Async Updates:} Από εκείνη τη στιγμή, κάθε αλλαγή (νέα κράτηση, αλλαγή ημερομηνίας) έρχεται ασύγχρονα μέσω Webhook.
@@ -1166,7 +1199,7 @@ await api.properties.propertiesCreate(
 
 \subsubsection{Α) Mass Import (Property Syncing)}
 
-Κατά την αρχική εισαγωγή ή τον περιοδικό συγχρονισμό, η πλατφόρμα χρειάζεται να εισάγει εκατοντάδες ή χιλιάδες κρατήσεις. Χρησιμοποιείται η \code{payload.db.create()} και \code{payload.db.updateOne()} αντί των standard methods, παρακάμπτοντας τα hooks για βέλτιστη απόδοση.
+Η \textbf{μαζική εισαγωγή bookings} πραγματοποιείται όταν ένα Property μεταβαίνει από την κατάσταση \code{imported} στην \code{active} (ενεργοποίηση του καταλύματος). Κατά τη διαδικασία αυτή, η πλατφόρμα χρειάζεται να εισάγει εκατοντάδες ή χιλιάδες κρατήσεις από το Beds24. Χρησιμοποιείται η \code{payload.db.create()} και \code{payload.db.updateOne()} αντί των standard methods, παρακάμπτοντας τα hooks για βέλτιστη απόδοση.
 
 \begin{lstlisting}[caption={Mass import με direct DB operations}]
 const syncBookingsOperations = async (
@@ -1195,6 +1228,10 @@ const syncBookingsOperations = async (
   }
 };
 \end{lstlisting}
+
+Μετά την εισαγωγή των bookings, ενεργοποιείται η ενημέρωση \textbf{όλων των σχετικών PropertyRates} για να αντικατοπτριστεί η διαθεσιμότητα. Αν και αυτή η διαδικασία δεν είναι βέλτιστη (καθώς ενεργοποιεί mass updates σε χιλιάδες rate records), δεν έχει αναπτυχθεί ακόμα χαμηλότερου επιπέδου υλοποίηση -- η βελτιστοποίηση αυτή αναλύεται στην Ενότητα \ref{subsec:property-import}.
+
+Σημειώνεται ότι η μαζική εισαγωγή \textbf{εκτελείται μόνο μία φορά} κατά την ενεργοποίηση του property. Μετά την αρχική εισαγωγή, όλες οι ενημερώσεις (δημιουργία, τροποποίηση, ακύρωση κρατήσεων) λαμβάνονται μέσω \textbf{webhooks} σε πραγματικό χρόνο, οπότε η απόδοση είναι ικανοποιητική.
 
 \subsubsection{Β) Webhook Updates (Channel Manager Triggers)}
 
@@ -1379,6 +1416,27 @@ try {
 \bottomrule
 \end{tabular}
 \end{table}
+
+\paragraph{Γιατί η Τρέχουσα Υλοποίηση είναι Αποδεκτή:}
+
+Παρά τα περιθώρια βελτιστοποίησης, η τρέχουσα υλοποίηση είναι \textbf{αποδεκτή για το παρόν} επειδή η μαζική εισαγωγή rates \textbf{εκτελείται μόνο μία φορά} κατά την αρχική σύνδεση με τον Channel Manager. Αντίστοιχα, η μαζική εισαγωγή bookings (βλ. Ενότητα \ref{subsec:booking-import-methods}) εκτελείται επίσης μόνο μία φορά κατά την ενεργοποίηση του property. Μετά την αρχική εισαγωγή, οι καθημερινές ενημερώσεις γίνονται μεμονωμένα μέσω webhooks, οπότε η απόδοση είναι ικανοποιητική.
+
+\paragraph{Μελλοντική Βελτιστοποίηση:}
+
+Για περαιτέρω βελτίωση της απόδοσης, η παράκαμψη των hooks \textbf{δεν είναι αρκετή} -- απαιτούνται \textbf{mass upsert operations} απευθείας στη βάση δεδομένων. Το Payload CMS υποστηρίζει πρόσβαση στο Drizzle ORM μέσω του \code{payload.db.drizzle}, που επιτρέπει type-safe SQL operations με δυνατότητα batch upserts.
+
+Ωστόσο, αυτή η υλοποίηση \textbf{αποφεύγεται προσωρινά} για τους εξής λόγους:
+\begin{itemize}
+    \item Κατά τη φάση ανάπτυξης, το schema υφίσταται συχνές αλλαγές (breaking changes).
+    \item Η χρήση low-level SQL/Drizzle queries απαιτεί σταθερό schema για να αποφευχθούν runtime errors.
+    \item Προτιμάται η αναμονή μέχρι το σύστημα να φτάσει σε \textbf{stable version} με πραγματικές επιχειρήσεις (businesses).
+\end{itemize}
+
+\paragraph{Μελλοντικά Σενάρια Χρήσης:}
+
+Η βελτιστοποίηση θα γίνει κρίσιμη σε σενάρια όπου απαιτούνται \textbf{τακτικές μαζικές ενημερώσεις}. Ένα τέτοιο σενάριο είναι η ενσωμάτωση με \textbf{Revenue Management Systems (RMS)}, τα οποία αλλάζουν αυτόματα τις τιμές βάσει αλγορίθμων ζήτησης. Σε αυτή την περίπτωση, θα χρειαζόταν καθημερινή (π.χ. κάθε βράδυ μέσω cron) ενημέρωση όλων των rates, καθιστώντας την τρέχουσα υλοποίηση ανεπαρκή.
+
+Αντίθετα, τα \textbf{bookings δεν θα απαιτήσουν αντίστοιχη βελτιστοποίηση}, καθώς η μαζική εισαγωγή γίνεται μόνο μία φορά κατά την ενεργοποίηση, και στη συνέχεια όλες οι ενημερώσεις (δημιουργία, τροποποίηση, ακύρωση κρατήσεων) λαμβάνονται μέσω \textbf{webhooks} σε πραγματικό χρόνο.
 
 \begin{figure}[H]
     \centering
@@ -1701,35 +1759,6 @@ Billing & visibility: view & \checkmark & \checkmark Own bills & \textit{If allo
     \caption{Decision tree για τον έλεγχο πρόσβασης.}
     \label{fig:access-control}
 \end{figure}
-
-\section{Αρχιτεκτονική Lifecycle Hooks Μεταξύ Collections}
-\label{sec:collection-lifecycles}
-
-Ένα από τα πιο κρίσιμα αρχιτεκτονικά στοιχεία της πλατφόρμας είναι ο τρόπος με τον οποίο οι διαφορετικές συλλογές (Collections) αλληλεπιδρούν μεταξύ τους μέσω του συστήματος lifecycle hooks. Το Σχήμα~\ref{fig:collection-lifecycles} απεικονίζει αναλυτικά τις ροές που ενεργοποιούνται κατά την αλλαγή δεδομένων σε κάθε collection: \textbf{Users}, \textbf{Properties}, \textbf{Bookings} και \textbf{Billings}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{collection_lifecycles_that_updates_other_collections.png}
-    \caption{Διάγραμμα ροής lifecycle hooks μεταξύ των κύριων Collections της πλατφόρμας. Κάθε collection ενεργοποιεί συγκεκριμένες ροές βάσει συνθηκών, με τελικό σημείο σύγκλισης τα PropertyRates.}
-    \label{fig:collection-lifecycles}
-\end{figure}
-
-Όπως φαίνεται στο διάγραμμα, κάθε collection έχει το δικό του \code{on:change} trigger που ενεργοποιεί διαφορετικές διαδρομές ανάλογα με τις συνθήκες. Τα βασικά αρχιτεκτονικά patterns που προκύπτουν από αυτή τη σχεδίαση είναι τα εξής:
-
-\subsection{Βασικά Αρχιτεκτονικά Patterns}
-\label{subsec:lifecycle-patterns}
-
-\paragraph{Στρατηγική «Κύματος» (Ripple Effect):}
-Η αρχιτεκτονική είναι σχεδιασμένη ώστε μια αλλαγή στο ανώτερο επίπεδο να διαδίδεται προς τα κάτω στη μικρότερη μονάδα (το Rate). Τόσο οι αλλαγές σε Properties όσο και σε Bookings καταλήγουν να ενεργοποιούν το lifecycle των \code{propertyRates}, διασφαλίζοντας ότι η λογική τιμολόγησης είναι πάντα ακριβής.
-
-\paragraph{Αποτροπή Βρόχων (\code{skipChannelSync}):}
-Ο αμφίδρομος συγχρονισμός (Local DB $\leftrightarrow$ Beds24) είναι επιρρεπής σε «ηχώ». Το \code{skipChannelSync} flag αποτρέπει το σύστημα από το να προσπαθήσει να ενημερώσει πίσω τον Channel Manager με δεδομένα που μόλις έλαβε από αυτόν.
-
-\paragraph{Ισορροπία Απόδοσης vs Ακρίβειας:}
-Σε πολλά ORMs, η εκτέλεση \code{updateMany} παρακάμπτει τα lifecycle hooks. Το σύστημα εκτελεί τις ενημερώσεις rates «ένα-ένα» για να διασφαλίσει ότι οι event listeners ενεργοποιούνται για κάθε record. Αν και αυτή η προσέγγιση είναι αργή, συνήθως εκτελείται μόνο μία φορά ανά Property κατά το onboarding.
-
-\paragraph{Διαχείριση Κατάστασης (State Management):}
-Η διάκριση μεταξύ \code{imported} και \code{active} properties επιτρέπει την ασφαλή εισαγωγή δεδομένων από τον Channel Manager (staging) πριν ξεκινήσει η επεξεργασία live κρατήσεων.
 
 \section{Αυτοματοποιημένη Παραγωγή Ιστοσελίδων}
 \label{sec:website-generation}
