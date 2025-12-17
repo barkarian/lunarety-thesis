@@ -810,7 +810,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 \begin{enumerate}
     \item \textbf{Platform Users (Admins):} Οι διαχειριστές της πλατφόρμας Lunarety. Έχουν καθολική εποπτεία.
-    \item \textbf{Managers:} Ο κεντρικός κόμβος. Συνδέουν το Channel Manager τους, δημιουργούν πλάνα χρέωσης και εισάγουν τους Owners τους.
+    \item \textbf{Managers:} Ο κεντρικός κόμβος. Συνδέουν το Channel Manager τους, δημιουργούν πλάνα χρέωσης και εισάγουν τους Owners τους. Η πρόσβαση τους καθορίζεται αυστηρά απο τους Platform Users.
     \item \textbf{Owners:} Πελάτες του Manager. Βλέπουν μόνο τα δικά τους ακίνητα και οικονομικά στοιχεία. Η πρόσβασή τους καθορίζεται αυστηρά από τον Manager.
     \item \textbf{Staff:} Υπάλληλοι (καθαριστές, υποδοχή) που ανήκουν σε Manager ή προαιρετικά και σε Owner, με περιορισμένα δικαιώματα. Η πρόσβασή τους καθορίζεται αυστηρά από τον Manager ή Owner τους.
 \end{enumerate}
@@ -830,7 +830,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 \toprule
 \textbf{User Type} & \textbf{Περιγραφή} & \textbf{Parent} & \textbf{Children} \\
 \midrule
-\code{platform-user} & Administrators πλατφόρμας & Κανένας & Managers \\
+\code{platform-user} & Administrators πλατφόρμας & Κανένας & Κανένας \\
 \code{manager} & Property Managers & Platform & Owners, Staff \\
 \code{owner} & Ιδιοκτήτες ακινήτων & Manager & Staff \\
 \code{stuff} & Προσωπικό & Owner/Manager & Κανένας \\
@@ -1116,10 +1116,10 @@ Resend & Email sending & \code{lib/email/} \\
 
 \begin{enumerate}
     \item \textbf{Σύνδεση Λογαριασμού:} Ο Manager εισάγει το API Key του Beds24.
+    \item     \item \textbf{Token Refresh:} Μια φορά την ημέρα και κατα το Initialization γίνεται αυτόματη ανανέωση του Beds24 token κάθε Manager μέσω του refresh token, ώστε να διασφαλίζεται απρόσκοπτη επικοινωνία με το Channel Manager.
     \item \textbf{Initial Import:} Κατά την εισαγωγή του κλειδιού, το σύστημα εκτελεί μια μαζική εισαγωγή (Import) όλων των Properties και των Rates που είναι ορισμένα στο Channel Manager.
-    \item \textbf{Webhook Configuration:} Το σύστημα αυτόματα ενημερώνει τις ρυθμίσεις του Beds24 ώστε να στέλνει Webhooks στο endpoint της πλατφόρμας (\code{/api/webhooks/channel-managers/beds24/bookings}).
+    \item \textbf{Webhook Configuration:} Το σύστημα αυτόματα ενημερώνει τις ρυθμίσεις του Channel Manager (Beds24) ώστε να στέλνει Webhooks στο endpoint της πλατφόρμας (\code{/api/webhooks/channel-managers/beds24/bookings}).
     \item \textbf{Async Updates:} Από εκείνη τη στιγμή, κάθε αλλαγή (νέα κράτηση, αλλαγή ημερομηνίας) έρχεται ασύγχρονα μέσω Webhook.
-    \item \textbf{Scheduled Sync:} Για λόγους ασφαλείας και συνέπειας, εκτελείται περιοδικός συγχρονισμός (π.χ. στο τέλος της ημέρας) για να διορθωθούν τυχόν χαμένα πακέτα.
 \end{enumerate}
 
 Η διαχείριση κρατήσεων αποτελεί τον πυρήνα της πλατφόρμας και απαιτεί προσεκτικό σχεδιασμό για να εξασφαλιστεί η ακεραιότητα των δεδομένων, η απόδοση και η συνέπεια μεταξύ της τοπικής βάσης δεδομένων και του Channel Manager.
@@ -1254,12 +1254,11 @@ export const computeCommissionOfPlan = (
 Κάθε κράτηση συνδέεται με τα αντίστοιχα PropertyRate records μέσω του \code{relatedRates} field. Αυτό είναι κρίσιμο για:
 
 \begin{itemize}
-    \item Τον υπολογισμό διαθεσιμότητας (ένα rate με booked unit δεν είναι διαθέσιμο)
-    \item Τον υπολογισμό τιμών (η τιμή ανά νύχτα προέρχεται από το rate)
+    \item Τον υπολογισμό διαθεσιμότητας (π.χ. ένα rate με 3 units και με 3 booked unit δεν είναι διαθέσιμο)
     \item Την ενημέρωση του ημερολογίου
 \end{itemize}
 
-\paragraph{linkRatesToBooking Hook:}
+\paragraph{linkRatesToBooking Hook:} Για να διασφαλίσουμε ότι κάθε κράτηση συνδέεται με τα σωστά property rates, χρησιμοποιούμε το hook \texttt{linkRatesToBooking}. Αυτό το hook, κατά τη δημιουργία ή την επεξεργασία μιας κράτησης, εντοπίζει και συσχετίζει με την κράτηση όλα τα rate που αφορούν τις επιλεγμένες ημερομηνίες διαμονής (\texttt{checkIn}, \texttt{checkOut}).
 
 \begin{lstlisting}[caption={linkRatesToBooking Hook}]
 export const linkRatesToBooking: CollectionBeforeChangeHook<Booking> = async ({
