@@ -898,22 +898,50 @@ await db.insert(bookingsTable).values(bookingsArray);
 \subsection{Δομή Monorepo}
 \label{subsec:monorepo-structure}
 
-\begin{lstlisting}[style=text,caption={Δομή καταλόγων του Monorepo}]
+Η πλατφόρμα αποτελείται από δύο ξεχωριστά repositories:
+
+\subsubsection{Platform Repository (lunarety-v2)}
+
+Το κύριο repository περιέχει τον πυρήνα της πλατφόρμας:
+
+\begin{english}
+\begin{lstlisting}[style=text,caption={Δομή καταλόγων της Πλατφόρμας (lunarety-v2)}]
 lunarety-v2/
-├── src/
-│   ├── app/                    # Next.js App Router
-│   │   ├── (frontend)/         # Frontend routes
-│   │   └── (payload)/          # PayloadCMS admin routes
-│   ├── apis/                   # External API integrations
-│   │   └── channel-managers/   # Beds24 API, DTOs, sync
-│   ├── collections/            # PayloadCMS collections
-│   ├── crons/                  # Scheduled jobs
-│   ├── endpoints/              # Custom API endpoints
-│   ├── lib/                    # Shared utilities
-│   └── payload.config.ts       # PayloadCMS configuration
-├── lunarety-v2-website/        # Website template
-└── package.json
+|-- src/
+|   |-- app/                    # Next.js App Router
+|   |   |-- (frontend)/         # Frontend routes
+|   |   +-- (payload)/          # PayloadCMS admin routes
+|   |-- apis/                   # External API integrations
+|   |   +-- channel-managers/   # Beds24 API, DTOs, sync
+|   |-- collections/            # PayloadCMS collections
+|   |-- crons/                  # Scheduled jobs
+|   |-- endpoints/              # Custom API endpoints
+|   |-- lib/                    # Shared utilities
+|   +-- payload.config.ts       # PayloadCMS configuration
++-- package.json
 \end{lstlisting}
+\end{english}
+
+\subsubsection{Website Template Repository (lunarety-website)}
+
+Το δεύτερο repository είναι δημόσια διαθέσιμο στο GitHub\footnote{\url{https://github.com/barkarian/lunarety-website}} και λειτουργεί ως template για τις ιστοσελίδες των καταλυμάτων:
+
+\begin{english}
+\begin{lstlisting}[style=text,caption={Δομή καταλόγων του Website Template (lunarety-website)}]
+lunarety-website/
+|-- src/
+|   |-- app/                    # Next.js App Router
+|   |   |-- page.tsx            # Home page (property search)
+|   |   |-- properties/         # Property listing & details
+|   |   +-- booking/            # Booking management pages
+|   |-- components/             # React UI components
+|   |   |-- ui/                 # Shadcn UI components
+|   |   +-- chat/               # AI Chat Bubble component
+|   +-- lib/                    # Utilities & API clients
+|-- public/                     # Static assets
++-- package.json
+\end{lstlisting}
+\end{english}
 
 \subsection{Βασικά Components}
 \label{subsec:basic-components}
