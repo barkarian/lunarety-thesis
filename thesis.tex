@@ -2205,6 +2205,85 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \label{fig:billings-system}
 \end{figure}
 
+\section{Advanced Dashboard}
+\label{sec:advanced-dashboard}
+
+Το Advanced Dashboard αποτελεί το κεντρικό εργαλείο διαμόρφωσης της πλατφόρμας, βασισμένο στο default administration interface του Payload CMS. Πρόκειται για ένα dashboard που απευθύνεται κυρίως στον \textbf{Platform User} (διαχειριστή της πλατφόρμας), ωστόσο είναι δυνατή η παροχή μερικής πρόσβασης σε χρήστες τύπου \textbf{Manager}, \textbf{Owner} ή ακόμα και \textbf{Staff}, εφόσον είναι εξοικειωμένοι με τη χρήση του.
+
+Η ευελιξία αυτή επιτρέπει σε έμπειρους Managers να διαχειρίζονται απευθείας τις ρυθμίσεις καταλυμάτων, πλάνων χρέωσης και αυτοματισμών, χωρίς να απαιτείται παρέμβαση του Platform User. Το σύστημα access control της πλατφόρμας διασφαλίζει ότι κάθε χρήστης βλέπει και επεξεργάζεται μόνο τα δεδομένα που του αναλογούν, σύμφωνα με την ιεραρχία Manager → Owner → Staff → Property.
+
+\subsection{Διαχείριση Καταλυμάτων (Properties)}
+
+Στο Advanced Dashboard, η διαχείριση καταλυμάτων παρέχει πρόσβαση σε όλες τις λεπτομερείς ρυθμίσεις που δεν είναι διαθέσιμες στο custom frontend UI. Περιλαμβάνει καρτέλες για το περιεχόμενο (Content), τις τιμές (Rates), τους αυτοματισμούς (Automations), τις κρατήσεις (Bookings), τις ιστοσελίδες (Websites) και τον συγχρονισμό (Syncing) με Channel Managers.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{advanced_dashboard_ui_screenshots/advanced_dashboard_properties.png}
+    \caption{Advanced Dashboard - Διαχείριση Property. Φαίνεται η επεξεργασία ενός καταλύματος με καρτέλες για Property, Content, Rates, Automations, Bookings, Websites και Syncing. Στα δεξιά εμφανίζονται τα πεδία Status, Manager, Owner, Staff καθώς και τα στοιχεία του Admin Contract.}
+    \label{fig:advanced-dashboard-properties}
+\end{figure}
+
+\subsection{Διαμόρφωση Πλάνων Χρέωσης (Plans)}
+
+Τα Plans αποτελούν τον πυρήνα του οικονομικού μοντέλου της πλατφόρμας. Μέσω του Advanced Dashboard, ο Platform User ή ο Manager μπορεί να ορίσει τη δομή προμηθειών για κάθε τύπο κράτησης: OTA Commission, Website Platform Commission, Website Manager Commission, Website Owner Commission και Direct Commission. Κάθε πλάνο περιλαμβάνει επίσης ρυθμίσεις για φόρους (Service Taxes) και εξαιρέσεις.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{advanced_dashboard_ui_screenshots/advanced_dashboard_plan.png}
+    \caption{Advanced Dashboard - Διαμόρφωση Plan. Εμφανίζεται η ρύθμιση ενός «OWNER PLAN» με καρτέλες Features και Plan Commission. Διακρίνονται οι επιλογές για Service Taxes, Taxes Percentage και οι διαφορετικοί τύποι προμηθειών (OTA, Website Platform, Manager, Owner Commission) ανά κράτηση ή ανά κατάλυμα.}
+    \label{fig:advanced-dashboard-plan}
+\end{figure}
+
+\subsection{Ρύθμιση Αυτοματισμών (Auto Actions)}
+
+Οι Auto Actions επιτρέπουν τη δημιουργία αυτοματοποιημένων ειδοποιήσεων που ενεργοποιούνται με βάση συγκεκριμένα triggers (π.χ. After Checkout, Before Check-in). Η διεπαφή υποστηρίζει template variables για δυναμική αντικατάσταση δεδομένων κράτησης (όνομα πελάτη, ημερομηνίες, τιμή κ.λπ.) και επιλογή καναλιών επικοινωνίας (Telegram, Email).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{advanced_dashboard_ui_screenshots/advanced_dashboard_auto_actions.png}
+    \caption{Advanced Dashboard - Ρύθμιση Auto Action. Παράδειγμα notification configuration με Trigger Type «After Checkout». Το πεδίο Content περιέχει template με μεταβλητές όπως \code{[property.title]}, \code{[booking.bookingHolder.firstName]} και conditional logic \code{\{user.settings.features.bookings.prices!=="none"??\}}. Διακρίνονται επίσης οι ρυθμίσεις Time Interval, Time Window και οι χρήστες που θα ειδοποιηθούν.}
+    \label{fig:advanced-dashboard-auto-actions}
+\end{figure}
+
+\subsection{Διαχείριση Websites και Quick Deploy στο Vercel}
+
+Η ενότητα Websites του Advanced Dashboard επιτρέπει τη δημιουργία και διαχείριση ιστοσελίδων για τα καταλύματα. Κάθε Website συνδέεται με έναν Owner, έχει συγκεκριμένο τύπο (π.χ. Manager Marketplace) και περιλαμβάνει τα Properties που θα εμφανίζονται. Το κλειδί-API (Website API Key) χρησιμοποιείται για την ασφαλή επικοινωνία μεταξύ της ιστοσελίδας και της κεντρικής πλατφόρμας.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{advanced_dashboard_ui_screenshots/advanced_dashboard_websites_and_deploy_button.png}
+    \caption{Advanced Dashboard - Διαχείριση Website με λειτουργία Quick Deploy. Εμφανίζονται οι καρτέλες Website, AI, SEO και Channel Manager, η λίστα των συνδεδεμένων Properties και το πλαίσιο «Deploy to Vercel» που εμφανίζει τα environment variables (\code{WEBSITE\_API\_KEY}, \code{LUNARETY\_URL}) που θα ρυθμιστούν αυτόματα.}
+    \label{fig:advanced-dashboard-websites}
+\end{figure}
+
+Η λειτουργία \textbf{Quick Deploy to Vercel} απλοποιεί δραματικά τη διαδικασία δημοσίευσης μιας ιστοσελίδας. Με ένα κλικ στο κουμπί «Deploy with Vercel», ο χρήστης ανακατευθύνεται στην πλατφόρμα Vercel με προ-συμπληρωμένες τις απαραίτητες ρυθμίσεις:
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[frame=0.5pt,width=\textwidth]{advanced_dashboard_ui_screenshots/quick-vercel-deploy-1.png}
+        \subcaption{Βήμα 1: Δημιουργία νέου Project}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[frame=0.5pt,width=\textwidth]{advanced_dashboard_ui_screenshots/quick-vercel-deploy-2.png}
+        \subcaption{Βήμα 2: Environment Variables}
+    \end{minipage}
+    \caption{Διαδικασία Quick Deploy στο Vercel. Αριστερά: Το Vercel κλωνοποιεί αυτόματα το template \code{lunarety-website} από το GitHub και ζητά επιβεβαίωση για το Git Scope και το όνομα του repository. Δεξιά: Τα environment variables (\code{WEBSITE\_API\_KEY}, \code{LUNARETY\_URL}) έχουν ήδη συμπληρωθεί αυτόματα από την πλατφόρμα και το deployment είναι σε εξέλιξη.}
+    \label{fig:quick-deploy-steps}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[frame=0.5pt,width=0.6\textwidth]{advanced_dashboard_ui_screenshots/quick-verce-deploy-3-website-successfully-deployed.png}
+    \caption{Επιτυχής ολοκλήρωση του Quick Deploy. Η ιστοσελίδα είναι πλέον διαθέσιμη στο domain \code{property-1-website.vercel.app} και συνδεδεμένη με το GitHub repository για αυτόματες ενημερώσεις μέσω CI/CD.}
+    \label{fig:quick-deploy-success}
+\end{figure}
+
+Η διαδικασία αυτή μετατρέπει μια παραδοσιακά τεχνική εργασία (setup hosting, environment configuration, CI/CD pipeline) σε μια απλή ενέργεια που μπορεί να εκτελέσει ακόμα και χρήστης χωρίς τεχνικές γνώσεις. Στην επόμενη ενότητα παρουσιάζεται αναλυτικά η εμπειρία χρήστη στην ιστοσελίδα που δημιουργείται μέσω αυτής της διαδικασίας.
+
 \section{Παρουσίαση του Generated Website}
 \label{sec:website-presentation}
 
