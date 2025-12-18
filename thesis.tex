@@ -2412,36 +2412,6 @@ const calculateTriggerTime = (booking, autoAction) => {
 };
 \end{lstlisting}
 
-\section{Στατιστικά και Μετρήσεις Κώδικα}
-\label{sec:code-stats}
-
-Η πλατφόρμα αποτελείται από σημαντικό volume κώδικα, οργανισμένο σε διακριτά modules:
-
-\begin{figure}[H]
-    \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Code Statistics Dashboard]}\\\small Περιγραφή: Ένα dashboard με μετρικές κάρτες: "Total Lines of Code: $\sim$45,000", "TypeScript Files: $\sim$280", "PayloadCMS Collections: 12", "Custom API Endpoints: 15", "Cron Jobs: 3", "External Integrations: 5".\vspace{1cm}}}
-    \caption{Στατιστικά Κώδικα.}
-    \label{fig:code-stats}
-\end{figure}
-
-\begin{table}[H]
-\centering
-\caption{Στατιστικά project}
-\label{tab:code-stats}
-\begin{tabular}{@{}lll@{}}
-\toprule
-\textbf{Κατηγορία} & \textbf{Αριθμός} & \textbf{Σημειώσεις} \\
-\midrule
-PayloadCMS Collections & 12 & Users, Bookings, Properties, etc. \\
-Custom Hooks & $\sim$35 & beforeChange, afterChange \\
-API Endpoints & 15 & Webhooks, Website API, Auth \\
-Cron Jobs & 3 & Hourly, Nightly, Monthly \\
-React Components & $\sim$50 & Calendar, Chat, Drawers \\
-Utility Functions & $\sim$100 & Date handling, formatting \\
-\bottomrule
-\end{tabular}
-\end{table}
-
 %----------------------------------------------------------------------------------------
 %	CHAPTER 6: DISCUSSION
 %----------------------------------------------------------------------------------------
