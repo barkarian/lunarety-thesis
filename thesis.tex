@@ -83,8 +83,12 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage[export]{adjustbox} % For adding frames to images
 \usepackage{amsmath}
 \usepackage{subcaption}
+
+% Define a light gray color for image borders
+\definecolor{imgbordercolor}{RGB}{180, 180, 180}
 
 % PGFPlots for charts and box plots
 \usepackage{pgfplots}
@@ -503,7 +507,7 @@ This work contributes to understanding how modern software architectures and Rap
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{tech_stack_logos.png}
+    \includegraphics[frame=0.5pt,width=0.9\textwidth]{tech_stack_logos.png}
     \caption{Σύγχρονο τεχνολογικό stack για web εφαρμογές (Next.js, PayloadCMS, PostgreSQL, κ.α.).}
     \label{fig:tech-stack}
 \end{figure}
@@ -556,7 +560,7 @@ This work contributes to understanding how modern software architectures and Rap
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/payloadCms_architecture_diagram.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{images/payloadCms_architecture_diagram.png}
     \caption{Αρχιτεκτονική PayloadCMS: Ένας ενιαίος ορισμός δημιουργεί πολλαπλά επίπεδα λειτουργικότητας.}
     \label{fig:payloadcms-arch}
 \end{figure}
@@ -721,7 +725,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/swagger_code_generation_flow.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{images/swagger_code_generation_flow.png}
     \caption{Ροή παραγωγής Client από OpenAPI/Swagger Documentation.}
     \label{fig:openapi-codegen-flow}
 \end{figure}
@@ -743,7 +747,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/openrouter_architecture.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{images/openrouter_architecture.png}
     \caption{Αρχιτεκτονική OpenRouter: Ένας ενδιάμεσος κόμβος για πρόσβαση σε πληθώρα LLM μοντέλων.}
     \label{fig:openrouter-arch}
 \end{figure}
@@ -758,7 +762,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/channel_manager_infographic.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{images/channel_manager_infographic.png}
     \caption{Αρχιτεκτονική Channel Manager ως ενδιάμεσου κόμβου.}
     \label{fig:channel-manager-arch}
 \end{figure}
@@ -889,7 +893,7 @@ await db.insert(bookingsTable).values(bookingsArray);
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{user_hierarchy.png}
+    \includegraphics[frame=0.5pt,width=0.8\textwidth]{user_hierarchy.png}
     \caption{Ιεραρχική δομή ρόλων χρηστών στην πλατφόρμα.}
     \label{fig:user-hierarchy}
 \end{figure}
@@ -1005,7 +1009,7 @@ Resend & Email sending & \code{lib/email/} \\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{system_architecture.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{system_architecture.png}
     \caption{Διάγραμμα αρχιτεκτονικής συστήματος (Monorepo).}
     \label{fig:system-architecture}
 \end{figure}
@@ -1108,7 +1112,7 @@ Resend & Email sending & \code{lib/email/} \\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{data_model_erd.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{data_model_erd.png}
     \caption{Entity Relationship Diagram (ERD) του μοντέλου δεδομένων της πλατφόρμας.}
     \label{fig:erd}
 \end{figure}
@@ -1129,7 +1133,7 @@ Resend & Email sending & \code{lib/email/} \\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{collection_lifecycles_that_updates_other_collections.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{collection_lifecycles_that_updates_other_collections.png}
     \caption{Διάγραμμα ροής lifecycle hooks μεταξύ των κύριων Collections της πλατφόρμας. Κάθε collection ενεργοποιεί συγκεκριμένες ροές βάσει συνθηκών, με τελικό σημείο σύγκλισης τα PropertyRates.}
     \label{fig:collection-lifecycles}
 \end{figure}
@@ -1203,7 +1207,7 @@ await api.properties.propertiesCreate(
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{booking_import_flowchart.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{booking_import_flowchart.png}
     \caption{Μέθοδοι εισαγωγής κρατήσεων στην πλατφόρμα.}
     \label{fig:booking-import}
 \end{figure}
@@ -1262,7 +1266,7 @@ const createBookingRes = await payload.create({
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{commission_structure.png}
+    \includegraphics[frame=0.5pt,width=0.8\textwidth]{commission_structure.png}
     \caption{Τριπλή δομή προμηθειών (Three-Tier Commission Structure).}
     \label{fig:commission-structure}
 \end{figure}
@@ -1291,10 +1295,75 @@ export const computeCommissionOfPlan = (
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{booking_sync.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{booking_sync.png}
     \caption{Ροή δεδομένων συγχρονισμού κρατήσεων με το Beds24.}
     \label{fig:booking-sync}
 \end{figure}
+
+\subsection{Διαχείριση Ημερομηνιών και Ζωνών Ώρας}
+\label{subsec:date-timezone-management}
+
+Ένα κρίσιμο τεχνικό ζήτημα στη διαχείριση κρατήσεων αφορά την αναπαράσταση και επεξεργασία ημερομηνιών. Η πλατφόρμα υιοθετεί μια συγκεκριμένη στρατηγική που διασφαλίζει συνέπεια και απλοποιεί τους υπολογισμούς.
+
+\subsubsection{Αριθμητική Αναπαράσταση Ημερομηνιών (YYYYMMDD)}
+
+Οι ημερομηνίες στην πλατφόρμα αποθηκεύονται ως \textbf{αριθμοί} στη μορφή \code{YYYYMMDD}. Για παράδειγμα:
+\begin{itemize}
+    \item Η 31η Δεκεμβρίου 2025 αποθηκεύεται ως \code{20251231}
+    \item Η 1η Ιανουαρίου 2026 αποθηκεύεται ως \code{20260101}
+\end{itemize}
+
+\textbf{Πλεονεκτήματα αυτής της προσέγγισης:}
+\begin{itemize}
+    \item \textbf{Απλές συγκρίσεις:} Η σύγκριση ημερομηνιών γίνεται με απλές αριθμητικές πράξεις (\code{date1 < date2})
+    \item \textbf{Αποτελεσματικό indexing:} Οι αριθμητικοί δείκτες στη βάση δεδομένων είναι ταχύτεροι
+    \item \textbf{Αποφυγή timezone bugs:} Δεν υπάρχει κίνδυνος μετατόπισης ημέρας λόγω timezone conversions
+    \item \textbf{Συμβατότητα με Beds24:} Το Channel Manager χρησιμοποιεί την ίδια μορφή
+\end{itemize}
+
+\begin{lstlisting}[caption={Μετατροπή ημερομηνίας σε αριθμητική μορφή}]
+// Μετατροπή Date σε αριθμητική μορφή YYYYMMDD
+const dateToNumber = (date: Date): number => {
+  return Number(format(date, "yyyyMMdd")); // π.χ. 20251231
+};
+
+// Αντίστροφη μετατροπή
+const numberToDate = (dateNum: number): Date => {
+  const str = dateNum.toString();
+  return parse(str, "yyyyMMdd", new Date());
+};
+\end{lstlisting}
+
+\subsubsection{Υπολογισμός Ακριβούς Ώρας Check-In}
+
+Κάθε Property έχει μια \textbf{ζώνη ώρας} (\code{timezone}) και μια \textbf{προεπιλεγμένη ώρα check-in} (\code{defaultCheckInTime}). Αυτά τα πεδία είναι κρίσιμα για τον υπολογισμό της ακριβούς στιγμής που θα πρέπει να εκτελεστούν οι αυτοματισμοί (Auto Actions).
+
+\begin{lstlisting}[caption={Υπολογισμός ακριβούς ώρας check-in}]
+// Υπολογισμός ακριβούς checkIn timestamp
+const calculateExactCheckInTime = (
+  checkInDate: number,      // π.χ. 20251231
+  property: Property
+): Date => {
+  const timezone = property.timezone ?? "Europe/Athens";
+  const checkInTime = property.defaultCheckInTime ?? "15:00";
+  
+  // Συνδυασμός ημερομηνίας και ώρας στη ζώνη ώρας του property
+  const dateStr = checkInDate.toString(); // "20251231"
+  const localDateTime = `${dateStr.slice(0,4)}-${dateStr.slice(4,6)}-${dateStr.slice(6,8)}T${checkInTime}`;
+  
+  // Μετατροπή σε UTC για αποθήκευση
+  return fromZonedTime(localDateTime, timezone);
+};
+\end{lstlisting}
+
+\textbf{Παράδειγμα:} Έστω ένα κατάλυμα στην Αθήνα (\code{Europe/Athens}) με \code{defaultCheckInTime: "15:00"} και κράτηση με \code{checkIn: 20251231}:
+\begin{enumerate}
+    \item Η τοπική ώρα check-in είναι: 31/12/2025 στις 15:00 (ώρα Αθήνας)
+    \item Μετατρέπεται σε UTC: 31/12/2025 στις 13:00 (UTC+2 το χειμώνα)
+    \item Αποθηκεύεται ως \code{checkInStartOfDay} στο booking
+\end{enumerate}
+
+Αυτή η προσέγγιση είναι ιδιαίτερα σημαντική για τα \textbf{Time-based Triggers} των Auto Actions (βλ. Ενότητα \ref{subsec:time-based-triggers}), καθώς επιτρέπει τον ακριβή υπολογισμό του πότε πρέπει να σταλεί ένα μήνυμα (π.χ. «2 ώρες πριν το check-in»).
 
 \subsection{Σύστημα Σύνδεσης με Property Rates}
 \label{subsec:rate-linking}
@@ -1484,7 +1553,7 @@ try {
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{auto_actions.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{auto_actions.png}
     \caption{Διάγραμμα ροής εκτέλεσης των Auto Actions.}
     \label{fig:auto-actions}
 \end{figure}
@@ -1530,6 +1599,8 @@ try {
 
 Αυτές οι ενέργειες εκτελούνται βάσει χρόνου σε σχέση με ένα γεγονός της κράτησης.
 
+\textbf{Σημαντικό:} Για τη σωστή λειτουργία των time-based triggers, είναι κρίσιμη η ακριβής διαχείριση ημερομηνιών και ζωνών ώρας. Όπως περιγράφεται στην \textbf{Ενότητα \ref{subsec:date-timezone-management}}, οι ημερομηνίες αποθηκεύονται σε αριθμητική μορφή (π.χ. \code{20251231}) και κάθε Property διαθέτει τη δική του ζώνη ώρας και προεπιλεγμένη ώρα check-in. Αυτά επιτρέπουν τον ακριβή υπολογισμό της στιγμής εκτέλεσης (π.χ. «2 ώρες πριν το check-in στις 15:00 ώρα Αθήνας»).
+
 \begin{itemize}
     \item \textbf{Trigger Types:} \code{before-checkin}, \code{after-checkout}, \code{after-cancellation}, \code{after-new-booking}.
     \item \textbf{Λογική Εκτέλεσης:} Ένα Cron Job τρέχει κάθε ώρα (\code{everyHourCron.ts}). Για κάθε ενεργό Auto Action, υπολογίζει ένα χρονικό παράθυρο [\code{fromDate}, \code{toDate}] βάσει του \code{timeInterval} και \code{timeWindow}.
@@ -1573,7 +1644,7 @@ if (triggerType.includes("before")) {
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{time_based_triggers_scenario.png}
+    \includegraphics[frame=0.5pt,width=\textwidth]{time_based_triggers_scenario.png}
     \caption{Σενάρια λειτουργίας Time-based Triggers για κράτηση της τελευταίας στιγμής (1 μέρα πριν την άφιξη). Στο Σενάριο 1 (μικρό παράθυρο 5 ωρών), η κράτηση χάνει τον κανόνα «2 μέρες πριν» και δεν στέλνεται μήνυμα. Στο Σενάριο 2 (μεγάλο παράθυρο 2 ημερών), η κράτηση εμπίπτει στο παράθυρο και το μήνυμα (π.χ. «The key to open your door is : 2004») αποστέλλεται κανονικά.}
     \label{fig:time-triggers}
 \end{figure}
@@ -1766,7 +1837,7 @@ Billing & visibility: view & \checkmark & \checkmark Own bills & \textit{If allo
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{access_control_decision_tree.png}
+    \includegraphics[frame=0.5pt,width=0.9\textwidth]{access_control_decision_tree.png}
     \caption{Decision tree για τον έλεγχο πρόσβασης.}
     \label{fig:access-control}
 \end{figure}
@@ -1783,7 +1854,7 @@ Billing & visibility: view & \checkmark & \checkmark Own bills & \textit{If allo
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{images/lunarety-autogenerated-website-features.png}
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{images/lunarety-autogenerated-website-features.png}
     \caption{Δυνατότητες του αυτόματα παραγόμενου Website.}
     \label{fig:website-features}
 \end{figure}
@@ -1817,7 +1888,7 @@ Billing & visibility: view & \checkmark & \checkmark Own bills & \textit{If allo
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{images/autogenerated-website-api-flow.png}
+    \includegraphics[frame=0.5pt,width=0.9\textwidth]{images/autogenerated-website-api-flow.png}
     \caption{Ροή επικοινωνίας Website API.}
     \label{fig:website-api-flow}
 \end{figure}
@@ -1839,43 +1910,7 @@ Billing & visibility: view & \checkmark & \checkmark Own bills & \textit{If allo
 \end{tabular}
 \end{table}
 
-\paragraph{Αλγόριθμος Ελέγχου Διαθεσιμότητας:}
 
-\begin{lstlisting}[caption={Έλεγχος Διαθεσιμότητας}]
-// Endpoint: /api/website/availability
-export const getAvailabilities = async (
-  websiteApiKey: string,
-  checkIn: number,
-  checkOut: number,
-  rooms: { adults: number; children: number }[]
-) => {
-  // 1. Βρες τα properties που ανήκουν σε αυτό το website
-  const website = await payload.find({
-    collection: "website",
-    where: { apiKey: { equals: websiteApiKey } },
-  });
-
-  // 2. Φέρε τα rates για τις ζητούμενες ημερομηνίες
-  const rates = await payload.find({
-    collection: "property-rates",
-    where: {
-      property: { in: website.properties },
-      date: {
-        greater_than_equal: checkIn,
-        less_than: checkOut,
-      },
-    },
-  });
-
-  // 3. Φιλτράρισμα βάσει availUnits > 0
-  const availableProperties = rates.docs.filter(
-    (rate) => rate.availability.availUnits > 0
-  );
-
-  // 4. Matching rooms με ζητούμενη χωρητικότητα
-  return matchRoomsToRequirements(availableProperties, rooms);
-};
-\end{lstlisting}
 
 \subsection{Deploy URL \& Vercel Integration}
 \label{subsec:deploy-url}
@@ -1884,7 +1919,7 @@ export const getAvailabilities = async (
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{images/one-click-deploy-process-autogenerated-website.png}
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{images/one-click-deploy-process-autogenerated-website.png}
     \caption{Διαδικασία One-Click Deploy.}
     \label{fig:deploy-process}
 \end{figure}
@@ -1903,7 +1938,7 @@ export const getAvailabilities = async (
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{images/guest-booking-journey-autogenerated-website.png}
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{images/guest-booking-journey-autogenerated-website.png}
     \caption{Ταξίδι κράτησης επισκέπτη.}
     \label{fig:guest-journey}
 \end{figure}
@@ -1960,10 +1995,12 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
 \subsection{Dashboard και Calendar}
 \label{subsec:calendar}
 
-Το ημερολόγιο δεν υποστηρίζει drag-and-drop για λόγους ακρίβειας. Αντ' αυτού, προσφέρει εργαλεία μαζικής επεξεργασίας:
+Το ημερολόγιο αποτελεί το κεντρικό εργαλείο διαχείρισης της πλατφόρμας και προσφέρει προηγμένες δυνατότητες:
 
 \begin{itemize}
-    \item \textbf{Επιλογή Κρατήσεων:} Ο χρήστης επιλέγει μια κράτηση για να δει λεπτομέρειες ή να την επεξεργαστεί.
+    \item \textbf{Drag-and-Drop:} Πλήρης υποστήριξη μετακίνησης κρατήσεων μέσω drag-and-drop, επιτρέποντας γρήγορη αναδιοργάνωση μεταξύ δωματίων ή αλλαγή ημερομηνιών με οπτική επιβεβαίωση.
+    \item \textbf{Infinite Scrolling:} Το ημερολόγιο υποστηρίζει infinite scrolling τόσο οριζόντια (για πλοήγηση στον χρόνο) όσο και κάθετα (για προβολή πολλαπλών καταλυμάτων), επιτρέποντας απρόσκοπτη εξερεύνηση χωρίς σελιδοποίηση.
+    \item \textbf{Επιλογή Κρατήσεων:} Ο χρήστης επιλέγει μια κράτηση για να δει λεπτομέρειες ή να την επεξεργαστεί μέσω του Drawer.
     \item \textbf{Επιλογή Ημερομηνιών:} Ο χρήστης επιλέγει ένα εύρος ημερομηνιών και μπορεί να αλλάξει μαζικά τιμές και διαθεσιμότητα.
     \item \textbf{Φίλτρα:} Δυνατότητα επιλογής συγκεκριμένων καταλυμάτων για προβολή.
 \end{itemize}
@@ -1971,7 +2008,7 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
 \subsection{Σύστημα Μηνυμάτων}
 \label{subsec:messages}
 
-Χρήστες με τα κατάλληλα δικαιώματα μπορούν να απαντήσουν σε φιλοξενούμενους απευθείας στα συνδεδεμένα OTAs μέσω της διεπαφής συνομιλίας. Στη σελίδα \code{/messages}, παρέχεται πρόσβαση σε όλα τα πρόσφατα μηνύματα, τα οποία επιστρέφονται ταξινομημένα από το νεότερο στο παλαιότερο και υποστηρίζουν πλήρη σελιδοποίηση με infinite scrolling. Ο χρήστης μπορεί να αναζητήσει συνομιλίες χρησιμοποιώντας φίλτρα όπως το όνομα κράτησης, το κατάλυμα ή το κείμενο του τελευταίου μηνύματος. Επιπλέον, το Chat επιτρέπει τη χρήση των \textbf{Simple Templates} (που συμπληρώνονται αυτόματα με στοιχεία της κράτησης) και τη βελτίωση κειμένου μέσω AI («Improve with AI»).
+Χρήστες με τα κατάλληλα δικαιώματα μπορούν να απαντήσουν σε φιλοξενούμενους απευθείας στα συνδεδεμένα OTAs μέσω της διεπαφής συνομιλίας. Στη σελίδα \code{/messages}, παρέχεται πρόσβαση σε όλα τα πρόσφατα μηνύματα, τα οποία επιστρέφονται ταξινομημένα από το νεότερο στο παλαιότερο και υποστηρίζουν πλήρη σελιδοποίηση με infinite scrolling. Η αναζήτηση γίνεται μέσω ενός πεδίου κειμένου (text input), όπου ο χρήστης μπορεί να πληκτρολογήσει για να βρει συνομιλίες βάσει ονόματος καταλύματος, ονόματος φιλοξενούμενου ή κειμένου του τελευταίου μηνύματος. Επιπλέον, το Chat επιτρέπει τη χρήση των \textbf{Simple Templates} (που συμπληρώνονται αυτόματα με στοιχεία της κράτησης) και τη βελτίωση κειμένου μέσω AI («Improve with AI»).
 
 \subsection{Διαχείριση Δικαιωμάτων και Drawers}
 \label{subsec:access-management}
@@ -1992,7 +2029,7 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
 % Calendar Bookings - Landscape view
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{ui_screenshots/platform/calendar-bookings/calendar-bookings-landscape.png}
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{ui_screenshots/platform/calendar-bookings/calendar-bookings-landscape.png}
     \caption{Η κεντρική προβολή του Ημερολογίου Κρατήσεων (Calendar Bookings). Παρουσιάζει μια συνολική εικόνα των κρατήσεων ανά κατάλυμα σε οριζόντια διάταξη, επιτρέποντας στον χρήστη να παρακολουθεί την κατάσταση όλων των δωματίων σε μια ματιά.}
     \label{fig:calendar-bookings-landscape}
 \end{figure}
@@ -2002,12 +2039,12 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \centering
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-daily/daily-calendar.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/calendar-daily/daily-calendar.png}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-daily/daily-calendar-booking-drawer.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/calendar-daily/daily-calendar-booking-drawer.png}
     \end{minipage}
     \caption{Το «Easy Calendar» (αριστερά) έχει σχεδιαστεί ως μια απλή λίστα καθηκόντων που δείχνει τι πρέπει να γίνει κάθε μέρα (αφίξεις, αναχωρήσεις). Δεξιά, το Drawer λεπτομερειών κράτησης που εμφανίζεται κατά την επιλογή μιας κράτησης.}
     \label{fig:daily-calendar}
@@ -2018,17 +2055,17 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \centering
     \begin{minipage}{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/rates-selection/calendar-rates-selection.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/calendar-bookings/rates-selection/calendar-rates-selection.png}
     \end{minipage}
     \hfill
     \begin{minipage}{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/rates-selection/calendar-rates-selection-drawer.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/calendar-bookings/rates-selection/calendar-rates-selection-drawer.png}
     \end{minipage}
     \hfill
     \begin{minipage}{0.32\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/rates-selection/calendar-rates-selection-after-update.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/calendar-bookings/rates-selection/calendar-rates-selection-after-update.png}
     \end{minipage}
     \caption{Διαδικασία επιλογής και ενημέρωσης τιμών (Rates). Αριστερά: Επιλογή ημερομηνιών στο ημερολόγιο. Κέντρο: Το Drawer επεξεργασίας τιμών και διαθεσιμότητας. Δεξιά: Η τελική κατάσταση μετά την ενημέρωση.}
     \label{fig:rates-selection-process}
@@ -2039,13 +2076,13 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \centering
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step1.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step1.png}
         \subcaption{Βήμα 1: Επιλογή κράτησης}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step2.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step2.png}
         \subcaption{Βήμα 2: Drag στη νέα θέση}
     \end{minipage}
     
@@ -2053,13 +2090,13 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step3.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step3.png}
         \subcaption{Βήμα 3: Επιβεβαίωση αλλαγής}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step4.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step4.png}
         \subcaption{Βήμα 4: Ολοκλήρωση μετακίνησης}
     \end{minipage}
     \caption{Λειτουργία Drag-and-Drop για μετακίνηση κρατήσεων. Η διαδικασία επιτρέπει τη γρήγορη αναδιοργάνωση κρατήσεων μεταξύ δωματίων ή ημερομηνιών με οπτική επιβεβαίωση σε κάθε βήμα.}
@@ -2073,12 +2110,12 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \centering
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/list/messages.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/messages/list/messages.png}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/list/messages-search.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/messages/list/messages-search.png}
     \end{minipage}
     \caption{Η σελίδα λίστας μηνυμάτων. Αριστερά: Η κύρια προβολή με όλες τις συνομιλίες ταξινομημένες χρονολογικά. Δεξιά: Η λειτουργία αναζήτησης που επιτρέπει φιλτράρισμα με βάση το όνομα κράτησης, το κατάλυμα ή το περιεχόμενο του μηνύματος.}
     \label{fig:messages-list}
@@ -2089,13 +2126,13 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \centering
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/single/message-view.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/messages/single/message-view.png}
         \subcaption{Βασική προβολή συνομιλίας}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/single/message-view-template-example.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/messages/single/message-view-template-example.png}
         \subcaption{Χρήση Template}
     \end{minipage}
     
@@ -2103,13 +2140,13 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/single/message-view-ai-improve-1.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/messages/single/message-view-ai-improve-1.png}
         \subcaption{AI Improve - Πριν}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/single/message-view-ai-improve-2.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/messages/single/message-view-ai-improve-2.png}
         \subcaption{AI Improve - Μετά}
     \end{minipage}
     \caption{Λειτουργίες της σελίδας συνομιλίας. Πάνω αριστερά: Η βασική διεπαφή chat. Πάνω δεξιά: Χρήση Simple Template που συμπληρώνεται αυτόματα με στοιχεία κράτησης. Κάτω: Η λειτουργία «Improve with AI» που βελτιώνει το κείμενο του χρήστη.}
@@ -2123,12 +2160,12 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \centering
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/bookings/bookings-list-all-in-one-table.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/bookings/bookings-list-all-in-one-table.png}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/bookings/bookings-list-by-property.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/bookings/bookings-list-by-property.png}
     \end{minipage}
     \caption{Προβολές λίστας κρατήσεων. Αριστερά: Ενιαίος πίνακας με όλες τις κρατήσεις, με δυνατότητα ταξινόμησης και φιλτραρίσματος. Δεξιά: Οργάνωση κρατήσεων ανά κατάλυμα για ευκολότερη διαχείριση πολλαπλών properties.}
     \label{fig:bookings-list}
@@ -2141,13 +2178,13 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \centering
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/billings/billing-page-as-manager.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/billings/billing-page-as-manager.png}
         \subcaption{Προβολή Manager}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/billings/billing-page-receive-showcasing-sendReminder-and-markaspaid.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/billings/billing-page-receive-showcasing-sendReminder-and-markaspaid.png}
         \subcaption{Ενέργειες: Υπενθύμιση \& Πληρωμή}
     \end{minipage}
     
@@ -2155,13 +2192,13 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/billings/billing-page-mark-as-paid-modal.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/billings/billing-page-mark-as-paid-modal.png}
         \subcaption{Modal επιβεβαίωσης πληρωμής}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{ui_screenshots/platform/billings/billing-page-receive-comments.png}
+        \includegraphics[frame=0.5pt,width=\textwidth]{ui_screenshots/platform/billings/billing-page-receive-comments.png}
         \subcaption{Προβολή σχολίων χρέωσης}
     \end{minipage}
     \caption{Σύστημα διαχείρισης χρεώσεων. Πάνω αριστερά: Η συνολική προβολή του Manager με όλες τις χρεώσεις. Πάνω δεξιά: Οι διαθέσιμες ενέργειες (αποστολή υπενθύμισης, σήμανση ως πληρωμένο). Κάτω αριστερά: Το modal επιβεβαίωσης πληρωμής. Κάτω δεξιά: Η προβολή σχολίων και ιστορικού επικοινωνίας.}
@@ -2177,7 +2214,7 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/properties-and-rooms-search-engine.png}
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{ui_screenshots/autogenerated-website/properties-and-rooms-search-engine.png}
     \caption{Η κεντρική σελίδα αναζήτησης καταλυμάτων και δωματίων. Ο επισκέπτης μπορεί να φιλτράρει με βάση ημερομηνίες, αριθμό επισκεπτών και άλλα κριτήρια για να βρει το ιδανικό κατάλυμα.}
     \label{fig:website-search-engine}
 \end{figure}
@@ -2186,7 +2223,7 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/single-property-page.png}
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{ui_screenshots/autogenerated-website/single-property-page.png}
     \caption{Η σελίδα λεπτομερειών ενός καταλύματος. Περιλαμβάνει φωτογραφίες, περιγραφή, παροχές, τοποθεσία και διαθέσιμα δωμάτια με τις αντίστοιχες τιμές.}
     \label{fig:website-single-property}
 \end{figure}
@@ -2195,7 +2232,7 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/select-rooms-and-complete-booking.png}
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{ui_screenshots/autogenerated-website/select-rooms-and-complete-booking.png}
     \caption{Επιλογή δωματίων και συμπλήρωση στοιχείων κράτησης. Ο επισκέπτης επιλέγει τα επιθυμητά δωμάτια, εισάγει τα στοιχεία του και προχωρά στην ολοκλήρωση της κράτησης.}
     \label{fig:website-select-rooms}
 \end{figure}
@@ -2205,14 +2242,14 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
 % Booking confirmation - 2 landscape images
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/booking-confirmation-page-1.png}
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{ui_screenshots/autogenerated-website/booking-confirmation-page-1.png}
     \caption{Σελίδα επιβεβαίωσης κράτησης (μέρος 1). Εμφανίζει τη σύνοψη της κράτησης με τις επιλεγμένες ημερομηνίες, τα δωμάτια και το συνολικό κόστος.}
     \label{fig:website-booking-confirmation-1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/booking-confirmation-page-2.png}
+    \includegraphics[frame=0.5pt,width=0.95\textwidth]{ui_screenshots/autogenerated-website/booking-confirmation-page-2.png}
     \caption{Σελίδα επιβεβαίωσης κράτησης (μέρος 2). Περιλαμβάνει τα στοιχεία επικοινωνίας, τους όρους χρήσης και τις οδηγίες άφιξης για τον επισκέπτη.}
     \label{fig:website-booking-confirmation-2}
 \end{figure}
@@ -2230,187 +2267,6 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
         \item \textbf{Context-Aware:} Το Chat Bubble είναι «Fixed» στη γωνία της οθόνης. Γνωρίζει τα πάντα για το κατάλυμα (παροχές, τοποθεσία) αλλά και δυναμικά δεδομένα όπως \textbf{τρέχουσα διαθεσιμότητα και τιμές}. Έτσι, μπορεί να απαντήσει σε ερωτήσεις τύπου «Είναι ελεύθερο το σπίτι για το επόμενο Σαββατοκύριακο και πόσο κοστίζει;» με ακρίβεια, λειτουργώντας ως ένας 24/7 ψηφιακός ρεσεψιονίστ.
     \end{itemize}
 \end{itemize}
-
-\section{Τεχνικές Προκλήσεις και Λύσεις}
-\label{sec:technical-challenges}
-
-\subsection{Συγχρονισμός Δεδομένων με External APIs}
-\label{subsec:sync-challenge}
-
-\textbf{Πρόβλημα:} Διατήρηση συνέπειας μεταξύ τοπικής βάσης και Beds24.
-
-\textbf{Λύση:} Υιοθέτηση στρατηγικής όπου το Beds24 είναι η κύρια πηγή αλήθειας για δεδομένα κρατήσεων, με merge logic για internal fields.
-
-\subsection{Αποφυγή Infinite Loops}
-\label{subsec:loop-prevention}
-
-\textbf{Πρόβλημα:} Two-way sync δημιουργεί κύκλους.
-
-\textbf{Λύση:} Χρήση \code{skipChannelSync} flag για αποτροπή reverse-update.
-
-\subsection{Απόδοση Μαζικών Εισαγωγών}
-\label{subsec:mass-import-performance}
-
-\textbf{Πρόβλημα:} Εισαγωγή $\sim$60.000 records με standard lifecycle απαιτεί ώρες.
-
-\textbf{Λύση:} Hybrid strategy με direct DB operations για bulk, standard lifecycle για μεμονωμένες αλλαγές.
-
-\begin{figure}[H]
-    \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Performance Bottleneck Visualization]}\\\small Περιγραφή: Ένα bar chart με δύο μπάρες σύγκρισης. Αριστερή μπάρα (κόκκινη): "With Full Lifecycle - ~4 hours" με breakdown: 60,000 hook executions, 60,000 validation calls, 60,000 individual queries. Δεξιά μπάρα (πράσινη): "With Direct DB Operations - ~2 minutes" με breakdown: 1 bulk insert query, minimal overhead.\vspace{1cm}}}
-    \caption{Σύγκριση απόδοσης Import.}
-    \label{fig:perf-bottleneck}
-\end{figure}
-
-\begin{table}[H]
-\centering
-\caption{Σύγκριση στρατηγικών εισαγωγής}
-\label{tab:import-comparison}
-\begin{tabular}{@{}lll@{}}
-\toprule
-\textbf{Περίπτωση} & \textbf{Μέθοδος} & \textbf{Πλεονέκτημα} \\
-\midrule
-Mass Property Import & Direct DB (\code{payload.db.create}) & 50$\times$ ταχύτερο \\
-Mass Rate Import & Bulk Insert & 1 query για χιλιάδες records \\
-Individual Updates & Standard Lifecycle & Consistency, hooks execute \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{lstlisting}[caption={Mass import με direct DB}]
-// Mass import με direct DB operations
-const insertPropertyRates = async (rates: PropertyRate[]) => {
-  // Χρήση Drizzle για bulk insert
-  await db.insert(propertyRatesTable).values(
-    rates.map((rate) => ({
-      date: rate.date,
-      property: rate.property,
-      channelRoomId: rate.channelRoomId,
-      availabilityStatus: rate.availability.status,
-      price: rate.availability.price,
-      minNights: rate.availability.minNights,
-      maxNights: rate.availability.maxNights,
-    }))
-  );
-};
-\end{lstlisting}
-
-\subsection{Διαχείριση Σύνθετων Rate Structures}
-\label{subsec:rate-structures}
-
-\textbf{Πρόβλημα:} Το Beds24 στέλνει τα rates σε συμπτυγμένη μορφή (date ranges), ενώ η πλατφόρμα χρειάζεται ημερήσια granularity για:
-\begin{itemize}
-    \item Υπολογισμό διαθεσιμότητας
-    \item Σύνδεση με κρατήσεις
-    \item Υπολογισμό τιμών
-\end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Rate Data Transformation]}\\\small Περιγραφή: Διάγραμμα μετατροπής δεδομένων. Αριστερά: "Beds24 Format" με ένα JSON object \{from: "2025-01-01", to: "2025-01-31", price: 100\}. Βέλος με ετικέτα "Expand to daily records". Δεξιά: "Platform Format" με 31 μικρά κελιά, κάθε ένα αναπαριστώντας μία ημέρα με τιμή €100.\vspace{1cm}}}
-    \caption{Μετατροπή δομής Rate.}
-    \label{fig:rate-transform}
-\end{figure}
-
-\textbf{Λύση - Date Range Expansion Algorithm:}
-
-\begin{lstlisting}[caption={Επέκταση date range}]
-// Επέκταση range σε μεμονωμένες ημέρες
-const expandDateRange = (range: DateRange): DailyRate[] => {
-  const days = eachDayOfInterval({
-    start: new Date(range.from),
-    end: new Date(range.to),
-  });
-
-  return days.map((day) => ({
-    date: Number(format(day, "yyyyMMdd")), // YYYYMMDD format
-    price: range.price,
-    minNights: range.minStay ?? 1,
-    maxNights: range.maxStay ?? 365,
-    status: range.override ?? "none",
-  }));
-};
-\end{lstlisting}
-
-\subsection{Multi-Tenant Data Isolation}
-\label{subsec:multi-tenant}
-
-\textbf{Πρόβλημα:} Η πλατφόρμα εξυπηρετεί πολλαπλούς Managers, καθένας με τους δικούς του Owners, Properties, και Bookings. Η απομόνωση δεδομένων είναι κρίσιμη:
-\begin{itemize}
-    \item Ο Manager Α δεν πρέπει ποτέ να δει δεδομένα του Manager Β
-    \item Ο Owner πρέπει να βλέψει μόνο τα δικά του properties
-\end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Multi-Tenant Data Isolation]}\\\small Περιγραφή: Τρεις κάθετες στήλες που αναπαριστούν τρεις Managers (A, B, C). Κάθε στήλα περιέχει "bubble" για τα δικά τους δεδομένα: Properties, Owners, Bookings. Μεταξύ των στηλών υπάρχει μια διακεκομμένη κόκκινη γραμμή με ετικέτα "Isolation Boundary - No Cross-Access".\vspace{1cm}}}
-    \caption{Απομόνωση δεδομένων Multi-Tenant.}
-    \label{fig:multi-tenant}
-\end{figure}
-
-\textbf{Λύση - Query Filtering at Access Layer:}
-
-\begin{lstlisting}[caption={Query Filtering}]
-// Κάθε collection έχει access functions που φιλτράρουν βάσει ιεραρχίας
-export const readAccess = async ({ req }: { req: PayloadRequest }) => {
-  const user = req.user as User;
-
-  // Platform users: no filter
-  if (user.type === "platform-user") return true;
-
-  // Managers: only their properties
-  if (user.type === "manager") {
-    return { manager: { equals: user.id } };
-  }
-
-  // Owners: only properties assigned to them
-  if (user.type === "owner") {
-    return { owner: { equals: user.id } };
-  }
-
-  // Staff: properties of their parent owner/manager
-  if (user.type === "stuff") {
-    const parentId = user.ownedBy ?? user.managedBy;
-    return { owner: { equals: parentId } };
-  }
-
-  return false; // Deny by default
-};
-\end{lstlisting}
-
-\subsection{Time-Zone Management}
-\label{subsec:timezone}
-
-\textbf{Πρόβλημα:} Οι κρατήσεις μπορεί να γίνονται από επισκέπτες σε διαφορετικές ζώνες ώρας, αλλά το check-in/check-out αναφέρεται στην τοπική ώρα του καταλύματος.
-
-\begin{figure}[H]
-    \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{1cm}\textit{[INFOGRAPHIC: Timezone Confusion Example]}\\\small Περιγραφή: Ένας κόσμος με τρεις τοποθεσίες επισημασμένες: New York (UTC-5), London (UTC), Athens (UTC+2). Βέλη δείχνουν: "Guest books at 11 PM New York time" $\to$ "Property's check-in is 3 PM Athens time next day" $\to$ "When should auto-action trigger?"\vspace{1cm}}}
-    \caption{Διαχείριση ζωνών ώρας.}
-    \label{fig:timezone}
-\end{figure}
-
-\textbf{Λύση - UTC Normalization + Property Timezone:}
-
-\begin{lstlisting}[caption={Υπολογισμός Trigger Time}]
-// Αποθήκευση πάντα σε UTC, μετατροπή βάσει property timezone
-const calculateTriggerTime = (booking, autoAction) => {
-  const propertyTimezone = booking.property.timezone ?? "Europe/Athens";
-
-  // Υπολογισμός check-in στην τοπική ώρα
-  const checkInLocal = formatInTimeZone(
-    new Date(booking.resource.checkInStartOfDay),
-    propertyTimezone,
-    "yyyy-MM-dd'T'HH:mm:ss"
-  );
-
-  // Εφαρμογή του trigger offset
-  const triggerTime = addHours(checkInLocal, -autoAction.timeInterval);
-
-  // Μετατροπή πίσω σε UTC για αποθήκευση
-  return toZonedTime(triggerTime, "UTC");
-};
-\end{lstlisting}
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 6: DISCUSSION
