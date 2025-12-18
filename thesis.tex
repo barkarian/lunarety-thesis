@@ -98,7 +98,7 @@
 \definecolor{gridcolor}{RGB}{220, 220, 220}       % Light gray for grid
 
 % Graphics path
-\graphicspath{{./images/}{./erd/}{./presentation_assets/}}
+\graphicspath{{./images/}{./erd/}{./presentation_assets/}{./ui_screenshots/}{./}}
 
 % Tables
 \usepackage{booktabs}
@@ -1987,67 +1987,234 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
     \item \textbf{Availability Update:} Για να αποφευχθεί ο φόρτος στο Channel Manager (ένα request ανά ημέρα), ακολουθείται άλλη στρατηγική. Γίνεται πρώτα μαζικό update στο Channel Manager και, εφόσον επιτύχει, ενημερώνονται απευθείας τα Rates στη βάση δεδομένων (Direct DB Update), παρακάμπτοντας τα hooks για ταχύτητα.
 \end{itemize}
 
-\subsection{Οπτική Παρουσίαση}
+\subsection{Οπτική Παρουσίαση Ημερολογίου}
 
+% Calendar Bookings - Landscape view
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Calendar Page Video.gif]}\vspace{3cm}}}
-    \caption{Η σελίδα του Ημερολογίου (Calendar). Το αρχικό ημερολόγιο έχει σχεδιαστεί ως ένα «Easy Calendar». Για τον βασικό χρήστη, λειτουργεί ως μια απλή λίστα καθηκόντων που δείχνει τι πρέπει να γίνει κάθε μέρα (αφίξεις, αναχωρήσεις), καθιστώντας το εξαιρετικά εύχρηστο για την καθημερινότητα. Ωστόσο, προσφέρει τη δυνατότητα προσθήκης περισσότερης λειτουργικότητας για πιο απαιτητικούς χρήστες, χωρίς να θυσιάζεται η ευκολία χρήσης.}
-    \label{fig:calendar-page}
+    \includegraphics[width=0.95\textwidth]{ui_screenshots/platform/calendar-bookings/calendar-bookings-landscape.png}
+    \caption{Η κεντρική προβολή του Ημερολογίου Κρατήσεων (Calendar Bookings). Παρουσιάζει μια συνολική εικόνα των κρατήσεων ανά κατάλυμα σε οριζόντια διάταξη, επιτρέποντας στον χρήστη να παρακολουθεί την κατάσταση όλων των δωματίων σε μια ματιά.}
+    \label{fig:calendar-bookings-landscape}
 \end{figure}
 
+% Daily Calendar - 2 vertical images side by side
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Messages Page Video.gif]}\vspace{3cm}}}
-    \caption{Η σελίδα των Μηνυμάτων. Το σύστημα μηνυμάτων παρέχει δυνατότητες άμεσης επικοινωνίας, υποστηρίζοντας τη χρήση προτύπων (templates) και τη βελτίωση κειμένου μέσω AI.}
-    \label{fig:messages-page}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-daily/daily-calendar.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-daily/daily-calendar-booking-drawer.png}
+    \end{minipage}
+    \caption{Το «Easy Calendar» (αριστερά) έχει σχεδιαστεί ως μια απλή λίστα καθηκόντων που δείχνει τι πρέπει να γίνει κάθε μέρα (αφίξεις, αναχωρήσεις). Δεξιά, το Drawer λεπτομερειών κράτησης που εμφανίζεται κατά την επιλογή μιας κράτησης.}
+    \label{fig:daily-calendar}
 \end{figure}
 
+% Rates Selection - 3 vertical images showing a process
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: USERS (advanced dashboard).gif]}\vspace{3cm}}}
-    \caption{Διαχείριση Χρηστών (Users) στο Advanced Dashboard.}
-    \label{fig:users-dashboard}
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/rates-selection/calendar-rates-selection.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/rates-selection/calendar-rates-selection-drawer.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/rates-selection/calendar-rates-selection-after-update.png}
+    \end{minipage}
+    \caption{Διαδικασία επιλογής και ενημέρωσης τιμών (Rates). Αριστερά: Επιλογή ημερομηνιών στο ημερολόγιο. Κέντρο: Το Drawer επεξεργασίας τιμών και διαθεσιμότητας. Δεξιά: Η τελική κατάσταση μετά την ενημέρωση.}
+    \label{fig:rates-selection-process}
 \end{figure}
 
+% Drag and Drop - 4 vertical images showing step-by-step process (2x2 grid)
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: PLANS (advanced dashboard).gif]}\vspace{3cm}}}
-    \caption{Διαχείριση Πλάνων Χρέωσης (Plans) στο Advanced Dashboard.}
-    \label{fig:plans-dashboard}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step1.png}
+        \subcaption{Βήμα 1: Επιλογή κράτησης}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step2.png}
+        \subcaption{Βήμα 2: Drag στη νέα θέση}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step3.png}
+        \subcaption{Βήμα 3: Επιβεβαίωση αλλαγής}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/calendar-bookings/drag-and-drop/drag-and-drop-step4.png}
+        \subcaption{Βήμα 4: Ολοκλήρωση μετακίνησης}
+    \end{minipage}
+    \caption{Λειτουργία Drag-and-Drop για μετακίνηση κρατήσεων. Η διαδικασία επιτρέπει τη γρήγορη αναδιοργάνωση κρατήσεων μεταξύ δωματίων ή ημερομηνιών με οπτική επιβεβαίωση σε κάθε βήμα.}
+    \label{fig:drag-and-drop-process}
 \end{figure}
 
+\subsection{Οπτική Παρουσίαση Μηνυμάτων}
+
+% Messages List - 2 vertical images side by side
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: AUTO\_ACTIONS (advanced dashboard).gif]}\vspace{3cm}}}
-    \caption{Διαχείριση Αυτοματισμών (Auto Actions) στο Advanced Dashboard.}
-    \label{fig:auto-actions-dashboard}
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/list/messages.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/list/messages-search.png}
+    \end{minipage}
+    \caption{Η σελίδα λίστας μηνυμάτων. Αριστερά: Η κύρια προβολή με όλες τις συνομιλίες ταξινομημένες χρονολογικά. Δεξιά: Η λειτουργία αναζήτησης που επιτρέπει φιλτράρισμα με βάση το όνομα κράτησης, το κατάλυμα ή το περιεχόμενο του μηνύματος.}
+    \label{fig:messages-list}
+\end{figure}
+
+% Message Single View - 4 vertical images (2x2 grid)
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/single/message-view.png}
+        \subcaption{Βασική προβολή συνομιλίας}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/single/message-view-template-example.png}
+        \subcaption{Χρήση Template}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/single/message-view-ai-improve-1.png}
+        \subcaption{AI Improve - Πριν}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/messages/single/message-view-ai-improve-2.png}
+        \subcaption{AI Improve - Μετά}
+    \end{minipage}
+    \caption{Λειτουργίες της σελίδας συνομιλίας. Πάνω αριστερά: Η βασική διεπαφή chat. Πάνω δεξιά: Χρήση Simple Template που συμπληρώνεται αυτόματα με στοιχεία κράτησης. Κάτω: Η λειτουργία «Improve with AI» που βελτιώνει το κείμενο του χρήστη.}
+    \label{fig:message-view-features}
+\end{figure}
+
+\subsection{Οπτική Παρουσίαση Κρατήσεων}
+
+% Bookings - 2 vertical images side by side
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/bookings/bookings-list-all-in-one-table.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/bookings/bookings-list-by-property.png}
+    \end{minipage}
+    \caption{Προβολές λίστας κρατήσεων. Αριστερά: Ενιαίος πίνακας με όλες τις κρατήσεις, με δυνατότητα ταξινόμησης και φιλτραρίσματος. Δεξιά: Οργάνωση κρατήσεων ανά κατάλυμα για ευκολότερη διαχείριση πολλαπλών properties.}
+    \label{fig:bookings-list}
+\end{figure}
+
+\subsection{Οπτική Παρουσίαση Χρεώσεων (Billings)}
+
+% Billings - 4 vertical images (2x2 grid)
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/billings/billing-page-as-manager.png}
+        \subcaption{Προβολή Manager}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/billings/billing-page-receive-showcasing-sendReminder-and-markaspaid.png}
+        \subcaption{Ενέργειες: Υπενθύμιση \& Πληρωμή}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/billings/billing-page-mark-as-paid-modal.png}
+        \subcaption{Modal επιβεβαίωσης πληρωμής}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{ui_screenshots/platform/billings/billing-page-receive-comments.png}
+        \subcaption{Προβολή σχολίων χρέωσης}
+    \end{minipage}
+    \caption{Σύστημα διαχείρισης χρεώσεων. Πάνω αριστερά: Η συνολική προβολή του Manager με όλες τις χρεώσεις. Πάνω δεξιά: Οι διαθέσιμες ενέργειες (αποστολή υπενθύμισης, σήμανση ως πληρωμένο). Κάτω αριστερά: Το modal επιβεβαίωσης πληρωμής. Κάτω δεξιά: Η προβολή σχολίων και ιστορικού επικοινωνίας.}
+    \label{fig:billings-system}
 \end{figure}
 
 \section{Παρουσίαση του Generated Website}
 \label{sec:website-presentation}
 
-Η πλατφόρμα παρέχει τη δυνατότητα αυτόματης παραγωγής ιστοσελίδων για τα καταλύματα, προσφέροντας μια ολοκληρωμένη εμπειρία τόσο για τον διαχειριστή όσο και για τον επισκέπτη.
+Η πλατφόρμα παρέχει τη δυνατότητα αυτόματης παραγωγής ιστοσελίδων για τα καταλύματα, προσφέροντας μια ολοκληρωμένη εμπειρία τόσο για τον διαχειριστή όσο και για τον επισκέπτη. Στις παρακάτω εικόνες παρουσιάζεται η διαδρομή του επισκέπτη από την αναζήτηση μέχρι την ολοκλήρωση της κράτησης.
+
+\subsection{Μηχανή Αναζήτησης Καταλυμάτων}
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Website Generation (Admin).gif]}\vspace{3cm}}}
-    \caption{Διαδικασία παραγωγής Website από το περιβάλλον του διαχειριστή. Ο διαχειριστής μπορεί με απλά βήματα να δημιουργήσει και να δημοσιεύσει την ιστοσελίδα του καταλύματος, αξιοποιώντας τα δεδομένα που είναι ήδη καταχωρημένα στην πλατφόρμα.}
-    \label{fig:website-generation}
+    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/properties-and-rooms-search-engine.png}
+    \caption{Η κεντρική σελίδα αναζήτησης καταλυμάτων και δωματίων. Ο επισκέπτης μπορεί να φιλτράρει με βάση ημερομηνίες, αριθμό επισκεπτών και άλλα κριτήρια για να βρει το ιδανικό κατάλυμα.}
+    \label{fig:website-search-engine}
+\end{figure}
+
+\subsection{Σελίδα Καταλύματος}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/single-property-page.png}
+    \caption{Η σελίδα λεπτομερειών ενός καταλύματος. Περιλαμβάνει φωτογραφίες, περιγραφή, παροχές, τοποθεσία και διαθέσιμα δωμάτια με τις αντίστοιχες τιμές.}
+    \label{fig:website-single-property}
+\end{figure}
+
+\subsection{Διαδικασία Κράτησης}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/select-rooms-and-complete-booking.png}
+    \caption{Επιλογή δωματίων και συμπλήρωση στοιχείων κράτησης. Ο επισκέπτης επιλέγει τα επιθυμητά δωμάτια, εισάγει τα στοιχεία του και προχωρά στην ολοκλήρωση της κράτησης.}
+    \label{fig:website-select-rooms}
+\end{figure}
+
+\subsection{Επιβεβαίωση Κράτησης}
+
+% Booking confirmation - 2 landscape images
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/booking-confirmation-page-1.png}
+    \caption{Σελίδα επιβεβαίωσης κράτησης (μέρος 1). Εμφανίζει τη σύνοψη της κράτησης με τις επιλεγμένες ημερομηνίες, τα δωμάτια και το συνολικό κόστος.}
+    \label{fig:website-booking-confirmation-1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Website Demo (Navigate inside Website like a guest).gif]}\vspace{3cm}}}
-    \caption{Πλοήγηση επισκέπτη στην παραγόμενη ιστοσελίδα. Η ιστοσελίδα που παράγεται είναι πλήρως λειτουργική, επιτρέποντας στον επισκέπτη να δει λεπτομέρειες του καταλύματος, φωτογραφίες και παροχές, καθώς και να προχωρήσει σε κράτηση.}
-    \label{fig:website-navigation}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \fbox{\parbox{0.9\textwidth}{\centering\vspace{3cm}\textit{[Προσθήκη Εικόνας: Website Demo (LLM and AI capabilities that guests can use).gif]}\vspace{3cm}}}
-    \caption{Δυνατότητες AI και LLM για την εξυπηρέτηση επισκεπτών. Ενσωματωμένες δυνατότητες Τεχνητής Νοημοσύνης επιτρέπουν στους επισκέπτες να αλληλεπιδρούν με έξυπνους βοηθούς για να λαμβάνουν άμεσες απαντήσεις σε ερωτήματα σχετικά με το κατάλυμα και την περιοχή.}
-    \label{fig:website-ai}
+    \includegraphics[width=0.95\textwidth]{ui_screenshots/autogenerated-website/booking-confirmation-page-2.png}
+    \caption{Σελίδα επιβεβαίωσης κράτησης (μέρος 2). Περιλαμβάνει τα στοιχεία επικοινωνίας, τους όρους χρήσης και τις οδηγίες άφιξης για τον επισκέπτη.}
+    \label{fig:website-booking-confirmation-2}
 \end{figure}
 
 \section{Smart Features \& LLM Integration}
