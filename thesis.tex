@@ -3189,9 +3189,9 @@ AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέ
 \textbf{Αρχιτεκτονικές αποφάσεις που δικαιώθηκαν:}
 
 \begin{enumerate}
-    \item \textbf{PayloadCMS v3:} Η επιλογή του PayloadCMS ως «Backend Framework» επέτρεψε ταχεία ανάπτυξη με type-safety. Το hook system αποδείχθηκε ιδανικό για complex business logic.
+    \item \textbf{PayloadCMS v3:} Η επιλογή του PayloadCMS ως «Backend Framework» επέτρεψε ταχεία ανάπτυξη με type-safety. Το collection lifecycl hooks system αποδείχθηκε ιδανικό για complex business logic.
     \item \textbf{PostgreSQL vs MongoDB:} Η επιλογή PostgreSQL δικαιώθηκε πλήρως. Οι complex queries για billing, access control, και analytics θα ήταν δυσκολότερες με document-based storage.
-    \item \textbf{Serverless Architecture:} Η χρήση Vercel serverless functions απλοποίησε το deployment και μείωσε τα operation costs, με trade-off τα occasional cold starts.
+    \item \textbf{Serverless Architecture:} Η χρήση Vercel serverless functions απλοποίησε το deployment και μείωσε κάτα πολύ τα operation costs.
     \item \textbf{Monorepo Structure:} Η οργάνωση σε monorepo διευκόλυνε τη συντήρηση και την κοινή χρήση τύπων μεταξύ frontend και backend.
 \end{enumerate}
 
@@ -3202,7 +3202,7 @@ AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέ
 
 \begin{itemize}
     \item \textbf{Για Managers:} Προσφέρουν premium υπηρεσίες στους Owners τους, με αυτοματοποιημένη τιμολόγηση και επαγγελματικά websites
-    \item \textbf{Για Owners:} Μειωμένη εξάρτηση από third-party OTAs (Airbnb, Booking) και χαμηλότερες προμήθειες
+    \item \textbf{Για Owners:} Απλές καθημερινές λειτουργίες και εξαιρετική διαχείριση προσωπικού με διαφορετικά δικαιώματα
     \item \textbf{Για Staff:} Απλοποιημένη πρόσβαση σε πληροφορίες κρατήσεων χωρίς να απαιτείται τεχνική κατάρτιση
 \end{itemize}
 
@@ -3212,8 +3212,8 @@ AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέ
 \begin{enumerate}
     \item \textbf{Direct DB Operations για Mass Import:} Η παράκαμψη του lifecycle για bulk operations είναι απαραίτητη για αποδεκτή απόδοση.
     \item \textbf{Flag-based Loop Prevention:} Η χρήση του \code{skipChannelSync} flag αποδείχθηκε απλή και αποτελεσματική λύση για τον two-way sync.
-    \item \textbf{Feature-based Access Control:} Η ευελιξία του συστήματος δικαιωμάτων επιτρέπει κάθε Manager να προσαρμόζει την εμπειρία για τους χρήστες του.
-    \item \textbf{AI as Enhancement:} Η AI ενσωμάτωση λειτουργεί καλύτερα ως «enhancement» παρά ως «replacement» -- βελτιώνει την εμπειρία χωρίς να αντικαθιστά ανθρώπινη κρίση.
+    \item \textbf{Feature-based Access Control:} Η ευελιξία του συστήματος δικαιωμάτων επιτρέπει στην πλατφόρμα να προσαρμόζει την εμπειρία για τους Platform User, Manager, Owner και Staff.
+    \item \textbf{AI as Enhancement (Copilot):} Η AI ενσωμάτωση λειτουργεί καλύτερα ως «enhancement» παρά ως «replacement» -- βελτιώνει την εμπειρία χωρίς να αντικαθιστά ανθρώπινη κρίση.
 \end{enumerate}
 
 Η αρχιτεκτονική της πλατφόρμας επιτρέπει εύκολη επέκταση και συντήρηση, καθιστώντας την μια βιώσιμη λύση για τη σύγχρονη αγορά βραχυχρόνιας μίσθωσης.
@@ -3227,41 +3227,6 @@ AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέ
 \addcontentsline{toc}{chapter}{Βιβλιογραφία}
 \printbibliography[title={Βιβλιογραφία}]
 
-%----------------------------------------------------------------------------------------
-%	THESIS CONTENT - APPENDICES
-%----------------------------------------------------------------------------------------
-
-\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
-
-\chapter{Δομή Webhook Payload}
-\label{app:webhook}
-
-\begin{lstlisting}[caption={Παράδειγμα Webhook Payload από Beds24}]
-{
-  "booking": {
-    "id": 12345,
-    "arrival": "2025-01-01",
-    "departure": "2025-01-05",
-    "status": "confirmed"
-  },
-  "messages": [...]
-}
-\end{lstlisting}
-
-\chapter{Παράδειγμα Auto Action Query}
-\label{app:auto-action-query}
-
-\begin{lstlisting}[caption={Αναζήτηση κρατήσεων για before-checkin trigger}]
-const whereClause = {
-  'resource.checkInStartOfDay': {
-    greater_than_equal: fromDate.toISOString(),
-    less_than_equal: toDate.toISOString(),
-  },
-  'logging.automationTracking.triggeredAutomations': {
-    not_in: [autoAction.id],
-  }
-}
-\end{lstlisting}
 
 \end{document}
 
