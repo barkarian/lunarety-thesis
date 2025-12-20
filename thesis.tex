@@ -3114,67 +3114,69 @@ Next.js App Router & SSR, Server Actions & Learning curve \\
 \section{Μελλοντικές Βελτιώσεις}
 \label{sec:future-work}
 
-\subsection{Βελτίωση UX στο Admin Panel}
+\subsection{Βελτιώσεις Advanced Dashboard}
+
+Η τρέχουσα έκδοση του Advanced Dashboard απαιτεί τεχνική εξοικείωση για τη ρύθμιση παραμέτρων. Οι παρακάτω βελτιώσεις θα καταστήσουν την πλατφόρμα πιο προσιτή σε Managers χωρίς τεχνική εμπειρία, μειώνοντας την ανάγκη για υποστήριξη από Help Desk:
+
 \begin{itemize}
-    \item GUI Builder για Templates με drag-and-drop
-    \item Visual Auto Action Editor με flow-chart style
-    \item Wizard-style user creation
+    \item \textbf{GUI Builder για Template Messages:} Drag-and-drop editor για δημιουργία templates μηνυμάτων στα Auto Actions, με visual placeholders για δυναμικά δεδομένα κρατήσεων
+    \item \textbf{Plans GUI:} Οπτικό interface για διαχείριση πλάνων συνδρομών με real-time preview των δυνατοτήτων
+    \item \textbf{Add/Update Users GUI:} Wizard-style διαδικασία δημιουργίας και επεξεργασίας χρηστών με οπτική αναπαράσταση δικαιωμάτων
+    \item \textbf{Auto Actions Visual Editor:} Flow-chart style editor με οπτικά στοιχεία για time windows, intervals, και triggers -- επιτρέποντας διαισθητική ρύθμιση χωρίς τεχνικές γνώσεις
 \end{itemize}
 
 \subsection{Επέκταση Channel Manager Support}
+
+Η υποστήριξη επιπλέον Channel Managers θα διευρύνει τη βάση πιθανών χρηστών:
+
 \begin{itemize}
-    \item Hostaway (υψηλή προτεραιότητα)
-    \item Lodgify (μεσαία προτεραιότητα)
-    \item Custom/Direct integrations
+    \item \textbf{Channex:} Δημοφιλής Channel Manager με ισχυρό API και ευρεία υιοθέτηση στην ευρωπαϊκή αγορά
+    \item \textbf{Custom/Direct Integrations:} Framework για εύκολη ενσωμάτωση νέων Channel Managers μέσω standardized adapter pattern
+\end{itemize}
+
+\subsection{Analytics Page}
+
+Σελίδα αναλυτικών στοιχείων για data-driven λήψη αποφάσεων:
+
+\begin{itemize}
+    \item \textbf{Year-over-Year Comparison:} Σύγκριση δεδομένων τρέχοντος με προηγούμενο έτος
+    \item \textbf{Revenue per Property/Room:} Αναλυτικά έσοδα ανά κατάλυμα και δωμάτιο
+    \item \textbf{Occupancy Rates over Time:} Ποσοστά πληρότητας με χρονική εξέλιξη
+    \item \textbf{Booking Source Distribution:} Κατανομή κρατήσεων ανά πηγή (OTA, direct, κ.λπ.)
 \end{itemize}
 
 \subsection{Mobile Application}
-\begin{itemize}
-    \item Push notifications για νέες κρατήσεις
-    \item Quick actions (approve, respond)
-    \item Offline calendar viewing
-\end{itemize}
 
-\subsection{Advanced Analytics Dashboard}
+Μετάβαση ολόκληρου του UI σε mobile εφαρμογή:
+
 \begin{itemize}
-    \item Revenue per property/room
-    \item Occupancy rates over time
-    \item Booking source distribution
-    \item Commission breakdown trends
+    \item \textbf{Seamless Authentication:} Biometric login χωρίς ανάγκη επαναλαμβανόμενης σύνδεσης
+    \item \textbf{Push Notifications:} Άμεσες ειδοποιήσεις για νέες κρατήσεις, μηνύματα, και κρίσιμες ενέργειες
+    \item \textbf{Offline Functionality:} Πρόσβαση σε calendar και βασικές πληροφορίες χωρίς σύνδεση
+    \item \textbf{Quick Actions:} Approve bookings, respond σε μηνύματα με ένα tap
 \end{itemize}
 
 \subsection{Payment Integration}
 \label{subsec:payment-integration}
 
-Σύνδεση με payment gateways για:
+Ολοκληρωμένη υποστήριξη πληρωμών σε πολλαπλά επίπεδα (αυτή τη στιγμή ο Manager ή Platform User επιλέγει χειροκίνητα ότι έχει λάβει πληρωμή):
 
 \begin{itemize}
-    \item Online bill payment από Owners
-    \item Direct booking payments στο website
-    \item Commission auto-deduction
+    \item \textbf{Website Payments:} Payment gateway integration για τα auto-generated websites, επιτρέποντας άμεσες πληρωμές από guests
+    \item \textbf{Manager-Platform Transactions:} Αυτοματοποιημένες πληρωμές μεταξύ Managers και πλατφόρμας για subscription fees
+    \item \textbf{Owner-Manager Settlements:} Διαχείριση πληρωμών μεταξύ Owners και Managers με automatic commission calculation
 \end{itemize}
 
-\section{Επίτευξη Στόχων}
-\label{sec:goal-achievement}
+\subsection{OTA Platform (Fork του Auto-Generated Website)}
 
-Η πλατφόρμα Lunarety επιτυγχάνει τον στόχο της να γεφυρώσει το χάσμα μεταξύ Channel Managers και ιδιοκτητών ακινήτων. Παρέχει στους Managers ένα ισχυρό εργαλείο για να προσφέρουν προστιθέμενη αξία στους πελάτες τους (Owners), ενώ παράλληλα αυτοματοποιεί χρονοβόρες διαδικασίες μέσω των Auto Actions και της Τεχνητής Νοημοσύνης.
+Επέκταση του Auto-Generated Website framework σε πλήρες Online Travel Agency (OTA), παρόμοιο με Booking.com και Airbnb:
 
-\begin{table}[H]
-\centering
-\caption{Κύρια επιτεύγματα της πλατφόρμας}
-\label{tab:achievements}
-\begin{tabular}{@{}L{3.5cm}L{4.5cm}L{4.5cm}@{}}
-\toprule
-\textbf{Στόχος} & \textbf{Υλοποίηση} & \textbf{Αποτέλεσμα} \\
-\midrule
-Two-way sync με Beds24 & Webhooks + API integration & Real-time data consistency \\
-Αυτοματοποίηση ειδοποιήσεων & Auto Actions με time-based και instant triggers & 80\% μείωση χειροκίνητων εργασιών \\
-Ιεραρχία χρηστών & 4-level user system με granular permissions & Ανεξαρτησία διαχείρισης ανά επίπεδο \\
-Generated websites & One-click Vercel deploy & 2-λεπτά deployment time \\
-AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέτηση \\
-\bottomrule
-\end{tabular}
-\end{table}
+\begin{itemize}
+    \item \textbf{Centralized Property Listing:} Όλοι οι Managers μπορούν να ανεβάσουν τα καταλύματά τους στο δικό μας OTA
+    \item \textbf{Unified Search \& Booking:} Ενιαία μηχανή αναζήτησης και κράτησης για όλα τα καταλύματα της πλατφόρμας
+    \item \textbf{Commission-based Model:} Έσοδα για την πλατφόρμα μέσω προμήθειας ανά κράτηση
+    \item \textbf{Brand Recognition:} Δημιουργία αναγνωρίσιμου brand στην αγορά βραχυχρόνιων μισθώσεων
+\end{itemize}
 
 \section{Τεχνικά Συμπεράσματα}
 \label{sec:technical-conclusions}
@@ -3199,18 +3201,6 @@ AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέ
     \item \textbf{Για Staff:} Απλοποιημένη πρόσβαση σε πληροφορίες κρατήσεων χωρίς να απαιτείται τεχνική κατάρτιση
     \item \textbf{Για Πλατφόρμα:} Εύκολη επέκταση και συντήρηση, καθιστώντας την βιώσιμη λύση για τη σύγχρονη αγορά βραχυχρόνιας μίσθωσης.
 \end{itemize}
-
-\section{Βασικά Διδάγματα}
-\label{sec:lessons-learned}
-
-\begin{enumerate}
-    \item \textbf{Direct DB Operations για Mass Import:} Η παράκαμψη του lifecycle για bulk operations είναι απαραίτητη για αποδεκτή απόδοση.
-    \item \textbf{Flag-based Loop Prevention:} Η χρήση του \code{skipChannelSync} flag αποδείχθηκε απλή και αποτελεσματική λύση για τον two-way sync.
-    \item \textbf{Feature-based Access Control:} Η ευελιξία του συστήματος δικαιωμάτων επιτρέπει στην πλατφόρμα να προσαρμόζει την εμπειρία για τους Platform User, Manager, Owner και Staff.
-    \item \textbf{AI as Enhancement (Copilot):} Η AI ενσωμάτωση λειτουργεί καλύτερα ως «enhancement» παρά ως «replacement» -- βελτιώνει την εμπειρία χωρίς να αντικαθιστά ανθρώπινη κρίση.
-\end{enumerate}
-
-Η αρχιτεκτονική της πλατφόρμας επιτρέπει εύκολη επέκταση και συντήρηση, καθιστώντας την μια βιώσιμη λύση για τη σύγχρονη αγορά βραχυχρόνιας μίσθωσης.
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
