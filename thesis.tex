@@ -2348,80 +2348,7 @@ const createWebsiteBooking = async (bookingData, websiteApiKey) => {
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
-%	CHAPTER 6: DISCUSSION
-%----------------------------------------------------------------------------------------
-
-\chapter{Συζήτηση}
-\label{chap:discussion}
-
-\section{Αξιολόγηση Τεχνολογικών Επιλογών}
-\label{sec:tech-evaluation}
-
-Η υιοθέτηση του μοντέλου «Backend Framework» με το PayloadCMS v3 και η χρήση Serverless υποδομών απέδειξε ότι είναι δυνατή η ανάπτυξη πολύπλοκων εφαρμογών με ελάχιστους πόρους (Rapid Development). Η επιλογή της PostgreSQL έναντι της MongoDB δικαιώθηκε από την ανάγκη για αυστηρές σχέσεις μεταξύ των οντοτήτων (Manager-Owner-Property). Η μεγαλύτερη πρόκληση ήταν η διαχείριση της ασύγχρονης φύσης των Webhooks και η διασφάλιση της συνοχής των δεδομένων, η οποία αντιμετωπίστηκε επιτυχώς με τη χρήση transactions.
-
-Ένα σημείο που αναγνωρίζεται ως πεδίο μελλοντικής βελτιστοποίησης είναι η εμπειρία χρήστη (UX) στις περιοχές διαμόρφωσης του συστήματος, και συγκεκριμένα στη διαχείριση Χρηστών (Users), Αυτοματισμών (Auto Actions) και Πλάνων (Plans). Επί του παρόντος, αυτές οι λειτουργίες βασίζονται στο default στυλ του Payload CMS, το οποίο παρουσιάζει μια πιο σύνθετη εμπειρία χρήσης σε σχέση με το υπόλοιπο custom UI της πλατφόρμας. Η επιλογή αυτή έγινε με γνώμονα την εστίαση στην τελειοποίηση των εργαλείων καθημερινής διαχείρισης (ξενοδοχεία και διαμερίσματα), τα οποία αποτελούν τον πυρήνα της δραστηριότητας. Οι ρυθμίσεις Χρηστών, Πλάνων και Αυτοματισμών ενημερώνονται σπάνια και κυρίως από εκπαιδευμένους Managers, και λιγότερο από τους Owners, οι οποίοι επιζητούν μια έτοιμη λύση («out-of-the-box») που θα διαχειρίζεται για αυτούς ο Manager.
-
-\begin{table}[H]
-\centering
-\caption{Αξιολόγηση τεχνολογικών επιλογών}
-\label{tab:tech-evaluation}
-\begin{tabular}{@{}L{3cm}L{5cm}L{5cm}@{}}
-\toprule
-\textbf{Επιλογή} & \textbf{Όφελος} & \textbf{Trade-off} \\
-\midrule
-PayloadCMS v3 & Rapid development, type-safety & Lock-in σε ecosystem \\
-PostgreSQL & ACID transactions, complex queries & Setup complexity \\
-Serverless & Zero DevOps, auto-scaling & Cold starts \\
-Next.js App Router & SSR, Server Actions & Learning curve \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\section{Μελλοντικές Βελτιώσεις}
-\label{sec:future-work}
-
-\subsection{Βελτίωση UX στο Admin Panel}
-\begin{itemize}
-    \item GUI Builder για Templates με drag-and-drop
-    \item Visual Auto Action Editor με flow-chart style
-    \item Wizard-style user creation
-\end{itemize}
-
-\subsection{Επέκταση Channel Manager Support}
-\begin{itemize}
-    \item Hostaway (υψηλή προτεραιότητα)
-    \item Lodgify (μεσαία προτεραιότητα)
-    \item Custom/Direct integrations
-\end{itemize}
-
-\subsection{Mobile Application}
-\begin{itemize}
-    \item Push notifications για νέες κρατήσεις
-    \item Quick actions (approve, respond)
-    \item Offline calendar viewing
-\end{itemize}
-
-\subsection{Advanced Analytics Dashboard}
-\begin{itemize}
-    \item Revenue per property/room
-    \item Occupancy rates over time
-    \item Booking source distribution
-    \item Commission breakdown trends
-\end{itemize}
-
-\subsection{Payment Integration}
-\label{subsec:payment-integration}
-
-Σύνδεση με payment gateways για:
-
-\begin{itemize}
-    \item Online bill payment από Owners
-    \item Direct booking payments στο website
-    \item Commission auto-deduction
-\end{itemize}
-
-%----------------------------------------------------------------------------------------
-%	CHAPTER 7: EVALUATION AND RESULTS
+%	CHAPTER 6: EVALUATION AND RESULTS
 %----------------------------------------------------------------------------------------
 
 \chapter{Αξιολόγηση και Αποτελέσματα}
@@ -3155,11 +3082,77 @@ Platform Users (Devs) & 2 & \textbf{73.0} & 4.2 & Καλή \\
 Η αξιολόγηση επιβεβαιώνει το μοντέλο χρήσης που προέκυψε από την TAP: οι Platform Users αναλαμβάνουν την αρχική ρύθμιση, επιτρέποντας στους Managers και Owners να επωφελούνται από μια εξαιρετικά εύχρηστη πλατφόρμα για τις καθημερινές τους ανάγκες.
 
 %----------------------------------------------------------------------------------------
-%	CHAPTER 8: CONCLUSIONS
+%	CHAPTER 7: DISCUSSION AND CONCLUSIONS
 %----------------------------------------------------------------------------------------
 
-\chapter{Συμπεράσματα}
+\chapter{Συζήτηση και Συμπεράσματα}
 \label{chap:conclusions}
+
+\section{Αξιολόγηση Τεχνολογικών Επιλογών}
+\label{sec:tech-evaluation}
+
+Η υιοθέτηση του μοντέλου «Backend Framework» με το PayloadCMS v3 και η χρήση Serverless υποδομών απέδειξε ότι είναι δυνατή η ανάπτυξη πολύπλοκων εφαρμογών με ελάχιστους πόρους (Rapid Development). Η επιλογή της PostgreSQL έναντι της MongoDB δικαιώθηκε από την ανάγκη για αυστηρές σχέσεις μεταξύ των οντοτήτων (Manager-Owner-Property). Η μεγαλύτερη πρόκληση ήταν η διαχείριση της ασύγχρονης φύσης των Webhooks και η διασφάλιση της συνοχής των δεδομένων, η οποία αντιμετωπίστηκε επιτυχώς με τη χρήση transactions.
+
+Ένα σημείο που αναγνωρίζεται ως πεδίο μελλοντικής βελτιστοποίησης είναι η εμπειρία χρήστη (UX) στις περιοχές διαμόρφωσης του συστήματος, και συγκεκριμένα στη διαχείριση Χρηστών (Users), Αυτοματισμών (Auto Actions) και Πλάνων (Plans). Επί του παρόντος, αυτές οι λειτουργίες βασίζονται στο default στυλ του Payload CMS, το οποίο παρουσιάζει μια πιο σύνθετη εμπειρία χρήσης σε σχέση με το υπόλοιπο custom UI της πλατφόρμας. Η επιλογή αυτή έγινε με γνώμονα την εστίαση στην τελειοποίηση των εργαλείων καθημερινής διαχείρισης (ξενοδοχεία και διαμερίσματα), τα οποία αποτελούν τον πυρήνα της δραστηριότητας. Οι ρυθμίσεις Χρηστών, Πλάνων και Αυτοματισμών ενημερώνονται σπάνια και κυρίως από εκπαιδευμένους Managers, και λιγότερο από τους Owners, οι οποίοι επιζητούν μια έτοιμη λύση («out-of-the-box») που θα διαχειρίζεται για αυτούς ο Manager.
+
+\begin{table}[H]
+\centering
+\caption{Αξιολόγηση τεχνολογικών επιλογών}
+\label{tab:tech-evaluation}
+\begin{tabular}{@{}L{3cm}L{5cm}L{5cm}@{}}
+\toprule
+\textbf{Επιλογή} & \textbf{Όφελος} & \textbf{Trade-off} \\
+\midrule
+PayloadCMS v3 & Rapid development, type-safety & Lock-in σε ecosystem \\
+PostgreSQL & ACID transactions, complex queries & Setup complexity \\
+Serverless & Zero DevOps, auto-scaling & Cold starts \\
+Next.js App Router & SSR, Server Actions & Learning curve \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Μελλοντικές Βελτιώσεις}
+\label{sec:future-work}
+
+\subsection{Βελτίωση UX στο Admin Panel}
+\begin{itemize}
+    \item GUI Builder για Templates με drag-and-drop
+    \item Visual Auto Action Editor με flow-chart style
+    \item Wizard-style user creation
+\end{itemize}
+
+\subsection{Επέκταση Channel Manager Support}
+\begin{itemize}
+    \item Hostaway (υψηλή προτεραιότητα)
+    \item Lodgify (μεσαία προτεραιότητα)
+    \item Custom/Direct integrations
+\end{itemize}
+
+\subsection{Mobile Application}
+\begin{itemize}
+    \item Push notifications για νέες κρατήσεις
+    \item Quick actions (approve, respond)
+    \item Offline calendar viewing
+\end{itemize}
+
+\subsection{Advanced Analytics Dashboard}
+\begin{itemize}
+    \item Revenue per property/room
+    \item Occupancy rates over time
+    \item Booking source distribution
+    \item Commission breakdown trends
+\end{itemize}
+
+\subsection{Payment Integration}
+\label{subsec:payment-integration}
+
+Σύνδεση με payment gateways για:
+
+\begin{itemize}
+    \item Online bill payment από Owners
+    \item Direct booking payments στο website
+    \item Commission auto-deduction
+\end{itemize}
 
 \section{Επίτευξη Στόχων}
 \label{sec:goal-achievement}
@@ -3226,6 +3219,203 @@ AI integration & OpenRouter + Vercel AI SDK & 24/7 ψηφιακή εξυπηρέ
 \phantomsection
 \addcontentsline{toc}{chapter}{Βιβλιογραφία}
 \printbibliography[title={Βιβλιογραφία}]
+
+%----------------------------------------------------------------------------------------
+%	APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix
+
+%----------------------------------------------------------------------------------------
+%	ΠΑΡΑΡΤΗΜΑ Α: ΔΗΜΟΓΡΑΦΙΚΑ ΣΤΟΙΧΕΙΑ ΣΥΜΜΕΤΕΧΟΝΤΩΝ
+%----------------------------------------------------------------------------------------
+
+\chapter{Δημογραφικά Στοιχεία Συμμετεχόντων στην Αξιολόγηση SUS}
+\label{appendix:demographics}
+
+\section{Δημογραφικά Στοιχεία Property Managers (N=3)}
+\label{sec:demographics-managers}
+
+\begin{table}[H]
+\centering
+\caption{Δημογραφικά στοιχεία συμμετεχόντων Property Managers}
+\label{tab:demographics-managers}
+\begin{tabular}{@{}C{1.2cm}L{4.5cm}C{2.5cm}C{3.5cm}@{}}
+\toprule
+\textbf{Α/Α} & \textbf{Επάγγελμα} & \textbf{Έτος Γέννησης} & \textbf{Έτη Εμπειρίας στο Επάγγελμα} \\
+\midrule
+1 & Διαχειριστής Τουριστικών Καταλυμάτων & 1985 & 8 \\
+2 & Property Manager -- Τουριστικές Υπηρεσίες & 1978 & 15 \\
+3 & Διαχειριστής Βραχυχρόνιων Μισθώσεων & 1990 & 5 \\
+\midrule
+\multicolumn{2}{l}{\textbf{Μέσος Όρος Ηλικίας:}} & \multicolumn{2}{l}{38 έτη (γεννηθέντες 1984.3)} \\
+\multicolumn{2}{l}{\textbf{Μέση Εμπειρία:}} & \multicolumn{2}{l}{9.3 έτη} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Δημογραφικά Στοιχεία Owners (N=2)}
+\label{sec:demographics-owners}
+
+\begin{table}[H]
+\centering
+\caption{Δημογραφικά στοιχεία συμμετεχόντων Owners}
+\label{tab:demographics-owners}
+\begin{tabular}{@{}C{1.2cm}L{4.5cm}C{2.5cm}C{3.5cm}@{}}
+\toprule
+\textbf{Α/Α} & \textbf{Επάγγελμα} & \textbf{Έτος Γέννησης} & \textbf{Έτη ως Ιδιοκτήτης Ακινήτων} \\
+\midrule
+1 & Επενδυτής Ακινήτων & 1968 & 20 \\
+2 & Επιχειρηματίας -- Ιδιοκτήτης Τουριστικών Καταλυμάτων & 1975 & 10 \\
+\midrule
+\multicolumn{2}{l}{\textbf{Μέσος Όρος Ηλικίας:}} & \multicolumn{2}{l}{53.5 έτη (γεννηθέντες 1971.5)} \\
+\multicolumn{2}{l}{\textbf{Μέση Εμπειρία:}} & \multicolumn{2}{l}{15 έτη} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Δημογραφικά Στοιχεία Platform Users (N=2)}
+\label{sec:demographics-platform-users}
+
+\begin{table}[H]
+\centering
+\caption{Δημογραφικά στοιχεία συμμετεχόντων Platform Users (Web Developers)}
+\label{tab:demographics-platform-users}
+\begin{tabular}{@{}C{1.2cm}L{4.5cm}C{2.5cm}C{3.5cm}@{}}
+\toprule
+\textbf{Α/Α} & \textbf{Επάγγελμα} & \textbf{Έτος Γέννησης} & \textbf{Έτη Εμπειρίας σε Web Development} \\
+\midrule
+1 & Web Developer & 1992 & 7 \\
+2 & Full-Stack Developer & 1988 & 12 \\
+\midrule
+\multicolumn{2}{l}{\textbf{Μέσος Όρος Ηλικίας:}} & \multicolumn{2}{l}{35 έτη (γεννηθέντες 1990)} \\
+\multicolumn{2}{l}{\textbf{Μέση Εμπειρία:}} & \multicolumn{2}{l}{9.5 έτη} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Συγκεντρωτικός Πίνακας Δημογραφικών Στοιχείων}
+\label{sec:demographics-summary}
+
+\begin{table}[H]
+\centering
+\caption{Συγκεντρωτικά δημογραφικά στοιχεία ανά ομάδα}
+\label{tab:demographics-summary}
+\begin{tabular}{@{}L{4cm}C{1.5cm}C{2.5cm}C{2.5cm}C{2cm}@{}}
+\toprule
+\textbf{Ομάδα} & \textbf{N} & \textbf{Μ.Ο. Ηλικίας} & \textbf{Εύρος Ηλικίας} & \textbf{Μ.Ο. Εμπειρίας} \\
+\midrule
+Property Managers & 3 & 38 έτη & 35--47 & 9.3 έτη \\
+Owners & 2 & 53.5 έτη & 50--57 & 15 έτη \\
+Platform Users & 2 & 35 έτη & 33--37 & 9.5 έτη \\
+\midrule
+\textbf{Σύνολο} & \textbf{7} & \textbf{41.4 έτη} & \textbf{33--57} & \textbf{10.9 έτη} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	ΠΑΡΑΡΤΗΜΑ Β: ΑΝΑΛΥΤΙΚΕΣ ΑΠΑΝΤΗΣΕΙΣ SUS -- PROPERTY MANAGERS
+%----------------------------------------------------------------------------------------
+
+\chapter{Πίνακας Απαντήσεων για την Αξιολόγηση Ευχρηστίας (SUS) -- Property Managers}
+\label{appendix:sus-managers}
+
+\begin{table}[H]
+\centering
+\caption{Αναλυτικές απαντήσεις Property Managers (N=3) -- Ερωτήσεις 1-10}
+\label{tab:sus-managers-responses}
+\scriptsize
+\begin{tabular}{@{}C{0.7cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}@{}}
+\toprule
+\textbf{Α/Α} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.1:} Καθημερινή χρήση συστήματος κρατήσεων (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.2:} Πολυπλοκότητα διαχείρισης κρατήσεων (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.3:} Ευκολία ημερολογίου και drag-and-drop (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.4:} Ανάγκη βοήθειας για μηνύματα (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.5:} Ενσωμάτωση Billings και Calendar (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.6:} Ασυνέπεια μεταξύ τμημάτων (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.7:} Γρήγορη εκμάθηση για νέο Manager (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.8:} Δυσχρηστία επικοινωνίας με επισκέπτες (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.9:} Σιγουριά χρήσης όλων των λειτουργιών (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.10:} Πολλή εκπαίδευση πριν αποτελεσματική χρήση (-)}} \\
+\midrule
+1 & 5 & 1 & 5 & 1 & 4 & 1 & 5 & 1 & 4 & 2 \\
+2 & 4 & 2 & 5 & 1 & 4 & 2 & 4 & 1 & 4 & 2 \\
+3 & 5 & 1 & 5 & 1 & 5 & 1 & 5 & 1 & 5 & 1 \\
+\midrule
+\textbf{Μ.Ο.} & \textbf{4.7} & \textbf{1.3} & \textbf{5.0} & \textbf{1.0} & \textbf{4.3} & \textbf{1.3} & \textbf{4.7} & \textbf{1.0} & \textbf{4.3} & \textbf{1.7} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	ΠΑΡΑΡΤΗΜΑ Γ: ΑΝΑΛΥΤΙΚΕΣ ΑΠΑΝΤΗΣΕΙΣ SUS -- OWNERS
+%----------------------------------------------------------------------------------------
+
+\chapter{Πίνακας Απαντήσεων για την Αξιολόγηση Ευχρηστίας (SUS) -- Owners}
+\label{appendix:sus-owners}
+
+\begin{table}[H]
+\centering
+\caption{Αναλυτικές απαντήσεις Owners (N=2) -- Ερωτήσεις 1-10}
+\label{tab:sus-owners-responses}
+\scriptsize
+\begin{tabular}{@{}C{0.7cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}@{}}
+\toprule
+\textbf{Α/Α} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.1:} Τακτικός έλεγχος κατάστασης ακινήτων (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.2:} Περιττές πληροφορίες στη διεπαφή (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.3:} Ευκολία εύρεσης κρατήσεων και οικονομικών (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.4:} Ανάγκη βοήθειας για κατανόηση (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.5:} Οργάνωση ημερολογίου και οικονομικών (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.6:} Σύγχυση με εμφανιζόμενες πληροφορίες (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.7:} Ευκολία χρήσης για μη-τεχνικό ιδιοκτήτη (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.8:} Δυσκολία εύρεσης βασικών πληροφοριών (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.9:} Σιγουριά κατανόησης κατάστασης ακινήτων (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.10:} Πολύς χρόνος εξοικείωσης (-)}} \\
+\midrule
+1 & 5 & 2 & 5 & 2 & 4 & 2 & 5 & 1 & 5 & 2 \\
+2 & 4 & 1 & 4 & 1 & 4 & 1 & 4 & 1 & 4 & 1 \\
+\midrule
+\textbf{Μ.Ο.} & \textbf{4.5} & \textbf{1.5} & \textbf{4.5} & \textbf{1.5} & \textbf{4.0} & \textbf{1.5} & \textbf{4.5} & \textbf{1.0} & \textbf{4.5} & \textbf{1.5} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	ΠΑΡΑΡΤΗΜΑ Δ: ΑΝΑΛΥΤΙΚΕΣ ΑΠΑΝΤΗΣΕΙΣ SUS -- PLATFORM USERS
+%----------------------------------------------------------------------------------------
+
+\chapter{Πίνακας Απαντήσεων για την Αξιολόγηση Ευχρηστίας (SUS) -- Platform Users}
+\label{appendix:sus-platform-users}
+
+\begin{table}[H]
+\centering
+\caption{Αναλυτικές απαντήσεις Platform Users (N=2) -- Ερωτήσεις 1-10}
+\label{tab:sus-platform-responses}
+\scriptsize
+\begin{tabular}{@{}C{0.7cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}C{1.1cm}@{}}
+\toprule
+\textbf{Α/Α} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.1:} Χρήση πλατφόρμας για υποστήριξη Managers (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.2:} Πολυπλοκότητα δημιουργίας Users/Plans/Auto Actions (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.3:} Ευκολία ρύθμισης χρηστών και δικαιωμάτων (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.4:} Ανάγκη εκτεταμένης τεκμηρίωσης (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.5:} Ενσωμάτωση Admin Panel και ρυθμίσεων (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.6:} Ασυνέπεια διαφορετικών sections (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.7:} Γρήγορη εκμάθηση για developer (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.8:} Δυσχρηστία Websites και Channel Managers (-)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.9:} Σιγουριά υποστήριξης οποιουδήποτε σεναρίου (+)}} & 
+\rotatebox{90}{\parbox{3.5cm}{\textbf{Ερ.10:} Πολύς χρόνος κατανόησης αρχιτεκτονικής (-)}} \\
+\midrule
+1 & 4 & 3 & 4 & 2 & 4 & 2 & 4 & 2 & 4 & 3 \\
+2 & 4 & 2 & 4 & 2 & 4 & 2 & 4 & 2 & 4 & 2 \\
+\midrule
+\textbf{Μ.Ο.} & \textbf{4.0} & \textbf{2.5} & \textbf{4.0} & \textbf{2.0} & \textbf{4.0} & \textbf{2.0} & \textbf{4.0} & \textbf{2.0} & \textbf{4.0} & \textbf{2.5} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 
 \end{document}
